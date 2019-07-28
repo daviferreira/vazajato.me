@@ -112,14 +112,6 @@
     "source": "veja"
   },
   {
-    "id": "veja2",
-    "title": "Novos diálogos: indícios de conversas impróprias entre Deltan e Gebran",
-    "description": "Mensagens obtidas pelo site The Intercept Brasil e analisadas por VEJA citam 'encontros fortuitos' entre procurador e desembargador do TRF4",
-    "url": "https://veja.abril.com.br/politica/novos-dialogos-indicios-de-conversas-improprias-entre-deltan-e-gebran/",
-    "publishDate": "2019-07-05",
-    "source": "veja"
-  },
-  {
     "id": "veja3",
     "title": "Faustão: Em diálogos, Moro revela conselho de Fausto Silva à Lava Jato",
     "description": "Apresentador, em conversa com o então juiz, elogiou as investigações e deu dicas para melhorar a comunicação dos procuradores",
@@ -158,6 +150,14 @@
     "url": "https://theintercept.com/2019/07/09/vazajato-audio-inedito-deltan-dallagnol/",
     "publishDate": "2019-07-09",
     "source": "intercept"
+  },
+  {
+    "id": "veja2",
+    "title": "Novos diálogos: indícios de conversas impróprias entre Deltan e Gebran",
+    "description": "Mensagens obtidas pelo site The Intercept Brasil e analisadas por VEJA citam 'encontros fortuitos' entre procurador e desembargador do TRF4",
+    "url": "https://veja.abril.com.br/politica/novos-dialogos-indicios-de-conversas-improprias-entre-deltan-e-gebran/",
+    "publishDate": "2019-07-12",
+    "source": "veja"
   },
   {
     "id": "intercept10",
