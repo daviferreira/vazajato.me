@@ -36,7 +36,7 @@
 .articles {
   align-self: flex-end;
   margin-bottom: 60px;
-  margin-top: -50px;
+  margin-top: -40px;
   width: calc(50% - 40px);
 }
 
@@ -63,12 +63,12 @@
 }
 
 .article:first-child::after {
-  background-color: #ccc;
+  background-color: #666;
   content: '';
   height: 1px;
   pointer-events: none;
   position: absolute;
-  top: 40px;
+  top: 30px;
   transform: translateY(-50%);
   width: 30px;
 }
@@ -83,7 +83,7 @@
 
 
 .article::before {
-  background-color: #ccc;
+  background-color: #666;
   content: '';
   height: 30px;
   left: 50%;

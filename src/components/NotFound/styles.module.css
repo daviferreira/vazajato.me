@@ -1,0 +1,20 @@
+.root {
+  align-items: center;
+  background: no-repeat url(./deltan.gif) 0 0;
+  background-size: cover;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  justify-content: center;
+  width: 100%;
+}
+
+.root a {
+  background-color: #000;
+  color: #fff;
+  display: inline-block;
+  font-weight: 600;
+  text-decoration: underline;
+  padding: 10px;
+}

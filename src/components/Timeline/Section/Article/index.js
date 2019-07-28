@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import Image from "./Image"
+import Source from "./Source"
 
 import styles from "./styles.module.css"
 
@@ -19,7 +20,7 @@ const Article = ({ id, source, title, url }) => {
         </div>
       </div>
       <h2 className={styles.title}>{title}</h2>
-      {/* <div className={styles.source}>{source}</div> */}
+      <Source source={source} />
     </a>
   )
 }

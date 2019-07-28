@@ -1,22 +1,22 @@
 .root {
   align-items: center;
-  background-color: #000;
   display: flex;
   left: 20px;
-  height: 100px;
   justify-content: center;
-  padding: 0 10px;
   position: fixed;
   top: 20px;
-  width: 100px;
   z-index: 1;
 }
 
 .title {
+  background-color: #000;
   font-size: 13px;
+  font-weight: 600;
   line-height: 1.6;
   margin: 0;
   text-transform: uppercase;
+  padding: 10px;
+  width: 100px;
 }
 
 .title a {
