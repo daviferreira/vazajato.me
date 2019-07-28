@@ -68,7 +68,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:image`,
-          content: `https://wwww.vazajato.me/images/vazajato.jpg`
+          content: `https://www.vazajato.me/images/vazajato.jpg`
         },
         {
           property: `og:image:width`,
