@@ -33,7 +33,6 @@ function SEO({ description, lang, meta, title }) {
         lang
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
           name: `description`,
@@ -66,6 +65,18 @@ function SEO({ description, lang, meta, title }) {
         {
           name: `twitter:description`,
           content: metaDescription
+        },
+        {
+          property: `og:image`,
+          content: `https://wwww.vazajato.me/images/vazajato.jpg`
+        },
+        {
+          property: `og:image:width`,
+          content: 1200
+        },
+        {
+          property: `og:image:height`,
+          content: 675
         }
       ].concat(meta)}
     />
