@@ -1,10 +1,10 @@
 .root {
   align-items: center;
+  bottom: 0;
   display: flex;
   left: 0;
   justify-content: center;
   position: fixed;
-  top: 0;
   z-index: 1;
 }
 
