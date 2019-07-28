@@ -21,8 +21,10 @@
 .day {
   color: #666;
   display: block;
+  font-size: 13px;
   font-weight: 600;
   position: absolute;
+  text-transform: uppercase;
   top: 50%;
   transform: translateY(-50%);
 }

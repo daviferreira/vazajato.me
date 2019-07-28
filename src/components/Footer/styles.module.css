@@ -1,13 +1,17 @@
 .root {
+  align-items: center;
   color: #666;
+  display: flex;
   font-size: 13px;
-  margin-top: 40px;
-  padding: 0 10px;
+  justify-content: flex-end;
+  margin-top: 35px;
+  padding: 0 15px;
   text-align: right;
 }
 
 .communist {
   color: red;
+  font-size: 20px;
 }
 
 .root a {

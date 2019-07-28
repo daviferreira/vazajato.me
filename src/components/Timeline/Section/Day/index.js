@@ -19,7 +19,7 @@ const Day = ({ articles, day, left }) => {
       <div className={styles.indicator}>
         <div className={styles.circle}></div>
         <time className={styles.day} timestamp={day}>
-          {moment(day, "YYYY-MM-DD").format("DD/MMM")}
+          {moment(day, "YYYY-MM-DD").format("DD/MM")}
         </time>
       </div>
       <div className={styles.articles}>

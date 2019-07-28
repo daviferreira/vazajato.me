@@ -10,8 +10,9 @@ const Footer = () => (
       target="_blank"
     >
       Desenvolvido
-    </a>{" "}
-    com <span className={styles.communist}>☭</span> por{" "}
+    </a>
+    &nbsp;com&nbsp;<span className={styles.communist}>☭</span>
+    &nbsp;por&nbsp;
     <a
       href="https://www.twitter.com/davitferreira"
       rel="noopener noreferrer"
