@@ -1,18 +1,18 @@
 .root {
   align-items: center;
   display: flex;
-  left: 20px;
+  left: 0;
   justify-content: center;
   position: fixed;
-  top: 20px;
+  top: 0;
   z-index: 1;
 }
 
 .title {
   background-color: #000;
   font-size: 13px;
-  font-weight: 600;
-  line-height: 1.6;
+  font-weight: 300;
+  line-height: 1.2;
   margin: 0;
   text-transform: uppercase;
   padding: 10px;
@@ -22,6 +22,12 @@
 .title a {
   color: #fff;
   text-decoration: none;
+}
+
+.hashtag {
+  display: block;
+  font-weight: 600;
+  margin-top: 10px;
 }
 
 .hashtag:hover {

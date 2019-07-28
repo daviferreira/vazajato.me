@@ -21,16 +21,20 @@
 .day {
   color: #666;
   display: block;
-  left: 0;
   font-weight: 600;
   position: absolute;
   top: 50%;
-  transform: translate(calc(-100% - 30px), -50%);
+  transform: translateY(-50%);
+}
+
+.right .day {
+  padding-right: 10px;
+  right: 100%;
 }
 
 .left .day {
   left: 100%;
-  transform: translate(calc(100% - 30px), -50%);
+  padding-left: 10px;
 }
 
 .articles {
@@ -80,7 +84,6 @@
 .left .article:first-child::after {
   left: 100%;
 }
-
 
 .article::before {
   background-color: #666;
