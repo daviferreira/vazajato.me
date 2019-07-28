@@ -16,3 +16,9 @@
   width: 13px;
   z-index: -1;
 }
+
+@media screen and (max-width: 767px) {
+  .root::before {
+    display: none;
+  }
+}

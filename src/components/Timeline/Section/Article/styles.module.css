@@ -25,10 +25,12 @@
   height: 100%;
 }
 
-.imageContainer {
-  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
+@media screen and (min-width: 768px) {
+  .imageContainer {
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
 
-.root:hover .imageContainer {
-  transform: scale(1.05);
+  .root:hover .imageContainer {
+    transform: scale(1.05);
+  }
 }

@@ -33,3 +33,24 @@
 .hashtag:hover {
   text-decoration: underline;
 }
+
+@media screen and (max-width: 767px) {
+  .root {
+    margin-bottom: 40px;
+    position: relative;
+  }
+
+  .title {
+    align-items: center;
+    display: flex;
+    font-size: 16px;
+    width: 100%;
+  }
+
+  .hashtag {
+    flex: 2;
+    margin: 0;
+    padding: 20px;
+    text-align: right;
+  }
+}
