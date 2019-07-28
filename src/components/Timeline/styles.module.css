@@ -9,6 +9,7 @@
   content: '';
   height: calc(100% + 70px);
   left: 50%;
+  opacity: 0.1;
   position: absolute;
   top: 0;
   transform: translateX(-50%);
