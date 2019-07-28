@@ -1,0 +1,42 @@
+[
+  {
+    "id": "intercept1",
+    "title": "Como e por que o Intercept está publicando chats privados sobre a Lava Jato e Sergio Moro",
+    "description": "Série de reportagens mostra comportamentos antiéticos e transgressões que o Brasil e o mundo têm o direito de conhecer.",
+    "url": "https://theintercept.com/2019/06/09/editorial-chats-telegram-lava-jato-moro/",
+    "publishDate": "2019-06-09",
+    "source": "intercept"
+  },
+  {
+    "id": "intercept2",
+    "title": "Procuradores da Lava Jato tramaram para barrar entrevista de Lula por medo de ‘eleger o Haddad’",
+    "description": "Em chats privados, procuradores reagiram indignados ao saber que ex-presidente falaria à Folha e celebraram quando ação do Partido Novo impediu a entrevista.",
+    "url": "https://theintercept.com/2019/06/09/procuradores-tramaram-impedir-entrevista-lula/",
+    "publishDate": "2019-06-09",
+    "source": "intercept"
+  },
+  {
+    "id": "reinaldoazevedo1",
+    "title": " O É DA COISA: Diálogo inédito prova agressão a devido processo legal. Ponto",
+    "description": "Procuradores substituíram colega em audiência com Lula depois de reclamação de Moro.",
+    "url": "https://reinaldoazevedo.blogosfera.uol.com.br/2019/06/20/o-e-da-coisa-dialogo-inedito-prova-agressao-a-devido-processo-legal-ponto/",
+    "publishDate": "2019-06-20",
+    "source": "reinaldoazevedo"
+  },
+  {
+    "id": "folha1",
+    "title": "Lava Jato articulou apoio a Moro diante de tensão com STF, mostram mensagens",
+    "description": "Conversas indicam que Deltan discutiu com então juiz medidas para evitar desgaste por divulgação de planilhas com políticos",
+    "url": "https://www1.folha.uol.com.br/poder/2019/06/lava-jato-articulou-apoio-a-moro-diante-de-tensao-com-stf-mostram-mensagens.shtml",
+    "publishDate": "2019-06-23",
+    "source": "folha"
+  },
+  {
+    "id": "veja1",
+    "title": "Novos diálogos revelam que Moro orientava ilegalmente ações da Lava Jato",
+    "description": "Mensagens inéditas analisadas pela parceria entre VEJA e o site The Intercept Brasil mostram que ele cometeu, sim, irregularidades enquanto atuava como juiz",
+    "url": "https://veja.abril.com.br/politica/dialogos-veja-capa-intercept-moro-dallagnol/",
+    "publishDate": "2019-07-12",
+    "source": "veja"
+  }
+]

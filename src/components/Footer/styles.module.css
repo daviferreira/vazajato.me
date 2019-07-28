@@ -1,0 +1,22 @@
+.root {
+  bottom: 0;
+  color: #666;
+  font-size: 13px;
+  padding: 20px 20px 0;
+  text-align: right;
+}
+
+.communist {
+  color: red;
+}
+
+.root a {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s linear;
+}
+
+.root a:hover {
+  color: #000;
+  text-decoration: underline;
+}

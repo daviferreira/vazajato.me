@@ -1,0 +1,15 @@
+.root {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 100px;
+}
+
+.month {
+  background-color: #fafafa;
+  border-bottom: 3px solid #000;
+  border-top: 3px solid #000;
+  line-height: 1;
+  margin-bottom: 60px;
+  padding: 5px;
+}

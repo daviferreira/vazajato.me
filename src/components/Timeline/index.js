@@ -1,14 +1,26 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import _ from "lodash"
+import moment from "moment"
+import "moment/locale/pt-br"
+import React from "react"
 
-import styles from './styles.module.css';
+import Section from "./Section"
 
-const Timeline = ({ chilren }) => (
-  <section className={styles.root}>content</section>
-);
+import articles from "../../data/articles.json"
 
-Timeline.propTypes = {
-  chilren: PropTypes.node
-};
+import styles from "./styles.module.css"
 
-export default Timeline;
+moment.locale("pt-BR")
+
+const groupedArticles = _.groupBy(articles, ({ publishDate }) =>
+  publishDate.slice(0, 7)
+)
+
+const Timeline = () => (
+  <section className={styles.root}>
+    {_.map(groupedArticles, (group, month) => (
+      <Section articles={group} key={month} month={month} />
+    ))}
+  </section>
+)
+
+export default Timeline

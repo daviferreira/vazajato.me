@@ -1,3 +1,17 @@
 .root {
-  background: red;
+  margin-top: -3px;
+  min-height: 100vh;
+  position: relative;
+}
+
+.root::before {
+  background-color: #000;
+  content: '';
+  height: calc(100% + 70px);
+  left: 50%;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  width: 13px;
+  z-index: -1;
 }

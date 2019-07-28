@@ -1,0 +1,18 @@
+{
+  "intercept": {
+    "name": "The Intercept Brasil",
+    "url": "https://theintercept.com/brasil/"
+  },
+  "folha": {
+    "name": "Folha De S.Paulo",
+    "url": "http://folha.com.br/"
+  },
+  "veja": {
+    "name": "VEJA",
+    "url": "https://veja.abril.com.br/"
+  },
+  "reinaldoazevedo": {
+    "name": "Reinaldo Azevedo",
+    "url": "https://veja.abril.com.br/"
+  }
+}

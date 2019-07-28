@@ -1,0 +1,34 @@
+.root {
+  background-color: #fff;
+  border-radius: 3px;
+  color: #000;
+  display: block;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.title {
+  font-size: 18px;
+  line-height: 1.45;
+  margin: 0;
+  padding: 20px;
+}
+
+.image {
+  background-color: #000;
+  max-height: 210px;
+  overflow: hidden;
+}
+
+.image img {
+  display: block;
+  height: 100%;
+}
+
+.imageContainer {
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.root:hover .imageContainer {
+  transform: scale(1.05) rotate(2deg);
+}
