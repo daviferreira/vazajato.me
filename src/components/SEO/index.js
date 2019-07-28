@@ -77,6 +77,10 @@ function SEO({ description, lang, meta, title }) {
         {
           property: `og:image:height`,
           content: 675
+        },
+        {
+          property: `og:url`,
+          content: `https://www.vazajato.me`
         }
       ].concat(meta)}
     />
