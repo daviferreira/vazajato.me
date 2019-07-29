@@ -18,6 +18,10 @@
 }
 
 @media screen and (max-width: 767px) {
+  .root {
+    padding-top: 160px;
+  }
+
   .root::before {
     display: none;
   }

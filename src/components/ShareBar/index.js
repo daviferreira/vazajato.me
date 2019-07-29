@@ -1,10 +1,10 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import FacebookIcon from "./facebook.svg"
-import TwitterIcon from "./twitter.svg"
+import FacebookIcon from './facebook.svg';
+import TwitterIcon from './twitter.svg';
 
-import styles from "./styles.module.css"
+import styles from './styles.module.css';
 
 const ShareBar = ({ text, url }) => (
   <div className={styles.root}>
@@ -27,16 +27,16 @@ const ShareBar = ({ text, url }) => (
       <TwitterIcon />
     </a>
   </div>
-)
+);
 
 ShareBar.propTypes = {
   text: PropTypes.string,
-  url: PropTypes.string,
-}
+  url: PropTypes.string
+};
 
 ShareBar.defaultProps = {
-  text: "Linha do tempo da VazaJato",
-  url: "https://www.vazajato.me",
-}
+  text: 'Linha do tempo da VazaJato',
+  url: 'https://www.vazajato.me'
+};
 
-export default ShareBar
+export default ShareBar;

@@ -1,10 +1,10 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import Image from "./Image"
-import Source from "./Source"
+import Image from './Image';
+import Source from './Source';
 
-import styles from "./styles.module.css"
+import styles from './styles.module.css';
 
 const Article = ({ id, source, title, url }) => {
   return (
@@ -22,14 +22,14 @@ const Article = ({ id, source, title, url }) => {
       <h2 className={styles.title}>{title}</h2>
       <Source source={source} />
     </a>
-  )
-}
+  );
+};
 
 Article.propTypes = {
   id: PropTypes.string.isRequired,
   source: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
-}
+  url: PropTypes.string.isRequired
+};
 
-export default Article
+export default Article;

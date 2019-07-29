@@ -1,6 +1,6 @@
-import React from "react"
+import React from 'react';
 
-import styles from "./styles.module.css"
+import styles from './styles.module.css';
 
 const Footer = () => (
   <footer className={styles.root}>
@@ -11,7 +11,11 @@ const Footer = () => (
     >
       Desenvolvido
     </a>
-    &nbsp;com&nbsp;<span className={styles.communist}>☭</span>
+    &nbsp;com&nbsp;
+    <span className={styles.communist}>
+      <span>&hearts;</span>
+      <span>☭</span>
+    </span>
     &nbsp;por&nbsp;
     <a
       href="https://www.twitter.com/davitferreira"
@@ -21,6 +25,6 @@ const Footer = () => (
       Davi Ferreira
     </a>
   </footer>
-)
+);
 
-export default Footer
+export default Footer;

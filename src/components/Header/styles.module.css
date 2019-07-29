@@ -29,8 +29,9 @@
 
 @media screen and (max-width: 767px) {
   .root {
-    margin-bottom: 40px;
-    position: relative;
+    left: 0;
+    position: fixed;
+    top: 0;
     width: 100%;
   }
 

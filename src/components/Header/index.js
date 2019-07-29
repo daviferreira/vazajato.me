@@ -1,9 +1,9 @@
-import { Link } from "gatsby"
-import React from "react"
+import { Link } from 'gatsby';
+import React from 'react';
 
-import ShareBar from "../ShareBar"
+import ShareBar from '../ShareBar';
 
-import styles from "./styles.module.css"
+import styles from './styles.module.css';
 
 const Header = () => (
   <header className={styles.root}>
@@ -23,6 +23,6 @@ const Header = () => (
       </a>
     </h1>
   </header>
-)
+);
 
-export default Header
+export default Header;

@@ -13,6 +13,18 @@
   font-size: 20px;
 }
 
+.communist span:last-child {
+  display: none;
+}
+
+.root:hover .communist span:first-child {
+  display: none;
+}
+
+.root:hover .communist span:last-child {
+  display: block;
+}
+
 .root a {
   color: #666;
   text-decoration: none;

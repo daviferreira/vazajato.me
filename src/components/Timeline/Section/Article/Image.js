@@ -1,7 +1,7 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
-import PropTypes from "prop-types"
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
+import PropTypes from 'prop-types';
 
 const Image = ({ alt, id }) => {
   const data = useStaticQuery(graphql`
@@ -257,14 +257,14 @@ const Image = ({ alt, id }) => {
         }
       }
     }
-  `)
+  `);
 
-  return <Img alt={alt} fluid={data[id].childImageSharp.fluid} />
-}
+  return <Img alt={alt} fluid={data[id].childImageSharp.fluid} />;
+};
 
 Image.propTypes = {
   alt: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-}
+  id: PropTypes.string.isRequired
+};
 
-export default Image
+export default Image;
