@@ -19,7 +19,7 @@ const ShareBar = ({ text, url }) => (
     </a>
     <a
       className={styles.button}
-      href={`https://twitter.com/share?text=${text}&url=${url}`}
+      href={`https://twitter.com/share?text=${text}&url=${url}&hashtags=VazaJato&via=davitferreira`}
       rel="noopener noreferrer"
       target="_blank"
       title="Compartilhe no Twitter"
@@ -35,7 +35,7 @@ ShareBar.propTypes = {
 }
 
 ShareBar.defaultProps = {
-  text: "Linha do tempo - #VazaJato",
+  text: "Linha do tempo da VazaJato",
   url: "https://www.vazajato.me",
 }
 
