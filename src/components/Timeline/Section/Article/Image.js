@@ -167,6 +167,13 @@ const Image = ({ alt, id }) => {
           }
         }
       }
+      folha10: file(relativePath: { eq: "articles/folha-10.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 300) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
       reinaldoazevedo1: file(
         relativePath: { eq: "articles/reinaldoazevedo-1.jpg" }
       ) {
