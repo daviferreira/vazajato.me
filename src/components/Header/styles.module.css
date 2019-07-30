@@ -29,6 +29,7 @@
 
 @media screen and (max-width: 767px) {
   .root {
+    height: 75px;
     left: 0;
     position: fixed;
     top: 0;
