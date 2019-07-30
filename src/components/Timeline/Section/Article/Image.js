@@ -104,6 +104,13 @@ const Image = ({ alt, id }) => {
           }
         }
       }
+      interceptCheck: file(relativePath: { eq: "articles/intercept-check.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 300) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
       folha1: file(relativePath: { eq: "articles/folha-1.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 300) {
