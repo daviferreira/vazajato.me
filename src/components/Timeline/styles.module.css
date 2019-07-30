@@ -1,5 +1,4 @@
 .root {
-  margin-top: -3px;
   min-height: 100vh;
   position: relative;
 }
@@ -7,11 +6,11 @@
 .root::before {
   background-color: #000;
   content: '';
-  height: calc(100% + 70px);
+  height: 100%;
   left: 50%;
   opacity: 0.1;
   position: absolute;
-  top: 0;
+  top: 60px;
   transform: translateX(-50%);
   width: 13px;
   z-index: -1;
@@ -19,7 +18,7 @@
 
 @media screen and (max-width: 767px) {
   .root {
-    padding-top: 160px;
+    padding-top: 80px;
   }
 
   .root::before {

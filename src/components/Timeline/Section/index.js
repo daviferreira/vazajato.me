@@ -1,3 +1,4 @@
+import classnames from 'classnames';
 import _ from 'lodash';
 import moment from 'moment';
 
@@ -15,7 +16,11 @@ const Section = ({ articles, month }) => {
 
   return (
     <div className={styles.root}>
-      <h2 className={styles.month}>
+      <h2
+        className={classnames(styles.month, {
+          [styles.first]: month === '2019-06'
+        })}
+      >
         {moment(month, 'YYYY-MM').format('MMMM')}
       </h2>
       {_.map(groupedArticles, (articles, day) => {
