@@ -289,10 +289,18 @@
   },
   {
     "id": "folha11",
-    "title": " Deltan incentivou cerco da Lava Jato a Toffoli, revelam mensagens",
+    "title": "Deltan incentivou cerco da Lava Jato a Toffoli, revelam mensagens",
     "description": "Procurador da força-tarefa de Curitiba sugeriu investigações sobre atual presidente do STF e escritório de advocacia da mulher em 2016",
     "url": "https://www1.folha.uol.com.br/poder/2019/08/deltan-incentivou-cerco-da-lava-jato-a-toffoli-revelam-mensagens.shtml",
     "publishDate": "2019-08-01",
+    "source": "folha"
+  },
+  {
+    "id": "folha12",
+    "title": "Moro omitiu palestra remunerada em prestação de contas como juiz federal",
+    "description": "Juízes têm 30 dias para informar sua participação nos eventos e devem registrar data, assunto, local e entidade que organizou",
+    "url": "https://www1.folha.uol.com.br/poder/2019/08/moro-omitiu-palestra-remunerada-em-prestacao-de-contas-como-juiz-federal.shtml",
+    "publishDate": "2019-08-04",
     "source": "folha"
   }
 ]
