@@ -256,6 +256,15 @@ const Image = ({ alt, id }) => {
           }
         }
       }
+      reinaldoazevedo7: file(
+        relativePath: { eq: "articles/reinaldoazevedo-7.jpg" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 800) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
       veja1: file(relativePath: { eq: "articles/veja-1.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 800) {
