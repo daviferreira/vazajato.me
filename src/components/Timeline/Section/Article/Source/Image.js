@@ -35,6 +35,13 @@ const Image = ({ alt, id }) => {
             ...GatsbyImageSharpFluid
           }
         }
+      },
+      elpais: file(relativePath: { eq: "sources/elpais.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 72) {
+            ...GatsbyImageSharpFluid
+          }
+        }
       }
     }
   `);

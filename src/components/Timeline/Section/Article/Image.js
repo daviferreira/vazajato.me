@@ -283,6 +283,13 @@ const Image = ({ alt, id }) => {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
+      },
+      elpais1: file(relativePath: { eq: "articles/elpais-1.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 800) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
       }
     }
   `);
