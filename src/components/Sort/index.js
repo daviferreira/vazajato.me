@@ -12,6 +12,7 @@ const Sort = ({ onClick, order }) => (
       [styles[order]]: order
     })}
     onClick={onClick}
+    title={order === 'asc' ? 'Mais recentes primeiro' : 'Mais antigas primeiro'}
   >
     <Arrows />
   </button>
