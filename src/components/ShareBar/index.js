@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import FacebookIcon from './facebook.svg';
 import TwitterIcon from './twitter.svg';
+import WhatsappIcon from './whatsapp.svg';
 
 import styles from './styles.module.css';
 
@@ -25,6 +26,14 @@ const ShareBar = ({ text, url }) => (
       title="Compartilhe no Twitter"
     >
       <TwitterIcon />
+    </a>
+    <a
+      className={styles.button}
+      data-action="share/whatsapp/share"
+      href={`whatsapp://send?text=${text} - ${url}`}
+      title="Compartilhe no Whatsapp"
+    >
+      <WhatsappIcon />
     </a>
   </div>
 );

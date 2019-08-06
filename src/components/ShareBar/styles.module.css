@@ -9,13 +9,20 @@
   background-color: #fff;
   display: flex;
   border: 1px solid #000;
+  border-right: 0;
   flex: 1;
+  height: 46px;
   justify-content: center;
-  padding: 15px;
+  width: 46px;
 }
 
-.button:first-child {
-  border-right: 0;
+.button svg {
+  height: 14px;
+  width: 14px;
+}
+
+.button:last-child {
+  border-right: 1px solid #000;
 }
 
 @media screen and (min-width: 768px) {
