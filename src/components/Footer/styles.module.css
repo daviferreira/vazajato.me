@@ -9,7 +9,9 @@
 
 .communist {
   color: red;
+  display: inline-block;
   font-size: 20px;
+  width: 18px;
 }
 
 .communist span:last-child {
