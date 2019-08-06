@@ -9,7 +9,7 @@ import Day from './Day';
 
 import styles from './styles.module.css';
 
-const Section = ({ articles, month }) => {
+const Section = ({ articles, isFirst, month }) => {
   const groupedArticles = _.groupBy(articles, 'publishDate');
 
   let count = -1;
@@ -18,7 +18,7 @@ const Section = ({ articles, month }) => {
     <div className={styles.root}>
       <h2
         className={classnames(styles.month, {
-          [styles.first]: month === '2019-06'
+          [styles.first]: isFirst
         })}
       >
         {moment(month, 'YYYY-MM').format('MMMM')}
@@ -35,6 +35,7 @@ const Section = ({ articles, month }) => {
 
 Section.propTypes = {
   articles: PropTypes.array.isRequired,
+  isFirst: PropTypes.bool,
   month: PropTypes.string.isRequired
 };
 

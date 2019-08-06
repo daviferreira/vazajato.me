@@ -1,0 +1,52 @@
+.root {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .root {
+    -moz-osx-font-smoothing: inherit;
+    -webkit-appearance: none;
+    -webkit-font-smoothing: inherit;
+    align-items: center;
+    background: transparent;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    display: flex;
+    font: inherit;
+    justify-content: center;
+    line-height: normal;
+    margin: 0;
+    overflow: visible;
+    padding: 0;
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    width: auto;
+    z-index: 10;
+  }
+
+  .root::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+
+  .root svg {
+    height: 48px;
+    width: 48px;
+  }
+
+  .root.asc > svg > g path:nth-child(1),
+  .root.asc > svg > g path:nth-child(2),
+  .root.desc > svg > g path:nth-child(3),
+  .root.desc > svg > g path:nth-child(4) {
+    fill: #000;
+  }
+
+  .root.desc > svg > g path:nth-child(1),
+  .root.desc > svg > g path:nth-child(2),
+  .root.asc > svg > g path:nth-child(3),
+  .root.asc > svg > g path:nth-child(4) {
+    fill: #ccc;
+  }
+}
