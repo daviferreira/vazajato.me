@@ -14,13 +14,13 @@ moment.locale('pt-BR');
 
 const groupArticles = _.memoize(order =>
   _.groupBy(
-    order === 'asc' ? articles : articles.reverse(),
+    order === 'asc' ? articles : articles.slice().reverse(),
     ({ publishDate }) => publishDate.slice(0, 7)
   )
 );
 
 const Timeline = () => {
-  const [order, setOrder] = useState('asc');
+  const [order, setOrder] = useState('desc');
 
   const groupedArticles = groupArticles(order);
 
