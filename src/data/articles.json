@@ -336,18 +336,18 @@
     "source": "elpais"
   },
   {
-    "id": "uol2",
-    "title": "Fiel apoiador da Lava Jato, Randolfe se afasta após vazamentos de mensagens",
-    "description": "Aliado de primeira hora dos procuradores da Lava Jato e de outros integrantes do MPF (Ministério Público Federal), como mostram os chats privados, o senador Randolfe Rodrigues (Rede-AP) chego",
-    "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2019/08/07/fiel-apoiador-da-lava-jato-randolfe-se-afasta-apos-vazamentos-de-mensagens.htm",
-    "publishDate": "2019-08-07",
-    "source": "uol"
-  },
-  {
     "id": "uol1",
     "title": "Deltan usou partido político para atacar Gilmar Mendes em ação no STF",
     "description": "O procurador Deltan Dallagnol, chefe da Operação Lava Jato em Curitiba, usou a Rede Sustentabilidade como uma espécie de laranja para extrapolar suas atribuições e propor uma ação no",
     "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2019/08/07/deltan-usou-partido-politico-para-atacar-gilmar-mendes-em-acao-no-stf.htm",
+    "publishDate": "2019-08-07",
+    "source": "uol"
+  },
+  {
+    "id": "uol2",
+    "title": "Fiel apoiador da Lava Jato, Randolfe se afasta após vazamentos de mensagens",
+    "description": "Aliado de primeira hora dos procuradores da Lava Jato e de outros integrantes do MPF (Ministério Público Federal), como mostram os chats privados, o senador Randolfe Rodrigues (Rede-AP) chego",
+    "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2019/08/07/fiel-apoiador-da-lava-jato-randolfe-se-afasta-apos-vazamentos-de-mensagens.htm",
     "publishDate": "2019-08-07",
     "source": "uol"
   }
