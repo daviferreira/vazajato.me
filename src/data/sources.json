@@ -18,5 +18,9 @@
   "elpais": {
     "name": "EL PAÍS Brasil",
     "url": "https://brasil.elpais.com/"
+  },
+  "uol": {
+    "name": "UOL",
+    "url": "https://www.uol.com.br/"
   }
 }

@@ -314,6 +314,20 @@ const Image = ({ alt, id }) => {
           }
         }
       }
+      uol1: file(relativePath: { eq: "articles/uol-1.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 800) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      uol2: file(relativePath: { eq: "articles/uol-2.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 800) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
     }
   `);
 

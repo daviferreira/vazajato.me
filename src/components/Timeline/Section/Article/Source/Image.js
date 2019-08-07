@@ -43,6 +43,13 @@ const Image = ({ alt, id }) => {
           }
         }
       }
+      uol: file(relativePath: { eq: "sources/uol.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 72) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `);
 
