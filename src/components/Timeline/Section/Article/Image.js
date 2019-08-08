@@ -328,6 +328,13 @@ const Image = ({ alt, id }) => {
           }
         }
       }
+      uol3: file(relativePath: { eq: "articles/uol-3.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 800) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
     }
   `);
 
