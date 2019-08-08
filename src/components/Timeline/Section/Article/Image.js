@@ -111,7 +111,9 @@ const Image = ({ alt, id }) => {
           }
         }
       }
-      interceptCheck: file(relativePath: { eq: "articles/intercept-check.jpg" }) {
+      interceptCheck: file(
+        relativePath: { eq: "articles/intercept-check.jpg" }
+      ) {
         childImageSharp {
           fluid(maxWidth: 800) {
             ...GatsbyImageSharpFluid_withWebp
@@ -203,6 +205,13 @@ const Image = ({ alt, id }) => {
         }
       }
       folha13: file(relativePath: { eq: "articles/folha-13.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 800) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      folha14: file(relativePath: { eq: "articles/folha-14.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 800) {
             ...GatsbyImageSharpFluid_withWebp
