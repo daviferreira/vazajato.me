@@ -20,8 +20,6 @@ if (url.includes('folha.uol.com.br')) {
   source = 'uol';
 } else if (url.includes('theintercept.com')) {
   source = 'intercept';
-} else if (url.includes('theintercept.com')) {
-  source = 'intercept';
 } else if (url.includes('veja.abril.com.br')) {
   source = 'veja';
 } else if (url.includes('elpais.com')) {
