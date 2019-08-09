@@ -7,342 +7,158 @@ const Image = ({ alt, id }) => {
   const data = useStaticQuery(graphql`
     query {
       intercept1: file(relativePath: { eq: "articles/intercept-1.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       intercept2: file(relativePath: { eq: "articles/intercept-2.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       intercept3: file(relativePath: { eq: "articles/intercept-3.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       intercept4: file(relativePath: { eq: "articles/intercept-4.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       intercept5: file(relativePath: { eq: "articles/intercept-5.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       intercept6: file(relativePath: { eq: "articles/intercept-6.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       intercept7: file(relativePath: { eq: "articles/intercept-7.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       intercept8: file(relativePath: { eq: "articles/intercept-8.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       intercept9: file(relativePath: { eq: "articles/intercept-9.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       intercept10: file(relativePath: { eq: "articles/intercept-10.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       intercept11: file(relativePath: { eq: "articles/intercept-11.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       intercept12: file(relativePath: { eq: "articles/intercept-12.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       intercept13: file(relativePath: { eq: "articles/intercept-13.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       intercept14: file(relativePath: { eq: "articles/intercept-14.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       intercept1mes: file(relativePath: { eq: "articles/intercept-1mes.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       interceptCheck: file(
         relativePath: { eq: "articles/intercept-check.jpg" }
       ) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       folha1: file(relativePath: { eq: "articles/folha-1.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       folha2: file(relativePath: { eq: "articles/folha-2.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       folha3: file(relativePath: { eq: "articles/folha-3.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       folha4: file(relativePath: { eq: "articles/folha-3.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       folha5: file(relativePath: { eq: "articles/folha-5.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       folha6: file(relativePath: { eq: "articles/folha-6.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       folha7: file(relativePath: { eq: "articles/folha-7.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       folha8: file(relativePath: { eq: "articles/folha-8.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       folha9: file(relativePath: { eq: "articles/folha-9.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       folha10: file(relativePath: { eq: "articles/folha-10.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       folha11: file(relativePath: { eq: "articles/folha-11.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       folha12: file(relativePath: { eq: "articles/folha-12.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       folha13: file(relativePath: { eq: "articles/folha-13.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       folha14: file(relativePath: { eq: "articles/folha-14.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       reinaldoazevedo1: file(
         relativePath: { eq: "articles/reinaldoazevedo-1.jpg" }
       ) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       reinaldoazevedo2: file(
         relativePath: { eq: "articles/reinaldoazevedo-2.jpg" }
       ) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       reinaldoazevedo3: file(
         relativePath: { eq: "articles/reinaldoazevedo-3.jpg" }
       ) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       reinaldoazevedo4: file(
         relativePath: { eq: "articles/reinaldoazevedo-4.jpg" }
       ) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       reinaldoazevedo5: file(
         relativePath: { eq: "articles/reinaldoazevedo-5.jpg" }
       ) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       reinaldoazevedo6: file(
         relativePath: { eq: "articles/reinaldoazevedo-6.jpg" }
       ) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       reinaldoazevedo7: file(
         relativePath: { eq: "articles/reinaldoazevedo-7.jpg" }
       ) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       veja1: file(relativePath: { eq: "articles/veja-1.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       veja2: file(relativePath: { eq: "articles/veja-2.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       veja3: file(relativePath: { eq: "articles/veja-3.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       veja4: file(relativePath: { eq: "articles/veja-4.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       elpais1: file(relativePath: { eq: "articles/elpais-1.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       elpais2: file(relativePath: { eq: "articles/elpais-2.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       uol1: file(relativePath: { eq: "articles/uol-1.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       uol2: file(relativePath: { eq: "articles/uol-2.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
       uol3: file(relativePath: { eq: "articles/uol-3.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+        ...articleImage
       }
     }
   `);

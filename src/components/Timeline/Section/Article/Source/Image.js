@@ -7,48 +7,24 @@ const Image = ({ alt, id }) => {
   const data = useStaticQuery(graphql`
     query {
       intercept: file(relativePath: { eq: "sources/intercept.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 72) {
-            ...GatsbyImageSharpFluid
-          }
-        }
+        ...sourceImage
       }
       folha: file(relativePath: { eq: "sources/folha.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 72) {
-            ...GatsbyImageSharpFluid
-          }
-        }
+        ...sourceImage
       }
       reinaldoazevedo: file(
         relativePath: { eq: "sources/reinaldoazevedo.jpg" }
       ) {
-        childImageSharp {
-          fluid(maxWidth: 72) {
-            ...GatsbyImageSharpFluid
-          }
-        }
+        ...sourceImage
       }
       veja: file(relativePath: { eq: "sources/veja.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 72) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      },
+        ...sourceImage
+      }
       elpais: file(relativePath: { eq: "sources/elpais.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 72) {
-            ...GatsbyImageSharpFluid
-          }
-        }
+        ...sourceImage
       }
       uol: file(relativePath: { eq: "sources/uol.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 72) {
-            ...GatsbyImageSharpFluid
-          }
-        }
+        ...sourceImage
       }
     }
   `);
