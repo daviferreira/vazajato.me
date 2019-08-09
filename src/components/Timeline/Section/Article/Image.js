@@ -160,6 +160,26 @@ const Image = ({ alt, id }) => {
       uol3: file(relativePath: { eq: "articles/uol-3.jpg" }) {
         ...articleImage
       }
+      sUtjRt4SHw6UANc5Xekyxj: file(
+        relativePath: { eq: "articles/sUtjRt4SHw6UANc5Xekyxj.jpg" }
+      ) {
+        ...articleImage
+      }
+      pbY8izLdiWXV4UVfXXozRD: file(
+        relativePath: { eq: "articles/pbY8izLdiWXV4UVfXXozRD.jpg" }
+      ) {
+        ...articleImage
+      }
+      folhagjGhM559fYT3DZLQH5zCJE: file(
+        relativePath: { eq: "articles/folhagjGhM559fYT3DZLQH5zCJE.jpg" }
+      ) {
+        ...articleImage
+      }
+      intercepthjkJ9pVmU87udJsQqHLN4h: file(
+        relativePath: { eq: "articles/intercepthjkJ9pVmU87udJsQqHLN4h.jpg" }
+      ) {
+        ...articleImage
+      }
     }
   `);
 

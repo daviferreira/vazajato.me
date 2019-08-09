@@ -72,6 +72,14 @@
     "source": "reinaldoazevedo"
   },
   {
+    "id": "folhagjGhM559fYT3DZLQH5zCJE",
+    "title": "Série de reportagens da Folha explora mensagens obtidas por site The Intercept Brasil",
+    "description": "Ao examinar material, reportagem não detectou indício de que ele possa ter sido adulterado",
+    "url": "https://www1.folha.uol.com.br/poder/2019/06/serie-de-reportagens-da-folha-explora-mensagens-obtidas-por-site-the-intercept-brasil.shtml",
+    "publishDate": "2019-06-23",
+    "source": "folha"
+  },
+  {
     "id": "folha1",
     "title": "Lava Jato articulou apoio a Moro diante de tensão com STF, mostram mensagens",
     "description": "Conversas indicam que Deltan discutiu com então juiz medidas para evitar desgaste por divulgação de planilhas com políticos",
@@ -208,6 +216,14 @@
     "source": "elpais"
   },
   {
+    "id": "intercepthjkJ9pVmU87udJsQqHLN4h",
+    "title": "#VazaJato: as provas de que os chats são autênticos agora vêm de diversos veículos de comunicação – são definitivas e esmagadoras",
+    "description": "Nenhuma pessoa minimamente racional pode continuar a ver a tática cínica de Moro e Deltan com qualquer credibilidade",
+    "url": "https://theintercept.com/2019/07/15/vazajato-as-provas-de-que-os-chats-sao-autenticos-agora-vem-de-diversos-veiculos-de-comunicacao-sao-definitivas-e-esmagadoras/",
+    "publishDate": "2019-07-15",
+    "source": "intercept"
+  },
+  {
     "id": "reinaldoazevedo2",
     "title": "Deltan pede, e Moro topa, dinheiro da 13ª Vara para campanha publicitária",
     "description": "Reinaldo Azevedo, jornalista, é colunista da Folha e âncora do programa \"O É da Coisa\", na BandNews FM. É autor de \"Contra o Consenso\", \"O Pais dos Petralhas I e II\", \"Máximas de um País Mínimo\" e \"Objeções de um Rotweiler Amoroso\".",
@@ -328,12 +344,28 @@
     "source": "folha"
   },
   {
+    "id": "sUtjRt4SHw6UANc5Xekyxj",
+    "title": "Editorial | Por que o EL PAÍS decidiu publicar as mensagens da Lava Jato vazadas ao ‘The Intercept’",
+    "description": "A investigação contra corrupção mais importante da história recente do Brasil merece ter o escrutínio da sociedade",
+    "url": "https://brasil.elpais.com/brasil/2019/08/05/opinion/1565029192_731997.html",
+    "publishDate": "2019-08-06",
+    "source": "elpais"
+  },
+  {
     "id": "elpais2",
     "title": "Lava Jato planejou buscar na Suíça provas contra Gilmar Mendes",
     "description": "Procuradores discutiram usar caso de Paulo Preto, operador do PSDB, para reunir munição contra ministro. Mensagens mostram o empenho da força-tarefa pelo impeachment do magistrado",
     "url": "https://brasil.elpais.com/brasil/2019/08/05/politica/1565040839_880977.html",
     "publishDate": "2019-08-06",
     "source": "elpais"
+  },
+  {
+    "id": "pbY8izLdiWXV4UVfXXozRD",
+    "title": "UOL faz parceria com Intercept em reportagens sobre mensagens da Lava Jato",
+    "description": "O UOL fechou parceria com o site The Intercept Brasil e publica hoje a sua primeira reportagem com base em mensagens privadas mantidas por procuradores da",
+    "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2019/08/07/uol-faz-parceria-com-intercept-em-reportagens-sobre-mensagens-da-lava-jato.htm",
+    "publishDate": "2019-08-07",
+    "source": "uol"
   },
   {
     "id": "uol1",

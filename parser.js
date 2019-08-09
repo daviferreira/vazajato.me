@@ -3,7 +3,7 @@ const domino = require('domino');
 const download = require('image-downloader');
 const fetch = require('node-fetch');
 const moment = require('moment');
-const uuid = require('uuid');
+const uuid = (short = require('short-uuid'));
 
 const [url, date] = process.argv.slice(2);
 
@@ -11,7 +11,28 @@ if (!url) {
   throw new Error('Invalid url');
 }
 
-const id = uuid.v4();
+let source;
+if (url.includes('folha.uol.com.br')) {
+  source = 'folha';
+} else if (url.includes('reinaldoazevedo.blogosfera.uol.com.br')) {
+  source = 'reinaldoazevedo';
+} else if (url.includes('uol.com.br')) {
+  source = 'uol';
+} else if (url.includes('theintercept.com')) {
+  source = 'intercept';
+} else if (url.includes('theintercept.com')) {
+  source = 'intercept';
+} else if (url.includes('veja.abril.com.br')) {
+  source = 'veja';
+} else if (url.includes('elpais.com')) {
+  source = 'elpais';
+}
+
+if (!source) {
+  throw new Error('Invalid source');
+}
+
+const id = `${source}${uuid.generate()}`;
 const publishDate = date || moment().format('YYYY-MM-DD');
 
 const fetchMetaData = async url => {
@@ -31,7 +52,7 @@ const parser = async url => {
     description,
     url,
     publishDate,
-    source: ''
+    source
   };
 
   await download.image({
@@ -39,11 +60,13 @@ const parser = async url => {
     dest: `${__dirname}/src/images/articles/${id}.jpg`
   });
 
-  const articleImage = `${id} : file(relativePath: { eq: "articles/${id}.jpg" }) {
+  const articleImage = `${id}: file(relativePath: { eq: "articles/${id}.jpg" }) {
   ...articleImage
 }`;
 
-  console.log(article);
+  console.log('\n\n');
+  console.log(JSON.stringify(article));
+  console.log('\n\n');
   console.log(articleImage);
 };
 

@@ -28,7 +28,7 @@
     "node-fetch": "^2.6.0",
     "page-metadata-parser": "^1.1.4",
     "prettier": "^1.18.2",
-    "uuid": "^3.3.2"
+    "short-uuid": "^3.1.1"
   },
   "keywords": [
     "gatsby"
