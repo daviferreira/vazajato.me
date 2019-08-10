@@ -42,12 +42,11 @@ const fetchMetaData = async url => {
 };
 
 const parser = async url => {
-  const { title, description, image } = await fetchMetaData(url);
+  const { title, image } = await fetchMetaData(url);
 
   const article = {
     id,
     title,
-    description,
     url,
     publishDate,
     source
