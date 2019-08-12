@@ -18,7 +18,7 @@ if (url.includes('folha.uol.com.br')) {
   source = 'reinaldoazevedo';
 } else if (url.includes('uol.com.br')) {
   source = 'uol';
-} else if (url.includes('theintercept.com')) {
+} else if (url.includes('theintercept.com') || url.includes('TheInterceptBr')) {
   source = 'intercept';
 } else if (url.includes('veja.abril.com.br')) {
   source = 'veja';

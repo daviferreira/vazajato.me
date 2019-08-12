@@ -185,7 +185,22 @@ const Image = ({ alt, id }) => {
       ) {
         ...articleImage
       }
-      interceptv7Jnm6r5Wb1ZCK5o6y9GQa: file(relativePath: { eq: "articles/interceptv7Jnm6r5Wb1ZCK5o6y9GQa.jpg" }) {
+      interceptv7Jnm6r5Wb1ZCK5o6y9GQa: file(
+        relativePath: { eq: "articles/interceptv7Jnm6r5Wb1ZCK5o6y9GQa.jpg" }
+      ) {
+        ...articleImage
+      }
+      intercept9ZAr2r9Tmqq44axPuPLwPV: file(
+        relativePath: { eq: "articles/intercept9ZAr2r9Tmqq44axPuPLwPV.jpg" }
+      ) {
+        ...articleImage
+      }
+      interceptptV24pHjj5Cp2UGXQRMWwg: file(
+        relativePath: { eq: "articles/interceptptV24pHjj5Cp2UGXQRMWwg.jpg" }
+      ) {
+        ...articleImage
+      }
+      interceptrEvL48gVcvB4mEuS9uqpgv: file(relativePath: { eq: "articles/interceptrEvL48gVcvB4mEuS9uqpgv.jpg" }) {
         ...articleImage
       }
     }
