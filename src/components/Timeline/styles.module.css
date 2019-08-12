@@ -4,11 +4,10 @@
 }
 
 .root::before {
-  background-color: #000;
+  background-color: #e1e1e1;
   content: '';
   height: 100%;
   left: 50%;
-  opacity: 0.1;
   position: absolute;
   top: 60px;
   transform: translateX(-50%);
