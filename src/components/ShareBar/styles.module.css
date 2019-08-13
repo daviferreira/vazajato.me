@@ -7,9 +7,9 @@
 .button {
   align-items: center;
   background-color: #fff;
-  display: flex;
   border: 1px solid #000;
   border-right: 0;
+  display: flex;
   flex: 1;
   height: 46px;
   justify-content: center;

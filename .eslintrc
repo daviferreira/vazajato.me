@@ -1,0 +1,18 @@
+{
+  "extends": [
+    "plugin:react/recommended",
+    "standard-react",
+    "prettier",
+    "prettier/react"
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "rules": {
+    "react/no-danger": "error"
+  },
+  "globals": {
+    "fetch": false
+  }
+}

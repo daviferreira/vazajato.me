@@ -4,16 +4,16 @@
 
 @media screen and (min-width: 768px) {
   .root {
-    -moz-osx-font-smoothing: inherit;
-    -webkit-appearance: none;
-    -webkit-font-smoothing: inherit;
     align-items: center;
+    -webkit-appearance: none;
     background: transparent;
     border: none;
     color: inherit;
     cursor: pointer;
     display: flex;
     font: inherit;
+    -moz-osx-font-smoothing: inherit;
+    -webkit-font-smoothing: inherit;
     justify-content: center;
     line-height: normal;
     margin: 0;
