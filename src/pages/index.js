@@ -6,7 +6,7 @@ import Timeline from '../components/Timeline';
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Linha do tempo | #VazaJato" />
+    <SEO title="Linha do tempo da #VazaJato" />
     <Timeline />
   </Layout>
 );
