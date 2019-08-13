@@ -24,3 +24,9 @@
     display: none;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .root::before {
+    background-color: #38444d;
+  }
+}

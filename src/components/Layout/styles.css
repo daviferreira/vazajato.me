@@ -617,8 +617,15 @@ pre tt:before,
 pre tt:after {
   content: '';
 }
+
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #15202b;
   }
 }

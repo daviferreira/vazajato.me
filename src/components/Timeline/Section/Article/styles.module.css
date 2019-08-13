@@ -34,3 +34,10 @@
     transform: scale(1.05);
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .root {
+    background-color: rgba(53, 60, 65, 0.1);
+    color: #fff;
+  }
+}

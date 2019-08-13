@@ -39,3 +39,14 @@
     fill: #fff;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .button {
+    background-color: #38444d;
+    border-color: #8899a5 !important;
+  }
+
+  .button path {
+    fill: #8899a5;
+  }
+}

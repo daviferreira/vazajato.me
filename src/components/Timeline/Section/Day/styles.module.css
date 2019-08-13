@@ -140,3 +140,23 @@
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .circle {
+    border: 0;
+  }
+
+  .circle,
+  .article:first-child::after,
+  .article::before {
+    background-color: #8899a5;
+  }
+
+  .day {
+    color: #8899a5;
+  }
+
+  .article {
+    background-color: #38444d;
+  }
+}

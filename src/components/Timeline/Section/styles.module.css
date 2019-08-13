@@ -27,3 +27,10 @@
     margin-bottom: 20px;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .month {
+    background-color: #38444d;
+    color: #8899a5;
+  }
+}

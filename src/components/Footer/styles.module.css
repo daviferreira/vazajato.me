@@ -43,3 +43,18 @@
     padding: 30px;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .root,
+  .root a {
+    color: #8899a5;
+  }
+
+  .root a:hover {
+    color: #fff;
+  }
+
+  .communist {
+    color: #de2960;
+  }
+}
