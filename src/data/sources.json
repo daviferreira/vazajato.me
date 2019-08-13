@@ -22,5 +22,9 @@
   "uol": {
     "name": "UOL",
     "url": "https://www.uol.com.br/"
+  },
+  "buzzfeed": {
+    "name": "BuzzFeed",
+    "url": "https://www.buzzfeed.com/br"
   }
 }

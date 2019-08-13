@@ -200,7 +200,14 @@ const Image = ({ alt, id }) => {
       ) {
         ...articleImage
       }
-      interceptrEvL48gVcvB4mEuS9uqpgv: file(relativePath: { eq: "articles/interceptrEvL48gVcvB4mEuS9uqpgv.jpg" }) {
+      interceptrEvL48gVcvB4mEuS9uqpgv: file(
+        relativePath: { eq: "articles/interceptrEvL48gVcvB4mEuS9uqpgv.jpg" }
+      ) {
+        ...articleImage
+      }
+      buzzfeedqREdmimo5GcQyyqxv2FP1e: file(
+        relativePath: { eq: "articles/buzzfeedqREdmimo5GcQyyqxv2FP1e.jpg" }
+      ) {
         ...articleImage
       }
     }

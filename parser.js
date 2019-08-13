@@ -24,6 +24,8 @@ if (url.includes('folha.uol.com.br')) {
   source = 'veja';
 } else if (url.includes('elpais.com')) {
   source = 'elpais';
+} else if (url.includes('buzzfeed.com')) {
+  source = 'buzzfeed';
 }
 
 if (!source) {
