@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Linha do tempo - #VazaJato`,
-    description: `Página listando todas as reportagens publicadas até agora na #VazaJato.`,
+    title: `Linha do tempo da #VazaJato`,
+    description: `Página listando todas as reportagens da #VazaJato.`,
     author: `@davitferreira`
   },
   plugins: [
@@ -19,11 +19,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `VazaJato.me`,
+        short_name: `vazajato`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#fafafa`,
+        theme_color: `#000000`,
         display: `minimal-ui`,
         icon: `src/images/deltan-icon.png`
       }
