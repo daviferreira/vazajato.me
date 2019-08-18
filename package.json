@@ -30,7 +30,7 @@
     "eslint-config-standard-react": "^8.0.0",
     "husky": "^3.0.3",
     "image-downloader": "^3.5.0",
-    "lint-staged": "^9.2.1",
+    "lint-staged": "^9.2.3",
     "node-fetch": "^2.6.0",
     "page-metadata-parser": "^1.1.4",
     "prettier": "^1.18.2",
