@@ -26,5 +26,9 @@
   "buzzfeed": {
     "name": "BuzzFeed",
     "url": "https://www.buzzfeed.com/br"
+  },
+  "glenn": {
+    "name": "Glenn Greenwald",
+    "url": "https://twitter.com/ggreenwald"
   }
 }

@@ -26,6 +26,8 @@ if (url.includes('folha.uol.com.br')) {
   source = 'elpais';
 } else if (url.includes('buzzfeed.com')) {
   source = 'buzzfeed';
+} else if (url.includes('ggreenwald')) {
+  source = 'glenn';
 }
 
 if (!source) {
