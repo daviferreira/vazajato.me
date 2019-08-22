@@ -44,7 +44,7 @@ ShareBar.propTypes = {
 };
 
 ShareBar.defaultProps = {
-  text: 'Linha do tempo da VazaJato',
+  text: 'Linha do tempo da Vaza Jato',
   url: 'https://www.vazajato.me'
 };
 
