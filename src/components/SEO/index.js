@@ -69,7 +69,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:image`,
-          content: `https://www.vazajato.me/images/vazajato.jpg`
+          content: `https://www.vazajato.me/images/telegram.jpg`
         },
         {
           property: `og:image:width`,

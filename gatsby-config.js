@@ -25,7 +25,7 @@ module.exports = {
         background_color: `#fafafa`,
         theme_color: `#000000`,
         display: `minimal-ui`,
-        icon: `src/images/deltan-icon.png`
+        icon: `src/images/telegram-icon.png`
       }
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
