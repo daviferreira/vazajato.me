@@ -9,10 +9,8 @@ import Day from './Day';
 
 import styles from './styles.module.css';
 
-const Section = ({ articles, isFirst, month }) => {
-  const groupedArticles = _.groupBy(articles, 'publishDate');
-
-  let count = -1;
+const Section = ({ group, isFirst, month, previousCount }) => {
+  let count = previousCount + 1;
 
   return (
     <div className={styles.root}>
@@ -23,7 +21,7 @@ const Section = ({ articles, isFirst, month }) => {
       >
         {moment(month, 'YYYY-MM').format('MMMM')}
       </h2>
-      {_.map(groupedArticles, (articles, day) => {
+      {_.map(group, (articles, day) => {
         count++;
         return (
           <Day articles={articles} day={day} key={day} left={!!(count % 2)} />
@@ -34,9 +32,10 @@ const Section = ({ articles, isFirst, month }) => {
 };
 
 Section.propTypes = {
-  articles: PropTypes.array.isRequired,
+  group: PropTypes.object.isRequired,
   isFirst: PropTypes.bool,
-  month: PropTypes.string.isRequired
+  month: PropTypes.string.isRequired,
+  previousCount: PropTypes.number
 };
 
 export default Section;

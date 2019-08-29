@@ -25,6 +25,7 @@ const Timeline = () => {
   const groupedArticles = groupArticles(order);
 
   let count = 0;
+  let articlesCount = 0;
 
   return (
     <>
@@ -34,15 +35,21 @@ const Timeline = () => {
       />
       <section className={styles.root}>
         {_.map(groupedArticles, (group, month) => {
+          const articles = _.groupBy(group, 'publishDate');
+
           const component = (
             <Section
-              articles={group}
+              group={articles}
               isFirst={count === 0}
               key={month}
               month={month}
+              previousCount={articlesCount}
             />
           );
           count++;
+
+          articlesCount += Object.keys(articles).length;
+
           return component;
         })}
       </section>
