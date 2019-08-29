@@ -3,16 +3,26 @@
   position: relative;
 }
 
-.root::before {
+.root::before,
+.root::after {
   background-color: #e1e1e1;
+  bottom: 120px;
   content: '';
-  height: 100%;
   left: 50%;
   position: absolute;
-  top: 60px;
   transform: translateX(-50%);
-  width: 13px;
   z-index: -1;
+}
+
+.root::before {
+  height: calc(100% - 180px);
+  top: 60px;
+  width: 13px;
+}
+
+.root::after {
+  height: 3px;
+  width: 52px;
 }
 
 @media screen and (max-width: 767px) {
@@ -20,13 +30,15 @@
     padding-top: 80px;
   }
 
-  .root::before {
+  .root::before,
+  .root::after {
     display: none;
   }
 }
 
 @media (prefers-color-scheme: dark) {
-  .root::before {
+  .root::before,
+  .root::after {
     background-color: #38444d;
   }
 }

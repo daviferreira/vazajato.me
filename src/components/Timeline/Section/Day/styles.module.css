@@ -64,7 +64,7 @@
 }
 
 .article:first-child::after {
-  background-color: #666;
+  background-color: #e1e1e1;
   content: '';
   height: 1px;
   pointer-events: none;
@@ -83,7 +83,7 @@
 }
 
 .article::before {
-  background-color: #666;
+  background-color: #e1e1e1;
   content: '';
   height: 30px;
   left: 50%;
