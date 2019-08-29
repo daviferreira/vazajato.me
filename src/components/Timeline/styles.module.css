@@ -6,7 +6,7 @@
 .root::before,
 .root::after {
   background-color: #e1e1e1;
-  bottom: 120px;
+  bottom: 10px;
   content: '';
   left: 50%;
   position: absolute;
@@ -15,7 +15,7 @@
 }
 
 .root::before {
-  height: calc(100% - 180px);
+  height: calc(100% - 70px);
   top: 60px;
   width: 13px;
 }
