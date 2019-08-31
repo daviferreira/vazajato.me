@@ -26,7 +26,7 @@ const Image = ({ alt, id }) => {
       uol: file(relativePath: { eq: "sources/uol.jpg" }) {
         ...sourceImage
       }
-      buzzfeed: file(relativePath: { eq: "sources/buzzfeed.jpg" }) {
+      buzzfeed: file(relativePath: { eq: "sources/buzzfeed.png" }) {
         ...sourceImage
       }
       glenn: file(relativePath: { eq: "sources/glenn.jpg" }) {
