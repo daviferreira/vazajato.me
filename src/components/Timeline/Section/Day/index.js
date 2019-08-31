@@ -6,6 +6,8 @@ import PropTypes from 'prop-types';
 
 import Article from '../Article';
 
+import sources from '../../../../data/sources';
+
 import styles from './styles.module.css';
 
 const Day = ({ articles, day, left }) => {
@@ -23,11 +25,21 @@ const Day = ({ articles, day, left }) => {
         </time>
       </div>
       <div className={styles.articles}>
-        {articles.map(({ id, source, title, url }) => (
-          <div className={styles.article} key={id}>
-            <Article id={id} source={source} title={title} url={url} />
-          </div>
-        ))}
+        {articles.map(({ id, source, title, url }) => {
+          const { color } = sources[source];
+
+          return (
+            <div
+              className={styles.article}
+              key={id}
+              style={{
+                borderBottomColor: color
+              }}
+            >
+              <Article id={id} source={source} title={title} url={url} />
+            </div>
+          );
+        })}
       </div>
     </div>
   );

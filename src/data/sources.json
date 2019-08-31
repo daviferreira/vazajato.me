@@ -1,34 +1,42 @@
 {
   "intercept": {
     "name": "The Intercept Brasil",
-    "url": "https://theintercept.com/brasil/"
+    "url": "https://theintercept.com/brasil/",
+    "color": "#000001"
   },
   "folha": {
     "name": "Folha de S.Paulo",
-    "url": "http://folha.com.br/"
+    "url": "http://folha.com.br/",
+    "color": "#1C7AA2"
   },
   "veja": {
     "name": "VEJA",
-    "url": "https://veja.abril.com.br/"
+    "url": "https://veja.abril.com.br/",
+    "color": "#0B1F7C"
   },
   "reinaldoazevedo": {
     "name": "Reinaldo Azevedo",
-    "url": "https://veja.abril.com.br/"
+    "url": "https://reinaldoazevedo.blogosfera.uol.com.br/",
+    "color": "#434FDB"
   },
   "elpais": {
     "name": "EL PAÍS Brasil",
-    "url": "https://brasil.elpais.com/"
+    "url": "https://brasil.elpais.com/",
+    "color": "#0F6DA1"
   },
   "uol": {
     "name": "UOL",
-    "url": "https://www.uol.com.br/"
+    "url": "https://www.uol.com.br/",
+    "color": "#FC663D"
   },
   "buzzfeed": {
     "name": "BuzzFeed",
-    "url": "https://www.buzzfeed.com/br"
+    "url": "https://www.buzzfeed.com/br",
+    "color": "#EB352C"
   },
   "glenn": {
     "name": "Glenn Greenwald",
-    "url": "https://twitter.com/ggreenwald"
+    "url": "https://twitter.com/ggreenwald",
+    "color": "#2AA3EF"
   }
 }
