@@ -275,6 +275,11 @@ const Image = ({ alt, id }) => {
       ) {
         ...articleImage
       }
+      apublicapa7UkeqwXfXDMpLZr44owV: file(
+        relativePath: { eq: "articles/apublicapa7UkeqwXfXDMpLZr44owV.jpg" }
+      ) {
+        ...articleImage
+      }
       apublicamKgfyfTdBemGqofa2EL4Pa: file(
         relativePath: { eq: "articles/apublicamKgfyfTdBemGqofa2EL4Pa.jpg" }
       ) {
