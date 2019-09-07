@@ -19,7 +19,8 @@ const Section = ({ group, isFirst, month, previousCount }) => {
   const onChange = inView => {
     if (!inView) {
       setStyle({
-        paddingTop: node.current.node.clientHeight - 100
+        paddingTop:
+          node.current.node.clientHeight - (window.innerWidth < 768 ? 40 : 100)
       });
       setVisible(false);
     } else {
