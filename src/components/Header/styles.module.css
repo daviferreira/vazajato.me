@@ -69,10 +69,10 @@
 @media (prefers-color-scheme: dark) {
   .title {
     background-color: #38444d;
-    color: #8899a5;
+    color: #fff;
   }
 
   .title a {
-    color: #8899a5;
+    color: #fff;
   }
 }

@@ -18,6 +18,10 @@
 
 @media (prefers-color-scheme: dark) {
   .root {
-    color: #8899a5;
+    color: #fff;
+  }
+
+  .name {
+    opacity: 0.7;
   }
 }
