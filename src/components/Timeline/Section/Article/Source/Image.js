@@ -35,6 +35,9 @@ const Image = ({ alt, id }) => {
       apublica: file(relativePath: { eq: "sources/apublica.jpg" }) {
         ...sourceImage
       }
+      monicabergamo: file(relativePath: { eq: "sources/monicabergamo.jpg" }) {
+        ...sourceImage
+      }
     }
   `);
 

@@ -43,5 +43,10 @@
     "name": "Agência Pública",
     "url": "https://apublica.org",
     "color": "#FED330"
+  },
+  "monicabergamo": {
+    "name": "Mônica Bergamo",
+    "url": "https://www1.folha.uol.com.br/colunas/monicabergamo/",
+    "color": "#1C7AA2"
   }
 }

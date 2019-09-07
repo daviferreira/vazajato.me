@@ -12,7 +12,9 @@ if (!url) {
 }
 
 let source;
-if (url.includes('folha.uol.com.br')) {
+if (url.includes('monicabergamo')) {
+  source = 'monicabergamo';
+} else if (url.includes('folha.uol.com.br')) {
   source = 'folha';
 } else if (url.includes('reinaldoazevedo.blogosfera.uol.com.br')) {
   source = 'reinaldoazevedo';
