@@ -4,9 +4,13 @@ import PropTypes from 'prop-types';
 import Image from './Image';
 import Source from './Source';
 
+import sources from '../../../../data/sources';
+
 import styles from './styles.module.css';
 
 const Article = ({ id, source, title, url }) => {
+  const { color } = sources[source];
+
   return (
     <a
       className={styles.root}
@@ -14,7 +18,12 @@ const Article = ({ id, source, title, url }) => {
       rel="noopener noreferrer"
       target="_blank"
     >
-      <div className={styles.image}>
+      <div
+        className={styles.image}
+        style={{
+          backgroundColor: color
+        }}
+      >
         <div className={styles.imageContainer}>
           <Image alt={title} id={id} />
         </div>
