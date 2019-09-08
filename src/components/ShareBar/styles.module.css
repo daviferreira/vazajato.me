@@ -40,6 +40,16 @@
   }
 }
 
+@media screen and (max-width: 767px) {
+  .button:first-child {
+    border-radius: 3px 0 0 3px;
+  }
+
+  .button:last-child {
+    border-radius: 0 3px 3px 0;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   .button {
     background-color: #38444d;
