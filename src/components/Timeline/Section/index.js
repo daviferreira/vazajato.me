@@ -1,6 +1,5 @@
 import classnames from 'classnames';
 import _ from 'lodash';
-import moment from 'moment';
 import React, { createRef, useState } from 'react';
 import PropTypes from 'prop-types';
 
@@ -8,6 +7,13 @@ import { InView } from 'react-intersection-observer';
 import Day from './Day';
 
 import styles from './styles.module.css';
+
+const MONTHS = {
+  6: 'Junho',
+  7: 'Julho',
+  8: 'Agosto',
+  9: 'Setembro'
+};
 
 const Section = ({ group, isFirst, month, previousCount }) => {
   const [isVisible, setVisible] = useState(isFirst);
@@ -47,7 +53,7 @@ const Section = ({ group, isFirst, month, previousCount }) => {
               [styles.first]: isFirst
             })}
           >
-            {moment(month, 'YYYY-MM').format('MMMM')}
+            {MONTHS[parseInt(month.slice(5, 7))]}
           </h2>
           {_.map(group, (articles, day) => {
             count++;

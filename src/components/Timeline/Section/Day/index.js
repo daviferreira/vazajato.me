@@ -1,5 +1,4 @@
 import classnames from 'classnames';
-import moment from 'moment';
 
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -9,6 +8,12 @@ import Article from '../Article';
 import sources from '../../../../data/sources';
 
 import styles from './styles.module.css';
+
+const formatDate = date => {
+  const [year, month, day] = date.split('-');
+
+  return `${day}/${month}`;
+};
 
 const Day = ({ articles, day, left }) => {
   return (
@@ -21,7 +26,7 @@ const Day = ({ articles, day, left }) => {
       <div className={styles.indicator}>
         <div className={styles.circle} />
         <time className={styles.day} timestamp={day}>
-          {moment(day, 'YYYY-MM-DD').format('DD/MM')}
+          {formatDate(day)}
         </time>
       </div>
       <div className={styles.articles}>

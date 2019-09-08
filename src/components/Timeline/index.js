@@ -1,6 +1,4 @@
 import _ from 'lodash';
-import moment from 'moment';
-import 'moment/locale/pt-br';
 import React, { useState } from 'react';
 
 import Section from './Section';
@@ -9,8 +7,6 @@ import Sort from '../Sort';
 import articles from '../../data/articles.json';
 
 import styles from './styles.module.css';
-
-moment.locale('pt-BR');
 
 const groupArticles = _.memoize(order =>
   _.groupBy(
