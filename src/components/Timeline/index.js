@@ -1,4 +1,6 @@
-import _ from 'lodash';
+import groupBy from 'lodash.groupby';
+import map from 'lodash.map';
+import memoize from 'lodash.memoize';
 import React, { useState } from 'react';
 
 import Section from './Section';
@@ -8,8 +10,8 @@ import articles from '../../data/articles.json';
 
 import styles from './styles.module.css';
 
-const groupArticles = _.memoize(order =>
-  _.groupBy(
+const groupArticles = memoize(order =>
+  groupBy(
     order === 'asc' ? articles : articles.slice().reverse(),
     ({ publishDate }) => publishDate.slice(0, 7)
   )
@@ -30,8 +32,8 @@ const Timeline = () => {
         order={order}
       />
       <section className={styles.root}>
-        {_.map(groupedArticles, (group, month) => {
-          const articles = _.groupBy(group, 'publishDate');
+        {map(groupedArticles, (group, month) => {
+          const articles = groupBy(group, 'publishDate');
 
           const component = (
             <Section

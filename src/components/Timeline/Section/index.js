@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import _ from 'lodash';
+import map from 'lodash.map';
 import React, { createRef, useState } from 'react';
 import PropTypes from 'prop-types';
 
@@ -55,7 +55,7 @@ const Section = ({ group, isFirst, month, previousCount }) => {
           >
             {MONTHS[parseInt(month.slice(5, 7))]}
           </h2>
-          {_.map(group, (articles, day) => {
+          {map(group, (articles, day) => {
             count++;
             return (
               <Day
