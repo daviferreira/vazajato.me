@@ -19,6 +19,9 @@ const Timeline = () => {
   const [months, setMonths] = useState(MONTHS.slice(1));
   const [hasNext, setHasNext] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
+  const [cache, setCache] = useState({
+    '2019-09': data
+  });
 
   const onSortChange = () => {
     window.scrollTo(0, 0);
@@ -50,24 +53,45 @@ const Timeline = () => {
   };
 
   const fetchArticles = async () => {
+    const page = months[0];
+
     setIsLoading(true);
+
+    if (cache[page]) {
+      const nextMonths = months.slice(1);
+
+      setMonths(nextMonths);
+
+      setArticles(
+        order === 'asc'
+          ? articles.concat(cache[page])
+          : cache[page].concat(articles)
+      );
+
+      setHasNext(!!nextMonths.length);
+
+      return setIsLoading(false);
+    }
+
     let response;
 
     try {
-      response = await fetch(`/data/${months[0]}.json`);
+      response = await fetch(`/data/${page}.json`);
 
       const nextArticles = await response.json();
 
       const nextMonths = months.slice(1);
 
+      setCache({ ...cache, [page]: nextArticles });
+
       setIsLoading(false);
-      setHasNext(!!nextMonths.length);
       setArticles(
         order === 'asc'
           ? articles.concat(nextArticles)
           : nextArticles.concat(articles)
       );
       setMonths(nextMonths);
+      setHasNext(!!nextMonths.length);
     } catch (err) {
       setIsLoading(false);
     }
