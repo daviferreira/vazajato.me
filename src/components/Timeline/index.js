@@ -5,43 +5,71 @@ import React, { useState } from 'react';
 import { InView } from 'react-intersection-observer';
 
 import Section from './Section';
+import Sort from '../Sort';
 
 import data from '../../../static/data/2019-09.json';
 
 import styles from './styles.module.css';
 
-const MONTHS = ['2019-08', '2019-07', '2019-06'];
+const MONTHS = ['2019-09', '2019-08', '2019-07', '2019-06'];
 
 const Timeline = () => {
+  const [order, setOrder] = useState('desc');
   const [articles, setArticles] = useState(data);
-  const [months, setMonths] = useState(MONTHS);
+  const [months, setMonths] = useState(MONTHS.slice(1));
   const [hasNext, setHasNext] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
+  const onSortChange = () => {
+    window.scrollTo(0, 0);
+
+    const nextOrder = order === 'asc' ? 'desc' : 'asc';
+
+    if (nextOrder === 'asc') {
+      setArticles([]);
+      setMonths(MONTHS.slice().reverse());
+    } else {
+      setArticles(data);
+      setMonths(MONTHS.slice(1));
+    }
+
+    setIsLoading(false);
+    setHasNext(true);
+    setOrder(nextOrder);
+  };
+
   const groupedArticles = groupBy(
-    articles.slice().reverse(),
+    order === 'desc' ? articles.slice().reverse() : articles,
     ({ publishDate }) => publishDate.slice(0, 7)
   );
 
-  const onChange = async inView => {
+  const onChange = inView => {
     if (!isLoading && inView) {
-      setIsLoading(true);
-      let response;
+      return fetchArticles();
+    }
+  };
 
-      try {
-        response = await fetch(`/data/${months[0]}.json`);
+  const fetchArticles = async () => {
+    setIsLoading(true);
+    let response;
 
-        const nextArticles = await response.json();
+    try {
+      response = await fetch(`/data/${months[0]}.json`);
 
-        const nextMonths = months.slice(1);
+      const nextArticles = await response.json();
 
-        setIsLoading(false);
-        setHasNext(!!nextMonths.length);
-        setArticles(nextArticles.concat(articles));
-        setMonths(nextMonths);
-      } catch (err) {
-        setIsLoading(false);
-      }
+      const nextMonths = months.slice(1);
+
+      setIsLoading(false);
+      setHasNext(!!nextMonths.length);
+      setArticles(
+        order === 'asc'
+          ? articles.concat(nextArticles)
+          : nextArticles.concat(articles)
+      );
+      setMonths(nextMonths);
+    } catch (err) {
+      setIsLoading(false);
     }
   };
 
@@ -50,6 +78,7 @@ const Timeline = () => {
 
   return (
     <>
+      <Sort onClick={onSortChange} order={order} />
       <section
         className={classnames(styles.root, {
           [styles.loaded]: !hasNext
