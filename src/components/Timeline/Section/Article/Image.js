@@ -315,6 +315,11 @@ const Image = ({ alt, id }) => {
       ) {
         ...articleImage
       }
+      intercept8qyEHbPH7m7Fd9WKZGjeJZ: file(
+        relativePath: { eq: "articles/intercept8qyEHbPH7m7Fd9WKZGjeJZ.jpg" }
+      ) {
+        ...articleImage
+      }
     }
   `);
 
