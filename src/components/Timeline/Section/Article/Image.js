@@ -325,6 +325,34 @@ const Image = ({ alt, id }) => {
       ) {
         ...articleImage
       }
+      reinaldoazevedoxcFFzqhU6VtsBY18wDakMu: file(
+        relativePath: {
+          eq: "articles/reinaldoazevedoxcFFzqhU6VtsBY18wDakMu.jpg"
+        }
+      ) {
+        ...articleImage
+      }
+      reinaldoazevedomCGQHzPgzQCDLQireNAX6Q: file(
+        relativePath: {
+          eq: "articles/reinaldoazevedomCGQHzPgzQCDLQireNAX6Q.jpg"
+        }
+      ) {
+        ...articleImage
+      }
+      reinaldoazevedoqdUdTY4TbP4TJajG6UBAZV: file(
+        relativePath: {
+          eq: "articles/reinaldoazevedoqdUdTY4TbP4TJajG6UBAZV.jpg"
+        }
+      ) {
+        ...articleImage
+      }
+      reinaldoazevedo5hD7u9svb4nEhz6kbSTYR2: file(
+        relativePath: {
+          eq: "articles/reinaldoazevedo5hD7u9svb4nEhz6kbSTYR2.jpg"
+        }
+      ) {
+        ...articleImage
+      }
     }
   `);
 
