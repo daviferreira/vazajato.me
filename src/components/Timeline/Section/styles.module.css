@@ -6,7 +6,7 @@
 }
 
 .root.hidden {
-  min-height: 400px;
+  min-height: 100vh;
 }
 
 .month {
