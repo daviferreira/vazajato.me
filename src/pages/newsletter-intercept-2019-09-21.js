@@ -6,6 +6,7 @@ import styles from './styles.module.css';
 const NewsletterPage = () => (
   <div className={styles.container}>
     <SEO title="Uma mão lava a outra (a jato)" />
+    <time dateTime="2019-09-21">21 de setembro de 2019</time>
     <h1>Uma mão lava a outra (a jato)</h1>
     <p>
       Passou quase despercebido, fora pequenas notas na imprensa, que a

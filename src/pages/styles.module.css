@@ -1,10 +1,20 @@
 .container {
+  background-color: #fff;
   padding: 20px;
+}
+
+.container time {
+  color: #666;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
 }
 
 @media screen and (min-width: 768px) {
   .container {
-    margin: 0 auto;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    margin: 60px auto;
     max-width: 960px;
     padding: 60px;
   }
