@@ -1,13 +1,11 @@
 import React from 'react';
+import SEO from '../components/SEO';
+
+import styles from './styles.module.css';
 
 const NewsletterPage = () => (
-  <div
-    style={{
-      margin: '0 auto',
-      maxWidth: 960,
-      padding: 60
-    }}
-  >
+  <div className={styles.container}>
+    <SEO title="Uma mão lava a outra (a jato)" />
     <h1>Uma mão lava a outra (a jato)</h1>
     <p>
       Passou quase despercebido, fora pequenas notas na imprensa, que a
