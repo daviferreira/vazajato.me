@@ -391,8 +391,8 @@ const Image = ({ alt, id }) => {
       ) {
         ...articleImage
       }
-      interceptNewsletterAnpr: file(
-        relativePath: { eq: "articles/interceptNewsletterAnpr.jpg" }
+      interceptNewsletter1: file(
+        relativePath: { eq: "articles/interceptNewsletter1.jpg" }
       ) {
         ...articleImage
       }
