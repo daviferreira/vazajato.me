@@ -12,8 +12,7 @@
 
 @media screen and (min-width: 768px) {
   .container {
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    box-shadow: rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     margin: 60px auto;
     max-width: 960px;
     padding: 60px;
