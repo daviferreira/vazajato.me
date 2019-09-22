@@ -40,15 +40,27 @@ const NewsletterPage = () => (
       Robalinho Cavalcanti – ele deixou o cargo em maio passado – saiu a público
       também para defender Sergio Moro, à época juiz federal. Faça uma pesquisa
       no Google e constate – ou clique{' '}
-      <a href="https://politica.estadao.com.br/noticias/geral,associacao-de-procuradores-diz-que-cartilha-do-pt-e-vazia-e-delirante,10000001950?utm_source=The+Intercept+Brasil+Newsletter&amp;utm_campaign=813e005351-EMAIL_CAMPAIGN_2019_09_21_01_12&amp;utm_medium=email&amp;utm_term=0_96fc3bd6d5-813e005351-133031405">
+      <a
+        href="https://politica.estadao.com.br/noticias/geral,associacao-de-procuradores-diz-que-cartilha-do-pt-e-vazia-e-delirante,10000001950?utm_source=The+Intercept+Brasil+Newsletter&amp;utm_campaign=813e005351-EMAIL_CAMPAIGN_2019_09_21_01_12&amp;utm_medium=email&amp;utm_term=0_96fc3bd6d5-813e005351-133031405"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
         aqui
       </a>
       ,{' '}
-      <a href="https://istoe.com.br/nao-houve-exibicionismo-na-lava-jato/?utm_source=The+Intercept+Brasil+Newsletter&amp;utm_campaign=813e005351-EMAIL_CAMPAIGN_2019_09_21_01_12&amp;utm_medium=email&amp;utm_term=0_96fc3bd6d5-813e005351-133031405">
+      <a
+        href="https://istoe.com.br/nao-houve-exibicionismo-na-lava-jato/?utm_source=The+Intercept+Brasil+Newsletter&amp;utm_campaign=813e005351-EMAIL_CAMPAIGN_2019_09_21_01_12&amp;utm_medium=email&amp;utm_term=0_96fc3bd6d5-813e005351-133031405"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
         aqui
       </a>{' '}
       ou{' '}
-      <a href="https://blogs.ne10.uol.com.br/jamildo/2018/11/08/sergio-moro-merece-o-apoio-de-todos-nos-diz-presidente-da-anpr/?utm_source=The+Intercept+Brasil+Newsletter&amp;utm_campaign=813e005351-EMAIL_CAMPAIGN_2019_09_21_01_12&amp;utm_medium=email&amp;utm_term=0_96fc3bd6d5-813e005351-133031405">
+      <a
+        href="https://blogs.ne10.uol.com.br/jamildo/2018/11/08/sergio-moro-merece-o-apoio-de-todos-nos-diz-presidente-da-anpr/?utm_source=The+Intercept+Brasil+Newsletter&amp;utm_campaign=813e005351-EMAIL_CAMPAIGN_2019_09_21_01_12&amp;utm_medium=email&amp;utm_term=0_96fc3bd6d5-813e005351-133031405"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
         aqui
       </a>
       .
@@ -425,8 +437,14 @@ const NewsletterPage = () => (
     <hr />
     <p>
       <em>
-        Por Rafael Moro Martins – Publicado originalmente na Newsletter do The
-        Intercept Brasil
+        Por Rafael Moro Martins – Publicado originalmente na{' '}
+        <a
+          href="https://theintercept.com/brasil/newsletter/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Newsletter do The Intercept Brasil
+        </a>
       </em>
     </p>
   </div>
