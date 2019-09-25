@@ -401,6 +401,13 @@ const Image = ({ alt, id }) => {
       ) {
         ...articleImage
       }
+      reinaldoazevedo2X3jHAiZL2TytdAujCxZS1: file(
+        relativePath: {
+          eq: "articles/reinaldoazevedo2X3jHAiZL2TytdAujCxZS1.jpg"
+        }
+      ) {
+        ...articleImage
+      }
     }
   `);
 
