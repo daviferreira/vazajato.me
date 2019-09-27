@@ -413,6 +413,16 @@ const Image = ({ alt, id }) => {
       ) {
         ...articleImage
       }
+      uolo89L93yf5yB3BQ8Yhw4PBh: file(
+        relativePath: { eq: "articles/uolo89L93yf5yB3BQ8Yhw4PBh.jpg" }
+      ) {
+        ...articleImage
+      }
+      uoliscxswAvrqujAgmRL4jwgb: file(
+        relativePath: { eq: "articles/uoliscxswAvrqujAgmRL4jwgb.jpg" }
+      ) {
+        ...articleImage
+      }
     }
   `);
 
