@@ -1,9 +1,13 @@
+import classnames from 'classnames';
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './styles.module.css';
 
-const Footer = () => (
-  <footer className={styles.root}>
+const Footer = ({ isVisible }) => (
+  <footer
+    className={classnames(styles.root, { [styles.isVisible]: isVisible })}
+  >
     <a
       href="https://www.github.com/daviferreira/vazajato.me"
       rel="noopener noreferrer"
@@ -26,5 +30,9 @@ const Footer = () => (
     </a>
   </footer>
 );
+
+Footer.propTypes = {
+  isVisible: PropTypes.bool
+};
 
 export default Footer;

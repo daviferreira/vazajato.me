@@ -4,7 +4,13 @@
   display: flex;
   font-size: 13px;
   justify-content: flex-end;
+  opacity: 0;
   padding: 15px;
+}
+
+.root.isVisible {
+  animation: fadeInUp 0.3s forwards ease-in;
+  animation-delay: 1s;
 }
 
 .communist {
@@ -56,5 +62,17 @@
 
   .communist {
     color: #de2960;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }

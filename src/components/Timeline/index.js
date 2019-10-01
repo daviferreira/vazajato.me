@@ -4,6 +4,7 @@ import map from 'lodash.map';
 import React, { useState } from 'react';
 import { InView } from 'react-intersection-observer';
 
+import Footer from '../Footer';
 import Section from './Section';
 import Sort from '../Sort';
 
@@ -142,6 +143,7 @@ const Timeline = () => {
           </div>
         </InView>
       )}
+      <Footer isVisible={!hasNext} />
     </>
   );
 };
