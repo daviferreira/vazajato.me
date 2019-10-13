@@ -3,8 +3,22 @@ import React, { useState } from 'react';
 
 import styles from './styles.module.css';
 
+let timer;
+
 const Footer = () => {
   const [active, setActive] = useState(false);
+
+  const handleMouseLeave = () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      setActive(false);
+    }, 300);
+  };
+
+  const handleMouseEnter = () => {
+    clearTimeout(timer);
+    setActive(true);
+  };
 
   return (
     <>
@@ -12,7 +26,8 @@ const Footer = () => {
         className={classnames(styles.about, {
           [styles.active]: active
         })}
-        onClick={() => setActive(!active)}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         title="Sobre este site"
       >
         ?
@@ -21,6 +36,8 @@ const Footer = () => {
         className={classnames(styles.root, {
           [styles.active]: active
         })}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         <a
           href="https://www.github.com/daviferreira/vazajato.me"
