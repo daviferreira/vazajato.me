@@ -143,7 +143,7 @@ const Timeline = () => {
           </div>
         </InView>
       )}
-      <Footer isVisible={!hasNext} />
+      <Footer />
     </>
   );
 };
