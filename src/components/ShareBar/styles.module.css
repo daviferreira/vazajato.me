@@ -21,13 +21,50 @@
   width: 14px;
 }
 
-.button:last-child {
-  border-right: 1px solid #000;
+@media screen and (max-width: 767px) {
+  .button:first-child {
+    border-radius: 3px 0 0 3px;
+  }
+
+  .button:last-child {
+    border-radius: 0 3px 3px 0;
+    border-right: 1px solid #000;
+  }
 }
 
 @media screen and (min-width: 768px) {
+  .root {
+    flex-direction: column;
+    width: 46px;
+  }
+
   .button {
+    animation-delay: 2s;
+    animation-duration: 0.4s;
+    animation-fill-mode: both;
+    animation-name: slideInRight;
+    background-color: transparent;
+    border-radius: 100%;
+    border-right: 1px solid #000;
+    flex: 0 0 46px;
+    margin-bottom: 15px;
     transition: background-color 0.3s ease;
+  }
+
+  .button:last-child {
+    margin-bottom: 0;
+  }
+
+  .button:nth-child(2) {
+    animation-delay: 2.1s;
+  }
+
+  .button:nth-child(3) {
+    animation-delay: 2.2s;
+  }
+
+  .button:nth-child(4) {
+    animation-delay: 2.3s;
   }
 
   .button:hover {
@@ -40,23 +77,30 @@
   }
 }
 
-@media screen and (max-width: 767px) {
-  .button:first-child {
-    border-radius: 3px 0 0 3px;
-  }
-
-  .button:last-child {
-    border-radius: 0 3px 3px 0;
-  }
-}
-
 @media (prefers-color-scheme: dark) {
   .button {
-    background-color: #38444d;
     border-color: #8899a5 !important;
   }
 
   .button path {
     fill: #8899a5;
+  }
+}
+
+@media screen and (max-width: 767px) and (prefers-color-scheme: dark) {
+  .button {
+    background-color: #38444d;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(500px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }

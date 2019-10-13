@@ -9,7 +9,9 @@ const Footer = () => {
   return (
     <>
       <div
-        className={styles.about}
+        className={classnames(styles.about, {
+          [styles.active]: active
+        })}
         onClick={() => setActive(!active)}
         title="Sobre este site"
       >

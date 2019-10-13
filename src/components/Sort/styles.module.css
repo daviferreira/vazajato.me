@@ -20,7 +20,7 @@
     overflow: visible;
     padding: 0;
     position: fixed;
-    right: 0;
+    right: 4px;
     top: 10px;
     width: auto;
     z-index: 10;

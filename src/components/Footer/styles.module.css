@@ -54,11 +54,11 @@
     border-radius: 3px;
     bottom: 9px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    left: 45px;
     opacity: 0;
     padding: 5px 15px;
     position: fixed;
-    right: 45px;
-    transform: translate3d(-40px, 0, 0);
+    transform: translate3d(40px, 0, 0);
     transition: transform 0.2s cubic-bezier(0, 0.5, 0.5, 1), opacity 0.2s;
   }
 
@@ -73,16 +73,17 @@
     font-weight: 600;
     height: 22px;
     justify-content: center;
+    left: 15px;
     line-height: 1;
-    opacity: 0.8;
+    opacity: 0.2;
     position: fixed;
-    right: 15px;
     transition: opacity 0.2s;
     width: 22px;
     z-index: 100;
   }
 
-  .about:hover {
+  .about:hover,
+  .about.active {
     opacity: 1;
   }
 

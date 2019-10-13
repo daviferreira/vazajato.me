@@ -11,16 +11,7 @@ const Header = () => (
       <ShareBar />
     </div>
     <h1 className={styles.title}>
-      <Link to="/">Linha do tempo</Link>
-      <br />
-      <a
-        className={styles.hashtag}
-        href="https://twitter.com/search?q=%23VazaJato"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        #VazaJato
-      </a>
+      <Link to="/">#vazajato</Link>
     </h1>
   </header>
 );

@@ -1,30 +1,24 @@
 .root {
   bottom: 0;
-  left: 0;
   position: fixed;
+  right: 0;
   width: 138px;
   z-index: 1;
 }
 
 .title {
-  background-color: #000;
   font-size: 13px;
   font-weight: 300;
   line-height: 1.2;
   margin: 0;
-  padding: 10px;
   text-transform: uppercase;
 }
 
 .title a {
   color: #fff;
-  text-decoration: none;
-}
-
-.hashtag {
   display: block;
   font-weight: 600;
-  margin-top: 10px;
+  text-decoration: none;
 }
 
 @media screen and (max-width: 767px) {
@@ -32,25 +26,17 @@
     height: 75px;
     left: 0;
     position: fixed;
+    right: auto;
     top: 0;
     width: 100%;
   }
 
   .title {
     align-items: center;
+    background-color: #000;
     display: flex;
     font-size: 13px;
     padding: 30px 15px;
-  }
-
-  .title a:first-child {
-    display: none;
-  }
-
-  .hashtag {
-    margin: 0;
-    padding: 0;
-    text-align: left;
   }
 
   .share {
@@ -61,14 +47,25 @@
 }
 
 @media screen and (min-width: 768px) {
-  .hashtag:hover {
-    text-decoration: underline;
+  .share {
+    bottom: 15px;
+    position: fixed;
+    right: 15px;
+  }
+
+  .title {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) and (prefers-color-scheme: dark) {
+  .title {
+    background-color: #38444d;
   }
 }
 
 @media (prefers-color-scheme: dark) {
   .title {
-    background-color: #38444d;
     color: #fff;
   }
 
