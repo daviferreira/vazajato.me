@@ -85,6 +85,14 @@
   .button path {
     fill: #8899a5;
   }
+
+  .button:hover {
+    background-color: #8899a5;
+  }
+
+  .button:hover path {
+    fill: #38444d;
+  }
 }
 
 @media screen and (max-width: 767px) and (prefers-color-scheme: dark) {
