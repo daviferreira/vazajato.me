@@ -46,9 +46,11 @@
     background-color: #fafafa;
     border-radius: 100%;
     border-right: 1px solid #000;
-    flex: 0 0 46px;
+    flex: 0 0 32px;
+    height: 32px;
     margin-bottom: 10px;
     transition: background-color 0.3s ease;
+    width: 32px;
   }
 
   .button:last-child {
