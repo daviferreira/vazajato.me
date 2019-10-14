@@ -8,11 +8,11 @@ import Footer from '../Footer';
 import Section from './Section';
 import Sort from '../Sort';
 
-import data from '../../../static/data/2019-09.json';
+import data from '../../../static/data/2019-10.json';
 
 import styles from './styles.module.css';
 
-const MONTHS = ['2019-09', '2019-08', '2019-07', '2019-06'];
+const MONTHS = ['2019-10', '2019-09', '2019-08', '2019-07', '2019-06'];
 
 const Timeline = () => {
   const [order, setOrder] = useState('desc');

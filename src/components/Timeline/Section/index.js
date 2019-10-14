@@ -12,7 +12,8 @@ const MONTHS = {
   6: 'Junho',
   7: 'Julho',
   8: 'Agosto',
-  9: 'Setembro'
+  9: 'Setembro',
+  10: 'Outubro'
 };
 
 const Section = ({ group, isFirst, month, previousCount }) => {
