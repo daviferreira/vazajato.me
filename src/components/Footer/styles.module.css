@@ -66,14 +66,14 @@
     align-items: center;
     background-color: #000;
     border-radius: 100%;
-    bottom: 15px;
+    bottom: 20px;
     color: #fff;
     cursor: pointer;
     display: flex;
     font-weight: 600;
     height: 22px;
     justify-content: center;
-    left: 15px;
+    left: 20px;
     line-height: 1;
     opacity: 0.2;
     position: fixed;
