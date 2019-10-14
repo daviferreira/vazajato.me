@@ -43,11 +43,11 @@
     animation-duration: 0.4s;
     animation-fill-mode: both;
     animation-name: slideInRight;
-    background-color: transparent;
+    background-color: #fafafa;
     border-radius: 100%;
     border-right: 1px solid #000;
     flex: 0 0 46px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     transition: background-color 0.3s ease;
   }
 
@@ -79,6 +79,7 @@
 
 @media (prefers-color-scheme: dark) {
   .button {
+    background-color: #15202b;
     border-color: #8899a5 !important;
   }
 
