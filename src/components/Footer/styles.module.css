@@ -52,14 +52,39 @@
   .root {
     background-color: #fff;
     border-radius: 3px;
-    bottom: 9px;
+    bottom: 13px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    left: 45px;
+    left: 55px;
     opacity: 0;
     padding: 5px 15px;
     position: fixed;
     transform: translate3d(40px, 0, 0);
     transition: transform 0.2s cubic-bezier(0, 0.5, 0.5, 1), opacity 0.2s;
+  }
+
+  .root::after,
+  .root::before {
+    border: solid transparent;
+    content: ' ';
+    height: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    width: 0;
+  }
+
+  .root::after {
+    border-color: rgba(255, 255, 255, 0);
+    border-right-color: #ffffff;
+    border-width: 7px;
+    margin-top: -7px;
+  }
+  .root::before {
+    border-color: rgba(204, 204, 204, 0);
+    border-right-color: rgba(0, 0, 0, 0.12);
+    border-width: 8px;
+    margin-top: -8px;
   }
 
   .about {
@@ -120,5 +145,9 @@
 
   .root a {
     color: #fff;
+  }
+
+  .root::after {
+    border-right-color: #38444d;
   }
 }
