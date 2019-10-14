@@ -20,8 +20,8 @@
     overflow: visible;
     padding: 0;
     position: fixed;
-    right: 4px;
-    top: 10px;
+    right: 8px;
+    top: 15px;
     width: auto;
     z-index: 10;
   }

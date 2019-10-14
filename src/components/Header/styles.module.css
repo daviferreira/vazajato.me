@@ -48,9 +48,10 @@
 
 @media screen and (min-width: 768px) {
   .share {
-    bottom: 15px;
+    bottom: 20px;
     position: fixed;
-    right: 15px;
+    right: 20px;
+    width: 32px;
   }
 
   .title {
