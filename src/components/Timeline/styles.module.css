@@ -15,9 +15,13 @@
 }
 
 .root::before {
-  height: calc(100% - 70px);
-  top: 60px;
+  height: calc(100% - 30px);
+  top: 20px;
   width: 13px;
+}
+
+.root.loaded {
+  margin-bottom: 10px;
 }
 
 .root.loaded::after {
