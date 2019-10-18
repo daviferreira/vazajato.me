@@ -20,7 +20,6 @@ export default class Timeline extends Component {
   state = {
     articles: INITIAL_ARTICLES,
     cache: { [monthsData[0]]: data.slice() },
-    hasLoadedAll: false,
     hasNext: true,
     isLoading: false,
     months: monthsData.slice(1),
@@ -28,15 +27,14 @@ export default class Timeline extends Component {
   };
 
   handleSortChange = () => {
-    const { articles, hasLoadedAll, order } = this.state;
+    const { articles, hasNext, order } = this.state;
 
     const nextOrder = order === 'asc' ? 'desc' : 'asc';
 
     let nextState;
-    if (hasLoadedAll) {
+    if (!hasNext) {
       nextState = {
-        articles: articles.slice().reverse(),
-        hasNext: false
+        articles: articles.slice().reverse()
       };
     } else if (nextOrder === 'asc') {
       nextState = {
@@ -53,7 +51,7 @@ export default class Timeline extends Component {
     this.setState({ hasNext: true, order: nextOrder, ...nextState }, () => {
       window.scrollTo(0, 0);
 
-      return !hasLoadedAll && nextOrder === 'asc' && this.loadArticles();
+      return hasNext && nextOrder === 'asc' && this.loadArticles();
     });
   };
 
@@ -82,13 +80,14 @@ export default class Timeline extends Component {
     const { articles, cache, months, order } = this.state;
 
     const nextMonths = months.slice(1);
+    const hasNext = !!nextMonths.length;
 
     if (cache[page]) {
       return this.setState({
         articles: articles.concat(
           order === 'desc' ? cache[page].slice().reverse() : cache[page]
         ),
-        hasNext: !!nextMonths.length,
+        hasNext,
         isLoading: false,
         months: nextMonths
       });
@@ -102,15 +101,11 @@ export default class Timeline extends Component {
       const nextArticles = await response.json();
       const nextCache = { ...cache, [page]: nextArticles };
 
-      const hasLoadedAll = Object.keys(nextCache).length === monthsData.length;
-      const hasNext = !!nextMonths.length;
-
       return this.setState({
         articles: articles.concat(
           order === 'desc' ? nextArticles.slice().reverse() : nextArticles
         ),
         cache: nextCache,
-        hasLoadedAll,
         hasNext,
         isLoading: false,
         months: nextMonths
@@ -121,7 +116,7 @@ export default class Timeline extends Component {
   };
 
   render() {
-    const { articles, hasLoadedAll, hasNext, order } = this.state;
+    const { articles, hasNext, order } = this.state;
 
     const groupedArticles = groupBy(articles, ({ publishDate }) =>
       publishDate.slice(0, 7)
@@ -135,7 +130,7 @@ export default class Timeline extends Component {
         <Sort onClick={this.handleSortChange} order={order} />
         <section
           className={classnames(styles.root, {
-            [styles.loaded]: !hasNext || hasLoadedAll
+            [styles.loaded]: !hasNext
           })}
         >
           {map(groupedArticles, (group, month) => {
@@ -163,7 +158,6 @@ export default class Timeline extends Component {
             as="div"
             className={styles.loaderContainer}
             onChange={this.handleLoadNext}
-            rootMargin="800px 0px"
           >
             <div className={styles.loader}>
               <div />
