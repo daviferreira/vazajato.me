@@ -39,13 +39,11 @@ export default class Timeline extends Component {
     } else if (nextOrder === 'asc') {
       nextState = {
         articles: [],
-        hasNext: true,
         months: MONTHS_ASC
       };
     } else {
       nextState = {
         articles: INITIAL_ARTICLES,
-        hasNext: true,
         months: monthsData.slice(1)
       };
     }
