@@ -20,10 +20,6 @@
   width: 13px;
 }
 
-.root.loaded {
-  margin-bottom: 100px;
-}
-
 .root.loaded::after {
   height: 3px;
   width: 52px;

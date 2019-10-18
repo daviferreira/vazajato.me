@@ -13,9 +13,12 @@ import monthsData from '../../../public/pages/months.json';
 
 import styles from './styles.module.css';
 
+const INITIAL_ARTICLES = data.slice().reverse();
+const MONTHS_ASC = monthsData.slice().reverse();
+
 export default class Timeline extends Component {
   state = {
-    articles: data.slice(),
+    articles: INITIAL_ARTICLES,
     cache: { [monthsData[0]]: data.slice() },
     hasLoadedAll: false,
     hasNext: true,
@@ -38,11 +41,11 @@ export default class Timeline extends Component {
     } else if (nextOrder === 'asc') {
       nextState = {
         articles: [],
-        months: monthsData.slice().reverse()
+        months: MONTHS_ASC
       };
     } else {
       nextState = {
-        articles: data.slice(),
+        articles: INITIAL_ARTICLES,
         months: monthsData.slice(1)
       };
     }
