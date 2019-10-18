@@ -39,16 +39,18 @@ export default class Timeline extends Component {
     } else if (nextOrder === 'asc') {
       nextState = {
         articles: [],
+        hasNext: true,
         months: MONTHS_ASC
       };
     } else {
       nextState = {
         articles: INITIAL_ARTICLES,
+        hasNext: true,
         months: monthsData.slice(1)
       };
     }
 
-    this.setState({ hasNext: true, order: nextOrder, ...nextState }, () => {
+    this.setState({ order: nextOrder, ...nextState }, () => {
       window.scrollTo(0, 0);
 
       return hasNext && nextOrder === 'asc' && this.loadArticles();
