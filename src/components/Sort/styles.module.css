@@ -10,7 +10,7 @@
     border: none;
     color: inherit;
     cursor: pointer;
-    display: flex;
+    /* display: flex; */
     font: inherit;
     -moz-osx-font-smoothing: inherit;
     -webkit-font-smoothing: inherit;
