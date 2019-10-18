@@ -20,8 +20,6 @@ const Section = ({ group, isFirst, month, previousCount }) => {
   const [isVisible, setVisible] = useState(isFirst);
   const [style, setStyle] = useState();
 
-  let count = previousCount + 1;
-
   const node = createRef();
   const onChange = inView => {
     if (!inView) {
@@ -35,6 +33,8 @@ const Section = ({ group, isFirst, month, previousCount }) => {
       setVisible(true);
     }
   };
+
+  let count = previousCount + 1;
 
   return (
     <InView

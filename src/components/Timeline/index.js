@@ -50,14 +50,11 @@ export default class Timeline extends Component {
       };
     }
 
-    this.setState(
-      { hasNext: true, isLoading: false, order: nextOrder, ...nextState },
-      () => {
-        window.scrollTo(0, 0);
+    this.setState({ hasNext: true, order: nextOrder, ...nextState }, () => {
+      window.scrollTo(0, 0);
 
-        return !hasLoadedAll && nextOrder === 'asc' && this.loadArticles();
-      }
-    );
+      return !hasLoadedAll && nextOrder === 'asc' && this.loadArticles();
+    });
   };
 
   handleLoadNext = inView => {
@@ -156,7 +153,7 @@ export default class Timeline extends Component {
 
             count++;
 
-            articlesCount += Object.keys(articles).length;
+            articlesCount += Object.keys(sectionArticles).length;
 
             return component;
           })}
