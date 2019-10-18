@@ -2,10 +2,19 @@ const { getMetadata } = require('page-metadata-parser');
 const domino = require('domino');
 const download = require('image-downloader');
 const fetch = require('node-fetch');
+const fs = require('fs');
 const moment = require('moment');
-const uuid = (short = require('short-uuid'));
+const path = require('path');
+const prettier = require('prettier');
+const uuid = require('short-uuid');
+
+const articlesData = require('./src/data/articles.json');
 
 const [url, date] = process.argv.slice(2);
+
+const prettierOptions = {
+  singleQuote: true
+};
 
 if (!url) {
   throw new Error('Invalid url');
@@ -60,19 +69,52 @@ const parser = async url => {
     source
   };
 
+  if (articlesData.find(data => data.url === url)) {
+    return console.error(`ERROR: URL já existe!`);
+  }
+
   await download.image({
     url: image,
     dest: `${__dirname}/src/images/articles/${id}.jpg`
   });
 
-  const articleImage = `${id}: file(relativePath: { eq: "articles/${id}.jpg" }) {
+  const articleImage = `
+${id}: file(relativePath: { eq: "articles/${id}.jpg" }) {
   ...articleImage
-}`;
+}
+# NEW IMAGE PLACEHOLDER`;
 
-  console.log('\n\n');
-  console.log(JSON.stringify(article));
-  console.log('\n\n');
-  console.log(articleImage);
+  // console.log('\n\n');
+  // console.log(JSON.stringify(article));
+  articlesData.push(article);
+  fs.writeFileSync(
+    path.join(__dirname, 'src', 'data', 'articles.json'),
+    prettier.format(JSON.stringify(articlesData), {
+      parser: 'json',
+      ...prettierOptions
+    })
+  );
+
+  const imagesFilePath = path.join(
+    __dirname,
+    'src',
+    'components',
+    'Timeline',
+    'Section',
+    'Article',
+    'Image.js'
+  );
+  const imagesFileContent = fs.readFileSync(imagesFilePath, 'utf8');
+  fs.writeFileSync(
+    imagesFilePath,
+    prettier.format(
+      imagesFileContent.replace('# NEW IMAGE PLACEHOLDER', articleImage),
+      prettierOptions
+    )
+  );
+  // console.log('\n\n');
+  // console.log(articleImage);
+  console.log('ALL DONE');
 };
 
 parser(url);

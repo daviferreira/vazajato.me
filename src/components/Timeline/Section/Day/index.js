@@ -10,7 +10,7 @@ import sources from '../../../../data/sources';
 import styles from './styles.module.css';
 
 const formatDate = date => {
-  const [year, month, day] = date.split('-');
+  const [, month, day] = date.split('-');
 
   return `${day}/${month}`;
 };

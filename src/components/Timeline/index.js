@@ -1,151 +1,179 @@
 import classnames from 'classnames';
 import groupBy from 'lodash.groupby';
 import map from 'lodash.map';
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 import { InView } from 'react-intersection-observer';
 
 import Footer from '../Footer';
 import Section from './Section';
 import Sort from '../Sort';
 
-import data from '../../../static/data/2019-10.json';
+import data from '../../../public/pages/data.json';
+import monthsData from '../../../public/pages/months.json';
 
 import styles from './styles.module.css';
 
-const MONTHS = ['2019-10', '2019-09', '2019-08', '2019-07', '2019-06'];
+export default class Timeline extends Component {
+  state = {
+    articles: data.slice(),
+    cache: { [monthsData[0]]: data.slice() },
+    hasLoadedAll: false,
+    hasNext: true,
+    isLoading: false,
+    months: monthsData.slice(1),
+    order: 'desc'
+  };
 
-const Timeline = () => {
-  const [order, setOrder] = useState('desc');
-  const [articles, setArticles] = useState(data);
-  const [months, setMonths] = useState(MONTHS.slice(1));
-  const [hasNext, setHasNext] = useState(true);
-  const [isLoading, setIsLoading] = useState(false);
-  const [cache, setCache] = useState({
-    [MONTHS[0]]: data
-  });
-
-  const onSortChange = () => {
-    window.scrollTo(0, 0);
+  handleSortChange = () => {
+    const { articles, hasLoadedAll, order } = this.state;
 
     const nextOrder = order === 'asc' ? 'desc' : 'asc';
 
-    if (nextOrder === 'asc') {
-      setArticles([]);
-      setMonths(MONTHS.slice().reverse());
+    let nextState;
+    if (hasLoadedAll) {
+      nextState = {
+        articles: articles.slice().reverse(),
+        hasNext: false
+      };
+    } else if (nextOrder === 'asc') {
+      nextState = {
+        articles: [],
+        months: monthsData.slice().reverse()
+      };
     } else {
-      setArticles(data);
-      setMonths(MONTHS.slice(1));
+      nextState = {
+        articles: data.slice(),
+        months: monthsData.slice(1)
+      };
     }
 
-    setIsLoading(false);
-    setHasNext(true);
-    setOrder(nextOrder);
+    this.setState(
+      { hasNext: true, isLoading: false, order: nextOrder, ...nextState },
+      () => {
+        window.scrollTo(0, 0);
+
+        return !hasLoadedAll && nextOrder === 'asc' && this.loadArticles();
+      }
+    );
   };
 
-  const groupedArticles = groupBy(
-    order === 'desc' ? articles.slice().reverse() : articles,
-    ({ publishDate }) => publishDate.slice(0, 7)
-  );
+  handleLoadNext = inView => {
+    const { isLoading } = this.state;
 
-  const onChange = inView => {
     if (!isLoading && inView) {
-      return fetchArticles();
+      return this.loadArticles();
     }
   };
 
-  const fetchArticles = async () => {
+  loadArticles = async () => {
+    const { months } = this.state;
+
     const page = months[0];
 
-    setIsLoading(true);
+    this.setState(
+      {
+        isLoading: true
+      },
+      () => this.fetchArticles(page)
+    );
+  };
+
+  fetchArticles = async page => {
+    const { articles, cache, months, order } = this.state;
+
+    const nextMonths = months.slice(1);
 
     if (cache[page]) {
-      const nextMonths = months.slice(1);
-
-      setMonths(nextMonths);
-
-      setArticles(
-        order === 'asc'
-          ? articles.concat(cache[page])
-          : cache[page].concat(articles)
-      );
-
-      setHasNext(!!nextMonths.length);
-
-      return setIsLoading(false);
+      return this.setState({
+        articles: articles.concat(
+          order === 'desc' ? cache[page].slice().reverse() : cache[page]
+        ),
+        hasNext: !!nextMonths.length,
+        isLoading: false,
+        months: nextMonths
+      });
     }
 
     let response;
 
     try {
-      response = await fetch(`/data/${page}.json`);
+      response = await fetch(`/pages/${page}.json`);
 
       const nextArticles = await response.json();
+      const nextCache = { ...cache, [page]: nextArticles };
 
-      const nextMonths = months.slice(1);
+      const hasLoadedAll = Object.keys(nextCache).length === monthsData.length;
+      const hasNext = !!nextMonths.length;
 
-      setCache({ ...cache, [page]: nextArticles });
-
-      setIsLoading(false);
-      setArticles(
-        order === 'asc'
-          ? articles.concat(nextArticles)
-          : nextArticles.concat(articles)
-      );
-      setMonths(nextMonths);
-      setHasNext(!!nextMonths.length);
+      return this.setState({
+        articles: articles.concat(
+          order === 'desc' ? nextArticles.slice().reverse() : nextArticles
+        ),
+        cache: nextCache,
+        hasLoadedAll,
+        hasNext,
+        isLoading: false,
+        months: nextMonths
+      });
     } catch (err) {
-      setIsLoading(false);
+      return this.setState({ isLoading: false });
     }
   };
 
-  let count = 0;
-  let articlesCount = 0;
+  render() {
+    const { articles, hasLoadedAll, hasNext, order } = this.state;
 
-  return (
-    <>
-      <Sort onClick={onSortChange} order={order} />
-      <section
-        className={classnames(styles.root, {
-          [styles.loaded]: !hasNext
-        })}
-      >
-        {map(groupedArticles, (group, month) => {
-          const articles = groupBy(group, 'publishDate');
+    const groupedArticles = groupBy(articles, ({ publishDate }) =>
+      publishDate.slice(0, 7)
+    );
 
-          const component = (
-            <Section
-              group={articles}
-              isFirst={count === 0}
-              key={month}
-              month={month}
-              previousCount={articlesCount}
-            />
-          );
+    let count = 0;
+    let articlesCount = 0;
 
-          count++;
-
-          articlesCount += Object.keys(articles).length;
-
-          return component;
-        })}
-      </section>
-      {hasNext && (
-        <InView
-          as="div"
-          className={styles.loaderContainer}
-          onChange={onChange}
-          rootMargin="800px 0px"
+    return (
+      <>
+        <Sort onClick={this.handleSortChange} order={order} />
+        <section
+          className={classnames(styles.root, {
+            [styles.loaded]: !hasNext || hasLoadedAll
+          })}
         >
-          <div className={styles.loader}>
-            <div />
-            <div />
-            <div />
-          </div>
-        </InView>
-      )}
-      <Footer />
-    </>
-  );
-};
+          {map(groupedArticles, (group, month) => {
+            const sectionArticles = groupBy(group, 'publishDate');
 
-export default Timeline;
+            const component = (
+              <Section
+                group={sectionArticles}
+                isFirst={count === 0}
+                key={month}
+                month={month}
+                previousCount={articlesCount}
+              />
+            );
+
+            count++;
+
+            articlesCount += Object.keys(articles).length;
+
+            return component;
+          })}
+        </section>
+        {hasNext && (
+          <InView
+            as="div"
+            className={styles.loaderContainer}
+            onChange={this.handleLoadNext}
+            rootMargin="800px 0px"
+          >
+            <div className={styles.loader}>
+              <div />
+              <div />
+              <div />
+            </div>
+          </InView>
+        )}
+        <Footer />
+      </>
+    );
+  }
+}
