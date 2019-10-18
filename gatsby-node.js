@@ -20,6 +20,7 @@ function createArticlesPagination(articles) {
       }
     });
 
+    // eslint-disable-next-line
     console.log(`\nCreated ${month}.json.`);
 
     if (month === lastMonth) {
@@ -30,12 +31,14 @@ function createArticlesPagination(articles) {
         }
       });
 
+      // eslint-disable-next-line
       console.log(`\nCreated data.json with month ${month}.`);
     }
   });
 
   fs.writeFile(`${DIR}/months.json`, JSON.stringify(months), function(err) {
     if (err) {
+      // eslint-disable-next-line
       return console.log(err);
     }
   });
@@ -81,6 +84,7 @@ function createJSON({
 
   fs.writeFile(filePath, dataToSave, function(err) {
     if (err) {
+      // eslint-disable-next-line
       return console.log(err);
     }
   });

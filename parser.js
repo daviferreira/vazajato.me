@@ -70,6 +70,7 @@ const parser = async url => {
   };
 
   if (articlesData.find(data => data.url === url)) {
+    // eslint-disable-next-line
     return console.error(`ERROR: URL já existe!`);
   }
 
@@ -114,7 +115,7 @@ ${id}: file(relativePath: { eq: "articles/${id}.jpg" }) {
   );
   // console.log('\n\n');
   // console.log(articleImage);
-  console.log('ALL DONE');
+  console.log('ALL DONE'); // eslint-disable-line
 };
 
 parser(url);
