@@ -15,6 +15,7 @@ import styles from './styles.module.css';
 
 const INITIAL_ARTICLES = data.slice().reverse();
 const MONTHS_ASC = monthsData.slice().reverse();
+const MONTHS_DESC = monthsData.slice(1);
 
 export default class Timeline extends Component {
   state = {
@@ -22,7 +23,7 @@ export default class Timeline extends Component {
     cache: { [monthsData[0]]: data.slice() },
     hasNext: true,
     isLoading: false,
-    months: monthsData.slice(1),
+    months: MONTHS_DESC,
     order: 'desc'
   };
 
@@ -44,7 +45,7 @@ export default class Timeline extends Component {
     } else {
       nextState = {
         articles: INITIAL_ARTICLES,
-        months: monthsData.slice(1)
+        months: MONTHS_DESC
       };
     }
 
