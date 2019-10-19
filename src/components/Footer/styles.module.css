@@ -115,7 +115,7 @@
     animation-fill-mode: both;
     animation-name: slideInRight;
     animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-    display: block;
+    display: flex;
   }
 }
 
