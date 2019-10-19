@@ -20,11 +20,11 @@
   width: 13px;
 }
 
-.root.loaded {
+.loaded .root {
   margin-bottom: 10px;
 }
 
-.root.loaded::after {
+.loaded .root::after {
   height: 3px;
   width: 52px;
 }
@@ -66,18 +66,30 @@
   margin-right: 0;
 }
 
+.footer {
+  display: inline-block;
+}
+
 @media screen and (max-width: 767px) {
   .root {
     padding-top: 80px;
   }
 
-  .root.loaded {
+  .loaded .root {
     margin-bottom: 0;
   }
 
   .root::before,
   .root::after {
     display: none;
+  }
+
+  .footer {
+    display: none;
+  }
+
+  .loaded .footer {
+    display: block;
   }
 }
 

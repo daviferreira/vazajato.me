@@ -54,12 +54,10 @@
     border-radius: 3px;
     bottom: 13px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    display: none;
     left: 55px;
-    opacity: 0;
     padding: 5px 15px;
     position: fixed;
-    transform: translate3d(40px, 0, 0);
-    transition: transform 0.2s cubic-bezier(0, 0.5, 0.5, 1), opacity 0.2s;
   }
 
   .root::after,
@@ -113,8 +111,11 @@
   }
 
   .root.active {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
+    animation-duration: 0.2s;
+    animation-fill-mode: both;
+    animation-name: slideInRight;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    display: block;
   }
 }
 
@@ -149,5 +150,17 @@
 
   .root::after {
     border-right-color: #38444d;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(20px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }

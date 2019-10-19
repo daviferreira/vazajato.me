@@ -127,13 +127,13 @@ export default class Timeline extends Component {
     let articlesCount = 0;
 
     return (
-      <>
+      <div
+        className={classnames(styles.container, {
+          [styles.loaded]: !hasNext
+        })}
+      >
         <Sort onClick={this.handleSortChange} order={order} />
-        <section
-          className={classnames(styles.root, {
-            [styles.loaded]: !hasNext
-          })}
-        >
+        <section className={styles.root}>
           {map(groupedArticles, (group, month) => {
             const sectionArticles = groupBy(group, 'publishDate');
 
@@ -167,8 +167,10 @@ export default class Timeline extends Component {
             </div>
           </InView>
         )}
-        <Footer />
-      </>
+        <div className={styles.footer}>
+          <Footer />
+        </div>
+      </div>
     );
   }
 }
