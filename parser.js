@@ -6,49 +6,49 @@ const fs = require('fs');
 const moment = require('moment');
 const path = require('path');
 const prettier = require('prettier');
+const prompt = require('prompts');
+const signale = require('signale');
 const uuid = require('short-uuid');
 
 const articlesData = require('./src/data/articles.json');
-
-const [url, date] = process.argv.slice(2);
 
 const prettierOptions = {
   singleQuote: true
 };
 
-if (!url) {
-  throw new Error('Invalid url');
-}
+let interval;
 
-let source;
-if (url.includes('monicabergamo')) {
-  source = 'monicabergamo';
-} else if (url.includes('folha.uol.com.br')) {
-  source = 'folha';
-} else if (url.includes('reinaldoazevedo.blogosfera.uol.com.br')) {
-  source = 'reinaldoazevedo';
-} else if (url.includes('uol.com.br')) {
-  source = 'uol';
-} else if (url.includes('theintercept.com') || url.includes('TheInterceptBr')) {
-  source = 'intercept';
-} else if (url.includes('veja.abril.com.br')) {
-  source = 'veja';
-} else if (url.includes('apublica.org')) {
-  source = 'apublica';
-} else if (url.includes('elpais.com')) {
-  source = 'elpais';
-} else if (url.includes('buzzfeed.com')) {
-  source = 'buzzfeed';
-} else if (url.includes('ggreenwald')) {
-  source = 'glenn';
-}
+(async function() {
+  const questions = [
+    {
+      type: 'text',
+      name: 'url',
+      message: `Qual a URL da reportagem?`
+    },
+    {
+      type: 'text',
+      name: 'publishDate',
+      message: `E a data? (YYYY-MM-DD - Deixe em branco pra hoje).`
+    }
+  ];
 
-if (!source) {
-  throw new Error('Invalid source');
-}
+  const { url, publishDate } = await prompt(questions, {
+    onCancel: cleanup,
+    onSubmit: cleanup
+  });
 
-const id = `${source}${uuid.generate()}`;
-const publishDate = date || moment().format('YYYY-MM-DD');
+  if (!url) {
+    return signale.fatal(`ERROR: URL inválida`);
+  } else if (articlesData.find(data => data.url === url)) {
+    return signale.fatal(`ERROR: URL já existe`);
+  }
+
+  try {
+    await fetchArticle(url, publishDate);
+  } catch (err) {
+    return signale.fatal(err);
+  }
+})();
 
 const fetchMetaData = async url => {
   const response = await fetch(url);
@@ -58,8 +58,57 @@ const fetchMetaData = async url => {
   return metadata;
 };
 
-const parser = async url => {
-  const { title, image } = await fetchMetaData(url);
+const getSource = url => {
+  let source;
+
+  if (url.includes('monicabergamo')) {
+    source = 'monicabergamo';
+  } else if (url.includes('folha.uol.com.br')) {
+    source = 'folha';
+  } else if (url.includes('reinaldoazevedo.blogosfera.uol.com.br')) {
+    source = 'reinaldoazevedo';
+  } else if (url.includes('uol.com.br')) {
+    source = 'uol';
+  } else if (
+    url.includes('theintercept.com') ||
+    url.includes('TheInterceptBr')
+  ) {
+    source = 'intercept';
+  } else if (url.includes('veja.abril.com.br')) {
+    source = 'veja';
+  } else if (url.includes('apublica.org')) {
+    source = 'apublica';
+  } else if (url.includes('elpais.com')) {
+    source = 'elpais';
+  } else if (url.includes('buzzfeed.com')) {
+    source = 'buzzfeed';
+  } else if (url.includes('ggreenwald')) {
+    source = 'glenn';
+  }
+
+  return source;
+};
+
+const fetchArticle = async (url, date) => {
+  const source = getSource(url);
+
+  if (!source) {
+    return signale.fatal('Fonte inválida.');
+  }
+
+  const id = `${source}${uuid.generate()}`;
+  const publishDate = date || moment().format('YYYY-MM-DD');
+
+  signale.pending('Baixando meta dados');
+
+  let metaData;
+  try {
+    metaData = await fetchMetaData(url);
+  } catch (err) {
+    return signale.fatal(err);
+  }
+
+  const { title, image } = metaData;
 
   const article = {
     id,
@@ -69,24 +118,23 @@ const parser = async url => {
     source
   };
 
-  if (articlesData.find(data => data.url === url)) {
-    // eslint-disable-next-line
-    return console.error(`ERROR: URL já existe!`);
-  }
+  signale.success('Meta dados adquiridos');
+
+  signale.pending('Baixando imagem de capa');
 
   await download.image({
     url: image,
     dest: `${__dirname}/src/images/articles/${id}.jpg`
   });
 
-  const articleImage = `
-${id}: file(relativePath: { eq: "articles/${id}.jpg" }) {
-  ...articleImage
-}
-# NEW IMAGE PLACEHOLDER`;
+  signale.success('Download da image de capa realizado com sucesso');
 
-  // console.log('\n\n');
-  // console.log(JSON.stringify(article));
+  const articleImage = `${id}: file(relativePath: { eq: "articles/${id}.jpg" }) {
+    ...articleImage
+  }
+  # NEW IMAGE PLACEHOLDER`;
+
+  signale.pending('Atualizando articles.json');
   articlesData.push(article);
   fs.writeFileSync(
     path.join(__dirname, 'src', 'data', 'articles.json'),
@@ -95,7 +143,9 @@ ${id}: file(relativePath: { eq: "articles/${id}.jpg" }) {
       ...prettierOptions
     })
   );
+  signale.success('Articles.json atualizado');
 
+  signale.pending('Atualizando Image.js');
   const imagesFilePath = path.join(
     __dirname,
     'src',
@@ -113,9 +163,11 @@ ${id}: file(relativePath: { eq: "articles/${id}.jpg" }) {
       prettierOptions
     )
   );
-  // console.log('\n\n');
-  // console.log(articleImage);
-  console.log('ALL DONE'); // eslint-disable-line
+  signale.success('Image.js atualizado');
+
+  signale.success('🎉 ALL DONE! 🎉');
 };
 
-parser(url);
+function cleanup() {
+  clearInterval(interval);
+}
