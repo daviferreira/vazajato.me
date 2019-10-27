@@ -16,7 +16,7 @@ const MONTHS = {
   10: 'Outubro'
 };
 
-const Section = ({ group, isFirst, month, previousCount }) => {
+const Section = ({ group, isFirst, month, order, previousCount }) => {
   const [isVisible, setVisible] = useState(isFirst);
   const [style, setStyle] = useState();
 
@@ -60,7 +60,9 @@ const Section = ({ group, isFirst, month, previousCount }) => {
             count++;
             return (
               <Day
-                articles={articles}
+                articles={
+                  order === 'desc' ? articles.slice().reverse() : articles
+                }
                 day={day}
                 key={day}
                 left={!!(count % 2)}
@@ -77,6 +79,7 @@ Section.propTypes = {
   group: PropTypes.object.isRequired,
   isFirst: PropTypes.bool,
   month: PropTypes.string.isRequired,
+  order: PropTypes.oneOf(['asc', 'desc']),
   previousCount: PropTypes.number
 };
 

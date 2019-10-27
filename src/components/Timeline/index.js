@@ -143,6 +143,7 @@ export default class Timeline extends Component {
                 isFirst={count === 0}
                 key={month}
                 month={month}
+                order={order}
                 previousCount={articlesCount}
               />
             );
