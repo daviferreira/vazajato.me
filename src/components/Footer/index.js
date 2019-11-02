@@ -12,7 +12,7 @@ const Footer = () => {
     clearTimeout(timer);
     timer = setTimeout(() => {
       setActive(false);
-    }, 300);
+    }, 600);
   };
 
   const handleMouseEnter = () => {
