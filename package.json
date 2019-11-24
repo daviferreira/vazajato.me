@@ -53,7 +53,7 @@
     "stylelint-order": "^3.1.1"
   },
   "engines": {
-    "node": "12.4.0",
+    "node": "13.2.0",
     "npm": "~6.9"
   },
   "keywords": [
