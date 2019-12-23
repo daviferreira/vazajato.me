@@ -1,6 +1,8 @@
 import classnames from 'classnames';
 import React, { useState } from 'react';
 
+import Spreadsheet from './spreadsheet.svg';
+
 import styles from './styles.module.css';
 
 let timer;
@@ -22,6 +24,15 @@ const Footer = () => {
 
   return (
     <>
+      <a
+        className={styles.spreadsheet}
+        href="https://docs.google.com/spreadsheets/d/1y9bixq_sZ5TOwwqfoagRKX4zCm1Ka6hXbch9qN6OtKI"
+        rel="noopener noreferrer"
+        target="_blank"
+        title="Planilha de dados"
+      >
+        <Spreadsheet />
+      </a>
       <div
         className={classnames(styles.about, {
           [styles.active]: active

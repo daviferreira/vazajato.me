@@ -37,7 +37,8 @@
   text-decoration: underline;
 }
 
-.about {
+.about,
+.spreadsheet {
   display: none;
 }
 
@@ -85,16 +86,12 @@
     margin-top: -8px;
   }
 
-  .about {
+  .about,
+  .spreadsheet {
     align-items: center;
-    background-color: #000;
     border-radius: 100%;
-    bottom: 20px;
-    color: #fff;
     cursor: pointer;
     display: flex;
-    font-size: 13px;
-    font-weight: 600;
     height: 18px;
     justify-content: center;
     left: 20px;
@@ -106,6 +103,28 @@
     z-index: 100;
   }
 
+  .about {
+    background-color: #000;
+    bottom: 20px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .spreadsheet {
+    bottom: 60px;
+  }
+
+  .spreadsheet svg {
+    height: 18px;
+    width: 18px;
+  }
+
+  .spreadsheet path {
+    fill: #000;
+  }
+
+  .spreadsheet:hover,
   .about:hover,
   .about.active {
     opacity: 1;
@@ -137,6 +156,10 @@
   .about {
     background-color: #8899a5;
     color: #15202b;
+  }
+
+  .spreadsheet path {
+    fill: #fff;
   }
 }
 
