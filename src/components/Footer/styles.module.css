@@ -23,7 +23,9 @@
 }
 
 .root:hover .communist span:last-child {
-  display: block;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 .root a {
