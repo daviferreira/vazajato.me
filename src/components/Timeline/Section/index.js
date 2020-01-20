@@ -9,6 +9,7 @@ import Day from './Day';
 import styles from './styles.module.css';
 
 const MONTHS = {
+  1: 'Janeiro',
   6: 'Junho',
   7: 'Julho',
   8: 'Agosto',
@@ -56,7 +57,7 @@ const Section = ({ group, isFirst, month, order, previousCount }) => {
               [styles.first]: isFirst
             })}
           >
-            {MONTHS[parseInt(month.slice(5, 7))]}
+            {MONTHS[parseInt(month.slice(5, 7))]}/{month.slice(2, 4)}
           </h2>
           {map(group, (articles, day) => {
             count++;
