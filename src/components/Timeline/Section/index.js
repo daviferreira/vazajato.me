@@ -57,7 +57,7 @@ const Section = ({ group, isFirst, month, order, previousCount }) => {
               [styles.first]: isFirst
             })}
           >
-            {MONTHS[parseInt(month.slice(5, 7))]}/{month.slice(2, 4)}
+            {MONTHS[parseInt(month.slice(5, 7))]}
           </h2>
           {map(group, (articles, day) => {
             count++;
