@@ -71,7 +71,8 @@ const getSource = url => {
     source = 'uol';
   } else if (
     url.includes('theintercept.com') ||
-    url.includes('TheInterceptBr')
+    url.includes('TheInterceptBr') ||
+    url.includes('rafaelmmartins')
   ) {
     source = 'intercept';
   } else if (url.includes('veja.abril.com.br')) {
