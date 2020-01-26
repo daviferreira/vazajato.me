@@ -42,9 +42,7 @@ const Section = ({ group, isFirst, month, order, previousCount }) => {
   return (
     <InView
       as="div"
-      className={classnames(styles.root, {
-        [styles.hidden]: !isVisible
-      })}
+      className={styles.root}
       onChange={onChange}
       ref={node}
       rootMargin="200px 0px"
