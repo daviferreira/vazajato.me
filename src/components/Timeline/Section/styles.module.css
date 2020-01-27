@@ -32,6 +32,6 @@
 @media (prefers-color-scheme: dark) {
   .month {
     background-color: #38444d;
-    color: #8899a5;
+    color: rgba(255, 255, 255, 0.7);
   }
 }
