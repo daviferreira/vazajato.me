@@ -1,6 +1,7 @@
 .container {
   background-color: #fff;
   padding: 20px;
+  position: relative;
 }
 
 .container time {
@@ -10,13 +11,24 @@
   text-transform: uppercase;
 }
 
+.back {
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  font-size: 13px;
+  font-weight: bolder;
+  margin-bottom: 30px;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+}
+
 @media screen and (min-width: 768px) {
   .container {
     box-shadow: 0px 6px 12px 3px rgba(0, 0, 0, 0.2);
     font-size: 18px;
     line-height: 29px;
     margin: 22px auto 45px auto;
-    max-width: 83.2ex;
+    max-width: 90ex;
     padding: 60px;
   }
 

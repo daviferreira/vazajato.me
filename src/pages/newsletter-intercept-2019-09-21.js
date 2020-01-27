@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'gatsby';
+
 import SEO from '../components/SEO';
 
 import styles from './styles.module.css';
@@ -6,6 +8,9 @@ import styles from './styles.module.css';
 const NewsletterPage = () => (
   <div className={styles.container}>
     <SEO title="Uma mão lava a outra (a jato)" />
+    <div className={styles.back}>
+      <Link to="/">&larr; Voltar para a linha do tempo</Link>
+    </div>
     <time dateTime="2019-09-21">21 de setembro de 2019</time>
     <h1>Uma mão lava a outra (a jato)</h1>
     <p>
