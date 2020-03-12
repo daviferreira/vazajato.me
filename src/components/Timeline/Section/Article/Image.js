@@ -508,6 +508,16 @@ const Image = ({ alt, id }) => {
       ) {
         ...articleImage
       }
+      intercept65VSV2XLjBM3Sa8jmxA5xo: file(
+        relativePath: { eq: "articles/intercept65VSV2XLjBM3Sa8jmxA5xo.jpg" }
+      ) {
+        ...articleImage
+      }
+      apublicaacegdb5gDvoN9Yxqk2ZTs5: file(
+        relativePath: { eq: "articles/apublicaacegdb5gDvoN9Yxqk2ZTs5.jpg" }
+      ) {
+        ...articleImage
+      }
       # NEW IMAGE PLACEHOLDER
     }
   `);

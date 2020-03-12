@@ -10,6 +10,10 @@ import styles from './styles.module.css';
 
 const MONTHS = {
   1: 'Janeiro',
+  2: 'Fevereiro',
+  3: 'Março',
+  4: 'Abril',
+  5: 'Junho',
   6: 'Junho',
   7: 'Julho',
   8: 'Agosto',
