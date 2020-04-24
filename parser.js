@@ -18,7 +18,7 @@ const prettierOptions = {
 
 let interval;
 
-(async function() {
+(async function () {
   const questions = [
     {
       type: 'text',

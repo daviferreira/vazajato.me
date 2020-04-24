@@ -36,7 +36,7 @@ function createArticlesPagination(articles) {
     }
   });
 
-  fs.writeFile(`${DIR}/months.json`, JSON.stringify(months), function(err) {
+  fs.writeFile(`${DIR}/months.json`, JSON.stringify(months), function (err) {
     if (err) {
       // eslint-disable-next-line
       return console.log(err);
@@ -82,7 +82,7 @@ function createJSON({
   const filePath = `${DIR}${path}.json`;
   const dataToSave = JSON.stringify(pageArticles);
 
-  fs.writeFile(filePath, dataToSave, function(err) {
+  fs.writeFile(filePath, dataToSave, function (err) {
     if (err) {
       // eslint-disable-next-line
       return console.log(err);
