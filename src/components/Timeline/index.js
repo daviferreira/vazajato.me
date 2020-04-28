@@ -160,6 +160,7 @@ export default class Timeline extends Component {
             as="div"
             className={styles.loaderContainer}
             onChange={this.handleLoadNext}
+            rootMargin="400px"
           >
             <div className={styles.loader}>
               <div />
