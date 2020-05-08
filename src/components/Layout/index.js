@@ -10,7 +10,9 @@ import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import Header from '../Header';
+
 import './styles.css';
+import styles from './styles.module.css';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -25,6 +27,16 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <div className={styles.banner}>
+        <a
+          className={styles.spreadsheet}
+          href="https://www.umaescolhamuitodificil.com/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Veja também: Uma escolha muito difícil
+        </a>
+      </div>
       <Header siteTitle={data.site.siteMetadata.title} />
       <main>{children}</main>
     </>

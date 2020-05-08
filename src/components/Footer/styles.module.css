@@ -81,6 +81,7 @@
     border-width: 7px;
     margin-top: -7px;
   }
+
   .root::before {
     border-color: rgba(204, 204, 204, 0);
     border-right-color: rgba(0, 0, 0, 0.12);
