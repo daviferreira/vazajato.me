@@ -43,6 +43,10 @@ const Section = ({ group, isFirst, month, order, previousCount }) => {
 
   let count = previousCount + 1;
 
+  const [year, monthDigit] = month.split('-');
+  const currentYear = new Date().getFullYear();
+  const showYear = parseInt(year) !== currentYear;
+
   return (
     <InView
       as="div"
@@ -59,7 +63,8 @@ const Section = ({ group, isFirst, month, order, previousCount }) => {
               [styles.first]: isFirst
             })}
           >
-            {MONTHS[parseInt(month.slice(5, 7))]}
+            {MONTHS[parseInt(monthDigit)]}
+            {showYear && ` de ${year}`}
           </h2>
           {map(group, (articles, day) => {
             count++;
@@ -71,6 +76,7 @@ const Section = ({ group, isFirst, month, order, previousCount }) => {
                 day={day}
                 key={day}
                 left={!!(count % 2)}
+                year={showYear ? year : undefined}
               />
             );
           })}

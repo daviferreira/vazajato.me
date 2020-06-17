@@ -9,13 +9,13 @@ import sources from '../../../../data/sources';
 
 import styles from './styles.module.css';
 
-const formatDate = date => {
+const formatDate = (date, year) => {
   const [, month, day] = date.split('-');
 
-  return `${day}/${month}`;
+  return `${day}/${month}${year ? `/${year}` : ''}`;
 };
 
-const Day = ({ articles, day, left }) => {
+const Day = ({ articles, day, left, year }) => {
   return (
     <div
       className={classnames(styles.root, {
@@ -26,7 +26,7 @@ const Day = ({ articles, day, left }) => {
       <div className={styles.indicator}>
         <div className={styles.circle} />
         <time className={styles.day} timestamp={day}>
-          {formatDate(day)}
+          {formatDate(day, year)}
         </time>
       </div>
       <div className={styles.articles}>
@@ -53,7 +53,8 @@ const Day = ({ articles, day, left }) => {
 Day.propTypes = {
   articles: PropTypes.array.isRequired,
   day: PropTypes.string.isRequired,
-  left: PropTypes.bool
+  left: PropTypes.bool,
+  year: PropTypes.string
 };
 
 export default Day;
