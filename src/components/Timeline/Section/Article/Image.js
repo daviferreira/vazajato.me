@@ -543,6 +543,13 @@ const Image = ({ alt, id }) => {
       ) {
         ...articleImage
       }
+      reinaldoazevedosR3R1JEPdnAZy34mBitECf: file(
+        relativePath: {
+          eq: "articles/reinaldoazevedosR3R1JEPdnAZy34mBitECf.jpg"
+        }
+      ) {
+        ...articleImage
+      }
       # NEW IMAGE PLACEHOLDER
     }
   `);

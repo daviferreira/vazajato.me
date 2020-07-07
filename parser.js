@@ -13,7 +13,9 @@ const uuid = require('short-uuid');
 const articlesData = require('./src/data/articles.json');
 
 const prettierOptions = {
-  singleQuote: true
+  arrowParens: 'avoid',
+  singleQuote: true,
+  trailingComma: 'none'
 };
 
 let interval;
@@ -65,7 +67,7 @@ const getSource = url => {
     source = 'monicabergamo';
   } else if (url.includes('folha.uol.com.br')) {
     source = 'folha';
-  } else if (url.includes('reinaldoazevedo.blogosfera.uol.com.br')) {
+  } else if (url.includes('colunas/reinaldo-azevedo')) {
     source = 'reinaldoazevedo';
   } else if (url.includes('uol.com.br')) {
     source = 'uol';
