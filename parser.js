@@ -79,7 +79,7 @@ const getSource = url => {
     source = 'intercept';
   } else if (url.includes('veja.abril.com.br')) {
     source = 'veja';
-  } else if (url.includes('apublica.org')) {
+  } else if (url.includes('apublica.org') || url.includes('VianaNatalia')) {
     source = 'apublica';
   } else if (url.includes('elpais.com')) {
     source = 'elpais';
