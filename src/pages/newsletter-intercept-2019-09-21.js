@@ -7,7 +7,11 @@ import styles from './styles.module.css';
 
 const NewsletterPage = () => (
   <div className={styles.container}>
-    <SEO title="Uma mão lava a outra (a jato)" />
+    <SEO
+      description="Desde a eclosão da Lava Jato, em março de 2014, que a ANPR se tornou
+      defensora de primeira hora da operação."
+      title="Uma mão lava a outra (a jato)"
+    />
     <div className={styles.back}>
       <Link to="/">&larr; Voltar para a linha do tempo</Link>
     </div>

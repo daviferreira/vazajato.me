@@ -7,7 +7,10 @@ import styles from './styles.module.css';
 
 const NewsletterPage = () => (
   <div className={styles.container}>
-    <SEO title="Deltan que ama o FBI que odeia a PGR" />
+    <SEO
+      description="Em mais uma de suas notas indignadas, a Lava Jato de Curitiba esperneou na quinta-feira à noite contra a decisão do presidente do Supremo Tribunal Federal, Dias Toffoli, que obrigou forças-tarefas do Ministério Público a compartilharem os dados de suas investigações com a Procuradoria-Geral da República."
+      title="Deltan que ama o FBI que odeia a PGR"
+    />
     <div className={styles.back}>
       <Link to="/">&larr; Voltar para a linha do tempo</Link>
     </div>
