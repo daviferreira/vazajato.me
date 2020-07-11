@@ -231,7 +231,7 @@ const NewsletterPage = () => (
         src="https://www.youtube.com/embed/nZC6B5doXok"
         frameBorder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowFullscreen
+        allowFullScreen
       />
     </p>
     <p>
