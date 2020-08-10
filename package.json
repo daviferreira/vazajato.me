@@ -6,14 +6,14 @@
   "author": "Davi Ferreira <hi@daviferreira.com>",
   "dependencies": {
     "classnames": "^2.2.6",
-    "gatsby": "^2.24.23",
+    "gatsby": "^2.24.33",
     "gatsby-image": "^2.4.14",
-    "gatsby-plugin-manifest": "^2.4.21",
+    "gatsby-plugin-manifest": "^2.4.22",
     "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-remove-serviceworker": "^1.0.0",
-    "gatsby-plugin-sharp": "^2.6.24",
-    "gatsby-source-filesystem": "^2.3.23",
+    "gatsby-plugin-sharp": "^2.6.25",
+    "gatsby-source-filesystem": "^2.3.24",
     "gatsby-transformer-json": "^2.4.11",
     "gatsby-transformer-sharp": "^2.5.12",
     "intersection-observer": "^0.11.0",
@@ -24,7 +24,7 @@
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
     "react-intersection-observer": "^8.26.2",
-    "whatwg-fetch": "^3.2.0"
+    "whatwg-fetch": "^3.3.1"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
