@@ -575,6 +575,11 @@ const Image = ({ alt, id }) => {
       ) {
         ...articleImage
       }
+      interceptsd4QqJfxeoSjnqerwZWVfD: file(
+        relativePath: { eq: "articles/interceptsd4QqJfxeoSjnqerwZWVfD.jpg" }
+      ) {
+        ...articleImage
+      }
       # NEW IMAGE PLACEHOLDER
     }
   `);
