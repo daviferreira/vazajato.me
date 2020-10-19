@@ -585,6 +585,13 @@ const Image = ({ alt, id }) => {
       ) {
         ...articleImage
       }
+      reinaldoazevedob3Je4DxXgpmX2tJ8y1ZDCm: file(
+        relativePath: {
+          eq: "articles/reinaldoazevedob3Je4DxXgpmX2tJ8y1ZDCm.jpg"
+        }
+      ) {
+        ...articleImage
+      }
       # NEW IMAGE PLACEHOLDER
     }
   `);
