@@ -13,7 +13,9 @@ import Arrow from './arrow.svg';
 import '@reach/menu-button/styles.css';
 import styles from './styles.module.css';
 
-const sourceKeys = Object.keys(sources).sort();
+const sourceKeys = Object.entries(sources)
+  .sort(([, a], [, b]) => a.name.localeCompare(b.name))
+  .map(([key]) => key);
 
 const Header = ({ onSourceChange, onSortChange, order, source }) => {
   const isAll = source === 'all';
