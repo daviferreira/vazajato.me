@@ -6,7 +6,7 @@ import { InView } from 'react-intersection-observer';
 
 import Footer from '../Footer';
 import Section from './Section';
-import Sort from '../Sort';
+import Header from './Header';
 
 import data from '../../../public/pages/data.json';
 import monthsData from '../../../public/pages/months.json';
@@ -17,14 +17,24 @@ const INITIAL_ARTICLES = data.slice().reverse();
 const MONTHS_ASC = monthsData.slice().reverse();
 const MONTHS_DESC = monthsData.slice(1);
 
+const Loader = () => (
+  <div className={styles.loader}>
+    <div />
+    <div />
+    <div />
+  </div>
+);
+
 export default class Timeline extends Component {
   state = {
     articles: INITIAL_ARTICLES,
     cache: { [monthsData[0]]: data.slice() },
     hasNext: true,
     isLoading: false,
+    isLoadingArticles: false,
     months: MONTHS_DESC,
-    order: 'desc'
+    order: 'desc',
+    source: 'all'
   };
 
   handleSortChange = () => {
@@ -54,6 +64,42 @@ export default class Timeline extends Component {
 
       return hasNext && nextOrder === 'asc' && this.loadArticles();
     });
+  };
+
+  handleSourceChange = source => {
+    const { order, source: currentSource } = this.state;
+
+    if (source === currentSource) {
+      return;
+    } else if (source === 'all') {
+      return this.resetArticles();
+    }
+
+    this.setState(
+      {
+        hasNext: false,
+        isLoading: true,
+        isLoadingArticles: true
+      },
+      async () => {
+        window.scrollTo(0, 0);
+
+        try {
+          const response = await fetch(`/pages/sources/${source}.json`);
+
+          const articles = await response.json();
+
+          return this.setState({
+            articles: order === 'desc' ? articles.slice().reverse() : articles,
+            isLoading: false,
+            isLoadingArticles: false,
+            source
+          });
+        } catch (err) {
+          return this.setState({ isLoading: false, isLoadingArticles: false });
+        }
+      }
+    );
   };
 
   handleLoadNext = inView => {
@@ -94,10 +140,8 @@ export default class Timeline extends Component {
       });
     }
 
-    let response;
-
     try {
-      response = await fetch(`/pages/${page}.json`);
+      const response = await fetch(`/pages/${page}.json`);
 
       const nextArticles = await response.json();
       const nextCache = { ...cache, [page]: nextArticles };
@@ -116,8 +160,38 @@ export default class Timeline extends Component {
     }
   };
 
+  resetArticles() {
+    const { order } = this.state;
+
+    let nextState;
+    if (order === 'asc') {
+      nextState = {
+        articles: [],
+        months: MONTHS_ASC
+      };
+    } else {
+      nextState = {
+        articles: INITIAL_ARTICLES,
+        months: MONTHS_DESC
+      };
+    }
+
+    this.setState(
+      {
+        ...nextState,
+        hasNext: true,
+        source: 'all'
+      },
+      () => {
+        window.scrollTo(0, 0);
+
+        return order === 'asc' && this.loadArticles();
+      }
+    );
+  }
+
   render() {
-    const { articles, hasNext, order } = this.state;
+    const { articles, hasNext, isLoadingArticles, order, source } = this.state;
 
     const groupedArticles = groupBy(articles, ({ publishDate }) =>
       publishDate.slice(0, 7)
@@ -132,29 +206,40 @@ export default class Timeline extends Component {
           [styles.loaded]: !hasNext
         })}
       >
-        <Sort onClick={this.handleSortChange} order={order} />
-        <section className={styles.root}>
-          {map(groupedArticles, (group, month) => {
-            const sectionArticles = groupBy(group, 'publishDate');
+        <Header
+          onSourceChange={this.handleSourceChange}
+          onSortChange={this.handleSortChange}
+          order={order}
+          source={source}
+        />
+        {isLoadingArticles ? (
+          <div className={styles.loaderContainer} style={{ paddingTop: 120 }}>
+            <Loader />
+          </div>
+        ) : (
+          <section className={styles.root}>
+            {map(groupedArticles, (group, month) => {
+              const sectionArticles = groupBy(group, 'publishDate');
 
-            const component = (
-              <Section
-                group={sectionArticles}
-                isFirst={count === 0}
-                key={month}
-                month={month}
-                order={order}
-                previousCount={articlesCount}
-              />
-            );
+              const component = (
+                <Section
+                  group={sectionArticles}
+                  isFirst={count === 0}
+                  key={month}
+                  month={month}
+                  order={order}
+                  previousCount={articlesCount}
+                />
+              );
 
-            count++;
+              count++;
 
-            articlesCount += Object.keys(sectionArticles).length;
+              articlesCount += Object.keys(sectionArticles).length;
 
-            return component;
-          })}
-        </section>
+              return component;
+            })}
+          </section>
+        )}
         {hasNext && (
           <InView
             as="div"
@@ -162,11 +247,7 @@ export default class Timeline extends Component {
             onChange={this.handleLoadNext}
             rootMargin="400px"
           >
-            <div className={styles.loader}>
-              <div />
-              <div />
-              <div />
-            </div>
+            <Loader />
           </InView>
         )}
         <div className={styles.footer}>
