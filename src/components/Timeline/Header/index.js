@@ -13,14 +13,13 @@ const sourceKeys = Object.keys(SOURCES).sort();
 const Header = ({ onSourceChange, onSortChange, order, source }) => (
   <div className={styles.root}>
     <div className={styles.filter}>
-      <label htmlFor="filter-source">Filtrar por veículo:</label>
       <select
         defaultValue={source}
         id="filter-source"
         onChange={e => onSourceChange(e.target.value)}
       >
         <option key="all" value="all">
-          Todos
+          Todos os veículos
         </option>
         {map(sourceKeys, key => (
           <option key={key} value={key}>

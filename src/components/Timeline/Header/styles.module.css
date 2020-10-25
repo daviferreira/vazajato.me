@@ -1,6 +1,6 @@
 .root {
   align-items: stretch;
-  background-color: rgb(237, 237, 237);
+  background-color: rgba(255, 255, 255, 0.8);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   display: flex;
   position: sticky;
@@ -17,20 +17,13 @@
   padding: 16px;
 }
 
-.filter label {
-  font-size: 10px;
-  line-height: 1;
-  margin: 0 0 6px;
-  text-transform: uppercase;
-}
-
 .filter select {
-  font-size: 13px;
+  font-size: 14px;
 }
 
 @media (prefers-color-scheme: dark) {
   .root {
-    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.8);
     border-bottom-color: rgba(255, 255, 255, 0.2);
     color: #8899a5;
   }
