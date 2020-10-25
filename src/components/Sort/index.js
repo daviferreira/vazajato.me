@@ -9,7 +9,7 @@ import styles from './styles.module.css';
 const Sort = ({ onClick, order }) => (
   <button
     className={classnames(styles.root, {
-      [styles[order]]: order
+      [styles[order]]: order,
     })}
     onClick={onClick}
     title={order === 'asc' ? 'Mais recentes primeiro' : 'Mais antigas primeiro'}
@@ -20,7 +20,7 @@ const Sort = ({ onClick, order }) => (
 
 Sort.propTypes = {
   onClick: PropTypes.func,
-  order: PropTypes.oneOf(['asc', 'desc'])
+  order: PropTypes.oneOf(['asc', 'desc']),
 };
 
 export default Sort;

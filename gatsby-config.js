@@ -1,8 +1,10 @@
+const path = require('path');
+
 module.exports = {
   siteMetadata: {
     title: `Linha do tempo da #VazaJato`,
     description: `Página listando todas as reportagens da #VazaJato.`,
-    author: `@davitferreira`
+    author: `@davitferreira`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -10,8 +12,8 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`
-      }
+        path: path.join(__dirname, `/src/images`),
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -25,8 +27,8 @@ module.exports = {
         background_color: `#fafafa`,
         theme_color: `#000000`,
         display: `minimal-ui`,
-        icon: `src/images/telegram-icon.png`
-      }
+        icon: `src/images/telegram-icon.png`,
+      },
     },
     `gatsby-plugin-remove-serviceworker`,
     `gatsby-transformer-json`,
@@ -34,8 +36,8 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `data`,
-        path: `${__dirname}/src/data/`
-      }
-    }
-  ]
+        path: path.join(__dirname, `/src/data/`),
+      },
+    },
+  ],
 };

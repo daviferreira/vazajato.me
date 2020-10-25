@@ -11,8 +11,8 @@ function createSourcePages(articles) {
     createJSON({
       path: `sources/${source}`,
       context: {
-        pageArticles: group
-      }
+        pageArticles: group,
+      },
     });
 
     // eslint-disable-next-line
@@ -32,8 +32,8 @@ function createArticlesPagination(articles) {
     createJSON({
       path: `/${month}`,
       context: {
-        pageArticles: group
-      }
+        pageArticles: group,
+      },
     });
 
     // eslint-disable-next-line
@@ -43,8 +43,8 @@ function createArticlesPagination(articles) {
       createJSON({
         path: `/data`,
         context: {
-          pageArticles: group
-        }
+          pageArticles: group,
+        },
       });
 
       // eslint-disable-next-line
@@ -62,7 +62,7 @@ function createArticlesPagination(articles) {
 
 function createJSON({
   context: { pageArticles, currentPage, totalPages },
-  path
+  path,
 }) {
   if (!fs.existsSync(DIR)) {
     fs.mkdirSync(DIR);
@@ -99,7 +99,7 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     }
-  `).then(result => {
+  `).then((result) => {
     if (result.errors) {
       throw result.errors;
     }
@@ -108,7 +108,7 @@ exports.createPages = ({ graphql, actions }) => {
 
     return Promise.all([
       createArticlesPagination(articles),
-      createSourcePages(articles)
+      createSourcePages(articles),
     ]);
   });
 };

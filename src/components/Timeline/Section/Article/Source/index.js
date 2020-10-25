@@ -21,7 +21,7 @@ const Source = ({ source }) => {
 };
 
 Source.propTypes = {
-  source: PropTypes.string.isRequired
+  source: PropTypes.string.isRequired,
 };
 
 export default Source;

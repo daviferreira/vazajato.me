@@ -20,7 +20,7 @@ const MONTHS = {
   9: 'Setembro',
   10: 'Outubro',
   11: 'Novembro',
-  12: 'Dezembro'
+  12: 'Dezembro',
 };
 
 const Section = ({ group, isFirst, month, order, previousCount }) => {
@@ -28,11 +28,11 @@ const Section = ({ group, isFirst, month, order, previousCount }) => {
   const [style, setStyle] = useState();
 
   const node = createRef();
-  const onChange = inView => {
+  const onChange = (inView) => {
     if (!inView) {
       setStyle({
         paddingTop:
-          node.current.node.clientHeight - (window.innerWidth < 768 ? 40 : 100)
+          node.current.node.clientHeight - (window.innerWidth < 768 ? 40 : 100),
       });
       setVisible(false);
     } else {
@@ -60,7 +60,7 @@ const Section = ({ group, isFirst, month, order, previousCount }) => {
         <>
           <h2
             className={classnames(styles.month, {
-              [styles.first]: isFirst
+              [styles.first]: isFirst,
             })}
           >
             {MONTHS[parseInt(monthDigit)]}
@@ -91,7 +91,7 @@ Section.propTypes = {
   isFirst: PropTypes.bool,
   month: PropTypes.string.isRequired,
   order: PropTypes.oneOf(['asc', 'desc']),
-  previousCount: PropTypes.number
+  previousCount: PropTypes.number,
 };
 
 export default Section;

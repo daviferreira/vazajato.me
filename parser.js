@@ -15,7 +15,7 @@ const articlesData = require('./src/data/articles.json');
 const prettierOptions = {
   arrowParens: 'avoid',
   singleQuote: true,
-  trailingComma: 'none'
+  trailingComma: 'none',
 };
 
 let interval;
@@ -25,23 +25,23 @@ let interval;
     {
       type: 'text',
       name: 'url',
-      message: `Qual a URL da reportagem?`
+      message: `Qual a URL da reportagem?`,
     },
     {
       type: 'text',
       name: 'publishDate',
-      message: `E a data? (YYYY-MM-DD - Deixe em branco pra hoje).`
-    }
+      message: `E a data? (YYYY-MM-DD - Deixe em branco pra hoje).`,
+    },
   ];
 
   const { url, publishDate } = await prompt(questions, {
     onCancel: cleanup,
-    onSubmit: cleanup
+    onSubmit: cleanup,
   });
 
   if (!url) {
     return signale.fatal(`ERROR: URL inválida`);
-  } else if (articlesData.find(data => data.url === url)) {
+  } else if (articlesData.find((data) => data.url === url)) {
     return signale.fatal(`ERROR: URL já existe`);
   }
 
@@ -52,7 +52,7 @@ let interval;
   }
 })();
 
-const fetchMetaData = async url => {
+const fetchMetaData = async (url) => {
   const response = await fetch(url);
   const html = await response.text();
   const doc = domino.createWindow(html).document;
@@ -60,7 +60,7 @@ const fetchMetaData = async url => {
   return metadata;
 };
 
-const getSource = url => {
+const getSource = (url) => {
   let source;
 
   if (url.includes('monicabergamo')) {
@@ -118,7 +118,7 @@ const fetchArticle = async (url, date) => {
     title,
     url,
     publishDate,
-    source
+    source,
   };
 
   signale.success('Meta dados adquiridos');
@@ -127,7 +127,7 @@ const fetchArticle = async (url, date) => {
 
   await download.image({
     url: image,
-    dest: `${__dirname}/src/images/articles/${id}.jpg`
+    dest: path.join(__dirname, `/src/images/articles/${id}.jpg`),
   });
 
   signale.success('Download da image de capa realizado com sucesso');
@@ -143,7 +143,7 @@ const fetchArticle = async (url, date) => {
     path.join(__dirname, 'src', 'data', 'articles.json'),
     prettier.format(JSON.stringify(articlesData), {
       parser: 'json',
-      ...prettierOptions
+      ...prettierOptions,
     })
   );
   signale.success('Articles.json atualizado');

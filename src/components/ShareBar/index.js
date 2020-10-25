@@ -40,12 +40,12 @@ const ShareBar = ({ text, url }) => (
 
 ShareBar.propTypes = {
   text: PropTypes.string,
-  url: PropTypes.string
+  url: PropTypes.string,
 };
 
 ShareBar.defaultProps = {
   text: 'Linha do tempo da Vaza Jato',
-  url: 'https://www.vazajato.me'
+  url: 'https://www.vazajato.me',
 };
 
 export default ShareBar;

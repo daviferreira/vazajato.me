@@ -21,7 +21,7 @@ const Article = ({ id, source, title, url }) => {
       <div
         className={styles.image}
         style={{
-          backgroundColor: color
+          backgroundColor: color,
         }}
       >
         <div className={styles.imageContainer}>
@@ -38,7 +38,7 @@ Article.propTypes = {
   id: PropTypes.string.isRequired,
   source: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired
+  url: PropTypes.string.isRequired,
 };
 
 export default Article;

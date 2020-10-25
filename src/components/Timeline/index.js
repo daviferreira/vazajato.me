@@ -34,7 +34,7 @@ export default class Timeline extends Component {
     isLoadingArticles: false,
     months: MONTHS_DESC,
     order: 'desc',
-    source: 'all'
+    source: 'all',
   };
 
   handleSortChange = () => {
@@ -45,17 +45,17 @@ export default class Timeline extends Component {
     let nextState;
     if (!hasNext) {
       nextState = {
-        articles: articles.slice().reverse()
+        articles: articles.slice().reverse(),
       };
     } else if (nextOrder === 'asc') {
       nextState = {
         articles: [],
-        months: MONTHS_ASC
+        months: MONTHS_ASC,
       };
     } else {
       nextState = {
         articles: INITIAL_ARTICLES,
-        months: MONTHS_DESC
+        months: MONTHS_DESC,
       };
     }
 
@@ -66,7 +66,7 @@ export default class Timeline extends Component {
     });
   };
 
-  handleSourceChange = source => {
+  handleSourceChange = (source) => {
     const { order, source: currentSource } = this.state;
 
     if (source === currentSource) {
@@ -79,7 +79,8 @@ export default class Timeline extends Component {
       {
         hasNext: false,
         isLoading: true,
-        isLoadingArticles: true
+        isLoadingArticles: true,
+        source,
       },
       async () => {
         window.scrollTo(0, 0);
@@ -93,7 +94,6 @@ export default class Timeline extends Component {
             articles: order === 'desc' ? articles.slice().reverse() : articles,
             isLoading: false,
             isLoadingArticles: false,
-            source
           });
         } catch (err) {
           return this.setState({ isLoading: false, isLoadingArticles: false });
@@ -102,7 +102,7 @@ export default class Timeline extends Component {
     );
   };
 
-  handleLoadNext = inView => {
+  handleLoadNext = (inView) => {
     const { isLoading } = this.state;
 
     if (!isLoading && inView) {
@@ -117,13 +117,13 @@ export default class Timeline extends Component {
 
     this.setState(
       {
-        isLoading: true
+        isLoading: true,
       },
       () => this.fetchArticles(page)
     );
   };
 
-  fetchArticles = async page => {
+  fetchArticles = async (page) => {
     const { articles, cache, months, order } = this.state;
 
     const nextMonths = months.slice(1);
@@ -136,7 +136,7 @@ export default class Timeline extends Component {
         ),
         hasNext,
         isLoading: false,
-        months: nextMonths
+        months: nextMonths,
       });
     }
 
@@ -153,7 +153,7 @@ export default class Timeline extends Component {
         cache: nextCache,
         hasNext,
         isLoading: false,
-        months: nextMonths
+        months: nextMonths,
       });
     } catch (err) {
       return this.setState({ isLoading: false });
@@ -167,12 +167,12 @@ export default class Timeline extends Component {
     if (order === 'asc') {
       nextState = {
         articles: [],
-        months: MONTHS_ASC
+        months: MONTHS_ASC,
       };
     } else {
       nextState = {
         articles: INITIAL_ARTICLES,
-        months: MONTHS_DESC
+        months: MONTHS_DESC,
       };
     }
 
@@ -180,7 +180,7 @@ export default class Timeline extends Component {
       {
         ...nextState,
         hasNext: true,
-        source: 'all'
+        source: 'all',
       },
       () => {
         window.scrollTo(0, 0);
@@ -203,7 +203,7 @@ export default class Timeline extends Component {
     return (
       <div
         className={classnames(styles.container, {
-          [styles.loaded]: !hasNext
+          [styles.loaded]: !hasNext,
         })}
       >
         <Header

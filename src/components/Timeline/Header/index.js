@@ -28,7 +28,7 @@ const Header = ({ onSourceChange, onSortChange, order, source }) => (
               <span aria-hidden>
                 <Arrow
                   className={classnames(styles.arrow, {
-                    [styles.expanded]: isExpanded
+                    [styles.expanded]: isExpanded,
                   })}
                 />
               </span>
@@ -41,7 +41,7 @@ const Header = ({ onSourceChange, onSortChange, order, source }) => (
               >
                 Todos os veículos
               </MenuItem>
-              {map(sourceKeys, key => (
+              {map(sourceKeys, (key) => (
                 <MenuItem
                   className={styles.item}
                   key={key}
@@ -63,7 +63,7 @@ Header.propTypes = {
   onSourceChange: PropTypes.func,
   onSortChange: PropTypes.func,
   order: PropTypes.oneOf(['asc', 'desc']),
-  source: PropTypes.oneOf(sourceKeys.concat(['all'])).isRequired
+  source: PropTypes.oneOf(sourceKeys.concat(['all'])).isRequired,
 };
 
 export default Header;

@@ -1,32 +1,32 @@
 export const SOURCES = {
   intercept: {
-    name: 'The Intercet Brasil'
+    name: 'The Intercet Brasil',
   },
   reinaldoazevedo: {
-    name: 'Reinaldo Azevedo'
+    name: 'Reinaldo Azevedo',
   },
   buzzfeed: {
-    name: 'Buzzfeed Brasil'
+    name: 'Buzzfeed Brasil',
   },
   folha: {
-    name: 'Folha de São Paulo'
+    name: 'Folha de São Paulo',
   },
   monicabergamo: {
-    name: 'Mônica Bergamo'
+    name: 'Mônica Bergamo',
   },
   veja: {
-    name: 'veja'
+    name: 'veja',
   },
   elpais: {
-    name: 'El País'
+    name: 'El País',
   },
   uol: {
-    name: 'UOL'
+    name: 'UOL',
   },
   glenn: {
-    name: 'Glenn Greenwald'
+    name: 'Glenn Greenwald',
   },
   apublica: {
-    name: 'Agência Pública'
-  }
+    name: 'Agência Pública',
+  },
 };

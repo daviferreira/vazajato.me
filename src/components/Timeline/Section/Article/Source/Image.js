@@ -46,7 +46,7 @@ const Image = ({ alt, id }) => {
 
 Image.propTypes = {
   alt: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired
+  id: PropTypes.string.isRequired,
 };
 
 export default Image;

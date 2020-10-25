@@ -20,7 +20,7 @@ const Day = ({ articles, day, left, year }) => {
     <div
       className={classnames(styles.root, {
         [styles.left]: left,
-        [styles.right]: !left
+        [styles.right]: !left,
       })}
     >
       <div className={styles.indicator}>
@@ -38,7 +38,7 @@ const Day = ({ articles, day, left, year }) => {
               className={styles.article}
               key={id}
               style={{
-                borderBottomColor: color
+                borderBottomColor: color,
               }}
             >
               <Article id={id} source={source} title={title} url={url} />
@@ -54,7 +54,7 @@ Day.propTypes = {
   articles: PropTypes.array.isRequired,
   day: PropTypes.string.isRequired,
   left: PropTypes.bool,
-  year: PropTypes.string
+  year: PropTypes.string,
 };
 
 export default Day;

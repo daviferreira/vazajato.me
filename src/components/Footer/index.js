@@ -35,7 +35,7 @@ const Footer = () => {
       </a>
       <div
         className={classnames(styles.about, {
-          [styles.active]: active
+          [styles.active]: active,
         })}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -45,7 +45,7 @@ const Footer = () => {
       </div>
       <footer
         className={classnames(styles.root, {
-          [styles.active]: active
+          [styles.active]: active,
         })}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
