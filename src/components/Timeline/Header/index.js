@@ -74,7 +74,9 @@ const Header = ({ onSourceChange, onSortChange, order, source }) => {
           )}
         </Menu>
       </div>
-      <Sort onClick={onSortChange} order={order} />
+      <div className={styles.sort}>
+        <Sort onClick={onSortChange} order={order} />
+      </div>
     </div>
   );
 };

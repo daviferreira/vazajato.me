@@ -4,17 +4,27 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   display: flex;
   height: 66px;
+  justify-content: space-between;
   position: sticky;
   top: 0;
   width: 100%;
   z-index: 100;
 }
 
-.filter {
-  border-right: 1px solid rgba(0, 0, 0, 0.1);
+.filter,
+.sort {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.filter {
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.sort {
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0 16px;
 }
 
 @keyframes slide-down {
@@ -136,6 +146,10 @@
 
   .filter {
     border-right-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .sort {
+    border-left-color: rgba(255, 255, 255, 0.2);
   }
 
   .avatar {
