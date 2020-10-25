@@ -17,12 +17,21 @@ const INITIAL_ARTICLES = data.slice().reverse();
 const MONTHS_ASC = monthsData.slice().reverse();
 const MONTHS_DESC = monthsData.slice(1);
 
+const Loader = () => (
+  <div className={styles.loader}>
+    <div />
+    <div />
+    <div />
+  </div>
+);
+
 export default class Timeline extends Component {
   state = {
     articles: INITIAL_ARTICLES,
     cache: { [monthsData[0]]: data.slice() },
     hasNext: true,
     isLoading: false,
+    isLoadingArticles: false,
     months: MONTHS_DESC,
     order: 'desc',
     source: 'all'
@@ -68,7 +77,9 @@ export default class Timeline extends Component {
 
     this.setState(
       {
-        isLoading: true
+        hasNext: false,
+        isLoading: true,
+        isLoadingArticles: true
       },
       async () => {
         window.scrollTo(0, 0);
@@ -80,12 +91,12 @@ export default class Timeline extends Component {
 
           return this.setState({
             articles: order === 'desc' ? articles.slice().reverse() : articles,
-            hasNext: false,
             isLoading: false,
+            isLoadingArticles: false,
             source
           });
         } catch (err) {
-          return this.setState({ isLoading: false });
+          return this.setState({ isLoading: false, isLoadingArticles: false });
         }
       }
     );
@@ -180,7 +191,7 @@ export default class Timeline extends Component {
   }
 
   render() {
-    const { articles, hasNext, order, source } = this.state;
+    const { articles, hasNext, isLoadingArticles, order, source } = this.state;
 
     const groupedArticles = groupBy(articles, ({ publishDate }) =>
       publishDate.slice(0, 7)
@@ -201,28 +212,34 @@ export default class Timeline extends Component {
           order={order}
           source={source}
         />
-        <section className={styles.root}>
-          {map(groupedArticles, (group, month) => {
-            const sectionArticles = groupBy(group, 'publishDate');
+        {isLoadingArticles ? (
+          <div className={styles.loaderContainer} style={{ paddingTop: 120 }}>
+            <Loader />
+          </div>
+        ) : (
+          <section className={styles.root}>
+            {map(groupedArticles, (group, month) => {
+              const sectionArticles = groupBy(group, 'publishDate');
 
-            const component = (
-              <Section
-                group={sectionArticles}
-                isFirst={count === 0}
-                key={month}
-                month={month}
-                order={order}
-                previousCount={articlesCount}
-              />
-            );
+              const component = (
+                <Section
+                  group={sectionArticles}
+                  isFirst={count === 0}
+                  key={month}
+                  month={month}
+                  order={order}
+                  previousCount={articlesCount}
+                />
+              );
 
-            count++;
+              count++;
 
-            articlesCount += Object.keys(sectionArticles).length;
+              articlesCount += Object.keys(sectionArticles).length;
 
-            return component;
-          })}
-        </section>
+              return component;
+            })}
+          </section>
+        )}
         {hasNext && (
           <InView
             as="div"
@@ -230,11 +247,7 @@ export default class Timeline extends Component {
             onChange={this.handleLoadNext}
             rootMargin="400px"
           >
-            <div className={styles.loader}>
-              <div />
-              <div />
-              <div />
-            </div>
+            <Loader />
           </InView>
         )}
         <div className={styles.footer}>
