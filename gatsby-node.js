@@ -68,6 +68,10 @@ function createJSON({
     fs.mkdirSync(DIR);
   }
 
+  if (!fs.existsSync(`${DIR}sources`)) {
+    fs.mkdirSync(`${DIR}sources`);
+  }
+
   const filePath = `${DIR}${path}.json`;
   const dataToSave = JSON.stringify(pageArticles);
 
