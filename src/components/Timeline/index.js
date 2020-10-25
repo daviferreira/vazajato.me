@@ -6,7 +6,7 @@ import { InView } from 'react-intersection-observer';
 
 import Footer from '../Footer';
 import Section from './Section';
-import Sort from '../Sort';
+import Header from './Header';
 
 import data from '../../../public/pages/data.json';
 import monthsData from '../../../public/pages/months.json';
@@ -24,7 +24,8 @@ export default class Timeline extends Component {
     hasNext: true,
     isLoading: false,
     months: MONTHS_DESC,
-    order: 'desc'
+    order: 'desc',
+    source: 'all'
   };
 
   handleSortChange = () => {
@@ -54,6 +55,31 @@ export default class Timeline extends Component {
 
       return hasNext && nextOrder === 'asc' && this.loadArticles();
     });
+  };
+
+  handleSourceChange = async source => {
+    const { order, source: currentSource } = this.state;
+
+    if (source === currentSource) {
+      return;
+    } else if (source === 'all') {
+      return this.resetArticles();
+    }
+
+    try {
+      const response = await fetch(`/pages/sources/${source}.json`);
+
+      const articles = await response.json();
+
+      return this.setState({
+        articles: order === 'desc' ? articles.slice().reverse() : articles,
+        hasNext: false,
+        isLoading: false,
+        source
+      });
+    } catch (err) {
+      return this.setState({ isLoading: false });
+    }
   };
 
   handleLoadNext = inView => {
@@ -94,10 +120,8 @@ export default class Timeline extends Component {
       });
     }
 
-    let response;
-
     try {
-      response = await fetch(`/pages/${page}.json`);
+      const response = await fetch(`/pages/${page}.json`);
 
       const nextArticles = await response.json();
       const nextCache = { ...cache, [page]: nextArticles };
@@ -116,8 +140,38 @@ export default class Timeline extends Component {
     }
   };
 
+  resetArticles() {
+    const { order } = this.state;
+
+    let nextState;
+    if (order === 'asc') {
+      nextState = {
+        articles: [],
+        months: MONTHS_ASC
+      };
+    } else {
+      nextState = {
+        articles: INITIAL_ARTICLES,
+        months: MONTHS_DESC
+      };
+    }
+
+    this.setState(
+      {
+        ...nextState,
+        hasNext: true,
+        source: 'all'
+      },
+      () => {
+        window.scrollTo(0, 0);
+
+        return order === 'asc' && this.loadArticles();
+      }
+    );
+  }
+
   render() {
-    const { articles, hasNext, order } = this.state;
+    const { articles, hasNext, order, source } = this.state;
 
     const groupedArticles = groupBy(articles, ({ publishDate }) =>
       publishDate.slice(0, 7)
@@ -132,7 +186,12 @@ export default class Timeline extends Component {
           [styles.loaded]: !hasNext
         })}
       >
-        <Sort onClick={this.handleSortChange} order={order} />
+        <Header
+          onSourceChange={this.handleSourceChange}
+          onSortChange={this.handleSortChange}
+          order={order}
+          source={source}
+        />
         <section className={styles.root}>
           {map(groupedArticles, (group, month) => {
             const sectionArticles = groupBy(group, 'publishDate');
