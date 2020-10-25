@@ -31,7 +31,7 @@
 .button,
 .menu {
   font-size: 14px;
-  width: 222px;
+  width: 232px;
 }
 
 .button {
@@ -71,10 +71,9 @@
   padding: 0;
 }
 
-.item:first-child {
+.item.all {
   align-items: center;
   display: flex;
-  height: 40px;
 }
 
 .avatar {
@@ -90,9 +89,9 @@
   border-bottom: 0;
 }
 
-.item:first-child,
+.item.all,
 .item > div {
-  padding: 4px 16px;
+  padding: 8px 16px;
 }
 
 .item[data-selected] {
