@@ -3,6 +3,7 @@
   background-color: rgba(255, 255, 255, 0.8);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   display: flex;
+  height: 66px;
   position: sticky;
   top: 0;
   width: 100%;
@@ -30,7 +31,7 @@
 .button,
 .menu {
   font-size: 14px;
-  width: 182px;
+  width: 222px;
 }
 
 .button {
@@ -48,6 +49,10 @@
   flex: 2;
 }
 
+.button span:first-child > div {
+  padding: 0;
+}
+
 .menu[data-reach-menu-list],
 .menu[data-reach-menu-items] {
   animation: slide-down 0.2s ease;
@@ -57,11 +62,41 @@
 }
 
 .item {
+  border-bottom: 1px solid rgb(0, 0, 0, 0.1);
+  color: #666;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1;
+  padding: 0;
+}
+
+.item:first-child {
+  align-items: center;
+  display: flex;
+  height: 40px;
+}
+
+.avatar {
+  background-color: rgb(0, 0, 0, 0.1);
+  border-radius: 100%;
+  flex: 0 0 32px;
+  height: 32px;
+  margin-right: 10px;
+  width: 32px;
+}
+
+.item:last-child {
+  border-bottom: 0;
+}
+
+.item:first-child,
+.item > div {
   padding: 4px 16px;
 }
 
 .item[data-selected] {
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(0, 0, 0, 0.1);
+  color: #666;
 }
 
 .arrow {

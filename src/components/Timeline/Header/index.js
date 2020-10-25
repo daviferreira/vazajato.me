@@ -5,6 +5,7 @@ import map from 'lodash.map';
 
 import { Menu, MenuList, MenuButton, MenuItem } from '@reach/menu-button';
 import Sort from '../../Sort';
+import Source from '../..//Timeline/Section/Article/Source';
 
 import sources from '../../../data/sources';
 
@@ -32,7 +33,11 @@ const Header = ({ onSourceChange, onSortChange, order, source }) => (
               }
             >
               <span>
-                {source === 'all' ? 'Todos os veículos' : sources[source].name}{' '}
+                {source === 'all' ? (
+                  'Todos os veículos'
+                ) : (
+                  <Source source={source} />
+                )}
               </span>
               <span aria-hidden>
                 <Arrow
@@ -48,7 +53,8 @@ const Header = ({ onSourceChange, onSortChange, order, source }) => (
                 key="all"
                 onSelect={() => onSourceChange('all')}
               >
-                Todos os veículos
+                <div className={styles.avatar} />
+                <span>Todos os veículos</span>
               </MenuItem>
               {map(sourceKeys, (key) => (
                 <MenuItem
@@ -56,7 +62,7 @@ const Header = ({ onSourceChange, onSortChange, order, source }) => (
                   key={key}
                   onSelect={() => onSourceChange(key)}
                 >
-                  {sources[key].name}
+                  <Source source={key} />
                 </MenuItem>
               ))}
             </MenuList>
