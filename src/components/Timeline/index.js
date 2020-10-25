@@ -57,7 +57,7 @@ export default class Timeline extends Component {
     });
   };
 
-  handleSourceChange = async source => {
+  handleSourceChange = source => {
     const { order, source: currentSource } = this.state;
 
     if (source === currentSource) {
@@ -66,20 +66,29 @@ export default class Timeline extends Component {
       return this.resetArticles();
     }
 
-    try {
-      const response = await fetch(`/pages/sources/${source}.json`);
+    this.setState(
+      {
+        isLoading: true
+      },
+      async () => {
+        window.scrollTo(0, 0);
 
-      const articles = await response.json();
+        try {
+          const response = await fetch(`/pages/sources/${source}.json`);
 
-      return this.setState({
-        articles: order === 'desc' ? articles.slice().reverse() : articles,
-        hasNext: false,
-        isLoading: false,
-        source
-      });
-    } catch (err) {
-      return this.setState({ isLoading: false });
-    }
+          const articles = await response.json();
+
+          return this.setState({
+            articles: order === 'desc' ? articles.slice().reverse() : articles,
+            hasNext: false,
+            isLoading: false,
+            source
+          });
+        } catch (err) {
+          return this.setState({ isLoading: false });
+        }
+      }
+    );
   };
 
   handleLoadNext = inView => {

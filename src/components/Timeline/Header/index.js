@@ -12,9 +12,8 @@ const sourceKeys = Object.keys(SOURCES).sort();
 
 const Header = ({ onSourceChange, onSortChange, order, source }) => (
   <div className={styles.root}>
-    <h1>Linha do tempo da VazaJato</h1>
     <div className={styles.filter}>
-      <label htmlFor="filter-source">Veículo:</label>
+      <label htmlFor="filter-source">Filtrar por veículo:</label>
       <select
         defaultValue={source}
         id="filter-source"

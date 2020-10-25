@@ -1,7 +1,7 @@
 .root {
   align-items: stretch;
-  background-color: #e1e1e1;
-  border-bottom: 1px solid #ccc;
+  background-color: rgb(237, 237, 237);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   display: flex;
   position: sticky;
   top: 0;
@@ -9,19 +9,12 @@
   z-index: 100;
 }
 
-.root h1 {
-  font-size: 16px;
-  margin: 0;
-  padding: 20px;
-}
-
 .filter {
-  border-left: 1px solid #ccc;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 16px;
-  padding: 0 16px;
+  padding: 16px;
 }
 
 .filter label {
@@ -43,7 +36,7 @@
   }
 
   .filter {
-    border-left-color: rgba(255, 255, 255, 0.2);
+    border-right-color: rgba(255, 255, 255, 0.2);
   }
 }
 
