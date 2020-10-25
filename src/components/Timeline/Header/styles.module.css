@@ -41,6 +41,7 @@
   border: 0;
   cursor: pointer;
   display: flex;
+  height: 100%;
   padding: 16px;
   text-align: left;
 }
@@ -120,6 +121,10 @@
     border-bottom-color: rgba(255, 255, 255, 0.2);
   }
 
+  .item {
+    color: #fff;
+  }
+
   .item[data-selected] {
     background-color: #8899a5;
     color: #000;
@@ -132,6 +137,10 @@
 
   .filter {
     border-right-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .avatar {
+    background-color: rgba(255, 255, 255, 0.2);
   }
 
   .arrow path {
