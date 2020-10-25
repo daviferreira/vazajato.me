@@ -6,14 +6,14 @@ import map from 'lodash.map';
 import { Menu, MenuList, MenuButton, MenuItem } from '@reach/menu-button';
 import Sort from '../../Sort';
 
-import { SOURCES } from '../constants';
+import sources from '../../../data/sources';
 
 import Arrow from './arrow.svg';
 
 import '@reach/menu-button/styles.css';
 import styles from './styles.module.css';
 
-const sourceKeys = Object.keys(SOURCES).sort();
+const sourceKeys = Object.keys(sources).sort();
 
 const Header = ({ onSourceChange, onSortChange, order, source }) => (
   <div className={styles.root}>
@@ -21,9 +21,18 @@ const Header = ({ onSourceChange, onSortChange, order, source }) => (
       <Menu>
         {({ isExpanded }) => (
           <>
-            <MenuButton className={styles.button}>
+            <MenuButton
+              className={styles.button}
+              style={
+                source !== 'all'
+                  ? {
+                      boxShadow: `inset 0 -3px 0 ${sources[source].color}`,
+                    }
+                  : undefined
+              }
+            >
               <span>
-                {source === 'all' ? 'Todos os veículos' : SOURCES[source].name}{' '}
+                {source === 'all' ? 'Todos os veículos' : sources[source].name}{' '}
               </span>
               <span aria-hidden>
                 <Arrow
@@ -47,7 +56,7 @@ const Header = ({ onSourceChange, onSortChange, order, source }) => (
                   key={key}
                   onSelect={() => onSourceChange(key)}
                 >
-                  {SOURCES[key].name}
+                  {sources[key].name}
                 </MenuItem>
               ))}
             </MenuList>
