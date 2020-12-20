@@ -87,6 +87,8 @@ const getSource = (url) => {
     source = 'buzzfeed';
   } else if (url.includes('ggreenwald')) {
     source = 'glenn';
+  } else if (url.includes('cnnbrasil')) {
+    source = 'cnn';
   }
 
   return source;

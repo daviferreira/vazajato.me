@@ -48,5 +48,10 @@
     "name": "Mônica Bergamo",
     "url": "https://www1.folha.uol.com.br/colunas/monicabergamo/",
     "color": "#1C7AA2"
+  },
+  "cnn": {
+    "name": "CNN Brasil",
+    "url": "https://www.cnnbrasil.com.br/",
+    "color": "#b80200"
   }
 }
