@@ -1,6 +1,7 @@
 const groupBy = require('lodash.groupby');
 const map = require('lodash.map');
 const fs = require('fs');
+const slugify = require('slugify');
 
 const DIR = 'public/pages/';
 
@@ -17,6 +18,49 @@ function createSourcePages(articles) {
 
     // eslint-disable-next-line
     console.log(`\nCreated ${source}.json.`);
+  });
+}
+
+function createTopicPages(articles) {
+  const topicsData = {};
+  const topicsPage = [];
+
+  articles.forEach((article) => {
+    article.topics = article.topics.map((topic) => {
+      if (topic && !topicsPage.includes(topic)) {
+        topicsPage.push(topic);
+      }
+      return slugify(topic).toLowerCase().trim();
+    });
+
+    article.topics.forEach((topic) => {
+      if (topic) {
+        if (topicsData[topic]) {
+          topicsData[topic].push(article);
+        } else {
+          topicsData[topic] = [article];
+        }
+      }
+    });
+  });
+
+  createJSON({
+    path: `topics`,
+    context: {
+      pageArticles: topicsPage.sort((a, b) => a.localeCompare(b)),
+    },
+  });
+
+  map(topicsData, (group, topic) => {
+    createJSON({
+      path: `topics/${topic}`,
+      context: {
+        pageArticles: group,
+      },
+    });
+
+    // eslint-disable-next-line
+    console.log(`\nCreated ${topic}.json.`);
   });
 }
 
@@ -72,6 +116,10 @@ function createJSON({
     fs.mkdirSync(`${DIR}sources`);
   }
 
+  if (!fs.existsSync(`${DIR}topics`)) {
+    fs.mkdirSync(`${DIR}topics`);
+  }
+
   const filePath = `${DIR}${path}.json`;
   const dataToSave = JSON.stringify(pageArticles);
 
@@ -95,6 +143,7 @@ exports.createPages = ({ graphql, actions }) => {
             url
             publishDate
             source
+            topics
           }
         }
       }
@@ -109,6 +158,7 @@ exports.createPages = ({ graphql, actions }) => {
     return Promise.all([
       createArticlesPagination(articles),
       createSourcePages(articles),
+      createTopicPages(articles),
     ]);
   });
 };

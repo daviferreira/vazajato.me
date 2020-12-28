@@ -3,6 +3,7 @@ import groupBy from 'lodash.groupby';
 import map from 'lodash.map';
 import React, { Component } from 'react';
 import { InView } from 'react-intersection-observer';
+import slugify from 'slugify';
 
 import Footer from '../Footer';
 import Section from './Section';
@@ -35,6 +36,7 @@ export default class Timeline extends Component {
     months: MONTHS_DESC,
     order: 'desc',
     source: 'all',
+    topic: null,
   };
 
   handleSortChange = () => {
@@ -81,12 +83,50 @@ export default class Timeline extends Component {
         isLoading: true,
         isLoadingArticles: true,
         source,
+        topic: null,
       },
       async () => {
         window.scrollTo(0, 0);
 
         try {
           const response = await fetch(`/pages/sources/${source}.json`);
+
+          const articles = await response.json();
+
+          return this.setState({
+            articles: order === 'desc' ? articles.slice().reverse() : articles,
+            isLoading: false,
+            isLoadingArticles: false,
+          });
+        } catch (err) {
+          return this.setState({ isLoading: false, isLoadingArticles: false });
+        }
+      }
+    );
+  };
+
+  handleTopicChange = (topic) => {
+    const { order, topic: currentTopic } = this.state;
+
+    if (topic === currentTopic) {
+      return;
+    } else if (!topic) {
+      return this.resetArticles();
+    }
+
+    this.setState(
+      {
+        hasNext: false,
+        isLoading: true,
+        isLoadingArticles: true,
+        source: 'all',
+        topic,
+      },
+      async () => {
+        window.scrollTo(0, 0);
+
+        try {
+          const response = await fetch(`/pages/topics/${slugify(topic)}.json`);
 
           const articles = await response.json();
 
@@ -181,6 +221,7 @@ export default class Timeline extends Component {
         ...nextState,
         hasNext: true,
         source: 'all',
+        topic: null,
       },
       () => {
         window.scrollTo(0, 0);
@@ -191,7 +232,14 @@ export default class Timeline extends Component {
   }
 
   render() {
-    const { articles, hasNext, isLoadingArticles, order, source } = this.state;
+    const {
+      articles,
+      hasNext,
+      isLoadingArticles,
+      order,
+      source,
+      topic,
+    } = this.state;
 
     const groupedArticles = groupBy(articles, ({ publishDate }) =>
       publishDate.slice(0, 7)
@@ -209,8 +257,10 @@ export default class Timeline extends Component {
         <Header
           onSourceChange={this.handleSourceChange}
           onSortChange={this.handleSortChange}
+          onTopicChange={this.handleTopicChange}
           order={order}
           source={source}
+          topic={topic}
         />
         {isLoadingArticles ? (
           <div className={styles.loaderContainer} style={{ paddingTop: 120 }}>

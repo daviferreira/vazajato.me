@@ -4,7 +4,7 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   display: flex;
   height: 66px;
-  justify-content: space-between;
+  justify-content: flex-start;
   position: sticky;
   top: 0;
   width: 100%;
@@ -24,6 +24,8 @@
 
 .sort {
   border-left: 1px solid rgba(0, 0, 0, 0.1);
+  justify-self: flex-end;
+  margin-left: auto;
   padding: 0 16px;
 }
 
@@ -44,6 +46,11 @@
   width: 232px;
 }
 
+.topics {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
 .button {
   align-items: center;
   appearance: none;
@@ -57,7 +64,12 @@
 }
 
 .button span:first-child {
+  display: block;
   flex: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre;
+  width: 100%;
 }
 
 .button span:first-child > div {

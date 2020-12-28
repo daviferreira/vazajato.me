@@ -49,6 +49,7 @@
     "prompts": "^2.3.2",
     "short-uuid": "^4.1.0",
     "signale": "^1.4.0",
+    "slugify": "^1.4.6",
     "stylelint": "^13.7.2",
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-order": "^4.1.0"
