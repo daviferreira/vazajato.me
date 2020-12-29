@@ -41,6 +41,9 @@ const Image = ({ alt, id }) => {
       cnn: file(relativePath: { eq: "sources/cnn.jpg" }) {
         ...sourceImage
       }
+      conjur: file(relativePath: { eq: "sources/conjur.png" }) {
+        ...sourceImage
+      }
     }
   `);
 

@@ -53,5 +53,10 @@
     "name": "CNN Brasil",
     "url": "https://www.cnnbrasil.com.br/",
     "color": "#b80200"
+  },
+  "conjur": {
+    "name": "Consultor Jurídico",
+    "url": "https://www.conjur.com.br/",
+    "color": "#1e5994"
   }
 }

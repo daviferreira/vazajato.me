@@ -32,9 +32,16 @@ let interval;
       name: 'publishDate',
       message: `E a data? (YYYY-MM-DD - Deixe em branco pra hoje).`,
     },
+    {
+      type: 'list',
+      name: 'topics',
+      message: 'Tópicos, separados por vírgula:',
+      initial: '',
+      separator: ',',
+    },
   ];
 
-  const { url, publishDate } = await prompt(questions, {
+  const { url, publishDate, topics } = await prompt(questions, {
     onCancel: cleanup,
     onSubmit: cleanup,
   });
@@ -46,7 +53,7 @@ let interval;
   }
 
   try {
-    await fetchArticle(url, publishDate);
+    await fetchArticle(url, publishDate, topics);
   } catch (err) {
     return signale.fatal(err);
   }
@@ -89,12 +96,14 @@ const getSource = (url) => {
     source = 'glenn';
   } else if (url.includes('cnnbrasil')) {
     source = 'cnn';
+  } else if (url.includes('conjur')) {
+    source = 'conjur';
   }
 
   return source;
 };
 
-const fetchArticle = async (url, date) => {
+const fetchArticle = async (url, date, topics) => {
   const source = getSource(url);
 
   if (!source) {
@@ -121,6 +130,7 @@ const fetchArticle = async (url, date) => {
     url,
     publishDate,
     source,
+    topics,
   };
 
   signale.success('Meta dados adquiridos');
