@@ -691,7 +691,13 @@
     "url": "https://reinaldoazevedo.blogosfera.uol.com.br/2019/09/16/ilegal-e-imoral-3-escritorio-de-advogado-atua-para-acionistas-da-petrobras/",
     "publishDate": "2019-09-16",
     "source": "reinaldoazevedo",
-    "topics": ["STF", "Modesto Carvalhosa", "Thaméa Danelon", "Gilmar Mendes"]
+    "topics": [
+      "STF",
+      "Modesto Carvalhosa",
+      "Thaméa Danelon",
+      "Gilmar Mendes",
+      "Petrobras"
+    ]
   },
   {
     "id": "reinaldoazevedo5hD7u9svb4nEhz6kbSTYR2",
@@ -915,7 +921,7 @@
     "url": "https://apublica.org/2020/03/desde-2015,-lava-jato-discutia-repartir-multa-da-petrobras-com-americanos",
     "publishDate": "2020-03-12",
     "source": "apublica",
-    "topics": ["FBI"]
+    "topics": ["FBI", "Petrobras"]
   },
   {
     "id": "intercept65VSV2XLjBM3Sa8jmxA5xo",
