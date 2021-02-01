@@ -44,6 +44,9 @@ const Image = ({ alt, id }) => {
       conjur: file(relativePath: { eq: "sources/conjur.png" }) {
         ...sourceImage
       }
+      forum: file(relativePath: { eq: "sources/forum.png" }) {
+        ...sourceImage
+      }
     }
   `);
 

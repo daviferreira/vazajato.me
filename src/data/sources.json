@@ -58,5 +58,10 @@
     "name": "Consultor Jurídico",
     "url": "https://www.conjur.com.br/",
     "color": "#1e5994"
+  },
+  "forum": {
+    "name": "Fórum",
+    "url": "https://revistaforum.com.br/",
+    "color": "#b12023"
   }
 }

@@ -98,6 +98,8 @@ const getSource = (url) => {
     source = 'cnn';
   } else if (url.includes('conjur')) {
     source = 'conjur';
+  } else if (url.includes('revistaforum')) {
+    source = 'forum';
   }
 
   return source;
