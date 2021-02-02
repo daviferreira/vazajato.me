@@ -90,7 +90,7 @@ const Header = ({
               <Arrow className={styles.arrow} />
             </span>
           </MenuButton>
-          <MenuList className={classnames(styles.menu, styles.topics)}>
+          <MenuList className={styles.menu}>
             {!!topic && (
               <MenuItem
                 className={classnames(styles.item, styles.all)}
