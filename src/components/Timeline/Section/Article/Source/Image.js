@@ -47,6 +47,9 @@ const Image = ({ alt, id }) => {
       forum: file(relativePath: { eq: "sources/forum.png" }) {
         ...sourceImage
       }
+      estadao: file(relativePath: { eq: "sources/estadao.jpg" }) {
+        ...sourceImage
+      }
     }
   `);
 

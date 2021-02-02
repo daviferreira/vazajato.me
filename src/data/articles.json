@@ -1122,5 +1122,13 @@
     "publishDate": "2021-02-01",
     "source": "conjur",
     "topics": ["Lula", "STF", "Moro"]
+  },
+  {
+    "id": "estadaosnvC7eExfnoVTH6bbLTeou",
+    "title": "Dallagnol chama Lula de ‘Madre Teresa do Guarujá’ em conversa com procuradores",
+    "url": "https://politica.estadao.com.br/blogs/coluna-do-estadao/dallagnol-chama-lula-de-madre-teresa-do-guaruja-em-conversa-com-procuradores/",
+    "publishDate": "2021-02-01",
+    "source": "estadao",
+    "topics": ["Lula", "Deltan Dallagnol", "Triplex"]
   }
 ]

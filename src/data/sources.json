@@ -63,5 +63,10 @@
     "name": "Fórum",
     "url": "https://revistaforum.com.br/",
     "color": "#b12023"
+  },
+  "estadao": {
+    "name": "Estadão",
+    "url": "https://www.estadao.com.br/",
+    "color": "#2e73e7"
   }
 }

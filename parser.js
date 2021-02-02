@@ -98,6 +98,8 @@ const getSource = (url) => {
     source = 'conjur';
   } else if (url.includes('revistaforum')) {
     source = 'forum';
+  } else if (url.includes('estadao')) {
+    source = 'estadao';
   }
 
   return source;
@@ -137,10 +139,14 @@ const fetchArticle = async (url, date, topics) => {
 
   signale.pending('Baixando imagem de capa');
 
-  await download.image({
-    url: image,
-    dest: path.join(__dirname, `/src/images/articles/${id}.jpg`),
-  });
+  try {
+    await download.image({
+      url: image,
+      dest: path.join(__dirname, `/src/images/articles/${id}.jpg`),
+    });
+  } catch (err) {
+    return signale.fatal(err);
+  }
 
   signale.success('Download da image de capa realizado com sucesso');
 
