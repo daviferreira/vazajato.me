@@ -13,9 +13,7 @@ const uuid = require('short-uuid');
 const articlesData = require('./src/data/articles.json');
 
 const prettierOptions = {
-  arrowParens: 'avoid',
   singleQuote: true,
-  trailingComma: 'none',
 };
 
 let interval;
