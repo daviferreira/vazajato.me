@@ -1138,5 +1138,13 @@
     "publishDate": "2021-02-02",
     "source": "conjur",
     "topics": ["Toffoli"]
+  },
+  {
+    "id": "uolck8VKGKyrKXSEhxMAprrSU",
+    "title": "Elogio de Dodge e 51: a reação da Lava Jato à operação contra Lula em sítio",
+    "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2021/02/03/elogio-de-dodge-e-foto-de-51-o-chat-da-lava-jato-apos-operacao-em-sitio.htm",
+    "publishDate": "2021-02-03",
+    "source": "uol",
+    "topics": ["Sítio", "Lula", "Raquel Dodge"]
   }
 ]
