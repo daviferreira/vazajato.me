@@ -68,5 +68,10 @@
     "name": "Estadão",
     "url": "https://www.estadao.com.br/",
     "color": "#2e73e7"
+  },
+  "migalhas": {
+    "name": "Migalhas",
+    "url": "https://migalhas.uol.com.br/",
+    "color": "#be1722"
   }
 }

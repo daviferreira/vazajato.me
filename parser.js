@@ -72,6 +72,8 @@ const getSource = (url) => {
     source = 'monicabergamo';
   } else if (url.includes('folha.uol.com.br')) {
     source = 'folha';
+  } else if (url.includes('migalhas.uol.com.br')) {
+    source = 'migalhas';
   } else if (url.includes('colunas/reinaldo-azevedo')) {
     source = 'reinaldoazevedo';
   } else if (url.includes('uol.com.br')) {
