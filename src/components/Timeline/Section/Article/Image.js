@@ -702,6 +702,11 @@ const Image = ({ alt, id }) => {
       ) {
         ...articleImage
       }
+      elpais6uXzaUy3xCFbbytgL5u4yS: file(
+        relativePath: { eq: "articles/elpais6uXzaUy3xCFbbytgL5u4yS.jpg" }
+      ) {
+        ...articleImage
+      }
       # NEW IMAGE PLACEHOLDER
     }
   `);
