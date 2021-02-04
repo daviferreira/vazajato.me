@@ -1212,11 +1212,11 @@
   },
   {
     "id": "monicabergamoicZLs8rFGaM3CuMYn58P3A",
-    "title": "Deltan não se sentia 'confortável' em defender amigo de Moro acusado de caixa dois para influir na Lava Jato, revelam diálogos",
+    "title": "Procurador da Lava Jato não se sentia 'confortável' em defender amigo de Moro acusado de caixa dois para influir na Lava Jato, revelam diálogos",
     "url": "https://www1.folha.uol.com.br/colunas/monicabergamo/2021/02/deltan-nao-se-sentia-confortavel-em-defender-amigo-de-moro-acusado-de-caixa-dois-para-influir-na-lava-jato-revelam-dialogos.shtml",
     "publishDate": "2021-02-04",
     "source": "monicabergamo",
-    "topics": ["Deltan Dallagnol", "Moro", "Zucolotto"]
+    "topics": ["Moro", "Zucolotto"]
   },
   {
     "id": "elpais6uXzaUy3xCFbbytgL5u4yS",
@@ -1225,5 +1225,13 @@
     "publishDate": "2021-02-04",
     "source": "elpais",
     "topics": ["Moro", "Lula"]
+  },
+  {
+    "id": "conjuro5BruJYDiskRrme8WvMcJs",
+    "title": "Procurador da \"lava jato\" pede na Justiça censura contra Valor Econômico",
+    "url": "https://www.conjur.com.br/2020-ago-04/procurador-lava-jato-justica-censura-valor-economico",
+    "publishDate": "2021-02-04",
+    "source": "conjur",
+    "topics": ["Januário Paludo"]
   }
 ]
