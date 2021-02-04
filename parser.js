@@ -70,6 +70,8 @@ const getSource = (url) => {
 
   if (url.includes('monicabergamo')) {
     source = 'monicabergamo';
+  } else if (url.includes('jamil-chade')) {
+    source = 'jamilchade';
   } else if (url.includes('folha.uol.com.br')) {
     source = 'folha';
   } else if (url.includes('migalhas.uol.com.br')) {

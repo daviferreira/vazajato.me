@@ -53,6 +53,9 @@ const Image = ({ alt, id }) => {
       migalhas: file(relativePath: { eq: "sources/migalhas.jpg" }) {
         ...sourceImage
       }
+      jamilchade: file(relativePath: { eq: "sources/jamilchade.jpg" }) {
+        ...sourceImage
+      }
     }
   `);
 

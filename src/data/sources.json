@@ -73,5 +73,10 @@
     "name": "Migalhas",
     "url": "https://migalhas.uol.com.br/",
     "color": "#be1722"
+  },
+  "jamilchade": {
+    "name": "Jamil Chade",
+    "url": "https://noticias.uol.com.br/colunas/jamil-chade/",
+    "color": "#434FDB"
   }
 }
