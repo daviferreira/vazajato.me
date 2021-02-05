@@ -104,6 +104,8 @@ const getSource = (url) => {
     source = 'forum';
   } else if (url.includes('estadao')) {
     source = 'estadao';
+  } else if (url.includes('cartacapital')) {
+    source = 'cartacapital';
   }
 
   return source;

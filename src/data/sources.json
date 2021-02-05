@@ -78,5 +78,10 @@
     "name": "Jamil Chade",
     "url": "https://noticias.uol.com.br/colunas/jamil-chade/",
     "color": "#434FDB"
+  },
+  "cartacapital": {
+    "name": "Carta Capital",
+    "url": "https://www.cartacapital.com.br/",
+    "color:": "#ff0000"
   }
 }
