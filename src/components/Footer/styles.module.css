@@ -101,7 +101,7 @@
     justify-content: center;
     left: 20px;
     line-height: 1;
-    opacity: 0.2;
+    opacity: 0.6;
     position: fixed;
     transition: opacity 0.2s;
     width: 18px;
@@ -170,6 +170,7 @@
     color: #15202b;
   }
 
+  .pdf path,
   .spreadsheet path {
     fill: #fff;
   }
