@@ -732,6 +732,11 @@ const Image = ({ alt, id }) => {
       ) {
         ...articleImage
       }
+      metropoles3BRhvxuSXH6QqoSbMQYXaK: file(
+        relativePath: { eq: "articles/metropoles3BRhvxuSXH6QqoSbMQYXaK.jpg" }
+      ) {
+        ...articleImage
+      }
       # NEW IMAGE PLACEHOLDER
     }
   `);

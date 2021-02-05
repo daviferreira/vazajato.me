@@ -106,6 +106,8 @@ const getSource = (url) => {
     source = 'estadao';
   } else if (url.includes('cartacapital')) {
     source = 'cartacapital';
+  } else if (url.includes('metropoles')) {
+    source = 'metropoles';
   }
 
   return source;

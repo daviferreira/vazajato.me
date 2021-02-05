@@ -83,5 +83,10 @@
     "name": "Carta Capital",
     "url": "https://www.cartacapital.com.br/",
     "color:": "#ff0000"
+  },
+  "metropoles": {
+    "name": "Metrópoles",
+    "url": "https://www.metropoles.com/",
+    "color:": "#c32519"
   }
 }
