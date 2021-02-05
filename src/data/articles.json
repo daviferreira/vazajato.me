@@ -1241,5 +1241,21 @@
     "publishDate": "2021-02-04",
     "source": "uol",
     "topics": ["Triplex", "Lula"]
+  },
+  {
+    "id": "cnnjUp5YYRM4C47oNVuXW82YJ",
+    "title": "Novas mensagens mostram intenção da Lava Jato de investigar ministros do STJ",
+    "url": "https://www.cnnbrasil.com.br/politica/2021/02/04/novas-mensagens-mostram-intencao-da-lava-jato-de-investigar-ministros-do-stj",
+    "publishDate": "2021-02-04",
+    "source": "cnn",
+    "topics": ["Moro", "Receita", "STJ"]
+  },
+  {
+    "id": "conjurayfASrde3ydx3xEJtTYmVn",
+    "title": "Delação de Palocci: procuradores viram tentativa de Moro influenciar as eleições",
+    "url": "https://www.conjur.com.br/2021-fev-04/procuradores-viram-tentativa-moro-influenciar-eleicoes",
+    "publishDate": "2021-02-04",
+    "source": "conjur",
+    "topics": ["Palocci", "Moro"]
   }
 ]
