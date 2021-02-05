@@ -40,7 +40,8 @@
 }
 
 .about,
-.spreadsheet {
+.spreadsheet,
+.pdf {
   display: none;
 }
 
@@ -90,7 +91,8 @@
   }
 
   .about,
-  .spreadsheet {
+  .spreadsheet,
+  .pdf {
     align-items: center;
     border-radius: 100%;
     cursor: pointer;
@@ -118,15 +120,22 @@
     bottom: 60px;
   }
 
+  .pdf {
+    bottom: 100px;
+  }
+
+  .pdf svg,
   .spreadsheet svg {
     height: 18px;
     width: 18px;
   }
 
+  .pdf path,
   .spreadsheet path {
     fill: #000;
   }
 
+  .pdf:hover,
   .spreadsheet:hover,
   .about:hover,
   .about.active {

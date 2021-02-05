@@ -1,6 +1,7 @@
 import classnames from 'classnames';
 import React, { useState } from 'react';
 
+import Pdf from './pdf.svg';
 import Spreadsheet from './spreadsheet.svg';
 
 import styles from './styles.module.css';
@@ -32,6 +33,15 @@ const Footer = () => {
         title="Planilha de dados"
       >
         <Spreadsheet />
+      </a>
+      <a
+        className={styles.pdf}
+        href="https://www.dropbox.com/sh/kpuj56unr06o7dp/AADJDKujsfgtEWFE-_2SAMwia?dl=0"
+        rel="noopener noreferrer"
+        target="_blank"
+        title="Arquivos com diálogos"
+      >
+        <Pdf />
       </a>
       <div
         className={classnames(styles.about, {
