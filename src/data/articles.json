@@ -1321,5 +1321,13 @@
     "publishDate": "2021-02-08",
     "source": "conjur",
     "topics": ["Receita", "STJ"]
+  },
+  {
+    "id": "monicabergamoiUgYBwvACqNoW42d9FeW6n",
+    "title": "Defesa de Lula envia novas mensagens ao STF e diz que Lava Jato adotou modelo 'pesque e pague' para obter informações da Receita",
+    "url": "https://www1.folha.uol.com.br/colunas/monicabergamo/2021/02/defesa-de-lula-envia-novas-mensagens-ao-stf-e-diz-que-lava-jato-adotou-modelo-pesque-e-pague-para-obter-informacoes-da-receita.shtml",
+    "publishDate": "2021-02-08",
+    "source": "monicabergamo",
+    "topics": ["Receita", "STF"]
   }
 ]
