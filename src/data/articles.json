@@ -1394,5 +1394,13 @@
     "publishDate": "2021-02-09",
     "source": "conjur",
     "topics": ["Imprensa"]
+  },
+  {
+    "id": "intercept8gVvzAndSd4z2spETJxVvd",
+    "title": "O namoro entre a Lava Jato e a Rede Globo",
+    "url": "https://theintercept.com/2021/02/09/namoro-lava-jato-rede-globo/",
+    "publishDate": "2021-02-09",
+    "source": "intercept",
+    "topics": ["Globo", "Imprensa"]
   }
 ]
