@@ -1361,5 +1361,13 @@
     "publishDate": "2021-02-08",
     "source": "conjur",
     "topics": ["Lula", "CIA"]
+  },
+  {
+    "id": "uol6YUfBKA4L1rURubnMi2zEX",
+    "title": "Perícia de Lula vê como autêntico arquivo que mostra Moro instruindo Deltan",
+    "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2021/02/01/dialogos-moro-dallagnol-operacao-spoofing.htm",
+    "publishDate": "2021-02-01",
+    "source": "uol",
+    "topics": ["Moro", "Deltan Dallagnol"]
   }
 ]
