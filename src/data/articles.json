@@ -1337,5 +1337,13 @@
     "publishDate": "2021-02-08",
     "source": "uol",
     "topics": ["Lula"]
+  },
+  {
+    "id": "conjuriMRKAN4B78YeFqw5UWRNZV",
+    "title": "Curitiba tentou coagir Rosa Weber com imprensa e Sergio Moro",
+    "url": "https://www.conjur.com.br/2021-fev-08/curitiba-tentou-coagir-rosa-weber-imprensa-sergio-moro",
+    "publishDate": "2021-02-08",
+    "source": "conjur",
+    "topics": ["Moro", "Rosa Weber"]
   }
 ]
