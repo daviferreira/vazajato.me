@@ -61,7 +61,7 @@
     "url": "https://theintercept.com/2019/06/14/sergio-moro-enquanto-julgava-lula-sugeriu-a-lava-jato-emitir-uma-nota-oficial-contra-a-defesa-eles-acataram-e-pautaram-a-imprensa/",
     "publishDate": "2019-06-15",
     "source": "intercept",
-    "topics": ["Moro", "Lula"]
+    "topics": ["Moro", "Lula", "Imprensa"]
   },
   {
     "id": "intercept7",
@@ -1041,7 +1041,7 @@
     "url": "https://brasil.elpais.com/brasil/2020-10-23/vaza-jato-a-investigacao-que-obrigou-a-imprensa-brasileira-se-olhar-no-espelho.html",
     "publishDate": "2020-10-23",
     "source": "elpais",
-    "topics": ["Meta"]
+    "topics": ["Meta", "Imprensa"]
   },
   {
     "id": "elpais4kYrXYsKyWWpN8cyPWtMsD",
@@ -1159,7 +1159,8 @@
       "Triplex",
       "Lula",
       "Léo Pinheiro",
-      "OAS"
+      "OAS",
+      "Imprensa"
     ]
   },
   {
@@ -1296,7 +1297,7 @@
     "url": "https://www.conjur.com.br/2021-fev-05/conversa-entre-procuradores-mostra-uso-estrategico-vazamentos",
     "publishDate": "2021-02-05",
     "source": "conjur",
-    "topics": ["Moro", "Globo", "Deltan Dallagnol"]
+    "topics": ["Moro", "Globo", "Deltan Dallagnol", "Imprensa"]
   },
   {
     "id": "uolwVri86hCipe6ctDG4uryEs",
@@ -1344,7 +1345,7 @@
     "url": "https://www.conjur.com.br/2021-fev-08/curitiba-tentou-coagir-rosa-weber-imprensa-sergio-moro",
     "publishDate": "2021-02-08",
     "source": "conjur",
-    "topics": ["Moro", "Rosa Weber"]
+    "topics": ["Moro", "Rosa Weber", "Imprensa"]
   },
   {
     "id": "uolpdJvrghrqxyar8Jm33hdHW",
