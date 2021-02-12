@@ -1458,5 +1458,13 @@
     "publishDate": "2021-02-11",
     "source": "conjur",
     "topics": ["Imprensa"]
+  },
+  {
+    "id": "monicabergamooyW5YxAdm7Knr8tRAiaYDt",
+    "title": "'Precisamos atingir Lula na cabeça', diz procuradora em novas mensagens da Lava Jato entregues ao STF",
+    "url": "https://www1.folha.uol.com.br/colunas/monicabergamo/2021/02/precisamos-atingir-lula-na-cabeca-diz-procuradora-em-novas-mensagens-da-lava-jato-entregues-ao-stf.shtml",
+    "publishDate": "2021-02-12",
+    "source": "monicabergamo",
+    "topics": ["STJ", "Lula"]
   }
 ]
