@@ -9,8 +9,8 @@ const prettier = require('prettier');
 const signale = require('signale');
 const uuid = require('short-uuid');
 
-const articlesData = require('./src/data/articles.json');
-const sourcesData = require('./src/data/sources');
+const articlesData = require('../src/data/articles.json');
+const sourcesData = require('../src/data/sources');
 
 const prettierOptions = {
   singleQuote: true,

@@ -71,7 +71,7 @@
     "serve": "gatsby serve",
     "lint": "eslint . --cache --cache-location node_modules/.eslintcache && prettier --check '**/*.{js,css,json}' && stylelint './src/**/*.css'",
     "test": "npm run lint",
-    "import": "node import"
+    "import": "node ./tasks/import"
   },
   "repository": {
     "type": "git",
