@@ -20,6 +20,7 @@
 
 .filter {
   border-right: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .sort {
@@ -67,9 +68,9 @@
   display: block;
   flex: 2;
   overflow: hidden;
+  padding-right: 24px;
   text-overflow: ellipsis;
   white-space: pre;
-  width: 100%;
 }
 
 .button span:first-child > div {
@@ -130,6 +131,29 @@
   transform: rotate(-180deg);
 }
 
+.clear {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  height: 17px;
+  justify-content: center;
+  margin-left: 0.5em;
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 17px;
+  z-index: 3;
+}
+
+.clear svg {
+  transform: scale(1.4);
+}
+
+.clear svg path {
+  fill: #666;
+}
+
 @media (prefers-color-scheme: dark) {
   .menu[data-reach-menu-list],
   .menu[data-reach-menu-items],
@@ -168,6 +192,7 @@
     background-color: rgba(255, 255, 255, 0.2);
   }
 
+  .clear svg path,
   .arrow path {
     fill: #8899a5;
   }

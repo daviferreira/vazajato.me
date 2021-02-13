@@ -10,6 +10,7 @@ import sources from '../../../data/sources';
 import topics from '../../../../public/pages/topics';
 
 import Arrow from './arrow.svg';
+import Clear from './clear-circle.svg';
 
 import '@reach/menu-button/styles.css';
 import styles from './styles.module.css';
@@ -31,6 +32,18 @@ const Header = ({
   return (
     <div className={styles.root}>
       <div className={styles.filter}>
+        {!isAll && (
+          <span
+            className={styles.clear}
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              onSourceChange('all');
+            }}
+          >
+            <Clear />
+          </span>
+        )}
         <Menu>
           {({ isExpanded }) => (
             <>
@@ -56,16 +69,6 @@ const Header = ({
                 </span>
               </MenuButton>
               <MenuList className={styles.menu}>
-                {!isAll && (
-                  <MenuItem
-                    className={classnames(styles.item, styles.all)}
-                    key="all"
-                    onSelect={() => onSourceChange('all')}
-                  >
-                    <div className={styles.avatar} />
-                    <span>Todos os veículos</span>
-                  </MenuItem>
-                )}
                 {sourceKeys
                   .filter((key) => key !== source)
                   .map((key) => (
@@ -83,6 +86,18 @@ const Header = ({
         </Menu>
       </div>
       <div className={styles.filter}>
+        {!!topic && (
+          <span
+            className={styles.clear}
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              onTopicChange(null);
+            }}
+          >
+            <Clear />
+          </span>
+        )}
         <Menu>
           <MenuButton className={styles.button}>
             <span>{topic || 'Filtrar por tópico'}</span>
@@ -91,15 +106,6 @@ const Header = ({
             </span>
           </MenuButton>
           <MenuList className={styles.menu}>
-            {!!topic && (
-              <MenuItem
-                className={classnames(styles.item, styles.all)}
-                key="all"
-                onSelect={() => onTopicChange(null)}
-              >
-                <span>Todos os tópicos</span>
-              </MenuItem>
-            )}
             {topics.map((key) => (
               <MenuItem
                 className={styles.item}

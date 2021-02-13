@@ -54,9 +54,9 @@ export default class Timeline extends Component {
       this.props.location && this.props.location.search
     );
 
-    if (source && sourceKeys.includes(source)) {
+    if (source && (source === 'all' || sourceKeys.includes(source))) {
       this.handleSourceChange(source);
-    } else if (topic && topics.includes(topic)) {
+    } else if (!topic || topics.includes(topic)) {
       this.handleTopicChange(topic);
     }
   }
@@ -91,13 +91,16 @@ export default class Timeline extends Component {
   };
 
   handleSourceChange = (source) => {
-    const { location } = this.props;
+    const {
+      location: { pathname },
+    } = this.props;
     const { order, source: currentSource } = this.state;
 
     if (source === currentSource) {
       return;
     } else if (source === 'all') {
-      return this.resetArticles();
+      this.resetArticles();
+      return navigate(pathname);
     }
 
     this.setState(
@@ -116,7 +119,6 @@ export default class Timeline extends Component {
 
           const articles = await response.json();
 
-          const { pathname } = location;
           const url = `${pathname}?source=${encodeURIComponent(source)}`;
           navigate(url);
 
@@ -133,13 +135,16 @@ export default class Timeline extends Component {
   };
 
   handleTopicChange = (topic) => {
-    const { location } = this.props;
+    const {
+      location: { pathname },
+    } = this.props;
     const { order, topic: currentTopic } = this.state;
 
     if (topic === currentTopic) {
       return;
     } else if (!topic) {
-      return this.resetArticles();
+      this.resetArticles();
+      return navigate(pathname);
     }
 
     this.setState(
@@ -158,7 +163,6 @@ export default class Timeline extends Component {
 
           const articles = await response.json();
 
-          const { pathname } = location;
           const url = `${pathname}?topic=${encodeURIComponent(topic)}`;
           navigate(url);
 
