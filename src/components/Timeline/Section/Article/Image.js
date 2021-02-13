@@ -877,6 +877,11 @@ const Image = ({ alt, id }) => {
       ) {
         ...articleImage
       }
+      forumeRdjHm4aV8XwFzXmXC9xR6: file(
+        relativePath: { eq: "articles/forumeRdjHm4aV8XwFzXmXC9xR6.jpg" }
+      ) {
+        ...articleImage
+      }
       # NEW IMAGE PLACEHOLDER
     }
   `);
