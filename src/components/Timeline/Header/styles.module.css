@@ -343,6 +343,17 @@
   .root {
     display: none;
   }
+
+  .files {
+    font-size: 16px;
+    list-style: none;
+    margin: 40px 0 0;
+    padding: 0;
+  }
+
+  .files a {
+    color: #38444d;
+  }
 }
 
 @media screen and (max-width: 767px) and (prefers-color-scheme: dark) {
@@ -362,5 +373,9 @@
 
   .menuToggle input:checked ~ span {
     background-color: #fff;
+  }
+
+  .files a {
+    color: #fff;
   }
 }

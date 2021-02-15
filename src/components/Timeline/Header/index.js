@@ -92,6 +92,28 @@ const Header = ({
                 ? 'Mais recentes primeiro'
                 : 'Mais antigas primeiro'}
             </button>
+            <ul className={styles.files}>
+              <li>
+                <a
+                  className={styles.spreadsheet}
+                  href="https://docs.google.com/spreadsheets/d/1y9bixq_sZ5TOwwqfoagRKX4zCm1Ka6hXbch9qN6OtKI"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Planilha de dados
+                </a>
+              </li>
+              <li>
+                <a
+                  className={styles.pdf}
+                  href="https://www.dropbox.com/sh/kpuj56unr06o7dp/AADJDKujsfgtEWFE-_2SAMwia?dl=0"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Arquivos com diálogos
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
         <div className={styles.share}>
