@@ -1521,6 +1521,6 @@
     "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2021/02/15/lava-jato-fases-substituta-moro.htm",
     "publishDate": "15/02/2021",
     "source": "uol",
-    "topics": "Gabriela Hardt"
+    "topics": ["Gabriela Hardt"]
   }
 ]
