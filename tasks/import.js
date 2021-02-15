@@ -4,6 +4,7 @@ const domino = require('domino');
 const download = require('image-downloader');
 const fetch = require('node-fetch');
 const fs = require('fs');
+const moment = require('moment');
 const path = require('path');
 const prettier = require('prettier');
 const signale = require('signale');
@@ -49,7 +50,7 @@ function getArticle(data) {
       id,
       title,
       url,
-      publishDate,
+      publishDate: moment(publishDate, 'DD/MM/YYYY').format('YYYY-MM-DD'),
       source,
       topics: topics.split(','),
     };
