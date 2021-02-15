@@ -77,6 +77,10 @@
   padding: 0;
 }
 
+:global([data-reach-menu-popover]) {
+  z-index: 200;
+}
+
 .menu[data-reach-menu-list],
 .menu[data-reach-menu-items] {
   animation: slide-down 0.2s ease;

@@ -15,6 +15,12 @@
       "custom-properties",
       "declarations"
     ],
-    "order/properties-alphabetical-order": true
+    "order/properties-alphabetical-order": true,
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global"]
+      }
+    ]
   }
 }
