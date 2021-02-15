@@ -2,8 +2,11 @@ import classnames from 'classnames';
 import groupBy from 'lodash.groupby';
 import map from 'lodash.map';
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { InView } from 'react-intersection-observer';
 import slugify from 'slugify';
+import queryString from 'query-string';
+import { navigate } from 'gatsby-link';
 
 import Footer from '../Footer';
 import Section from './Section';
@@ -12,7 +15,14 @@ import Header from './Header';
 import data from '../../../public/pages/data.json';
 import monthsData from '../../../public/pages/months.json';
 
+import sources from '../../data/sources';
+import topics from '../../../public/pages/topics';
+
 import styles from './styles.module.css';
+
+const sourceKeys = Object.entries(sources)
+  .sort(([, a], [, b]) => a.name.localeCompare(b.name))
+  .map(([key]) => key);
 
 const INITIAL_ARTICLES = data.slice().reverse();
 const MONTHS_ASC = monthsData.slice().reverse();
@@ -38,6 +48,18 @@ export default class Timeline extends Component {
     source: 'all',
     topic: null,
   };
+
+  componentDidMount() {
+    const { source, topic } = queryString.parse(
+      this.props.location && this.props.location.search
+    );
+
+    if (source && (source === 'all' || sourceKeys.includes(source))) {
+      this.handleSourceChange(source);
+    } else if (!topic || topics.includes(topic)) {
+      this.handleTopicChange(topic);
+    }
+  }
 
   handleSortChange = () => {
     const { articles, hasNext, order } = this.state;
@@ -69,12 +91,16 @@ export default class Timeline extends Component {
   };
 
   handleSourceChange = (source) => {
+    const {
+      location: { pathname },
+    } = this.props;
     const { order, source: currentSource } = this.state;
 
     if (source === currentSource) {
       return;
     } else if (source === 'all') {
-      return this.resetArticles();
+      this.resetArticles();
+      return navigate(pathname);
     }
 
     this.setState(
@@ -93,6 +119,9 @@ export default class Timeline extends Component {
 
           const articles = await response.json();
 
+          const url = `${pathname}?source=${encodeURIComponent(source)}`;
+          navigate(url);
+
           return this.setState({
             articles: order === 'desc' ? articles.slice().reverse() : articles,
             isLoading: false,
@@ -106,12 +135,16 @@ export default class Timeline extends Component {
   };
 
   handleTopicChange = (topic) => {
+    const {
+      location: { pathname },
+    } = this.props;
     const { order, topic: currentTopic } = this.state;
 
     if (topic === currentTopic) {
       return;
     } else if (!topic) {
-      return this.resetArticles();
+      this.resetArticles();
+      return navigate(pathname);
     }
 
     this.setState(
@@ -129,6 +162,9 @@ export default class Timeline extends Component {
           const response = await fetch(`/pages/topics/${slugify(topic)}.json`);
 
           const articles = await response.json();
+
+          const url = `${pathname}?topic=${encodeURIComponent(topic)}`;
+          navigate(url);
 
           return this.setState({
             articles: order === 'desc' ? articles.slice().reverse() : articles,
@@ -307,3 +343,7 @@ export default class Timeline extends Component {
     );
   }
 }
+
+Timeline.propTypes = {
+  location: PropTypes.object,
+};
