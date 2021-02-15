@@ -330,7 +330,8 @@
       "Fux",
       "STF",
       "Palestras",
-      "XP Investimentos"
+      "XP Investimentos",
+      "Bancos"
     ]
   },
   {
@@ -339,7 +340,7 @@
     "url": "https://reinaldoazevedo.blogosfera.uol.com.br/2019/07/26/fux-prefere-o-silencio-e-xp-diz-pagamento-ou-nao-e-acordado-em-contrato/",
     "publishDate": "2019-07-26",
     "source": "reinaldoazevedo",
-    "topics": ["Fux", "STF", "Palestras", "XP Investimentos"]
+    "topics": ["Fux", "STF", "Palestras", "XP Investimentos", "Bancos"]
   },
   {
     "id": "intercept13",
@@ -347,7 +348,7 @@
     "url": "https://theintercept.com/2019/07/26/deltan-encontro-secreto-bancos-xp/",
     "publishDate": "2019-07-27",
     "source": "intercept",
-    "topics": ["Deltan Dallagnol", "XP Investimentos", "Palestras"]
+    "topics": ["Deltan Dallagnol", "XP Investimentos", "Palestras", "Bancos"]
   },
   {
     "id": "folha10",
@@ -539,7 +540,7 @@
     "url": "https://brasil.elpais.com/brasil/2019/08/16/politica/1565978687_974717.html",
     "publishDate": "2019-08-22",
     "source": "elpais",
-    "topics": ["Bancos"]
+    "topics": ["Bancos", "Palocci"]
   },
   {
     "id": "glennjYRUC1horrtheHRMgxDRhU",
