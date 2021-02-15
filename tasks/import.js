@@ -51,7 +51,7 @@ function getArticle(data) {
       url,
       publishDate,
       source,
-      topics,
+      topics: topics.split(','),
     };
 
     signale.success('Meta dados adquiridos');
