@@ -327,6 +327,7 @@
   }
 
   .select select {
+    font-size: 16px;
     padding: 6px;
     width: 100%;
   }
