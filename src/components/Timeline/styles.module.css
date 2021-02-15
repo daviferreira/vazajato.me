@@ -72,7 +72,7 @@
 
 @media screen and (max-width: 767px) {
   .root {
-    padding-top: 80px;
+    padding-top: 20px;
   }
 
   .loaded .root {

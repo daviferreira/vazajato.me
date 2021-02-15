@@ -23,26 +23,7 @@
 
 @media screen and (max-width: 767px) {
   .root {
-    height: 75px;
-    left: 0;
-    position: fixed;
-    right: auto;
-    top: 0;
-    width: 100%;
-  }
-
-  .title {
-    align-items: center;
-    background-color: #000;
-    display: flex;
-    font-size: 13px;
-    padding: 30px 15px;
-  }
-
-  .share {
-    position: absolute;
-    right: 15px;
-    top: 15px;
+    display: none;
   }
 }
 
@@ -56,12 +37,6 @@
 
   .title {
     display: none;
-  }
-}
-
-@media screen and (max-width: 767px) and (prefers-color-scheme: dark) {
-  .title {
-    background-color: #38444d;
   }
 }
 
