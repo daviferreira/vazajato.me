@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
+    "csvtojson": "^2.0.10",
     "domino": "^2.1.6",
     "eslint": "^7.12.0",
     "eslint-config-prettier": "^6.14.0",
@@ -46,7 +47,6 @@
     "node-fetch": "^2.6.1",
     "page-metadata-parser": "^1.1.4",
     "prettier": "^2.1.2",
-    "prompts": "^2.3.2",
     "short-uuid": "^4.1.0",
     "signale": "^1.4.0",
     "slugify": "^1.4.6",
@@ -71,7 +71,7 @@
     "serve": "gatsby serve",
     "lint": "eslint . --cache --cache-location node_modules/.eslintcache && prettier --check '**/*.{js,css,json}' && stylelint './src/**/*.css'",
     "test": "npm run lint",
-    "article:add": "node parser"
+    "import": "node ./tasks/import"
   },
   "repository": {
     "type": "git",
