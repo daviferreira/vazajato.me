@@ -11,10 +11,17 @@
 .avatar {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 100%;
+  flex: 0 0 32px;
   height: 32px;
   margin-right: 10px;
   overflow: hidden;
   width: 32px;
+}
+
+.name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre;
 }
 
 @media (prefers-color-scheme: dark) {
