@@ -17,14 +17,6 @@ const prettierOptions = {
 };
 
 function getArticle(data) {
-  (async function () {
-    try {
-      await fetchArticle(data);
-    } catch (err) {
-      return signale.fatal(err);
-    }
-  })();
-
   const fetchMetaData = async (url) => {
     const response = await fetch(url);
     const html = await response.text();
@@ -69,7 +61,7 @@ function getArticle(data) {
     try {
       await download.image({
         url: image,
-        dest: path.join(__dirname, `/src/images/articles/${id}.jpg`),
+        dest: path.join(__dirname, `../src/images/articles/${id}.jpg`),
       });
     } catch (err) {
       return signale.fatal(err);
@@ -85,7 +77,7 @@ function getArticle(data) {
     signale.pending('Atualizando articles.json');
     articlesData.push(article);
     fs.writeFileSync(
-      path.join(__dirname, 'src', 'data', 'articles.json'),
+      path.join(__dirname, '..', 'src', 'data', 'articles.json'),
       prettier.format(JSON.stringify(articlesData), {
         parser: 'json',
         ...prettierOptions,
@@ -96,6 +88,7 @@ function getArticle(data) {
     signale.pending('Atualizando Image.js');
     const imagesFilePath = path.join(
       __dirname,
+      '..',
       'src',
       'components',
       'Timeline',
@@ -113,6 +106,14 @@ function getArticle(data) {
     );
     signale.success('Image.js atualizado');
   };
+
+  (async function () {
+    try {
+      await fetchArticle(data);
+    } catch (err) {
+      return signale.fatal(err);
+    }
+  })();
 }
 
 function importSheet() {
