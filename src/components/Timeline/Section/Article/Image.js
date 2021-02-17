@@ -892,6 +892,11 @@ const Image = ({ alt, id }) => {
       ) {
         ...articleImage
       }
+      monicabergamocDX5QzUZY7DqcQSRWv1xc1: file(
+        relativePath: { eq: "articles/monicabergamocDX5QzUZY7DqcQSRWv1xc1.jpg" }
+      ) {
+        ...articleImage
+      }
       # NEW IMAGE PLACEHOLDER
     }
   `);
