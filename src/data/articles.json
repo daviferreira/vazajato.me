@@ -1563,5 +1563,13 @@
     "publishDate": "2021-02-21",
     "source": "conjur",
     "topics": ["STJ"]
+  },
+  {
+    "id": "uol9NgHXNBhsYzdsCHWkyfQdW",
+    "title": "Deltan formulou proposta de mudanças no STF 'para não entrar um Toffoli'",
+    "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2021/02/22/lava-jato-ministros-stf.htm",
+    "publishDate": "2021-02-22",
+    "source": "uol",
+    "topics": ["Deltan Dallagnol", "STF", "Toffoli"]
   }
 ]
