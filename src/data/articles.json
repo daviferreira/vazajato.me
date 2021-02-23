@@ -1595,5 +1595,21 @@
     "publishDate": "2021-02-22",
     "source": "conjur",
     "topics": ["Suíça", "Rodrigo Janot"]
+  },
+  {
+    "id": "conjurp8w6xBAvP87XBfJEzppLZw",
+    "title": "MPF ocultou doença neurodegenerativa de delator da Odebrecht, mostra diálogo",
+    "url": "https://www.conjur.com.br/2021-fev-22/procuradores-ocultaram-mal-alzheimer-delator-odebrecht",
+    "publishDate": "2021-02-22",
+    "source": "conjur",
+    "topics": ["Odebrecht"]
+  },
+  {
+    "id": "estadaodhXg95TXwExTqviWmUinEU",
+    "title": "‘Deixe essa burocracia chata que não serve pra nada e vem pra cá você também, venha prender o Lula’, disse Deltan a colega, mostram diálogos hackeados da Lava Jato",
+    "url": "https://politica.estadao.com.br/blogs/fausto-macedo/deixe-essa-burocracia-chata-que-nao-serve-pra-nada-e-vem-pra-ca-voce-tambem-venha-prender-o-lula-disse-deltan-a-colega-mostram-dialogos-hackeados-da-lava-jato/",
+    "publishDate": "2021-02-22",
+    "source": "estadao",
+    "topics": ["Lula", "Deltan Dallagnol"]
   }
 ]
