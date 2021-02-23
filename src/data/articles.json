@@ -1619,5 +1619,53 @@
     "publishDate": "2021-02-22",
     "source": "conjur",
     "topics": ["Temer"]
+  },
+  {
+    "id": "conjuro3oNp9drDnKbzUAG8Yfe1k",
+    "title": "\"Faz tempo que não tenho vergonha na cara\", disse Dallagnol sobre cooperação informal",
+    "url": "https://www.conjur.com.br/2021-fev-22/faz-tempo-nao-tenho-vergonha-cara-disse-deltan-monaco",
+    "publishDate": "2021-02-22",
+    "source": "conjur",
+    "topics": ["Deltan Dallagnol", "Mônaco"]
+  },
+  {
+    "id": "conjurqRzApruuN8oGy5HwabNQKp",
+    "title": "Procuradores planejaram afrontar Teori para manter investigação contra Lula",
+    "url": "https://www.conjur.com.br/2021-fev-22/procuradores-planejaram-afrontar-teori-manter-lula",
+    "publishDate": "2021-02-22",
+    "source": "conjur",
+    "topics": ["Lula", "Teori", "STF"]
+  },
+  {
+    "id": "conjurs66arETMhLerDtp1nJsSg6",
+    "title": "Procurador admitiu que competência de Curitiba era \"complexa e delicada\"",
+    "url": "https://www.conjur.com.br/2021-fev-22/procurador-admitiu-competencia-curitiba-complexa",
+    "publishDate": "2021-02-22",
+    "source": "conjur",
+    "topics": ["STF"]
+  },
+  {
+    "id": "conjurqkU38vdxKDbEeCiUcTPeds",
+    "title": "Deltan recebeu orientação de dentro do CNMP sobre processo do PowerPoint",
+    "url": "https://www.conjur.com.br/2021-fev-22/deltan-recebeu-ajuda-dentro-cnmp-powerpoint",
+    "publishDate": "2021-02-22",
+    "source": "conjur",
+    "topics": ["Deltan Dallagnol", "CNMP"]
+  },
+  {
+    "id": "conjurnD83PKnX9f5oJsp7zu4yds",
+    "title": "Investigar filhos de ministros é \"caminho\" para \"pegar Lula\", disse procurador",
+    "url": "https://www.conjur.com.br/2021-fev-22/mpf-investigar-filhos-ministros-ajudar-pegar-lula",
+    "publishDate": "2021-02-22",
+    "source": "conjur",
+    "topics": ["Lula", "STF", "STJ"]
+  },
+  {
+    "id": "conjurrDFGAzjuJwNJ5xir88AAvM",
+    "title": "MPF distorceu notícia para desviar atenção da imprensa sobre decisão desfavorável",
+    "url": "https://www.conjur.com.br/2021-fev-22/mpf-distorceu-noticia-abafar-decisao-desfavoravel-lava-jato",
+    "publishDate": "2021-02-22",
+    "source": "conjur",
+    "topics": ["Imprensa", "Suíça"]
   }
 ]
