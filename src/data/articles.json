@@ -1675,5 +1675,13 @@
     "publishDate": "2021-02-23",
     "source": "conjur",
     "topics": ["Moro", "Deltan Dallagnol", "STJ"]
+  },
+  {
+    "id": "uoltDcSUZwHB6tzja1HZgTX7o",
+    "title": "Lava Jato: Contratar ex-procurador suíço renderia 'docs da investigação'",
+    "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2021/02/24/para-lava-jato-contratar-procurador-suico-renderia-docs-da-investigacao.htm",
+    "publishDate": "2021-02-24",
+    "source": "uol",
+    "topics": ["Suíça", "Odebrecht"]
   }
 ]
