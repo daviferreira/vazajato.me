@@ -52,7 +52,7 @@ function getArticle(data) {
       url,
       publishDate: moment(publishDate, 'DD/MM/YYYY').format('YYYY-MM-DD'),
       source,
-      topics: topics.split(',').map((topic) => topic.replace('"', '')),
+      topics: topics.split(',').map((topic) => topic.trim().replace('"', '')),
     };
 
     signale.success('Meta dados adquiridos');
