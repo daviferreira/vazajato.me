@@ -1699,5 +1699,29 @@
     "publishDate": "2021-02-24",
     "source": "conjur",
     "topics": ["Erika Marena"]
+  },
+  {
+    "id": "cnnppbLvT4NMymPzd17b8ScnE",
+    "title": "Já ministro, Moro consultou Lava Jato sobre acordos internacionais",
+    "url": "https://www.cnnbrasil.com.br/politica/2021/02/26/ja-ministro-moro-consultou-lava-jato-sobre-acordos-internacionais",
+    "publishDate": "2021-02-26",
+    "source": "cnn",
+    "topics": ["Moro", "Deltan Dallagnol"]
+  },
+  {
+    "id": "cnnvVmDMwxt6yJGyhAvWuYyPH",
+    "title": "Lava Jato comemorou ida de Witzel ao segundo turno para governo do Rio",
+    "url": "https://www.cnnbrasil.com.br/politica/2021/02/26/lava-jato-comemorou-ida-de-witzel-ao-segundo-turno-para-governo-do-rio",
+    "publishDate": "2021-02-26",
+    "source": "cnn",
+    "topics": ["Deltan Dallagnol", "Wilson Witzel "]
+  },
+  {
+    "id": "cnne2SfHeuB9wT6AYqEp1eMnX",
+    "title": "Em diálogo, Lava Jato comentou vazamento de dados de Flávio Bolsonaro",
+    "url": "https://www.cnnbrasil.com.br/politica/2021/02/26/em-dialogo-lava-jato-comentou-vazamento-de-dados-de-flavio-bolsonaro",
+    "publishDate": "2021-02-26",
+    "source": "cnn",
+    "topics": ["Deltan Dallagnol", "Flávio Bolsonaro", "Bolsonaro"]
   }
 ]
