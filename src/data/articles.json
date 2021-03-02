@@ -1771,5 +1771,21 @@
     "publishDate": "2021-03-01",
     "source": "conjur",
     "topics": ["Diogo Castor de Mattos"]
+  },
+  {
+    "id": "cnnx9XDaQ4Hr7euDceEuv4aDi",
+    "title": "Lava Jato sobre caso Flávio Bolsonaro: 'O pai vai deixar?'",
+    "url": "https://www.cnnbrasil.com.br/politica/2021/03/01/lava-jato-sobre-caso-flavio-bolsonaro-o-pai-vai-deixar",
+    "publishDate": "2021-03-01",
+    "source": "cnn",
+    "topics": ["Flávio Bolsonaro", "Bolsonaro"]
+  },
+  {
+    "id": "cnn8qDqx4bFm7qRzWFZi9BY7Z",
+    "title": "Na campanha, Lava Jato considerou Bolsonaro de 'mito' a 'retrocesso'",
+    "url": "https://www.cnnbrasil.com.br/politica/2021/03/01/na-campanha-lava-jato-considerou-bolsonaro-de-mito-a-retrocesso",
+    "publishDate": "2021-03-01",
+    "source": "cnn",
+    "topics": ["Bolsonaro", "Haddad"]
   }
 ]
