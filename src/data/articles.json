@@ -1755,5 +1755,21 @@
     "publishDate": "2021-03-01",
     "source": "conjur",
     "topics": ["Odebrecht", "Suíça", "Luis Nassif"]
+  },
+  {
+    "id": "conjur3aPfPXRvEbyfCijcYsQPke",
+    "title": "Para procurador, compra de caças pela qual Lula é réu não tinha \"nada de anormal\"",
+    "url": "https://www.conjur.com.br/2021-mar-01/compra-cacas-nao-teve-nada-anormal-disse-procurador",
+    "publishDate": "2021-03-01",
+    "source": "conjur",
+    "topics": ["Lula"]
+  },
+  {
+    "id": "conjurnFkNArVSRci7ZLrSKvL1ba",
+    "title": "Lavajatistas tentaram esconder conflito de interesses entre familiares",
+    "url": "https://www.conjur.com.br/2021-mar-01/lavajatistas-tentaram-esconder-conflito-interesses-entre-familiares",
+    "publishDate": "2021-03-01",
+    "source": "conjur",
+    "topics": ["Diogo Castor de Mattos"]
   }
 ]
