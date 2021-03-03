@@ -1803,5 +1803,21 @@
     "publishDate": "2021-03-02",
     "source": "conjur",
     "topics": ["Deltan Dallagnol", "Lula", "Triplex"]
+  },
+  {
+    "id": "conjur7JLfPwSLsoDK4wLzTttUMH",
+    "title": "Delegado da PF perseguido por lavajatistas pede acesso aos diálogos",
+    "url": "https://www.conjur.com.br/2021-mar-02/delegado-pf-perseguido-lavajatistas-acesso-aos-dialogos",
+    "publishDate": "2021-03-02",
+    "source": "conjur",
+    "topics": ["PF", "Erika Marena"]
+  },
+  {
+    "id": "conjursofpNY3AiKJ7kzPoCpRASV",
+    "title": "\"Se perdermos o HC do Palocci temos que pedir o impeachment do Gilmar\", disse Deltan",
+    "url": "https://www.conjur.com.br/2021-mar-02/deltan-impeachment-gilmar-perdessem-hc-palocci",
+    "publishDate": "2021-03-02",
+    "source": "conjur",
+    "topics": ["STF", "Gilmar Mendes", "Thaméa Danelon"]
   }
 ]
