@@ -1819,5 +1819,21 @@
     "publishDate": "2021-03-02",
     "source": "conjur",
     "topics": ["STF", "Gilmar Mendes", "Thaméa Danelon"]
+  },
+  {
+    "id": "conjurdwr6JNnAkM3EzzcuFCQxZ7",
+    "title": "Investida contra escritórios autorizada por Bretas foi articulada por Deltan",
+    "url": "https://www.conjur.com.br/2021-mar-04/deltan-articulou-investida-escritorios-autorizada-bretas?utm_source=dlvr.it&utm_medium=twitter",
+    "publishDate": "2021-03-04",
+    "source": "conjur",
+    "topics": ["Deltan Dallagnol", "Marcelo Bretas", "Imprensa"]
+  },
+  {
+    "id": "conjurg6PRDnWfNaAbEUs51qvrBq",
+    "title": "MPF queria dar imunidade a executivo e usar delação para investigar defesa de Lula",
+    "url": "https://www.conjur.com.br/2021-mar-03/mpf-trocar-imunidade-delacao-atingir-defesa-lula",
+    "publishDate": "2021-03-03",
+    "source": "conjur",
+    "topics": ["Lula", "Odebrecht"]
   }
 ]
