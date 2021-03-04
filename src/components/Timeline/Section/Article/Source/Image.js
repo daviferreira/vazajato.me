@@ -62,6 +62,9 @@ const Image = ({ alt, id }) => {
       metropoles: file(relativePath: { eq: "sources/metropoles.jpg" }) {
         ...sourceImage
       }
+      jota: file(relativePath: { eq: "sources/jota.jpg" }) {
+        ...sourceImage
+      }
     }
   `);
 

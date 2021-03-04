@@ -88,5 +88,10 @@
     "name": "Metrópoles",
     "url": "https://www.metropoles.com/",
     "color:": "#c32519"
+  },
+  "jota": {
+    "name": "JOTA",
+    "url": "https://www.jota.info/",
+    "color:": "#f05841"
   }
 }
