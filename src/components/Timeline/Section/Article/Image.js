@@ -1112,6 +1112,11 @@ const Image = ({ alt, id }) => {
       ) {
         ...articleImage
       }
+      jamilchadeiLzFXCdWN9U8CCcxmruiGa: file(
+        relativePath: { eq: "articles/jamilchadeiLzFXCdWN9U8CCcxmruiGa.jpg" }
+      ) {
+        ...articleImage
+      }
       # NEW IMAGE PLACEHOLDER
     }
   `);
