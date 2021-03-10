@@ -1,14 +1,23 @@
 const path = require('path');
 
+const siteUrl = `https://www.vazajato.me`;
+
 module.exports = {
   siteMetadata: {
     title: `Linha do tempo da #VazaJato`,
     description: `Página listando todas as reportagens da #VazaJato.`,
     author: `@davitferreira`,
-    siteUrl: `https://www.vazajato.me`,
+    siteUrl,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-react-helmet-canonical-urls`,
+      options: {
+        noTrailingSlash: true,
+        siteUrl,
+      },
+    },
     `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
