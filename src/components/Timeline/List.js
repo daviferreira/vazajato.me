@@ -10,7 +10,7 @@ import Header from './Header';
 
 import styles from './styles.module.css';
 
-const List = ({ articles, source, topic }) => {
+const List = ({ articles, location, source, topic }) => {
   const [order, setOrder] = useState('desc');
   const [groupedArticles, setGroupedArticles] = useState(
     groupBy(articles, ({ publishDate }) => publishDate.slice(0, 7))
@@ -19,10 +19,11 @@ const List = ({ articles, source, topic }) => {
   let articlesCount = 0;
 
   const handleSortChange = () => {
-    setOrder(order === 'asc' ? 'desc' : 'asc');
+    const nextOrder = order === 'asc' ? 'desc' : 'asc';
+    setOrder(nextOrder);
     setGroupedArticles(
       groupBy(
-        order === 'asc' ? articles.slice().reverse() : articles,
+        nextOrder === 'asc' ? articles.slice().reverse() : articles,
         ({ publishDate }) => publishDate.slice(0, 7)
       )
     );
@@ -31,9 +32,8 @@ const List = ({ articles, source, topic }) => {
   return (
     <div className={styles.container}>
       <Header
-        // onSourceChange={this.handleSourceChange}
+        location={location}
         onSortChange={handleSortChange}
-        // onTopicChange={this.handleTopicChange}
         order={order}
         source={source || 'all'}
         topic={topic}
@@ -70,8 +70,9 @@ const List = ({ articles, source, topic }) => {
 
 List.propTypes = {
   articles: PropTypes.array.isRequired,
+  location: PropTypes.object,
   source: PropTypes.string,
-  topic: PropTypes.string, // FIXME
+  topic: PropTypes.string,
 };
 
 export default List;
