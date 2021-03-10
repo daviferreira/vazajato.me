@@ -111,25 +111,28 @@ export default class Timeline extends Component {
         source,
         topic: null,
       },
-      async () => {
+      () => {
         window.scrollTo(0, 0);
+        const url = `${pathname}veiculos/${source}/`;
+        // console.log(pathname);
+        navigate(url);
 
-        try {
-          const response = await fetch(`/pages/sources/${source}.json`);
+        // try {
+        //   const response = await fetch(`/pages/sources/${source}.json`);
 
-          const articles = await response.json();
+        //   const articles = await response.json();
 
-          const url = `${pathname}?source=${encodeURIComponent(source)}`;
-          navigate(url);
+        //   const url = `${pathname}/veiculos/${source}/`;
+        //   navigate(url);
 
-          return this.setState({
-            articles: order === 'desc' ? articles.slice().reverse() : articles,
-            isLoading: false,
-            isLoadingArticles: false,
-          });
-        } catch (err) {
-          return this.setState({ isLoading: false, isLoadingArticles: false });
-        }
+        //   return this.setState({
+        //     articles: order === 'desc' ? articles.slice().reverse() : articles,
+        //     isLoading: false,
+        //     isLoadingArticles: false,
+        //   });
+        // } catch (err) {
+        //   return this.setState({ isLoading: false, isLoadingArticles: false });
+        // }
       }
     );
   };
@@ -155,25 +158,29 @@ export default class Timeline extends Component {
         source: 'all',
         topic,
       },
-      async () => {
+      () => {
         window.scrollTo(0, 0);
+        const url = `${pathname}topicos/${slugify(topic)
+          .toLowerCase()
+          .trim()}/`;
+        navigate(url);
 
-        try {
-          const response = await fetch(`/pages/topics/${slugify(topic)}.json`);
+        // try {
+        //   const response = await fetch(`/pages/topics/${slugify(topic)}.json`);
 
-          const articles = await response.json();
+        //   const articles = await response.json();
 
-          const url = `${pathname}?topic=${encodeURIComponent(topic)}`;
-          navigate(url);
+        //   const url = `${pathname}?topic=${encodeURIComponent(topic)}`;
+        //   navigate(url);
 
-          return this.setState({
-            articles: order === 'desc' ? articles.slice().reverse() : articles,
-            isLoading: false,
-            isLoadingArticles: false,
-          });
-        } catch (err) {
-          return this.setState({ isLoading: false, isLoadingArticles: false });
-        }
+        //   return this.setState({
+        //     articles: order === 'desc' ? articles.slice().reverse() : articles,
+        //     isLoading: false,
+        //     isLoadingArticles: false,
+        //   });
+        // } catch (err) {
+        //   return this.setState({ isLoading: false, isLoadingArticles: false });
+        // }
       }
     );
   };
