@@ -178,17 +178,15 @@ const Header = ({ onSortChange, order, source, topic }) => {
                   </span>
                 </MenuButton>
                 <MenuList className={styles.menu}>
-                  {sourceKeys
-                    .filter((key) => key !== source)
-                    .map((key) => (
-                      <MenuItem
-                        className={styles.item}
-                        key={key}
-                        onSelect={() => handleSourceChange(key)}
-                      >
-                        <Source source={key} />
-                      </MenuItem>
-                    ))}
+                  {sourceKeys.map((key) => (
+                    <MenuItem
+                      className={styles.item}
+                      key={key}
+                      onSelect={() => handleSourceChange(key)}
+                    >
+                      <Source source={key} />
+                    </MenuItem>
+                  ))}
                 </MenuList>
               </>
             )}
