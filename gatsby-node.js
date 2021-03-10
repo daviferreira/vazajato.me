@@ -62,13 +62,6 @@ function createTopicPages(articles, createPage) {
   });
 
   map(topicsData, (group, topic) => {
-    // createJSON({
-    //   path: `topics/${topic}`,
-    //   context: {
-    //     pageArticles: group,
-    //   },
-    // });
-
     const path = `topicos/${topic}`;
 
     createPage({
