@@ -5,9 +5,11 @@ module.exports = {
     title: `Linha do tempo da #VazaJato`,
     description: `Página listando todas as reportagens da #VazaJato.`,
     author: `@davitferreira`,
+    siteUrl: `https://www.vazajato.me`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

@@ -19,6 +19,7 @@ function SEO({ description, lang, meta, path, title }) {
             title
             description
             author
+            siteUrl
           }
         }
       }
@@ -81,7 +82,7 @@ function SEO({ description, lang, meta, path, title }) {
         },
         {
           property: `og:url`,
-          content: `https://www.vazajato.me${path}`,
+          content: `${site.siteMetadata.siteUrl}${path}`,
         },
       ].concat(meta)}
     />
