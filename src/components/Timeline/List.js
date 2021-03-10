@@ -27,6 +27,7 @@ const List = ({ articles, location, source, topic }) => {
         ({ publishDate }) => publishDate.slice(0, 7)
       )
     );
+    window.scrollTo(0, 0);
   };
 
   return (
