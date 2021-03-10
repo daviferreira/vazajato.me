@@ -1,6 +1,8 @@
 import classnames from 'classnames';
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import slugify from 'slugify';
+import { navigate } from 'gatsby-link';
 
 import { Menu, MenuList, MenuButton, MenuItem } from '@reach/menu-button';
 import ShareBar from '../../ShareBar';
@@ -20,16 +22,33 @@ const sourceKeys = Object.entries(sources)
   .sort(([, a], [, b]) => a.name.localeCompare(b.name))
   .map(([key]) => key);
 
-const Header = ({
-  onSourceChange,
-  onSortChange,
-  onTopicChange,
-  order,
-  source,
-  topic,
-}) => {
+const Header = ({ onSortChange, order, source, topic }) => {
   const isAll = source === 'all';
   const [checked, setChecked] = useState(false);
+
+  const handleSourceChange = (nextSource) => {
+    if (nextSource === source) {
+      return;
+    }
+
+    window.scrollTo(0, 0);
+    const url =
+      !nextSource || nextSource === 'all' ? '/' : `/veiculos/${nextSource}`;
+    navigate(url);
+  };
+
+  const handleTopicChange = (nextTopic) => {
+    if (nextTopic === topic) {
+      return;
+    }
+
+    window.scrollTo(0, 0);
+    const url =
+      !nextTopic || nextTopic === 'all'
+        ? '/'
+        : `/topicos/${slugify(nextTopic).toLowerCase().trim()}`;
+    navigate(url);
+  };
 
   return (
     <>
@@ -52,7 +71,7 @@ const Header = ({
               <select
                 id="filter-source"
                 onChange={(e) => {
-                  onSourceChange(e.target.value);
+                  handleSourceChange(e.target.value);
                   setChecked(false);
                 }}
                 value={source}
@@ -70,7 +89,7 @@ const Header = ({
               <select
                 id="filter-topic"
                 onChange={(e) => {
-                  onTopicChange(e.target.value || null);
+                  handleTopicChange(e.target.value || null);
                   setChecked(false);
                 }}
                 value={topic || ''}
@@ -128,7 +147,7 @@ const Header = ({
               onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                onSourceChange('all');
+                handleSourceChange('all');
               }}
             >
               <Clear />
@@ -165,7 +184,7 @@ const Header = ({
                       <MenuItem
                         className={styles.item}
                         key={key}
-                        onSelect={() => onSourceChange(key)}
+                        onSelect={() => handleSourceChange(key)}
                       >
                         <Source source={key} />
                       </MenuItem>
@@ -182,7 +201,7 @@ const Header = ({
               onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                onTopicChange(null);
+                handleTopicChange(null);
               }}
             >
               <Clear />
@@ -200,7 +219,7 @@ const Header = ({
                 <MenuItem
                   className={styles.item}
                   key={key}
-                  onSelect={() => onTopicChange(key)}
+                  onSelect={() => handleTopicChange(key)}
                 >
                   <div>{key}</div>
                 </MenuItem>
@@ -217,9 +236,7 @@ const Header = ({
 };
 
 Header.propTypes = {
-  onSourceChange: PropTypes.func,
   onSortChange: PropTypes.func,
-  onTopicChange: PropTypes.func,
   order: PropTypes.oneOf(['asc', 'desc']),
   source: PropTypes.oneOf(sourceKeys.concat(['all'])).isRequired,
   topic: PropTypes.string,

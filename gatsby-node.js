@@ -2,35 +2,45 @@ const groupBy = require('lodash.groupby');
 const map = require('lodash.map');
 const fs = require('fs');
 const slugify = require('slugify');
+const path = require('path');
 
 const DIR = 'public/pages/';
 
-function createSourcePages(articles) {
+const timelineTemplate = path.resolve(`src/templates/timeline.js`);
+
+function createSourcePages(articles, createPage) {
   const groupedArticles = groupBy(articles, 'source');
 
   map(groupedArticles, (group, source) => {
-    createJSON({
-      path: `sources/${source}`,
+    const path = `veiculos/${source}`;
+
+    createPage({
+      path,
+      component: timelineTemplate,
       context: {
-        pageArticles: group,
+        articles: group.reverse(),
+        source,
       },
     });
 
     // eslint-disable-next-line
-    console.log(`\nCreated ${source}.json.`);
+    console.log(`\nCreated ${source} page.`);
   });
 }
 
-function createTopicPages(articles) {
+function createTopicPages(articles, createPage) {
   const topicsData = {};
   const topicsPage = [];
+  const topicsLabels = {};
 
   articles.forEach((article) => {
     article.topics = article.topics.map((topic) => {
+      const slug = slugify(topic).toLowerCase().trim();
       if (topic && !topicsPage.includes(topic)) {
         topicsPage.push(topic);
+        topicsLabels[slug] = topic;
       }
-      return slugify(topic).toLowerCase().trim();
+      return slug;
     });
 
     article.topics.forEach((topic) => {
@@ -52,15 +62,19 @@ function createTopicPages(articles) {
   });
 
   map(topicsData, (group, topic) => {
-    createJSON({
-      path: `topics/${topic}`,
+    const path = `topicos/${topic}`;
+
+    createPage({
+      path,
+      component: timelineTemplate,
       context: {
-        pageArticles: group,
+        articles: group.reverse(),
+        topic: topicsLabels[topic],
       },
     });
 
     // eslint-disable-next-line
-    console.log(`\nCreated ${topic}.json.`);
+    console.log(`\nCreated ${topic} page.`);
   });
 }
 
@@ -132,6 +146,8 @@ function createJSON({
 }
 
 exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions;
+
   return graphql(`
     query articlesListQuery {
       allArticlesJson(sort: { fields: [publishDate], order: [ASC] }) {
@@ -157,8 +173,8 @@ exports.createPages = ({ graphql, actions }) => {
 
     return Promise.all([
       createArticlesPagination(articles),
-      createSourcePages(articles),
-      createTopicPages(articles),
+      createSourcePages(articles, createPage),
+      createTopicPages(articles, createPage),
     ]);
   });
 };
