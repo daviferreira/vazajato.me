@@ -1137,6 +1137,11 @@ const Image = ({ alt, id }) => {
       ) {
         ...articleImage
       }
+      interceptjnsyHsEA9iENPRamQnCrKR: file(
+        relativePath: { eq: "articles/interceptjnsyHsEA9iENPRamQnCrKR.jpg" }
+      ) {
+        ...articleImage
+      }
       # NEW IMAGE PLACEHOLDER
     }
   `);
