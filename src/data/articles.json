@@ -93,7 +93,7 @@
     "url": "https://www1.folha.uol.com.br/poder/2019/06/lava-jato-articulou-apoio-a-moro-diante-de-tensao-com-stf-mostram-mensagens.shtml",
     "publishDate": "2019-06-23",
     "source": "folha",
-    "topics": ["Moro", "STF"]
+    "topics": ["Moro", "STF", "MBL"]
   },
   {
     "id": "folha2",
@@ -101,7 +101,7 @@
     "url": "https://www1.folha.uol.com.br/poder/2019/06/leia-integra-da-troca-de-mensagens-entre-moro-e-deltan-ante-tensao-com-stf.shtml",
     "publishDate": "2019-06-23",
     "source": "folha",
-    "topics": ["Moro", "Deltan Dallagnol", "STF"]
+    "topics": ["Moro", "Deltan Dallagnol", "STF", "MBL"]
   },
   {
     "id": "intercept8",
@@ -1899,5 +1899,21 @@
     "publishDate": "2021-03-09",
     "source": "conjur",
     "topics": ["Áudio", "Deltan Dallagnol", "Petrobras"]
+  },
+  {
+    "id": "conjurm9TN7WRet7m95sMoxvvAfq",
+    "title": "Lavajatistas criaram grupo para articular medidas contra Gilmar Mendes",
+    "url": "https://www.conjur.com.br/2021-mar-10/lavajatistas-criaram-grupo-articular-gilmar",
+    "publishDate": "2021-03-10",
+    "source": "conjur",
+    "topics": ["STF", "Gilmar Mendes", "Thaméa Danelon"]
+  },
+  {
+    "id": "conjur9nURNQZsNk1eFgJjJtVB6Y",
+    "title": "Deltan e Transparência Internacional queriam influenciadores de esquerda",
+    "url": "https://www.conjur.com.br/2021-mar-10/deltan-ti-queriam-conquistar-influenciadores-esquerda",
+    "publishDate": "2021-03-10",
+    "source": "conjur",
+    "topics": ["Transparência Internacional", "Deltan Dallagnol", "MBL"]
   }
 ]
