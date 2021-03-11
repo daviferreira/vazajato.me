@@ -28,7 +28,7 @@ const Article = ({ id, source, title, url }) => {
           <Image alt={title} id={id} />
         </div>
       </div>
-      <h2 className={styles.title}>{title}</h2>
+      <h3 className={styles.title}>{title}</h3>
       <Source source={source} />
     </a>
   );
