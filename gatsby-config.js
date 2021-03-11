@@ -5,7 +5,7 @@ const siteUrl = `https://www.vazajato.me`;
 module.exports = {
   siteMetadata: {
     title: `Linha do tempo interativa da #VazaJato`,
-    description: `Leia todo o conteúdo da #VazaJato incluindo matérias de diferentes veículos, áudios e tuítes.`,
+    description: `Leia todo o conteúdo já publicado da #VazaJato incluindo matérias de diferentes veículos, áudios e tuítes.`,
     author: `@davitferreira`,
     siteUrl,
   },
