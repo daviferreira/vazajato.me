@@ -1939,5 +1939,29 @@
     "publishDate": "2021-03-15",
     "source": "uol",
     "topics": ["TRF4", "Lula", "Moro"]
+  },
+  {
+    "id": "uolfAQyTVhVLZ7HKpuwqLzXtG",
+    "title": "Lava Jato cogitou nova ordem de prisão contra Lula para atender Moro",
+    "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2021/03/15/lava-jato-cogitou-nova-ordem-de-prisao-contra-lula-para-atender-moro.htm",
+    "publishDate": "2021-03-15",
+    "source": "uol",
+    "topics": ["Lula", "Moro"]
+  },
+  {
+    "id": "conjurfHw3ZFS9C5xA1CBXYmaSQw",
+    "title": "\"Por companheirismo\", procurador cogitou preventiva de Lula para agradar Moro",
+    "url": "https://www.conjur.com.br/2021-mar-15/novos-dialogos-mostram-moro-coordenava-lava-jato",
+    "publishDate": "2021-03-15",
+    "source": "conjur",
+    "topics": ["Lula", "Moro"]
+  },
+  {
+    "id": "conjurwrLj6KUJkwqNkejKTCVhmz",
+    "title": "Moro aceitou convite para ministério de olho em vaga no STF, mostram diálogos",
+    "url": "https://www.conjur.com.br/2021-mar-15/moro-aceitou-convite-ministerio-olho-vaga-stf",
+    "publishDate": "2021-03-15",
+    "source": "conjur",
+    "topics": ["Moro", "STF"]
   }
 ]

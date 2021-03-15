@@ -1152,6 +1152,21 @@ const Image = ({ alt, id }) => {
       ) {
         ...articleImage
       }
+      uolfAQyTVhVLZ7HKpuwqLzXtG: file(
+        relativePath: { eq: "articles/uolfAQyTVhVLZ7HKpuwqLzXtG.jpg" }
+      ) {
+        ...articleImage
+      }
+      conjurfHw3ZFS9C5xA1CBXYmaSQw: file(
+        relativePath: { eq: "articles/conjurfHw3ZFS9C5xA1CBXYmaSQw.jpg" }
+      ) {
+        ...articleImage
+      }
+      conjurwrLj6KUJkwqNkejKTCVhmz: file(
+        relativePath: { eq: "articles/conjurwrLj6KUJkwqNkejKTCVhmz.jpg" }
+      ) {
+        ...articleImage
+      }
       # NEW IMAGE PLACEHOLDER
     }
   `);
