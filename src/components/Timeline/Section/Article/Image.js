@@ -1167,8 +1167,8 @@ const Image = ({ alt, id }) => {
       ) {
         ...articleImage
       }
-      conjurkaLEYeJ1ZhpfsGT8Tsr5tC: file(
-        relativePath: { eq: "articles/conjurkaLEYeJ1ZhpfsGT8Tsr5tC.jpg" }
+      conjur2KTrNUwHHzfhLhgTUjDucj: file(
+        relativePath: { eq: "articles/conjur2KTrNUwHHzfhLhgTUjDucj.jpg" }
       ) {
         ...articleImage
       }
