@@ -1172,6 +1172,36 @@ const Image = ({ alt, id }) => {
       ) {
         ...articleImage
       }
+      conjurniwpGE3WPxwoEjdudEPrJJ: file(
+        relativePath: { eq: "articles/conjurniwpGE3WPxwoEjdudEPrJJ.jpg" }
+      ) {
+        ...articleImage
+      }
+      conjurgyMaWuG1eNT9Gcb13Hor1U: file(
+        relativePath: { eq: "articles/conjurgyMaWuG1eNT9Gcb13Hor1U.jpg" }
+      ) {
+        ...articleImage
+      }
+      conjurjT6QWvfBqweAiqG9tTcmcA: file(
+        relativePath: { eq: "articles/conjurjT6QWvfBqweAiqG9tTcmcA.jpg" }
+      ) {
+        ...articleImage
+      }
+      conjurwySWjqA9EC6HbMc13wUG7y: file(
+        relativePath: { eq: "articles/conjurwySWjqA9EC6HbMc13wUG7y.jpg" }
+      ) {
+        ...articleImage
+      }
+      conjurbpJr6jPkK9jjyjzu18JTDK: file(
+        relativePath: { eq: "articles/conjurbpJr6jPkK9jjyjzu18JTDK.jpg" }
+      ) {
+        ...articleImage
+      }
+      uoliJHpbJPgDJn2ybuMgLo9sD: file(
+        relativePath: { eq: "articles/uoliJHpbJPgDJn2ybuMgLo9sD.jpg" }
+      ) {
+        ...articleImage
+      }
       # NEW IMAGE PLACEHOLDER
     }
   `);

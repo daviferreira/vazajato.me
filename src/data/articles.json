@@ -1971,5 +1971,53 @@
     "publishDate": "2021-03-15",
     "source": "conjur",
     "topics": ["Moro", "Gilmar Mendes", "Guido Mantega", "Odebrecht"]
+  },
+  {
+    "id": "conjurniwpGE3WPxwoEjdudEPrJJ",
+    "title": "Substituto de Moro deu orientações a procuradores da \"lava jato\"",
+    "url": "https://www.conjur.com.br/2021-mar-22/substituto-moro-deu-orientacoes-procuradores-lava-jato",
+    "publishDate": "2021-03-22",
+    "source": "conjur",
+    "topics": ["Luiz Antônio Bonat"]
+  },
+  {
+    "id": "conjurgyMaWuG1eNT9Gcb13Hor1U",
+    "title": "\"Lava jato\" condicionava delações à menção de ministros de STJ, diz defesa de Lula",
+    "url": "https://www.conjur.com.br/2021-mar-22/lava-jato-condicionava-delacoes-mencao-ministros-stj",
+    "publishDate": "2021-03-22",
+    "source": "conjur",
+    "topics": ["STJ"]
+  },
+  {
+    "id": "conjurjT6QWvfBqweAiqG9tTcmcA",
+    "title": "13ª Vara escondeu autos que basearam prisão um ano depois da investigação",
+    "url": "https://www.conjur.com.br/2021-mar-22/advogado-descobre-outro-processo-secreto-lava-jato",
+    "publishDate": "2021-03-22",
+    "source": "conjur",
+    "topics": ["Luiz Antônio Bonat", "PF"]
+  },
+  {
+    "id": "conjurwySWjqA9EC6HbMc13wUG7y",
+    "title": "MPF ouviu Palocci para impulsionar ação contra Lula que não tinha \"nada de anormal\"",
+    "url": "https://www.conjur.com.br/2021-mar-22/mpf-ouviu-palocci-impulsionar-acao-lula-envolvendo-cacas",
+    "publishDate": "2021-03-22",
+    "source": "conjur",
+    "topics": ["Palocci", "Lula"]
+  },
+  {
+    "id": "conjurbpJr6jPkK9jjyjzu18JTDK",
+    "title": "MPF escondeu cargo de embaixadora para não perder foro contra Lula",
+    "url": "https://www.conjur.com.br/2021-mar-22/mpf-escondeu-cargo-embaixadora-tentar-acusar-lula",
+    "publishDate": "2021-03-22",
+    "source": "conjur",
+    "topics": ["Lula"]
+  },
+  {
+    "id": "uoliJHpbJPgDJn2ybuMgLo9sD",
+    "title": "Substituto de Moro fez sugestão à Lava Jato, indicam novas mensagens",
+    "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2021/03/22/bonat-substituto-moro-mensagem-lava-jato.htm",
+    "publishDate": "2021-03-22",
+    "source": "uol",
+    "topics": ["Luiz Antônio Bonat"]
   }
 ]
