@@ -36,7 +36,7 @@ const Footer = () => {
       </a>
       <a
         className={styles.pdf}
-        href="https://www.dropbox.com/sh/kpuj56unr06o7dp/AADJDKujsfgtEWFE-_2SAMwia?dl=0"
+        href="https://www.dropbox.com/sh/a2wijlhwezq8yyo/AABTEZI4XWfjPEmHeKT7bbcYa?dl=0"
         rel="noopener noreferrer"
         target="_blank"
         title="Arquivos com diálogos"
