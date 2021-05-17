@@ -2059,5 +2059,18 @@
     "publishDate": "2021-03-30",
     "source": "intercept",
     "topics": ["Diogo Castor de Mattos", "TCU"]
+  },
+  {
+    "id": "interceptsQFF7XqspzHWRmdPDSEUD1",
+    "title": "Lava Jato força a barra para processar jornalistas em Curitiba e com juízes alinhados",
+    "url": "https://theintercept.com/2021/05/17/lava-jato-processos-jornalistas-danos-morais-juizado-especial/",
+    "publishDate": "2021-05-17",
+    "source": "intercept",
+    "topics": [
+      "Diogo Castor de Mattos",
+      "Deltan Dallagnol",
+      "Januário Paludo",
+      "Dario Messer"
+    ]
   }
 ]
