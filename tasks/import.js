@@ -65,7 +65,7 @@ function getArticle(data) {
         dest: path.join(__dirname, `../src/images/articles/${id}.jpg`),
       });
     } catch (err) {
-      return signale.fatal(err);
+      // return signale.fatal(err);
     }
 
     signale.success('Download da image de capa realizado com sucesso');

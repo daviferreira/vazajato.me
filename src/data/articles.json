@@ -2088,5 +2088,13 @@
     "publishDate": "2021-07-26",
     "source": "jota",
     "topics": ["Pegasus"]
+  },
+  {
+    "id": "cnngTT4M4zXpwhh8RJLfLCLTv",
+    "title": "Operação Lava Jato teria negociado a contratação do software espião Pegasus",
+    "url": "https://www.cnnbrasil.com.br/politica/2021/07/26/operacao-lava-jato-teria-negociado-a-contratacao-do-software-espiao-pegasus",
+    "publishDate": "2021-07-26",
+    "source": "cnn",
+    "topics": ["Pegasus"]
   }
 ]
