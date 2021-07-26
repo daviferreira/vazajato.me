@@ -19,7 +19,7 @@ const prettierOptions = {
 
 function getArticle(data) {
   const fetchMetaData = async (url) => {
-    const response = await fetch(url);
+    const response = await fetch(url, { compress: false });
     const html = await response.text();
     const doc = domino.createWindow(html).document;
     const metadata = getMetadata(doc, url);
