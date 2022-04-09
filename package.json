@@ -46,7 +46,7 @@
     "husky": "^4.3.0",
     "image-downloader": "^4.0.1",
     "lint-staged": "^10.4.2",
-    "moment": "^2.29.1",
+    "moment": "^2.29.2",
     "node-fetch": "^2.6.1",
     "page-metadata-parser": "^1.1.4",
     "prettier": "^2.1.2",
