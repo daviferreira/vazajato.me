@@ -47,7 +47,7 @@
     "image-downloader": "^4.0.1",
     "lint-staged": "^10.4.2",
     "moment": "^2.29.1",
-    "node-fetch": "^2.6.1",
+    "node-fetch": "^2.6.7",
     "page-metadata-parser": "^1.1.4",
     "prettier": "^2.1.2",
     "short-uuid": "^4.1.0",
