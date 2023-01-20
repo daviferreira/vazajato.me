@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 
 import SEO from '../components/SEO';
 
-import styles from './styles.module.css';
+import * as styles from './styles.module.css';
 
 const NewsletterPage = () => (
   <div className={styles.container}>

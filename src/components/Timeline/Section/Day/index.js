@@ -7,7 +7,7 @@ import Article from '../Article';
 
 import sources from '../../../../data/sources';
 
-import styles from './styles.module.css';
+import * as styles from './styles.module.css';
 
 const formatDate = (date, year) => {
   const [, month, day] = date.split('-');
@@ -25,7 +25,7 @@ const Day = ({ articles, day, left, year }) => {
     >
       <div className={styles.indicator}>
         <div className={styles.circle} />
-        <time className={styles.day} timestamp={day}>
+        <time className={styles.day} dateTime={day}>
           {formatDate(day, year)}
         </time>
       </div>

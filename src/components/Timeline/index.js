@@ -12,7 +12,7 @@ import Header from './Header';
 import data from '../../../public/pages/data.json';
 import monthsData from '../../../public/pages/months.json';
 
-import styles from './styles.module.css';
+import * as styles from './styles.module.css';
 
 const INITIAL_ARTICLES = data.slice();
 const MONTHS_ASC = monthsData.slice(1);
@@ -136,7 +136,7 @@ export default class Timeline extends Component {
 
     return (
       <div
-        className={classnames(styles.container, {
+        className={classnames({
           [styles.loaded]: !hasNext,
         })}
       >

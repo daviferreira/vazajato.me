@@ -6,7 +6,7 @@ import Source from './Source';
 
 import sources from '../../../../data/sources';
 
-import styles from './styles.module.css';
+import * as styles from './styles.module.css';
 
 const Article = ({ id, source, title, url }) => {
   const { color } = sources[source];

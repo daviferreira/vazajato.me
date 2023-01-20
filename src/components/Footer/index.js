@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Pdf from './pdf.svg';
 import Spreadsheet from './spreadsheet.svg';
 
-import styles from './styles.module.css';
+import * as styles from './styles.module.css';
 
 let timer;
 

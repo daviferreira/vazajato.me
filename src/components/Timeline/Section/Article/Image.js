@@ -1,6 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
 
 const Image = ({ alt, id }) => {
@@ -1265,8 +1265,9 @@ const Image = ({ alt, id }) => {
       # NEW IMAGE PLACEHOLDER
     }
   `);
-
-  return <Img alt={alt} fluid={data[id].childImageSharp.fluid} />;
+  return (
+    <GatsbyImage image={data[id].childImageSharp.gatsbyImageData} alt={alt} />
+  );
 };
 
 Image.propTypes = {

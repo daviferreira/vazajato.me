@@ -8,7 +8,7 @@ import Footer from '../Footer';
 import Section from './Section';
 import Header from './Header';
 
-import styles from './styles.module.css';
+import * as styles from './styles.module.css';
 
 const List = ({ articles, location, source, topic }) => {
   const [order, setOrder] = useState('desc');
@@ -31,7 +31,7 @@ const List = ({ articles, location, source, topic }) => {
   };
 
   return (
-    <div className={styles.container}>
+    <>
       <Header
         location={location}
         onSortChange={handleSortChange}
@@ -65,7 +65,7 @@ const List = ({ articles, location, source, topic }) => {
       <div className={styles.footer}>
         <Footer />
       </div>
-    </div>
+    </>
   );
 };
 
