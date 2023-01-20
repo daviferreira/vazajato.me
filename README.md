@@ -1,6 +1,4 @@
-# Linha do Tempo | VazaJato 
-
-[![Build Status](https://travis-ci.com/daviferreira/vazajato.me.svg?branch=master)](https://travis-ci.com/daviferreira/vazajato.me)
+# Linha do Tempo | VazaJato
 
 Página listando todas as reportagens publicadas até agora na #VazaJato.
 
