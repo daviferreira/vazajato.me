@@ -31,7 +31,7 @@ const List = ({ articles, location, source, topic }) => {
   };
 
   return (
-    <div className={styles.container}>
+    <>
       <Header
         location={location}
         onSortChange={handleSortChange}
@@ -65,7 +65,7 @@ const List = ({ articles, location, source, topic }) => {
       <div className={styles.footer}>
         <Footer />
       </div>
-    </div>
+    </>
   );
 };
 

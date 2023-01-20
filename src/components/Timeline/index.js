@@ -136,7 +136,7 @@ export default class Timeline extends Component {
 
     return (
       <div
-        className={classnames(styles.container, {
+        className={classnames({
           [styles.loaded]: !hasNext,
         })}
       >

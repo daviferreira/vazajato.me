@@ -114,7 +114,6 @@ const Header = ({ onSortChange, order, source, topic }) => {
             <ul className={styles.files}>
               <li>
                 <a
-                  className={styles.spreadsheet}
                   href="https://docs.google.com/spreadsheets/d/1y9bixq_sZ5TOwwqfoagRKX4zCm1Ka6hXbch9qN6OtKI"
                   rel="noopener noreferrer"
                   target="_blank"
@@ -124,7 +123,6 @@ const Header = ({ onSortChange, order, source, topic }) => {
               </li>
               <li>
                 <a
-                  className={styles.pdf}
                   href="https://www.dropbox.com/sh/a2wijlhwezq8yyo/AABTEZI4XWfjPEmHeKT7bbcYa?dl=0"
                   rel="noopener noreferrer"
                   target="_blank"
@@ -135,7 +133,7 @@ const Header = ({ onSortChange, order, source, topic }) => {
             </ul>
           </div>
         </div>
-        <div className={styles.share}>
+        <div>
           <ShareBar />
         </div>
       </div>
