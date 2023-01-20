@@ -3,12 +3,10 @@
     "standard",
     "plugin:react/recommended",
     "standard-react",
-    "prettier",
-    "prettier/standard",
-    "prettier/react"
+    "prettier"
   ],
   "plugins": ["react-hooks"],
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": {
     "sourceType": "module"
   },

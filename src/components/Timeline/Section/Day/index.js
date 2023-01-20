@@ -25,7 +25,7 @@ const Day = ({ articles, day, left, year }) => {
     >
       <div className={styles.indicator}>
         <div className={styles.circle} />
-        <time className={styles.day} timestamp={day}>
+        <time className={styles.day} dateTime={day}>
           {formatDate(day, year)}
         </time>
       </div>
