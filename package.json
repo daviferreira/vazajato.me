@@ -58,8 +58,8 @@
     "stylelint-order": "^4.1.0"
   },
   "engines": {
-    "node": "14.4.0",
-    "npm": "~6.9"
+    "node": "18.13.0",
+    "npm": "~8.19"
   },
   "keywords": [
     "gatsby"
