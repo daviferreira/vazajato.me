@@ -3,7 +3,7 @@ import React from 'react';
 
 import ShareBar from '../ShareBar';
 
-import styles from './styles.module.css';
+import * as styles from './styles.module.css';
 
 const Header = () => (
   <header className={styles.root}>

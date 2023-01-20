@@ -7,7 +7,7 @@ import Article from '../Article';
 
 import sources from '../../../../data/sources';
 
-import styles from './styles.module.css';
+import * as styles from './styles.module.css';
 
 const formatDate = (date, year) => {
   const [, month, day] = date.split('-');

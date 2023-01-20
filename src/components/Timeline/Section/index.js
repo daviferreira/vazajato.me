@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { InView } from 'react-intersection-observer';
 import Day from './Day';
 
-import styles from './styles.module.css';
+import * as styles from './styles.module.css';
 
 const MONTHS = {
   1: 'Janeiro',

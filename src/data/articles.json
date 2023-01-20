@@ -1,6 +1,6 @@
 [
   {
-    "id": "intercept1",
+    "articleId": "intercept1",
     "title": "Como e por que o Intercept está publicando chats privados sobre a Lava Jato e Sergio Moro",
     "url": "https://theintercept.com/2019/06/09/editorial-chats-telegram-lava-jato-moro/",
     "publishDate": "2019-06-09",
@@ -8,7 +8,7 @@
     "topics": ["Meta"]
   },
   {
-    "id": "intercept2",
+    "articleId": "intercept2",
     "title": "Procuradores da Lava Jato tramaram para barrar entrevista de Lula por medo de ‘eleger o Haddad’",
     "url": "https://theintercept.com/2019/06/09/procuradores-tramaram-impedir-entrevista-lula/",
     "publishDate": "2019-06-09",
@@ -16,7 +16,7 @@
     "topics": ["Lula", "Haddad"]
   },
   {
-    "id": "intercept3",
+    "articleId": "intercept3",
     "title": "Deltan duvidava das provas contra Lula e de propina da Petrobras horas antes de denunciar triplex",
     "url": "https://theintercept.com/2019/06/09/dallagnol-duvidas-triplex-lula-telegram-petrobras/",
     "publishDate": "2019-06-09",
@@ -24,7 +24,7 @@
     "topics": ["Deltan Dallagnol", "Lula", "Petrobras", "Triplex"]
   },
   {
-    "id": "intercept4",
+    "articleId": "intercept4",
     "title": "Chats privados revelam colaboração proibida de Moro com Deltan Dallagnol",
     "url": "https://theintercept.com/2019/06/09/chat-moro-deltan-telegram-lava-jato/",
     "publishDate": "2019-06-09",
@@ -32,7 +32,7 @@
     "topics": ["Moro", "Deltan Dallagnol"]
   },
   {
-    "id": "reinaldoazevedo7",
+    "articleId": "reinaldoazevedo7",
     "title": "Moro sobre papo de Dallagnol com membro do STF: In Fux we trust",
     "url": "https://reinaldoazevedo.blogosfera.uol.com.br/2019/06/12/exclusivo-moro-sobre-papo-de-dallagnol-com-membro-do-stf-in-fux-we-trust/",
     "publishDate": "2019-06-12",
@@ -40,7 +40,7 @@
     "topics": ["Moro", "Deltan Dallagnol", "STF", "Fux"]
   },
   {
-    "id": "reinaldoazevedo88pABzBWUSA9Gxc9cn7zkv",
+    "articleId": "reinaldoazevedo88pABzBWUSA9Gxc9cn7zkv",
     "title": "Mensagens com a mesma hora? Que bobagem! Nem teria como ser diferente!",
     "url": "https://reinaldoazevedo.blogosfera.uol.com.br/2019/06/12/mensagens-com-a-mesma-hora-que-bobagem-nem-teria-como-ser-diferente/",
     "publishDate": "2019-06-12",
@@ -48,7 +48,7 @@
     "topics": ["Meta"]
   },
   {
-    "id": "intercept5",
+    "articleId": "intercept5",
     "title": "Os diálogos de Moro e Deltan que embasaram a nossa reportagem",
     "url": "https://theintercept.com/2019/06/12/chat-sergio-moro-deltan-dallagnol-lavajato/",
     "publishDate": "2019-06-13",
@@ -56,7 +56,7 @@
     "topics": ["Moro", "Deltan Dallagnol"]
   },
   {
-    "id": "intercept6",
+    "articleId": "intercept6",
     "title": "Moro sugeriu nota para direcionar a imprensa após interrogar Lula. Lava Jato obedeceu.",
     "url": "https://theintercept.com/2019/06/14/sergio-moro-enquanto-julgava-lula-sugeriu-a-lava-jato-emitir-uma-nota-oficial-contra-a-defesa-eles-acataram-e-pautaram-a-imprensa/",
     "publishDate": "2019-06-15",
@@ -64,7 +64,7 @@
     "topics": ["Moro", "Lula", "Imprensa"]
   },
   {
-    "id": "intercept7",
+    "articleId": "intercept7",
     "title": "Moro repreendeu Deltan sobre investigação contra FHC: ‘melindra alguém cujo apoio é importante’",
     "url": "https://theintercept.com/2019/06/18/lava-jato-fingiu-investigar-fhc-apenas-para-criar-percepcao-publica-de-imparcialidade-mas-moro-repreendeu-melindra-alguem-cujo-apoio-e-importante/",
     "publishDate": "2019-06-19",
@@ -72,7 +72,7 @@
     "topics": ["Moro", "Deltan Dallagnol", "FHC", "PSDB"]
   },
   {
-    "id": "reinaldoazevedo1",
+    "articleId": "reinaldoazevedo1",
     "title": "O que disse Moro a senadores e o que fez Dallagnol com procuradora",
     "url": "https://reinaldoazevedo.blogosfera.uol.com.br/2019/06/20/inedito-o-que-disse-moro-a-senadores-e-o-que-fez-dallagnol-com-procuradora/",
     "publishDate": "2019-06-20",
@@ -80,7 +80,7 @@
     "topics": ["Moro", "Deltan Dallagnol", "Laura Tessler"]
   },
   {
-    "id": "folhagjGhM559fYT3DZLQH5zCJE",
+    "articleId": "folhagjGhM559fYT3DZLQH5zCJE",
     "title": "Série de reportagens da Folha explora mensagens obtidas por site The Intercept Brasil",
     "url": "https://www1.folha.uol.com.br/poder/2019/06/serie-de-reportagens-da-folha-explora-mensagens-obtidas-por-site-the-intercept-brasil.shtml",
     "publishDate": "2019-06-23",
@@ -88,7 +88,7 @@
     "topics": ["Meta"]
   },
   {
-    "id": "folha1",
+    "articleId": "folha1",
     "title": "Lava Jato articulou apoio a Moro diante de tensão com STF, mostram mensagens",
     "url": "https://www1.folha.uol.com.br/poder/2019/06/lava-jato-articulou-apoio-a-moro-diante-de-tensao-com-stf-mostram-mensagens.shtml",
     "publishDate": "2019-06-23",
@@ -96,7 +96,7 @@
     "topics": ["Moro", "STF", "MBL"]
   },
   {
-    "id": "folha2",
+    "articleId": "folha2",
     "title": "Leia íntegra da troca de mensagens entre Moro e Deltan ante tensão com STF",
     "url": "https://www1.folha.uol.com.br/poder/2019/06/leia-integra-da-troca-de-mensagens-entre-moro-e-deltan-ante-tensao-com-stf.shtml",
     "publishDate": "2019-06-23",
@@ -104,7 +104,7 @@
     "topics": ["Moro", "Deltan Dallagnol", "STF", "MBL"]
   },
   {
-    "id": "intercept8",
+    "articleId": "intercept8",
     "title": "‘Moro viola sempre o sistema acusatório’",
     "url": "https://theintercept.com/2019/06/29/chats-violacoes-moro-credibilidade-bolsonaro/",
     "publishDate": "2019-06-29",
@@ -112,7 +112,7 @@
     "topics": ["Moro", "Monique Cheker"]
   },
   {
-    "id": "folha13",
+    "articleId": "folha13",
     "title": "Deltan queria acelerar ações contra Jaques Wagner em 2018, mostram mensagens",
     "url": "https://www1.folha.uol.com.br/colunas/monicabergamo/2019/06/deltan-queria-acelerar-acoes-contra-jacques-wagner-em-2018-mostram-mensagens.shtml",
     "publishDate": "2019-06-29",
@@ -120,7 +120,7 @@
     "topics": ["Deltan Dallagnol", "Jaques Wagner"]
   },
   {
-    "id": "folha3",
+    "articleId": "folha3",
     "title": "Lava Jato desconfiou de empreiteiro pivô da prisão de Lula, indicam mensagens",
     "url": "https://www1.folha.uol.com.br/poder/2019/06/lava-jato-desconfiou-de-empreiteiro-pivo-da-prisao-de-lula-indicam-mensagens.shtml",
     "publishDate": "2019-06-30",
@@ -128,7 +128,7 @@
     "topics": ["Lula", "Léo Pinheiro", "OAS"]
   },
   {
-    "id": "folha4",
+    "articleId": "folha4",
     "title": "Leia trechos das mensagens entre procuradores sobre peça-chave na prisão de Lula",
     "url": "https://www1.folha.uol.com.br/poder/2019/06/leia-trechos-das-mensagens-entre-procuradores-sobre-peca-chave-na-prisao-de-lula.shtml",
     "publishDate": "2019-06-30",
@@ -136,7 +136,7 @@
     "topics": ["Lula", "Léo Pinheiro", "OAS"]
   },
   {
-    "id": "veja1",
+    "articleId": "veja1",
     "title": "Novos diálogos revelam que Moro orientava ilegalmente ações da Lava Jato",
     "url": "https://veja.abril.com.br/politica/dialogos-veja-capa-intercept-moro-dallagnol/",
     "publishDate": "2019-07-05",
@@ -144,7 +144,7 @@
     "topics": ["Moro"]
   },
   {
-    "id": "veja3",
+    "articleId": "veja3",
     "title": "Faustão: Em diálogos, Moro revela conselho de Fausto Silva à Lava Jato",
     "url": "https://veja.abril.com.br/brasil/em-dialogos-moro-revela-conselho-de-fausto-silva-a-lava-jato/",
     "publishDate": "2019-07-05",
@@ -152,7 +152,7 @@
     "topics": ["Moro", "Fausto Silva"]
   },
   {
-    "id": "veja4",
+    "articleId": "veja4",
     "title": "Diálogos revelam que Moro era contra a delação de Eduardo Cunha",
     "url": "https://veja.abril.com.br/brasil/dialogos-revelam-que-moro-era-contra-a-delacao-de-eduardo-cunha/",
     "publishDate": "2019-07-05",
@@ -160,7 +160,7 @@
     "topics": ["Moro", "Eduardo Cunha"]
   },
   {
-    "id": "intercept9",
+    "articleId": "intercept9",
     "title": "Lava Jato articulou vazamento para a oposição venezuelana após sugestão de Moro",
     "url": "https://theintercept.com/2019/07/07/lava-jato-vazamento-delacao-venezuela/",
     "publishDate": "2019-07-07",
@@ -168,7 +168,7 @@
     "topics": ["Moro", "Venezuela"]
   },
   {
-    "id": "folha5",
+    "articleId": "folha5",
     "title": "Lava Jato e Moro atuaram para expor dados sigilosos sobre Venezuela, mostram mensagens",
     "url": "https://www1.folha.uol.com.br/poder/2019/07/lava-jato-e-moro-atuaram-para-expor-dados-sigilosos-sobre-venezuela-mostram-mensagens.shtml",
     "publishDate": "2019-07-07",
@@ -176,7 +176,7 @@
     "topics": ["Moro", "Venezuela"]
   },
   {
-    "id": "interceptCheck",
+    "articleId": "interceptCheck",
     "title": "Como o Intercept Brasil confirma a identidade das pessoas que aparecem nos chats da #VazaJato",
     "url": "https://theintercept.com/2019/07/08/como-o-intercept-brasil-confirma-a-identidade-das-pessoas-que-aparecem-nos-chats-da-vazajato/",
     "publishDate": "2019-07-08",
@@ -184,7 +184,7 @@
     "topics": ["Meta"]
   },
   {
-    "id": "intercept1mes",
+    "articleId": "intercept1mes",
     "title": "ÁUDIO INÉDITO: Deltan comemora proibição de entrevista de Lula",
     "url": "https://theintercept.com/2019/07/09/vazajato-audio-inedito-deltan-dallagnol/",
     "publishDate": "2019-07-09",
@@ -192,7 +192,7 @@
     "topics": ["Deltan Dallagnol", "Lula", "Áudio"]
   },
   {
-    "id": "veja2",
+    "articleId": "veja2",
     "title": "Novos diálogos: indícios de conversas impróprias entre Deltan e Gebran",
     "url": "https://veja.abril.com.br/politica/novos-dialogos-indicios-de-conversas-improprias-entre-deltan-e-gebran/",
     "publishDate": "2019-07-12",
@@ -200,7 +200,7 @@
     "topics": ["Deltan Dallagnol", "Gebran", "TRF4"]
   },
   {
-    "id": "intercept10",
+    "articleId": "intercept10",
     "title": "R$ 400 mil: Deltan usou Lava Jato para lucrar com palestras e livros",
     "url": "https://theintercept.com/2019/07/14/dallagnol-lavajato-palestras/",
     "publishDate": "2019-07-14",
@@ -208,7 +208,7 @@
     "topics": ["Deltan Dallagnol", "Palestras"]
   },
   {
-    "id": "folha6",
+    "articleId": "folha6",
     "title": "Deltan montou plano para lucrar com fama da Lava Jato, apontam mensagens",
     "url": "https://www1.folha.uol.com.br/poder/2019/07/deltan-montou-plano-para-lucrar-com-fama-da-lava-jato-apontam-mensagens.shtml",
     "publishDate": "2019-07-14",
@@ -216,7 +216,7 @@
     "topics": ["Deltan Dallagnol", "Palestras"]
   },
   {
-    "id": "elpais1",
+    "articleId": "elpais1",
     "title": "Afinal, é possível testar a veracidade das mensagens divulgadas pelo ‘The Intercept’?",
     "url": "https://brasil.elpais.com/brasil/2019/07/13/politica/1563047507_551141.html",
     "publishDate": "2019-07-14",
@@ -224,7 +224,7 @@
     "topics": ["Meta"]
   },
   {
-    "id": "intercepthjkJ9pVmU87udJsQqHLN4h",
+    "articleId": "intercepthjkJ9pVmU87udJsQqHLN4h",
     "title": "#VazaJato: as provas de que os chats são autênticos agora vêm de diversos veículos de comunicação – são definitivas e esmagadoras",
     "url": "https://theintercept.com/2019/07/15/vazajato-as-provas-de-que-os-chats-sao-autenticos-agora-vem-de-diversos-veiculos-de-comunicacao-sao-definitivas-e-esmagadoras/",
     "publishDate": "2019-07-15",
@@ -232,7 +232,7 @@
     "topics": ["Meta"]
   },
   {
-    "id": "reinaldoazevedo2",
+    "articleId": "reinaldoazevedo2",
     "title": "Deltan pede, e Moro topa, dinheiro da 13ª Vara para campanha publicitária",
     "url": "https://reinaldoazevedo.blogosfera.uol.com.br/2019/07/15/deltan-pede-e-moro-topa-dinheiro-da-13o-vara-para-campanha-publicitaria/",
     "publishDate": "2019-07-15",
@@ -240,7 +240,7 @@
     "topics": ["Deltan Dallagnol", "Moro"]
   },
   {
-    "id": "reinaldoazevedo3",
+    "articleId": "reinaldoazevedo3",
     "title": "Moro combina reunião com Deltan e PF para coordenar futuro da LJ. É ilegal!",
     "url": "https://reinaldoazevedo.blogosfera.uol.com.br/2019/07/15/moro-combina-reuniao-com-deltan-e-pf-para-coordenar-futuro-da-lj-e-ilegal/",
     "publishDate": "2019-07-15",
@@ -248,7 +248,7 @@
     "topics": ["Moro", "Deltan Dallagnol", "PF"]
   },
   {
-    "id": "reinaldoazevedo4",
+    "articleId": "reinaldoazevedo4",
     "title": "Para Deltan e “Robito”, amanhãs gloriosos; para a população, terror e medo",
     "url": "https://reinaldoazevedo.blogosfera.uol.com.br/2019/07/15/para-deltan-e-robito-amanhas-gloriosos-para-a-populacao-terror-e-medo/",
     "publishDate": "2019-07-15",
@@ -256,7 +256,7 @@
     "topics": ["Deltan Dallagnol"]
   },
   {
-    "id": "reinaldoazevedo69bhAsqTTHxBByzESriykq",
+    "articleId": "reinaldoazevedo69bhAsqTTHxBByzESriykq",
     "title": "O que a Lava Jato diz em nota e o que ela silencia de extremamente grave",
     "url": "https://reinaldoazevedo.blogosfera.uol.com.br/2019/07/15/o-que-a-lava-jato-diz-em-nota-e-o-que-ela-silencia-de-extremamente-grave/",
     "publishDate": "2019-07-15",
@@ -264,7 +264,7 @@
     "topics": [""]
   },
   {
-    "id": "reinaldoazevedovCf9HJE6F9xu8h5v6Yiqnz",
+    "articleId": "reinaldoazevedovCf9HJE6F9xu8h5v6Yiqnz",
     "title": "É TUDO VERDADE: Deiró confirma orçamento, não trabalho; vídeo segue roteiro",
     "url": "https://reinaldoazevedo.blogosfera.uol.com.br/2019/07/15/e-tudo-verdade-deiro-confirma-orcamento-nao-trabalho-video-segue-roteiro/",
     "publishDate": "2019-07-15",
@@ -272,7 +272,7 @@
     "topics": [""]
   },
   {
-    "id": "folha7",
+    "articleId": "folha7",
     "title": "Dallagnol pede passagem e hotel para férias da família no Beach Park",
     "url": "https://www1.folha.uol.com.br/colunas/monicabergamo/2019/07/dallagnol-pede-passagem-e-hotel-para-ferias-da-familia-no-beach-park.shtml",
     "publishDate": "2019-07-16",
@@ -280,7 +280,7 @@
     "topics": ["Deltan Dallagnol", "Beach Park"]
   },
   {
-    "id": "reinaldoazevedo5",
+    "articleId": "reinaldoazevedo5",
     "title": "As estratégias de Deltan, o sedutor, e o jantar/coquetel na casa de Barroso",
     "url": "https://reinaldoazevedo.blogosfera.uol.com.br/2019/07/16/as-estrategias-de-deltan-o-sedutor-e-o-jantarcoquetel-na-casa-de-barroso/",
     "publishDate": "2019-07-16",
@@ -288,7 +288,7 @@
     "topics": ["Deltan Dallagnol", "Barroso", "STF"]
   },
   {
-    "id": "folha8",
+    "articleId": "folha8",
     "title": "Mensagens apontam que Moro interferiu em negociação de delações",
     "url": "https://www1.folha.uol.com.br/poder/2019/07/mensagens-apontam-que-moro-interferiu-em-negociacao-de-delacoes.shtml",
     "publishDate": "2019-07-18",
@@ -296,7 +296,7 @@
     "topics": ["Moro"]
   },
   {
-    "id": "intercept11",
+    "articleId": "intercept11",
     "title": "Deltan sugeriu que Moro protegeria Flávio Bolsonaro para não desagradar o presidente",
     "url": "https://theintercept.com/2019/07/21/deltan-dallagnol-sergio-moro-flavio-bolsonaro-queiroz/",
     "publishDate": "2019-07-21",
@@ -304,7 +304,7 @@
     "topics": ["Deltan Dallagnol", "Moro", "Flávio Bolsonaro", "Bolsonaro"]
   },
   {
-    "id": "intercept12",
+    "articleId": "intercept12",
     "title": "Deltan recebeu dinheiro de palestra de empresa investigada na Lava Jato",
     "url": "https://theintercept.com/2019/07/26/deltan-dallagnol-palestra-empresa-investigada-lava-jato/",
     "publishDate": "2019-07-26",
@@ -312,7 +312,7 @@
     "topics": ["Deltan Dallagnol", "Palestras"]
   },
   {
-    "id": "folha9",
+    "articleId": "folha9",
     "title": "Deltan foi pago por palestra em empresa citada na Lava Jato",
     "url": "https://www1.folha.uol.com.br/poder/2019/07/deltan-foi-pago-por-palestra-em-empresa-citada-na-lava-jato.shtml",
     "publishDate": "2019-07-26",
@@ -320,7 +320,7 @@
     "topics": ["Deltan Dallagnol", "Palestras"]
   },
   {
-    "id": "reinaldoazevedo6",
+    "articleId": "reinaldoazevedo6",
     "title": "Deltan e Fux em reuniões clandestinas com banqueiros. Tema: \"LJ e eleições\"",
     "url": "https://reinaldoazevedo.blogosfera.uol.com.br/2019/07/26/deltan-e-fux-em-reunioes-clandestinas-com-banqueiros-tema-lj-e-eleicoes/",
     "publishDate": "2019-07-26",
@@ -335,7 +335,7 @@
     ]
   },
   {
-    "id": "reinaldoazevedo63H3z4gPnrg2xGhuafDevk",
+    "articleId": "reinaldoazevedo63H3z4gPnrg2xGhuafDevk",
     "title": "Fux prefere o silêncio, e XP diz: “Pagamento ou não é acordado em contrato”",
     "url": "https://reinaldoazevedo.blogosfera.uol.com.br/2019/07/26/fux-prefere-o-silencio-e-xp-diz-pagamento-ou-nao-e-acordado-em-contrato/",
     "publishDate": "2019-07-26",
@@ -343,7 +343,7 @@
     "topics": ["Fux", "STF", "Palestras", "XP Investimentos", "Bancos"]
   },
   {
-    "id": "intercept13",
+    "articleId": "intercept13",
     "title": "Deltan foi estrela de encontro secreto com bancos organizado pela XP",
     "url": "https://theintercept.com/2019/07/26/deltan-encontro-secreto-bancos-xp/",
     "publishDate": "2019-07-27",
@@ -351,7 +351,7 @@
     "topics": ["Deltan Dallagnol", "XP Investimentos", "Palestras", "Bancos"]
   },
   {
-    "id": "folha10",
+    "articleId": "folha10",
     "title": "Moro achava fraca delação de Palocci que divulgou às vésperas de eleição, sugerem mensagens",
     "url": "https://www1.folha.uol.com.br/poder/2019/07/moro-achava-fraca-delacao-de-palocci-que-divulgou-as-vesperas-de-eleicao-sugerem-mensagens.shtml",
     "publishDate": "2019-07-29",
@@ -359,7 +359,7 @@
     "topics": ["Moro", "Palocci"]
   },
   {
-    "id": "intercept14",
+    "articleId": "intercept14",
     "title": "Deltan Dallagnol incentivou cerco da Lava Jato ao ministro do STF Dias Toffoli",
     "url": "https://theintercept.com/2019/08/01/deltan-incentivou-cerco-lava-jato-toffoli/",
     "publishDate": "2019-08-01",
@@ -367,7 +367,7 @@
     "topics": ["Deltan Dallagnol", "STF", "Toffoli"]
   },
   {
-    "id": "folha11",
+    "articleId": "folha11",
     "title": "Deltan incentivou cerco da Lava Jato a Toffoli, revelam mensagens",
     "url": "https://www1.folha.uol.com.br/poder/2019/08/deltan-incentivou-cerco-da-lava-jato-a-toffoli-revelam-mensagens.shtml",
     "publishDate": "2019-08-01",
@@ -375,7 +375,7 @@
     "topics": ["Deltan Dallagnol", "STF", "Toffoli"]
   },
   {
-    "id": "folha12",
+    "articleId": "folha12",
     "title": "Moro omitiu palestra remunerada em prestação de contas como juiz federal",
     "url": "https://www1.folha.uol.com.br/poder/2019/08/moro-omitiu-palestra-remunerada-em-prestacao-de-contas-como-juiz-federal.shtml",
     "publishDate": "2019-08-04",
@@ -383,7 +383,7 @@
     "topics": ["Moro", "Palestras"]
   },
   {
-    "id": "sUtjRt4SHw6UANc5Xekyxj",
+    "articleId": "sUtjRt4SHw6UANc5Xekyxj",
     "title": "Editorial | Por que o EL PAÍS decidiu publicar as mensagens da Lava Jato vazadas ao ‘The Intercept’",
     "url": "https://brasil.elpais.com/brasil/2019/08/05/opinion/1565029192_731997.html",
     "publishDate": "2019-08-06",
@@ -391,7 +391,7 @@
     "topics": ["Meta"]
   },
   {
-    "id": "elpais2",
+    "articleId": "elpais2",
     "title": "Lava Jato planejou buscar na Suíça provas contra Gilmar Mendes",
     "url": "https://brasil.elpais.com/brasil/2019/08/05/politica/1565040839_880977.html",
     "publishDate": "2019-08-06",
@@ -399,7 +399,7 @@
     "topics": ["Gilmar Mendes", "STF"]
   },
   {
-    "id": "pbY8izLdiWXV4UVfXXozRD",
+    "articleId": "pbY8izLdiWXV4UVfXXozRD",
     "title": "UOL faz parceria com Intercept em reportagens sobre mensagens da Lava Jato",
     "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2019/08/07/uol-faz-parceria-com-intercept-em-reportagens-sobre-mensagens-da-lava-jato.htm",
     "publishDate": "2019-08-07",
@@ -407,7 +407,7 @@
     "topics": ["Meta"]
   },
   {
-    "id": "uol1",
+    "articleId": "uol1",
     "title": "Deltan usou partido político para atacar Gilmar Mendes em ação no STF",
     "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2019/08/07/deltan-usou-partido-politico-para-atacar-gilmar-mendes-em-acao-no-stf.htm",
     "publishDate": "2019-08-07",
@@ -415,7 +415,7 @@
     "topics": ["Deltan Dallagnol", "Gilmar Mendes", "STF"]
   },
   {
-    "id": "uol2",
+    "articleId": "uol2",
     "title": "Fiel apoiador da Lava Jato, Randolfe se afasta após vazamentos de mensagens",
     "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2019/08/07/fiel-apoiador-da-lava-jato-randolfe-se-afasta-apos-vazamentos-de-mensagens.htm",
     "publishDate": "2019-08-07",
@@ -423,7 +423,7 @@
     "topics": ["Randolfe", "Senado"]
   },
   {
-    "id": "folha14",
+    "articleId": "folha14",
     "title": "Corregedor da Procuradoria viu conduta grave de Deltan, mas não abriu apuração",
     "url": "https://www1.folha.uol.com.br/poder/2019/08/corregedor-da-procuradoria-viu-conduta-grave-de-deltan-mas-nao-abriu-apuracao.shtml",
     "publishDate": "2019-08-08",
@@ -431,7 +431,7 @@
     "topics": ["Deltan Dallagnol"]
   },
   {
-    "id": "uol3",
+    "articleId": "uol3",
     "title": "Lava Jato viu em resultado das eleições no Senado chance de tirar Gilmar",
     "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2019/08/08/em-chats-lava-jato-cogita-puxao-de-orelha-e-impeachment-de-gilmar.htm",
     "publishDate": "2019-08-08",
@@ -439,7 +439,7 @@
     "topics": ["Gilmar Mendes", "Senado"]
   },
   {
-    "id": "elpaisdYKiP47dAgKWAPwgVnrkRW",
+    "articleId": "elpaisdYKiP47dAgKWAPwgVnrkRW",
     "title": "“O barraco tem nome e sobrenome. Raquel Dodge”, o retrato da procuradora-geral segundo a Lava Jato",
     "url": "https://brasil.elpais.com/brasil/2019/08/08/politica/1565296861_511506.html",
     "publishDate": "2019-08-09",
@@ -447,7 +447,7 @@
     "topics": ["Raquel Dodge", "PGR"]
   },
   {
-    "id": "interceptv7Jnm6r5Wb1ZCK5o6y9GQa",
+    "articleId": "interceptv7Jnm6r5Wb1ZCK5o6y9GQa",
     "title": "Vem Pra Rua e Mude serviram de laranjas para ações de pressão política da Lava Jato",
     "url": "https://theintercept.com/2019/08/11/deltan-lava-jato-vemprarua-lobby-stf/",
     "publishDate": "2019-08-12",
@@ -455,7 +455,7 @@
     "topics": ["Vem Pra Rua", "Mude"]
   },
   {
-    "id": "intercept9ZAr2r9Tmqq44axPuPLwPV",
+    "articleId": "intercept9ZAr2r9Tmqq44axPuPLwPV",
     "title": "\"É graças à nossa equipe e a muitos brasileiros corajosos que tomaram postura, como o MUDE\".",
     "url": "https://twitter.com/TheInterceptBr/status/1160937249732800513",
     "publishDate": "2019-08-12",
@@ -463,7 +463,7 @@
     "topics": ["Mude", "Deltan Dallagnol", "Renan Calheiros", "Senado"]
   },
   {
-    "id": "interceptptV24pHjj5Cp2UGXQRMWwg",
+    "articleId": "interceptptV24pHjj5Cp2UGXQRMWwg",
     "title": "\"Vc ajudou a derrubar Renan\"",
     "url": "https://twitter.com/TheInterceptBr/status/1160937454838394881",
     "publishDate": "2019-08-12",
@@ -471,7 +471,7 @@
     "topics": ["Moro", "Vladimir Aras", "Senado", "Renan Calheiros"]
   },
   {
-    "id": "interceptrEvL48gVcvB4mEuS9uqpgv",
+    "articleId": "interceptrEvL48gVcvB4mEuS9uqpgv",
     "title": "Deltan Dallagnol confessou que já sabia que Onyx Lorenzoni, atual chefe da Casa Civil de Bolsonaro, estava envolvido em corrupção",
     "url": "https://twitter.com/TheInterceptBr/status/1160938382048059392",
     "publishDate": "2019-08-12",
@@ -479,7 +479,7 @@
     "topics": ["Deltan Dallagnol", "Onyx Lorenzoni"]
   },
   {
-    "id": "buzzfeedqREdmimo5GcQyyqxv2FP1e",
+    "articleId": "buzzfeedqREdmimo5GcQyyqxv2FP1e",
     "title": "Diálogos indicam que Moro instruiu força-tarefa a não apreender celulares de Eduardo Cunha",
     "url": "https://www.buzzfeed.com/br/severinomotta/dialogos-indicam-que-moro-instruiu-forca-tarefa-a-nao",
     "publishDate": "2019-08-12",
@@ -487,7 +487,7 @@
     "topics": ["Moro", "Eduardo Cunha"]
   },
   {
-    "id": "uolfz849vs3owzVtNjtbm6Vg9",
+    "articleId": "uolfz849vs3owzVtNjtbm6Vg9",
     "title": "Deltan rejeitou receber prêmio ao lado de Bolsonaro e \"radicais de direita\"",
     "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2019/08/14/deltan-rejeitou-receber-premio-ao-lado-de-bolsonaro-e-radicais-de-direita.htm",
     "publishDate": "2019-08-14",
@@ -495,7 +495,7 @@
     "topics": ["Deltan Dallagnol", "Bolsonaro"]
   },
   {
-    "id": "folhahY75VdmXESdLFp9o28WGkP",
+    "articleId": "folhahY75VdmXESdLFp9o28WGkP",
     "title": "Ex-presidente da OAS diz ter liberado R$ 1 milhão em propina a vice de Doria",
     "url": "https://www1.folha.uol.com.br/poder/2019/08/ex-presidente-da-oas-diz-ter-liberado-r-1-milhao-em-propina-a-vice-de-doria.shtml",
     "publishDate": "2019-08-16",
@@ -503,7 +503,7 @@
     "topics": ["Doria", "Léo Pinheiro", "OAS"]
   },
   {
-    "id": "uolpPZhKEr1ywj8cMcwA8jVef",
+    "articleId": "uolpPZhKEr1ywj8cMcwA8jVef",
     "title": "Deltan fez lobby com STF e governo Bolsonaro para tentar emplacar novo PGR",
     "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2019/08/16/deltan-fez-lobby-com-stf-e-governo-para-tentar-emplacar-novo-pgr.htm",
     "publishDate": "2019-08-16",
@@ -511,7 +511,7 @@
     "topics": ["Deltan Dallagnol", "STF", "Bolsonaro", "PGR"]
   },
   {
-    "id": "folhasvVVDz5bDGybZqTr9QcAPC",
+    "articleId": "folhasvVVDz5bDGybZqTr9QcAPC",
     "title": "Lava Jato driblou lei para ter acesso a dados da Receita, mostram mensagens",
     "url": "https://www1.folha.uol.com.br/poder/2019/08/lava-jato-driblou-lei-para-ter-acesso-a-dados-da-receita-mostram-mensagens.shtml",
     "publishDate": "2019-08-18",
@@ -519,7 +519,7 @@
     "topics": ["Receita"]
   },
   {
-    "id": "intercept2bSAP51ucevpq3MSwbZTLy",
+    "articleId": "intercept2bSAP51ucevpq3MSwbZTLy",
     "title": "Lava Jato usava chats para pedir dados fiscais sigilosos ao atual chefe do Coaf",
     "url": "https://theintercept.com/2019/08/18/lava-jato-dados-sigilosos-chefe-coaf/",
     "publishDate": "2019-08-18",
@@ -527,7 +527,7 @@
     "topics": ["Receita", "Coaf"]
   },
   {
-    "id": "folha3TQuDLeVScQtbQw3ngdJqH",
+    "articleId": "folha3TQuDLeVScQtbQw3ngdJqH",
     "title": "Deltan idealizou monumento à Lava Jato, mas Moro previu crítica à 'soberba'",
     "url": "https://www1.folha.uol.com.br/poder/2019/08/deltan-idealizou-monumento-a-lava-jato-mas-moro-previu-critica-a-soberba.shtml",
     "publishDate": "2019-08-21",
@@ -535,7 +535,7 @@
     "topics": ["Deltan Dallagnol", "Moro", "Monumento"]
   },
   {
-    "id": "elpaiskM1WCbXpzThDRC6VR6RdyR",
+    "articleId": "elpaiskM1WCbXpzThDRC6VR6RdyR",
     "title": "Como os grandes bancos escaparam da Lava Jato",
     "url": "https://brasil.elpais.com/brasil/2019/08/16/politica/1565978687_974717.html",
     "publishDate": "2019-08-22",
@@ -543,7 +543,7 @@
     "topics": ["Bancos", "Palocci"]
   },
   {
-    "id": "glennjYRUC1horrtheHRMgxDRhU",
+    "articleId": "glennjYRUC1horrtheHRMgxDRhU",
     "title": "João Carlos Rocha sobre Ricardo Salles: \"Não é um porra louca qualquer. É um porra louca graúdo.\"",
     "url": "https://twitter.com/ggreenwald/status/1164532044585717763",
     "publishDate": "2019-08-22",
@@ -551,7 +551,7 @@
     "topics": ["Ricardo Salles"]
   },
   {
-    "id": "folhatpT1KVGMAW7gyt3sf4Ys9S",
+    "articleId": "folhatpT1KVGMAW7gyt3sf4Ys9S",
     "title": "Deltan mudou contratos de palestras, e filantropia ficou de lado, apontam mensagens",
     "url": "https://www1.folha.uol.com.br/poder/2019/08/deltan-mudou-contratos-de-palestras-e-filantropia-ficou-de-lado-apontam-mensagens.shtml",
     "publishDate": "2019-08-23",
@@ -559,7 +559,7 @@
     "topics": ["Deltan Dallagnol", "Palestras"]
   },
   {
-    "id": "interceptqjivZuopgupmze6iredVwX",
+    "articleId": "interceptqjivZuopgupmze6iredVwX",
     "title": "Corregedor-geral do MPF encobriu confissão de procurador da Lava Jato que pagou por outdoor ilegal",
     "url": "https://theintercept.com/2019/08/26/lava-jato-procurador-audios-outdoor/",
     "publishDate": "2019-08-26",
@@ -567,7 +567,7 @@
     "topics": ["Áudio", "Outdoor", "Diogo Castor de Mattos"]
   },
   {
-    "id": "uolo9SnGN3oQXTP6aB4P93LHt",
+    "articleId": "uolo9SnGN3oQXTP6aB4P93LHt",
     "title": "Procuradores da Lava Jato ironizam morte de Marisa Letícia e luto de Lula",
     "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2019/08/27/lava-jato-morte-marisa-leticia-lula.htm",
     "publishDate": "2019-08-27",
@@ -575,7 +575,7 @@
     "topics": ["Lula", "Marisa Letícia"]
   },
   {
-    "id": "folhaeRqn5gvUHvJ93mwPj8ZR59",
+    "articleId": "folhaeRqn5gvUHvJ93mwPj8ZR59",
     "title": "Delator preso pela Lava Jato diz ter lavado dinheiro para Grupo Silvio Santos",
     "url": "https://www1.folha.uol.com.br/poder/2019/08/delator-preso-pela-lava-jato-diz-ter-lavado-dinheiro-para-grupo-silvio-santos.shtml?utm_source=twitter&utm_medium=social&utm_campaign=twfolha",
     "publishDate": "2019-08-29",
@@ -583,7 +583,7 @@
     "topics": ["Grupo Silvio Santos"]
   },
   {
-    "id": "intercept2dJLphMAbxfYDphYcnM8Ku",
+    "articleId": "intercept2dJLphMAbxfYDphYcnM8Ku",
     "title": "Dallagnol mentiu: Lava Jato vazou informações para a imprensa para forçar delações",
     "url": "https://theintercept.com/2019/08/29/lava-jato-vazamentos-imprensa/",
     "publishDate": "2019-08-29",
@@ -591,7 +591,7 @@
     "topics": ["Deltan Dallagnol", "Imprensa"]
   },
   {
-    "id": "apublicapa7UkeqwXfXDMpLZr44owV",
+    "articleId": "apublicapa7UkeqwXfXDMpLZr44owV",
     "title": "Agência Pública é a nova parceira na cobertura dos diálogos da Vaza Jato",
     "url": "https://apublica.org/2019/09/agencia-publica-e-a-nova-parceira-na-cobertura-dos-dialogos-da-vaza-jato/",
     "publishDate": "2019-09-02",
@@ -599,7 +599,7 @@
     "topics": ["Meta"]
   },
   {
-    "id": "apublicamKgfyfTdBemGqofa2EL4Pa",
+    "articleId": "apublicamKgfyfTdBemGqofa2EL4Pa",
     "title": "Deltan captava recursos de empresários para Instituto Mude",
     "url": "https://apublica.org/2019/09/deltan-captava-recursos-de-empresarios-para-instituto-mude/",
     "publishDate": "2019-09-02",
@@ -607,7 +607,7 @@
     "topics": ["Deltan Dallagnol", "Mude"]
   },
   {
-    "id": "interceptnmgrMzbvbCBir3UHcAT1gc",
+    "articleId": "interceptnmgrMzbvbCBir3UHcAT1gc",
     "title": "Deltan avaliou candidatura ao Senado e não descartou disputa em 2022",
     "url": "https://theintercept.com/2019/09/03/deltan-senado-candidato/",
     "publishDate": "2019-09-03",
@@ -615,7 +615,7 @@
     "topics": ["Deltan Dallagnol", "Senado"]
   },
   {
-    "id": "elpaisfeDHHv53CwrnnjHRzRdytA",
+    "articleId": "elpaisfeDHHv53CwrnnjHRzRdytA",
     "title": "O limbo legal da Lava Jato que confiou cegamente no Telegram",
     "url": "https://brasil.elpais.com/brasil/2019/08/29/politica/1567099289_537556.html",
     "publishDate": "2019-09-05",
@@ -623,7 +623,7 @@
     "topics": ["Telegram"]
   },
   {
-    "id": "folha3eT61K1qvybdoC5PVMmvPp",
+    "articleId": "folha3eT61K1qvybdoC5PVMmvPp",
     "title": "Procuradores temiam Moro fraco e Aras na PGR",
     "url": "https://www1.folha.uol.com.br/colunas/monicabergamo/2019/09/procuradores-temiam-moro-fraco-e-aras-na-pgr.shtml",
     "publishDate": "2019-09-07",
@@ -631,7 +631,7 @@
     "topics": ["Moro", "PGR", "Augusto Aras"]
   },
   {
-    "id": "folha2angFaw5qGkbozPwDMXuum",
+    "articleId": "folha2angFaw5qGkbozPwDMXuum",
     "title": "Conversas de Lula mantidas sob sigilo pela Lava Jato enfraquecem tese de Moro",
     "url": "https://www1.folha.uol.com.br/poder/2019/09/conversas-de-lula-mantidas-sob-sigilo-pela-lava-jato-enfraquecem-tese-de-moro.shtml",
     "publishDate": "2019-09-08",
@@ -639,7 +639,7 @@
     "topics": ["Lula", "Moro"]
   },
   {
-    "id": "folha5HEaSaLP9PJSJuVSp8yZhh",
+    "articleId": "folha5HEaSaLP9PJSJuVSp8yZhh",
     "title": "Leia diálogos da Lava Jato sobre escutas telefônicas do ex-presidente Lula",
     "url": "https://www1.folha.uol.com.br/poder/2019/09/leia-dialogos-da-lava-jato-sobre-escutas-telefonicas-do-ex-presidente-lula.shtml",
     "publishDate": "2019-09-08",
@@ -647,7 +647,7 @@
     "topics": ["Lula", "Moro"]
   },
   {
-    "id": "uol2UnsQxALYaggWgfATDEb2i",
+    "articleId": "uol2UnsQxALYaggWgfATDEb2i",
     "title": "Lava Jato ignorou fraude relatada por Cunha em processo de cassação",
     "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2019/09/10/lava-jato-ignorou-fraude-relatada-por-cunha-em-processo-de-cassacao.htm",
     "publishDate": "2019-09-10",
@@ -655,7 +655,7 @@
     "topics": ["Eduardo Cunha"]
   },
   {
-    "id": "intercept8qyEHbPH7m7Fd9WKZGjeJZ",
+    "articleId": "intercept8qyEHbPH7m7Fd9WKZGjeJZ",
     "title": "Moro autorizou devassa na vida de filha de investigado da Lava Jato para tentar prendê-lo",
     "url": "https://theintercept.com/2019/09/10/moro-devassa-filha-investigado/",
     "publishDate": "2019-09-11",
@@ -663,7 +663,7 @@
     "topics": ["Moro"]
   },
   {
-    "id": "folhadu2AFswDG495LUVn4MiTr5",
+    "articleId": "folhadu2AFswDG495LUVn4MiTr5",
     "title": "OAS afirma que assumiu obra deficitária na Bolívia por exigência de Lula",
     "url": "https://www1.folha.uol.com.br/poder/2019/09/oas-afirma-que-assumiu-obra-deficitaria-na-bolivia-por-exigencia-de-lula.shtml",
     "publishDate": "2019-09-16",
@@ -671,7 +671,7 @@
     "topics": ["Lula", "OAS"]
   },
   {
-    "id": "reinaldoazevedoxcFFzqhU6VtsBY18wDakMu",
+    "articleId": "reinaldoazevedoxcFFzqhU6VtsBY18wDakMu",
     "title": "ILEGAL E IMORAL 1: Cotada por Aras tramou com advogado contra membro do STF",
     "url": "https://reinaldoazevedo.blogosfera.uol.com.br/2019/09/16/ilegal-e-imoral-1-cotada-por-aras-tramou-com-advogado-contra-membro-do-stf/",
     "publishDate": "2019-09-16",
@@ -679,7 +679,7 @@
     "topics": ["STF", "Modesto Carvalhosa", "Thaméa Danelon", "Gilmar Mendes"]
   },
   {
-    "id": "reinaldoazevedomCGQHzPgzQCDLQireNAX6Q",
+    "articleId": "reinaldoazevedomCGQHzPgzQCDLQireNAX6Q",
     "title": "ILEGAL E IMORAL 2: Envolvidos não comentam “material de origem criminosa”",
     "url": "https://reinaldoazevedo.blogosfera.uol.com.br/2019/09/16/ilegal-e-imoral-2-envolvidos-nao-comentam-material-de-origem-criminosa/",
     "publishDate": "2019-09-16",
@@ -687,7 +687,7 @@
     "topics": ["STF", "Modesto Carvalhosa", "Thaméa Danelon", "Gilmar Mendes"]
   },
   {
-    "id": "reinaldoazevedoqdUdTY4TbP4TJajG6UBAZV",
+    "articleId": "reinaldoazevedoqdUdTY4TbP4TJajG6UBAZV",
     "title": "ILEGAL E IMORAL 3: Escritório de advogado atua para acionistas da Petrobras",
     "url": "https://reinaldoazevedo.blogosfera.uol.com.br/2019/09/16/ilegal-e-imoral-3-escritorio-de-advogado-atua-para-acionistas-da-petrobras/",
     "publishDate": "2019-09-16",
@@ -701,7 +701,7 @@
     ]
   },
   {
-    "id": "reinaldoazevedo5hD7u9svb4nEhz6kbSTYR2",
+    "articleId": "reinaldoazevedo5hD7u9svb4nEhz6kbSTYR2",
     "title": "ILEGAL E IMORAL 4: Leia as perguntas enviadas a Thamea, Deltan e Carvalhosa",
     "url": "https://reinaldoazevedo.blogosfera.uol.com.br/2019/09/16/ilegal-e-imoral-4-leia-as-perguntas-enviadas-a-thamea-deltan-e-carvalhosa/",
     "publishDate": "2019-09-16",
@@ -709,7 +709,7 @@
     "topics": ["STF", "Modesto Carvalhosa", "Thaméa Danelon", "Gilmar Mendes"]
   },
   {
-    "id": "folhapkjbtqRgQupNz9Xying8yo",
+    "articleId": "folhapkjbtqRgQupNz9Xying8yo",
     "title": "Aloysio aparece como coordenador de propina do PSDB em delação da OAS",
     "url": "https://www1.folha.uol.com.br/poder/2019/09/aloysio-aparece-como-coordenador-de-propina-do-psdb-em-delacao-da-oas.shtml",
     "publishDate": "2019-09-21",
@@ -717,7 +717,7 @@
     "topics": ["OAS", "PSDB"]
   },
   {
-    "id": "interceptNewsletter1",
+    "articleId": "interceptNewsletter1",
     "title": "Uma mão lava a outra (a jato)",
     "url": "/newsletter-intercept-2019-09-21/",
     "publishDate": "2019-09-21",
@@ -725,7 +725,7 @@
     "topics": ["Deltan Dallagnol", "Moro", "ANPR"]
   },
   {
-    "id": "folhaj7aLmMbegqS2QvR7mjfbqa",
+    "articleId": "folhaj7aLmMbegqS2QvR7mjfbqa",
     "title": "Lava Jato poupou donos da Odebrecht de medidas drásticas para fechar delação",
     "url": "https://www1.folha.uol.com.br/poder/2019/09/lava-jato-poupou-donos-da-odebrecht-de-medidas-drasticas-para-fechar-delacao.shtml",
     "publishDate": "2019-09-22",
@@ -733,7 +733,7 @@
     "topics": ["Odebrecht"]
   },
   {
-    "id": "apublicadum6aiAJPLwJdZmskidKrQ",
+    "articleId": "apublicadum6aiAJPLwJdZmskidKrQ",
     "title": "De olho em vaga no Senado em 2022, Dallagnol mirou apoio de evangélicos",
     "url": "https://apublica.org/2019/09/de-olho-em-vaga-no-senado-em-2022-dallagnol-mirou-apoio-de-evangelicos/",
     "publishDate": "2019-09-23",
@@ -741,7 +741,7 @@
     "topics": ["Senado", "Deltan Dallagnol"]
   },
   {
-    "id": "reinaldoazevedo2X3jHAiZL2TytdAujCxZS1",
+    "articleId": "reinaldoazevedo2X3jHAiZL2TytdAujCxZS1",
     "title": "Laços estreitados em Oxford em 2016 fizeram de Barroso orientador de Deltan",
     "url": "https://reinaldoazevedo.blogosfera.uol.com.br/2019/09/25/lacos-estreitados-em-oxford-em-2016-fizeram-de-barroso-orientador-de-deltan/",
     "publishDate": "2019-09-25",
@@ -749,7 +749,7 @@
     "topics": ["Deltan Dallagnol", "STF", "Barroso"]
   },
   {
-    "id": "uolo89L93yf5yB3BQ8Yhw4PBh",
+    "articleId": "uolo89L93yf5yB3BQ8Yhw4PBh",
     "title": "Lava Jato usou provas ilegais do exterior para prender futuros delatores",
     "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2019/09/27/lava-jato-usou-provas-ilegais-do-exterior-para-prender-futuros-delatores.htm",
     "publishDate": "2019-09-27",
@@ -757,7 +757,7 @@
     "topics": ["Odebrecht", "Suíça"]
   },
   {
-    "id": "uoliscxswAvrqujAgmRL4jwgb",
+    "articleId": "uoliscxswAvrqujAgmRL4jwgb",
     "title": "\"Risco calculado\", disse Dallagnol sobre uso de prova ilegal em prisão",
     "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2019/09/27/risco-calculado-disse-dallagnol-sobre-uso-de-prova-ilegal-em-prisao.htm",
     "publishDate": "2019-09-27",
@@ -765,7 +765,7 @@
     "topics": ["Deltan Dallagnol", "Odebrecht", "Suíça"]
   },
   {
-    "id": "uolsbSehJUEFqwGz2dUMujeXG",
+    "articleId": "uolsbSehJUEFqwGz2dUMujeXG",
     "title": "Lava Jato teve acesso clandestino a sistema de propina da Odebrecht",
     "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2019/09/27/lava-jato-teve-acesso-clandestino-a-sistema-de-propina-da-odebrecht.htm",
     "publishDate": "2019-09-27",
@@ -773,7 +773,7 @@
     "topics": ["Odebrecht", "Suíça"]
   },
   {
-    "id": "intercept8kpywU5zBs1RW86DMEmuDi",
+    "articleId": "intercept8kpywU5zBs1RW86DMEmuDi",
     "title": "Lava Jato usou denúncia contra Lula para abafar crise que atingia Janot",
     "url": "https://theintercept.com/2019/10/13/lava-jato-lula-sitio-jbs/",
     "publishDate": "2019-10-14",
@@ -781,7 +781,7 @@
     "topics": ["Lula", "Rodrigo Janot"]
   },
   {
-    "id": "elpais8gbz362GfHaNMM96Q6YkHo",
+    "articleId": "elpais8gbz362GfHaNMM96Q6YkHo",
     "title": "Às vésperas do afastamento de Dilma, Lava Jato rejeitou delação que prenderia Temer em 2019",
     "url": "https://brasil.elpais.com/brasil/2019/09/30/economia/1569857428_539313.html",
     "publishDate": "2019-10-18",
@@ -789,7 +789,7 @@
     "topics": ["Dilma", "Temer"]
   },
   {
-    "id": "interceptw3pSfXkNgPuwJ57GNitk6w",
+    "articleId": "interceptw3pSfXkNgPuwJ57GNitk6w",
     "title": "Chats mostram que Sergio Moro também direcionava ações da Polícia Federal na Lava Jato",
     "url": "https://theintercept.com/2019/10/19/sergio-moro-policia-federal-lava-jato/",
     "publishDate": "2019-10-19",
@@ -797,7 +797,7 @@
     "topics": ["Moro", "PF"]
   },
   {
-    "id": "folhapVPNCBaVicy26D5P3jAkTx",
+    "articleId": "folhapVPNCBaVicy26D5P3jAkTx",
     "title": "Lava Jato levou ministro do STF a manter empreiteiros presos para fechar delação",
     "url": "https://www1.folha.uol.com.br/poder/2019/10/lava-jato-levou-ministro-do-stf-a-manter-empreiteiros-presos-para-fechar-delacao.shtml",
     "publishDate": "2019-10-27",
@@ -805,7 +805,7 @@
     "topics": ["Moro", "PF"]
   },
   {
-    "id": "folhaur8KRR5xo4LZMBVQWEYoQb",
+    "articleId": "folhaur8KRR5xo4LZMBVQWEYoQb",
     "title": "Força-tarefa da Lava Jato e Moro dizem que defesa de empreiteiros foi respeitada",
     "url": "https://www1.folha.uol.com.br/poder/2019/10/forca-tarefa-da-lava-jato-e-moro-dizem-que-defesa-de-empreiteiros-foi-respeitada.shtml",
     "publishDate": "2019-10-27",
@@ -813,7 +813,7 @@
     "topics": ["Moro", "PF"]
   },
   {
-    "id": "folhaqCcYJmm3c3eGXgHFq4UD7j",
+    "articleId": "folhaqCcYJmm3c3eGXgHFq4UD7j",
     "title": "Lava Jato deixou Rosa Weber no escuro ao pedir apoio a investigação sobre Lula",
     "url": "https://www1.folha.uol.com.br/poder/2019/11/lava-jato-deixou-rosa-weber-no-escuro-ao-pedir-apoio-a-investigacao-sobre-lula.shtml",
     "publishDate": "2019-11-05",
@@ -821,7 +821,7 @@
     "topics": ["Moro", "STF", "Rosa Weber", "Lula"]
   },
   {
-    "id": "elpais35k8Nh4zY6TCZAtvcS3R36",
+    "articleId": "elpais35k8Nh4zY6TCZAtvcS3R36",
     "title": "No pior momento da Lava Jato, força-tarefa em São Paulo tenta “renovar impulso”",
     "url": "https://brasil.elpais.com/brasil/2019/10/07/politica/1570461436_935160.html",
     "publishDate": "2019-11-05",
@@ -829,7 +829,7 @@
     "topics": [""]
   },
   {
-    "id": "uol4ZocjxgDhHn6Y3DYojWx45",
+    "articleId": "uol4ZocjxgDhHn6Y3DYojWx45",
     "title": "De \"notícia falsa\" a defesa de atos: Lava Jato mudou reação a vazamentos",
     "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2019/11/06/forca-tarefa-lava-jato-respostas-mensagens-vazadas-mudanca.htm",
     "publishDate": "2019-11-06",
@@ -837,7 +837,7 @@
     "topics": [""]
   },
   {
-    "id": "folha7YTgS29FptbTsB4FCozEdK",
+    "articleId": "folha7YTgS29FptbTsB4FCozEdK",
     "title": "Moro contrariou padrão da Lava Jato ao divulgar grampo de Lula, indicam mensagens",
     "url": "https://www1.folha.uol.com.br/poder/2019/11/moro-contrariou-padrao-da-lava-jato-ao-divulgar-grampo-de-lula-indicam-mensagens.shtml",
     "publishDate": "2019-11-24",
@@ -845,7 +845,7 @@
     "topics": ["Moro", "Lula"]
   },
   {
-    "id": "vejazaS42j31tcSgNkgptqRqs",
+    "articleId": "vejazaS42j31tcSgNkgptqRqs",
     "title": "Em mensagem, procurador diz que TCU tem ‘bandidos infiltrados’",
     "url": "https://veja.abril.com.br/blog/radar/em-mensagens-procurador-chama-ministros-do-tcu-de-bandidos-infiltrados/",
     "publishDate": "2019-10-18",
@@ -853,7 +853,7 @@
     "topics": ["TCU"]
   },
   {
-    "id": "folha5y3T4o4KByRuS5NEKxCUAW",
+    "articleId": "folha5y3T4o4KByRuS5NEKxCUAW",
     "title": "Mensagens vazadas da Lava Jato indicam favorecimento a jornalistas aliados",
     "url": "https://www1.folha.uol.com.br/ilustrissima/2019/12/mensagens-vazadas-da-lava-jato-indicam-favorecimento-a-jornalistas-aliados.shtml",
     "publishDate": "2019-12-20",
@@ -861,7 +861,7 @@
     "topics": ["Imprensa"]
   },
   {
-    "id": "elpaistW2DoMfxasnrfF6HmWewfJ",
+    "articleId": "elpaistW2DoMfxasnrfF6HmWewfJ",
     "title": "O acordo da Lava Jato que blindou o banco Safra de punições por negociar com  o doleiro Alberto Youssef",
     "url": "https://brasil.elpais.com/brasil/2019-12-20/o-acordo-da-lava-jato-que-blindou-o-banco-safra-de-punicoes-por-negociar-com-o-doleiro-alberto-youssef.html",
     "publishDate": "2019-12-20",
@@ -869,7 +869,7 @@
     "topics": ["Bancos"]
   },
   {
-    "id": "buzzfeeddz8BTbLYK6rD55eeizaKB4",
+    "articleId": "buzzfeeddz8BTbLYK6rD55eeizaKB4",
     "title": "Documentos mostram que atos da Lava Jato coincidiram com orientações de Moro no Telegram",
     "url": "https://www.buzzfeed.com/br/gracilianorocha/moro-deltan-telegram",
     "publishDate": "2019-06-13",
@@ -877,7 +877,7 @@
     "topics": ["Moro"]
   },
   {
-    "id": "folhanyK3UhmzYNmSsbxdup79rV",
+    "articleId": "folhanyK3UhmzYNmSsbxdup79rV",
     "title": "Em delação frustrada, Cunha citou 120 políticos e arrecadação milionária",
     "url": "https://www1.folha.uol.com.br/poder/2019/12/em-delacao-frustrada-cunha-citou-120-politicos-e-arrecadacao-milionaria.shtml",
     "publishDate": "2019-12-26",
@@ -885,7 +885,7 @@
     "topics": ["Eduardo Cunha"]
   },
   {
-    "id": "intercept2K4AwtdRm3sEQyUDUtDMYH",
+    "articleId": "intercept2K4AwtdRm3sEQyUDUtDMYH",
     "title": "Deltan usou Antagonista para interferir no Banco do Brasil",
     "url": "https://theintercept.com/2020/01/20/lava-jato-antagonista-deltan-parceria/",
     "publishDate": "2020-01-20",
@@ -893,7 +893,7 @@
     "topics": ["Deltan Dallagnol", "Antagonista", "Imprensa"]
   },
   {
-    "id": "intercept6RtmSuwZYmksBY3Q5UXhQs",
+    "articleId": "intercept6RtmSuwZYmksBY3Q5UXhQs",
     "title": "\"Sobre os levantamentos de sigilos, Delta, acho que estamos fracos de bons argumentos\"",
     "url": "https://twitter.com/rafaelmmartins/status/1219458533424541696",
     "publishDate": "2020-01-20",
@@ -901,7 +901,7 @@
     "topics": ["Deltan Dallagnol"]
   },
   {
-    "id": "intercepti2XsSRGiAzpEBdnrri3VCc",
+    "articleId": "intercepti2XsSRGiAzpEBdnrri3VCc",
     "title": "Leia todas as reportagens que o Intercept e parceiros produziram para a Vaza Jato",
     "url": "https://theintercept.com/2020/01/20/linha-do-tempo-vaza-jato/",
     "publishDate": "2020-01-20",
@@ -909,7 +909,7 @@
     "topics": ["Meta"]
   },
   {
-    "id": "apublicaacegdb5gDvoN9Yxqk2ZTs5",
+    "articleId": "apublicaacegdb5gDvoN9Yxqk2ZTs5",
     "title": "Como a Lava Jato escondeu do governo federal visita do FBI e procuradores americanos",
     "url": "https://apublica.org/2020/03/como-a-lava-jato-escondeu-do-governo-federal-visita-do-fbi-e-procuradores-americanos/",
     "publishDate": "2020-03-12",
@@ -917,7 +917,7 @@
     "topics": ["FBI"]
   },
   {
-    "id": "apublicacUF4CKemxSxLSb7swkcNa4",
+    "articleId": "apublicacUF4CKemxSxLSb7swkcNa4",
     "title": "Desde 2015, Lava Jato discutia repartir multa da Petrobras com americanos",
     "url": "https://apublica.org/2020/03/desde-2015,-lava-jato-discutia-repartir-multa-da-petrobras-com-americanos",
     "publishDate": "2020-03-12",
@@ -925,7 +925,7 @@
     "topics": ["FBI", "Petrobras"]
   },
   {
-    "id": "intercept65VSV2XLjBM3Sa8jmxA5xo",
+    "articleId": "intercept65VSV2XLjBM3Sa8jmxA5xo",
     "title": "Lava Jato fez de tudo para ajudar justiça americana – inclusive driblar o governo brasileiro",
     "url": "https://theintercept.com/2020/03/12/lava-jato-driblou-governo-ajudar-americanos-doj/",
     "publishDate": "2020-03-12",
@@ -933,7 +933,7 @@
     "topics": ["FBI", "DOJ"]
   },
   {
-    "id": "interceptvFKG1r8em5HDXYUAjNUmPR",
+    "articleId": "interceptvFKG1r8em5HDXYUAjNUmPR",
     "title": "Lava Jato suspeitava que Alexandre Ramagem era corrupto e ligado ao PT",
     "url": "https://theintercept.com/2020/04/27/vaza-jato-deltan-desconfiava-ramagem/",
     "publishDate": "2020-04-28",
@@ -941,7 +941,7 @@
     "topics": ["Alexandre Ramagem"]
   },
   {
-    "id": "interceptscUbEvyfugff2YXR6XR6m3",
+    "articleId": "interceptscUbEvyfugff2YXR6XR6m3",
     "title": "Um ano de Vaza Jato",
     "url": "https://theintercept.com/2020/06/09/vaza-jato-um-ano/",
     "publishDate": "2020-06-09",
@@ -949,7 +949,7 @@
     "topics": ["Meta"]
   },
   {
-    "id": "apublicaaAo1pExMUAMKQW5DW1hWVV",
+    "articleId": "apublicaaAo1pExMUAMKQW5DW1hWVV",
     "title": "O FBI e a Lava Jato",
     "url": "https://apublica.org/2020/07/o-fbi-e-a-lava-jato/",
     "publishDate": "2020-07-01",
@@ -957,7 +957,7 @@
     "topics": ["FBI"]
   },
   {
-    "id": "apublicas6SYVjZpEsij1B78vPxyi9",
+    "articleId": "apublicas6SYVjZpEsij1B78vPxyi9",
     "title": "Quem são os agentes do FBI que atuaram na Lava Jato",
     "url": "https://apublica.org/2020/07/quem-sao-os-agentes-do-fbi-que-atuaram-na-lava-jato/",
     "publishDate": "2020-07-02",
@@ -965,7 +965,7 @@
     "topics": ["FBI"]
   },
   {
-    "id": "reinaldoazevedosR3R1JEPdnAZy34mBitECf",
+    "articleId": "reinaldoazevedosR3R1JEPdnAZy34mBitECf",
     "title": "Até Dallagnol admite: fatos da Vaza Jato são causa de nulidade de processos",
     "url": "https://noticias.uol.com.br/colunas/reinaldo-azevedo/2020/07/07/ate-dallagnol-admite-fatos-da-vaza-jato-sao-causa-de-nulidade-de-processos.htm",
     "publishDate": "2020-07-07",
@@ -973,7 +973,7 @@
     "topics": ["Deltan Dallagnol"]
   },
   {
-    "id": "apublicauLJ7vNWDNnJ1VBBYGPh21Q",
+    "articleId": "apublicauLJ7vNWDNnJ1VBBYGPh21Q",
     "title": "Thread: A Lava-Jato e o Governo Americano",
     "url": "https://twitter.com/VianaNatalia/status/1281009499906682886",
     "publishDate": "2020-07-09",
@@ -981,7 +981,7 @@
     "topics": ["FBI"]
   },
   {
-    "id": "interceptNewsletter2",
+    "articleId": "interceptNewsletter2",
     "title": "Deltan que ama o FBI que odeia a PGR",
     "url": "/deltan-ama-fbi/",
     "publishDate": "2020-07-11",
@@ -989,7 +989,7 @@
     "topics": ["FBI", "PGR"]
   },
   {
-    "id": "interceptpjdgk6LWBtqoz57v3KKuf6",
+    "articleId": "interceptpjdgk6LWBtqoz57v3KKuf6",
     "title": "Fachin defendeu Moro como nem Dallagnol foi capaz de fazer",
     "url": "https://theintercept.com/2020/08/05/fachin-defendeu-moro-dallagnol-delacao-palocci/",
     "publishDate": "2020-08-05",
@@ -997,7 +997,7 @@
     "topics": ["Moro", "Fachin", "STF"]
   },
   {
-    "id": "interceptvCciqRjoRvir1MbkwHVKYs",
+    "articleId": "interceptvCciqRjoRvir1MbkwHVKYs",
     "title": "Descontrole no MPF: Brasília vazou investigação sigilosa contra Lula à Lava Jato",
     "url": "https://theintercept.com/2020/08/10/lava-jato-mpf-descontrole-vazamento-inquerito-sigiloso-lula-pgr-pic/",
     "publishDate": "2020-08-10",
@@ -1005,7 +1005,7 @@
     "topics": ["MPF", "Lula"]
   },
   {
-    "id": "apublicaoFmqZ21arDRkUpnxCi2Tkr",
+    "articleId": "apublicaoFmqZ21arDRkUpnxCi2Tkr",
     "title": "A aliança da Lava Jato com a Transparência Internacional",
     "url": "https://apublica.org/2020/09/a-alianca-da-lava-jato-com-a-transparencia-internacional/",
     "publishDate": "2020-09-14",
@@ -1013,7 +1013,7 @@
     "topics": ["Transparência Internacional"]
   },
   {
-    "id": "interceptsd4QqJfxeoSjnqerwZWVfD",
+    "articleId": "interceptsd4QqJfxeoSjnqerwZWVfD",
     "title": "Áudios: Deltan interferiu para colocar juiz aliado no lugar de Moro na Lava Jato",
     "url": "https://theintercept.com/2020/10/13/deltan-dallagnol-lava-jato-interferiu-substituto-sergio-moro/",
     "publishDate": "2020-10-13",
@@ -1021,7 +1021,7 @@
     "topics": ["Áudio", "Deltan Dallagnol"]
   },
   {
-    "id": "uolxbFLkbp9SDe4dvMiLN2yFj",
+    "articleId": "uolxbFLkbp9SDe4dvMiLN2yFj",
     "title": "Site: Lava Jato quis prender Lula durante coercitiva; petista vai ao STF",
     "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2020/10/16/site-lava-jato-quis-prender-lula-durante-coercitiva-petista-vai-ao-stf.htm",
     "publishDate": "2020-10-16",
@@ -1029,7 +1029,7 @@
     "topics": ["Lula", "STF"]
   },
   {
-    "id": "reinaldoazevedob3Je4DxXgpmX2tJ8y1ZDCm",
+    "articleId": "reinaldoazevedob3Je4DxXgpmX2tJ8y1ZDCm",
     "title": "Está pronto o livro sobre a Vaza Jato. A leitura, caros, é obrigatória!",
     "url": "https://noticias.uol.com.br/colunas/reinaldo-azevedo/2020/10/19/esta-pronto-o-livro-sobre-a-vaza-jato-a-leitura-caros-e-obrigatoria.htm",
     "publishDate": "2020-10-19",
@@ -1037,7 +1037,7 @@
     "topics": ["Livro", "Globo"]
   },
   {
-    "id": "elpaiscuoeR7wuTSyrHoeeSWRA6B",
+    "articleId": "elpaiscuoeR7wuTSyrHoeeSWRA6B",
     "title": "‘Vaza Jato’, a investigação que obrigou a imprensa brasileira a se olhar no espelho",
     "url": "https://brasil.elpais.com/brasil/2020-10-23/vaza-jato-a-investigacao-que-obrigou-a-imprensa-brasileira-se-olhar-no-espelho.html",
     "publishDate": "2020-10-23",
@@ -1045,7 +1045,7 @@
     "topics": ["Meta", "Imprensa"]
   },
   {
-    "id": "elpais4kYrXYsKyWWpN8cyPWtMsD",
+    "articleId": "elpais4kYrXYsKyWWpN8cyPWtMsD",
     "title": "O hacker, a ex-deputada e o jornalista",
     "url": "https://brasil.elpais.com/brasil/2020-10-23/o-hacker-a-ex-deputada-e-o-jornalista.html",
     "publishDate": "2020-10-23",
@@ -1053,7 +1053,7 @@
     "topics": ["Meta", "Hacker"]
   },
   {
-    "id": "apublicarENeMsd5NhyNjQ2CHoEbND",
+    "articleId": "apublicarENeMsd5NhyNjQ2CHoEbND",
     "title": "Thread: Alvarez & Marsal contrata Moro",
     "url": "https://twitter.com/VianaNatalia/status/1338890150462500864",
     "publishDate": "2020-12-15",
@@ -1061,7 +1061,7 @@
     "topics": ["Moro", "Alvares & Marsal", "Odebrecht"]
   },
   {
-    "id": "cnn7eeiqjwAiFvjRJxXoTDVp6",
+    "articleId": "cnn7eeiqjwAiFvjRJxXoTDVp6",
     "title": "Lava Jato queria prender ministros do STF, diz hacker em entrevista à CNN Brasil",
     "url": "https://www.cnnbrasil.com.br/nacional/2020/12/20/exclusivo-lava-jato-queria-prender-gilmar-mendes-e-toffoli-diz-hacker-a-cnn",
     "publishDate": "2020-12-20",
@@ -1069,7 +1069,7 @@
     "topics": ["Meta", "STF", "Hacker"]
   },
   {
-    "id": "conjurjoj4LqftuMj7KdwtzdTMbs",
+    "articleId": "conjurjoj4LqftuMj7KdwtzdTMbs",
     "title": "Perícia atesta integridade de mensagens hackeadas de procuradores",
     "url": "https://www.conjur.com.br/2020-dez-29/pericia-atesta-integridade-mensagens-hackeadas-vaza-jato",
     "publishDate": "2020-12-29",
@@ -1077,7 +1077,7 @@
     "topics": ["Meta"]
   },
   {
-    "id": "vejaoXyxPB1RgRGHEqTdC65Wdx",
+    "articleId": "vejaoXyxPB1RgRGHEqTdC65Wdx",
     "title": "Veja mensagens obtidas por Lula em ação, agora sob sigilo de Lewandowski",
     "url": "https://veja.abril.com.br/politica/lewandowski-poe-sigilo-sobre-vaza-jato-veja-mensagens-obtidas-por-lula/",
     "publishDate": "2021-01-28",
@@ -1085,7 +1085,7 @@
     "topics": ["Moro", "Deltan Dallagnol"]
   },
   {
-    "id": "uolfSKCnZggyuNAwoxkiXuzsm",
+    "articleId": "uolfSKCnZggyuNAwoxkiXuzsm",
     "title": "\"Cérebro\" da Lava Jato na Suíça sugeriu que Petrobras o contratasse",
     "url": "https://noticias.uol.com.br/colunas/jamil-chade/2021/01/29/cerebro-da-lava-jato-na-suica-sugeriu-que-petrobras-o-contratasse.htm",
     "publishDate": "2021-01-29",
@@ -1093,7 +1093,7 @@
     "topics": ["Deltan Dallagnol", "Suíça", "Petrobras"]
   },
   {
-    "id": "uolpjXvThf2NCXHyCheNxV8Hk",
+    "articleId": "uolpjXvThf2NCXHyCheNxV8Hk",
     "title": "Moro e Lava Jato trocaram informações sobre denúncia contra Lula",
     "url": "https://noticias.uol.com.br/colunas/jamil-chade/2021/01/29/moro-e-dallagnol-trocaram-informacoes-sobre-denuncia-contra-lula.htm",
     "publishDate": "2021-01-29",
@@ -1101,7 +1101,7 @@
     "topics": ["Moro", "Deltan Dallagnol", "Petrobras"]
   },
   {
-    "id": "monicabergamo4bonSvGppcvghZCHtX3FfG",
+    "articleId": "monicabergamo4bonSvGppcvghZCHtX3FfG",
     "title": "Lewandowski levanta sigilo e dá acesso a 50 páginas de conversas de Moro com procuradores; leia a troca de mensagens",
     "url": "https://www1.folha.uol.com.br/colunas/monicabergamo/2021/02/lewandowski-levanta-sigilo-e-novas-conversas-de-moro-com-procuradores-podem-vir-a-publico.shtml",
     "publishDate": "2021-02-01",
@@ -1109,7 +1109,7 @@
     "topics": ["STF"]
   },
   {
-    "id": "forumaMG3ywPx95XCc3RUBkFJSX",
+    "articleId": "forumaMG3ywPx95XCc3RUBkFJSX",
     "title": "Procuradora ridiculariza fala de Lula no dia em que ele foi preso: “orgasmo múltiplo, para ter tesão”",
     "url": "https://revistaforum.com.br/noticias/procuradora-disse-que-trf-moro-lava-jato-e-globo-tinham-sonho-de-ver-lula-preso-para-um-orgasmo-multiplo-para-ter-tesao/",
     "publishDate": "2021-02-01",
@@ -1117,7 +1117,7 @@
     "topics": ["Lula", "Globo", "TRF4", "Moro"]
   },
   {
-    "id": "conjurrRMJ5PWsQdic1ZwogfdcAV",
+    "articleId": "conjurrRMJ5PWsQdic1ZwogfdcAV",
     "title": "Confira novos diálogos entre procuradores do Paraná e Moro",
     "url": "https://www.conjur.com.br/2021-fev-01/confira-novos-dialogos-entre-procuradores-parana-sergio-moro",
     "publishDate": "2021-02-01",
@@ -1125,7 +1125,7 @@
     "topics": ["Lula", "STF", "Moro"]
   },
   {
-    "id": "estadaosnvC7eExfnoVTH6bbLTeou",
+    "articleId": "estadaosnvC7eExfnoVTH6bbLTeou",
     "title": "Dallagnol chama Lula de ‘Madre Teresa do Guarujá’ em conversa com procuradores",
     "url": "https://politica.estadao.com.br/blogs/coluna-do-estadao/dallagnol-chama-lula-de-madre-teresa-do-guaruja-em-conversa-com-procuradores/",
     "publishDate": "2021-02-01",
@@ -1133,7 +1133,7 @@
     "topics": ["Lula", "Deltan Dallagnol", "Triplex"]
   },
   {
-    "id": "conjuroLwhoqrMnfJQe1aM3MPhBB",
+    "articleId": "conjuroLwhoqrMnfJQe1aM3MPhBB",
     "title": "Mentira virou ferramenta de trabalho para grupo de Curitiba",
     "url": "https://www.conjur.com.br/2021-fev-02/mentira-virou-ferramenta-trabalho-grupo-curitiba",
     "publishDate": "2021-02-02",
@@ -1141,7 +1141,7 @@
     "topics": ["Toffoli"]
   },
   {
-    "id": "uolck8VKGKyrKXSEhxMAprrSU",
+    "articleId": "uolck8VKGKyrKXSEhxMAprrSU",
     "title": "Elogio de Dodge e 51: a reação da Lava Jato à operação contra Lula em sítio",
     "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2021/02/03/elogio-de-dodge-e-foto-de-51-o-chat-da-lava-jato-apos-operacao-em-sitio.htm",
     "publishDate": "2021-02-03",
@@ -1149,7 +1149,7 @@
     "topics": ["Sítio", "Lula", "Raquel Dodge"]
   },
   {
-    "id": "migalhas3QaZFiD7RHWqGfBRWaXEcR",
+    "articleId": "migalhas3QaZFiD7RHWqGfBRWaXEcR",
     "title": "Deltan pretendia usar a imprensa para pressionar TRF-4",
     "url": "https://migalhas.uol.com.br/quentes/313109/deltan-pretendia-usar-a-imprensa-para-pressionar-trf-4",
     "publishDate": "2021-02-02",
@@ -1165,7 +1165,7 @@
     ]
   },
   {
-    "id": "conjureEnGx5fZo35x7VX9fmjnJn",
+    "articleId": "conjureEnGx5fZo35x7VX9fmjnJn",
     "title": "\"Precisamos fazer algo em relação a Gilmar Mendes\", disse Dallagnol a procuradores",
     "url": "https://www.conjur.com.br/2021-fev-03/dallagnol-precisamos-algo-relacao-gilmar-mendes",
     "publishDate": "2021-02-03",
@@ -1173,7 +1173,7 @@
     "topics": ["Gilmar Mendes", "PSDB", "Deltan Dallagnol"]
   },
   {
-    "id": "uolpPu51k8ScWNU2FFaavtczc",
+    "articleId": "uolpPu51k8ScWNU2FFaavtczc",
     "title": "Diálogos entre procuradores levam defesa de Lula à Justiça na Suíça",
     "url": "https://noticias.uol.com.br/colunas/jamil-chade/2021/02/03/dialogos-entre-procuradores-levam-defesa-de-lula-a-justica-na-suica.htm",
     "publishDate": "2021-02-03",
@@ -1181,7 +1181,7 @@
     "topics": ["Suíça", "Odebrecht", "Lula"]
   },
   {
-    "id": "veja6BDbd2wxeF954hvhYaGPxQ",
+    "articleId": "veja6BDbd2wxeF954hvhYaGPxQ",
     "title": "Diálogo com Deltan sobre denúncia foi para ‘proteger’ Lula, diz Moro",
     "url": "https://veja.abril.com.br/blog/maquiavel/dialogo-com-deltan-sobre-denuncia-foi-para-proteger-lula-diz-moro/",
     "publishDate": "2021-02-03",
@@ -1189,7 +1189,7 @@
     "topics": ["Moro", "Lula"]
   },
   {
-    "id": "uolcLwcBH7bJ3nHye1QPsmh6X",
+    "articleId": "uolcLwcBH7bJ3nHye1QPsmh6X",
     "title": "Moro tirou sigilo de ação sobre acervo após Deltan temer Lula ministro",
     "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2021/02/04/moro-deltan-conversas-sigilo.htm",
     "publishDate": "2021-02-04",
@@ -1197,7 +1197,7 @@
     "topics": ["Moro", "Deltan Dallagnol", "Lula"]
   },
   {
-    "id": "folhaciFg2ZYWy9goh1E97Uq5C5",
+    "articleId": "folhaciFg2ZYWy9goh1E97Uq5C5",
     "title": "Divulgação de mensagens da Lava Jato por Lewandowski aumenta pressão sobre STF",
     "url": "https://www1.folha.uol.com.br/poder/2021/02/divulgacao-de-mensagens-da-lava-jato-por-lewandowski-aumenta-pressao-sobre-stf.shtml",
     "publishDate": "2021-02-03",
@@ -1205,7 +1205,7 @@
     "topics": ["Moro", "Deltan Dallagnol"]
   },
   {
-    "id": "conjur4MFU1ivuZdYYuC1vdS4Fvz",
+    "articleId": "conjur4MFU1ivuZdYYuC1vdS4Fvz",
     "title": "Devido processo legal é doença, diz professor anfitrião de Deltan",
     "url": "https://www.conjur.com.br/2021-fev-04/senso-incomum-devido-processo-legal-doenca-professor-anfitriao-deltan",
     "publishDate": "2021-02-04",
@@ -1213,7 +1213,7 @@
     "topics": ["Globo", "Deltan Dallagnol"]
   },
   {
-    "id": "monicabergamoicZLs8rFGaM3CuMYn58P3A",
+    "articleId": "monicabergamoicZLs8rFGaM3CuMYn58P3A",
     "title": "Procurador da Lava Jato não se sentia 'confortável' em defender amigo de Moro acusado de caixa dois para influir na Lava Jato, revelam diálogos",
     "url": "https://www1.folha.uol.com.br/colunas/monicabergamo/2021/02/deltan-nao-se-sentia-confortavel-em-defender-amigo-de-moro-acusado-de-caixa-dois-para-influir-na-lava-jato-revelam-dialogos.shtml",
     "publishDate": "2021-02-04",
@@ -1221,7 +1221,7 @@
     "topics": ["Moro", "Zucolotto"]
   },
   {
-    "id": "elpais6uXzaUy3xCFbbytgL5u4yS",
+    "articleId": "elpais6uXzaUy3xCFbbytgL5u4yS",
     "title": "Derrocada da Lava Jato expõe Moro como guia da força-tarefa, e escândalo cai no colo do Supremo",
     "url": "https://brasil.elpais.com/brasil/2021-02-04/derrocada-da-lava-jato-expoe-moro-como-guia-da-forca-tarefa-e-escandalo-cai-no-colo-do-supremo.html",
     "publishDate": "2021-02-04",
@@ -1229,7 +1229,7 @@
     "topics": ["Moro", "Lula"]
   },
   {
-    "id": "conjuro5BruJYDiskRrme8WvMcJs",
+    "articleId": "conjuro5BruJYDiskRrme8WvMcJs",
     "title": "Procurador da \"lava jato\" pede na Justiça censura contra Valor Econômico",
     "url": "https://www.conjur.com.br/2020-ago-04/procurador-lava-jato-justica-censura-valor-economico",
     "publishDate": "2021-02-04",
@@ -1237,7 +1237,7 @@
     "topics": ["Januário Paludo", "Dario Messer"]
   },
   {
-    "id": "uoltRWyeig89qoPtDzAfoFiQp",
+    "articleId": "uoltRWyeig89qoPtDzAfoFiQp",
     "title": "Em nova perícia, defesa de Lula reforça 'ilegalidade' de Moro e MPF; veja",
     "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2021/02/04/com-novas-mensagens-defesa-de-lula-reforca-ilegalidade-entre-moro-e-mpf.htm",
     "publishDate": "2021-02-04",
@@ -1245,7 +1245,7 @@
     "topics": ["Triplex", "Lula"]
   },
   {
-    "id": "cnnjUp5YYRM4C47oNVuXW82YJ",
+    "articleId": "cnnjUp5YYRM4C47oNVuXW82YJ",
     "title": "Novas mensagens mostram intenção da Lava Jato de investigar ministros do STJ",
     "url": "https://www.cnnbrasil.com.br/politica/2021/02/04/novas-mensagens-mostram-intencao-da-lava-jato-de-investigar-ministros-do-stj",
     "publishDate": "2021-02-04",
@@ -1253,7 +1253,7 @@
     "topics": ["Moro", "Receita", "STJ"]
   },
   {
-    "id": "conjurayfASrde3ydx3xEJtTYmVn",
+    "articleId": "conjurayfASrde3ydx3xEJtTYmVn",
     "title": "Delação de Palocci: procuradores viram tentativa de Moro influenciar as eleições",
     "url": "https://www.conjur.com.br/2021-fev-04/procuradores-viram-tentativa-moro-influenciar-eleicoes",
     "publishDate": "2021-02-04",
@@ -1261,7 +1261,7 @@
     "topics": ["Palocci", "Moro"]
   },
   {
-    "id": "cartacapitaligm1mqaFhZ1vU8hGCWNVxC",
+    "articleId": "cartacapitaligm1mqaFhZ1vU8hGCWNVxC",
     "title": "‘Meio porra louquinha’: Lava Jato criticou Moro por interferir nas eleições de 2018",
     "url": "https://www.cartacapital.com.br/politica/meio-porra-louquinha-lava-jato-criticou-moro-por-interferir-nas-eleicoes-de-2018/",
     "publishDate": "2021-02-04",
@@ -1269,7 +1269,7 @@
     "topics": ["Moro", "Vladimir Aras", "Palocci"]
   },
   {
-    "id": "metropoles3BRhvxuSXH6QqoSbMQYXaK",
+    "articleId": "metropoles3BRhvxuSXH6QqoSbMQYXaK",
     "title": "Mensagens apontam que procuradores de Curitiba se intitulavam \"equipe Moro\"",
     "url": "https://www.metropoles.com/brasil/politica-brasil/mensagens-apontam-que-procuradores-de-curitiba-se-intitulavam-equipe-moro",
     "publishDate": "2021-02-04",
@@ -1277,7 +1277,7 @@
     "topics": ["Moro", "Lula", "FHC", "PSDB"]
   },
   {
-    "id": "forumagBz4UQTBddxhoYce3uwkZ",
+    "articleId": "forumagBz4UQTBddxhoYce3uwkZ",
     "title": "Deltan disse que Moro ficou \"putin\" com convocação de Tacla Durán como testemunha de Lula",
     "url": "https://revistaforum.com.br/politica/deltan-disse-que-moro-ficou-putin-com-convocacao-de-tacla-duran-como-testemunha-de-lula/",
     "publishDate": "2021-02-04",
@@ -1285,7 +1285,7 @@
     "topics": ["Tacla Duran", "Moro", "Odebrecht"]
   },
   {
-    "id": "cartacapital1drtqwkCVdz1U8su13w5Ln",
+    "articleId": "cartacapital1drtqwkCVdz1U8su13w5Ln",
     "title": "'Lula está indo tomar café': Vaza Jato mostra como procuradores monitoravam grampos do ex-presidente",
     "url": "https://www.cartacapital.com.br/cartaexpressa/lula-esta-indo-tomar-cafe-vaza-jato-mostra-como-procuradores-monitoravam-grampos-do-ex-presidente/",
     "publishDate": "2021-02-04",
@@ -1293,7 +1293,7 @@
     "topics": ["Lula", "PF"]
   },
   {
-    "id": "conjurjKnLHMnwuijemY7vWbfgT9",
+    "articleId": "conjurjKnLHMnwuijemY7vWbfgT9",
     "title": "Conversa entre procuradores da \"lava jato\" mostra uso estratégico de vazamentos",
     "url": "https://www.conjur.com.br/2021-fev-05/conversa-entre-procuradores-mostra-uso-estrategico-vazamentos",
     "publishDate": "2021-02-05",
@@ -1301,7 +1301,7 @@
     "topics": ["Moro", "Globo", "Deltan Dallagnol", "Imprensa"]
   },
   {
-    "id": "uolwVri86hCipe6ctDG4uryEs",
+    "articleId": "uolwVri86hCipe6ctDG4uryEs",
     "title": "Após grampos, Lava Jato descartou prisão para não tornar Lula 'mártir vivo'",
     "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2021/02/06/lula-martir-lava-jato.htm",
     "publishDate": "2021-02-06",
@@ -1309,7 +1309,7 @@
     "topics": ["Lula", "Dilma"]
   },
   {
-    "id": "jamilchade6ns9kdDAUhdexfBWsjQxLD",
+    "articleId": "jamilchade6ns9kdDAUhdexfBWsjQxLD",
     "title": "Lava Jato antecipou delatores da Odebrecht a MP da Suíça, indicam mensagens",
     "url": "https://noticias.uol.com.br/colunas/jamil-chade/2021/02/08/lava-jato-odebrecht-mp-da-suica.htm",
     "publishDate": "2021-02-08",
@@ -1317,7 +1317,7 @@
     "topics": ["Odebrecht", "Suíça"]
   },
   {
-    "id": "conjur765MRi5AL1StHUKamqawdk",
+    "articleId": "conjur765MRi5AL1StHUKamqawdk",
     "title": "Procuradores combinavam com a Receita quebra de sigilo de ministros do STJ",
     "url": "https://www.conjur.com.br/2021-fev-08/lava-jato-combinava-receita-quebra-sigilo-ministros",
     "publishDate": "2021-02-08",
@@ -1325,7 +1325,7 @@
     "topics": ["Receita", "STJ"]
   },
   {
-    "id": "monicabergamoiUgYBwvACqNoW42d9FeW6n",
+    "articleId": "monicabergamoiUgYBwvACqNoW42d9FeW6n",
     "title": "Defesa de Lula envia novas mensagens ao STF e diz que Lava Jato adotou modelo 'pesque e pague' para obter informações da Receita",
     "url": "https://www1.folha.uol.com.br/colunas/monicabergamo/2021/02/defesa-de-lula-envia-novas-mensagens-ao-stf-e-diz-que-lava-jato-adotou-modelo-pesque-e-pague-para-obter-informacoes-da-receita.shtml",
     "publishDate": "2021-02-08",
@@ -1333,7 +1333,7 @@
     "topics": ["Receita", "STF"]
   },
   {
-    "id": "uold8ycKsGTgKU1XZvGVp91bd",
+    "articleId": "uold8ycKsGTgKU1XZvGVp91bd",
     "title": "Lava Jato comemorou ordem de prisão contra Lula: \"Meooo caneco\"",
     "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2021/02/08/lula-prisao-procuradores-lava-jato.htm",
     "publishDate": "2021-02-08",
@@ -1341,7 +1341,7 @@
     "topics": ["Lula"]
   },
   {
-    "id": "conjuriMRKAN4B78YeFqw5UWRNZV",
+    "articleId": "conjuriMRKAN4B78YeFqw5UWRNZV",
     "title": "Curitiba tentou coagir Rosa Weber com imprensa e Sergio Moro",
     "url": "https://www.conjur.com.br/2021-fev-08/curitiba-tentou-coagir-rosa-weber-imprensa-sergio-moro",
     "publishDate": "2021-02-08",
@@ -1349,7 +1349,7 @@
     "topics": ["Moro", "Rosa Weber", "Imprensa"]
   },
   {
-    "id": "uolpdJvrghrqxyar8Jm33hdHW",
+    "articleId": "uolpdJvrghrqxyar8Jm33hdHW",
     "title": "Lava Jato considerou em acusação deixar Lula 'mal frente aos trabalhadores'",
     "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2021/02/08/lava-jato-debateu-estrategia-de-deixar-lula-mal-frente-aos-trabalhadores.htm",
     "publishDate": "2021-02-08",
@@ -1357,7 +1357,7 @@
     "topics": ["Lula", "Triplex"]
   },
   {
-    "id": "conjureMFC4bMTG6VkTV3rrMyTcY",
+    "articleId": "conjureMFC4bMTG6VkTV3rrMyTcY",
     "title": "Deltan disse que prisão de Lula era \"presente da CIA\"",
     "url": "https://www.conjur.com.br/2021-fev-08/deltan-disse-prisao-lula-presente-cia",
     "publishDate": "2021-02-08",
@@ -1365,7 +1365,7 @@
     "topics": ["Lula", "CIA"]
   },
   {
-    "id": "uol6YUfBKA4L1rURubnMi2zEX",
+    "articleId": "uol6YUfBKA4L1rURubnMi2zEX",
     "title": "Perícia de Lula vê como autêntico arquivo que mostra Moro instruindo Deltan",
     "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2021/02/01/dialogos-moro-dallagnol-operacao-spoofing.htm",
     "publishDate": "2021-02-01",
@@ -1373,7 +1373,7 @@
     "topics": ["Moro", "Deltan Dallagnol"]
   },
   {
-    "id": "conjurmJyVumbcRXcaGSaonSt78j",
+    "articleId": "conjurmJyVumbcRXcaGSaonSt78j",
     "title": "Moro queria delação de Palocci \"pela mesma razão\" da de Leo Pinheiro",
     "url": "https://www.conjur.com.br/2021-fev-09/moro-delacao-palocci-mesma-razao-leo-pinheiro",
     "publishDate": "2021-02-09",
@@ -1381,7 +1381,7 @@
     "topics": ["Palocci", "Léo Pinheiro", "Moro"]
   },
   {
-    "id": "cartacapital2FRBbYUid7ejcwdvVBKaPN",
+    "articleId": "cartacapital2FRBbYUid7ejcwdvVBKaPN",
     "title": "'Ela é faca na caveira. Pedi uma decisão hoje e já saiu': diálogos mostram proximidade entre Lava Jato e sucessora de Moro",
     "url": "https://www.cartacapital.com.br/justica/ela-e-faca-na-caveira-pedi-uma-decisao-hoje-e-ja-saiu-dialogos-mostram-proximidade-entre-lava-jato-e-sucessora-de-moro/",
     "publishDate": "2021-02-08",
@@ -1389,7 +1389,7 @@
     "topics": ["Gabriela Hardt"]
   },
   {
-    "id": "conjurv85y58pzM716cS8rxfbqKP",
+    "articleId": "conjurv85y58pzM716cS8rxfbqKP",
     "title": "Mensagens evidenciam uso da imprensa por procuradores da \"lava jato\"",
     "url": "https://www.conjur.com.br/2021-fev-09/mensagens-evidenciam-uso-imprensa-procuradores-lava-jato",
     "publishDate": "2021-02-09",
@@ -1397,7 +1397,7 @@
     "topics": ["Imprensa"]
   },
   {
-    "id": "intercept8gVvzAndSd4z2spETJxVvd",
+    "articleId": "intercept8gVvzAndSd4z2spETJxVvd",
     "title": "O namoro entre a Lava Jato e a Rede Globo",
     "url": "https://theintercept.com/2021/02/09/namoro-lava-jato-rede-globo/",
     "publishDate": "2021-02-09",
@@ -1405,7 +1405,7 @@
     "topics": ["Globo", "Imprensa"]
   },
   {
-    "id": "forumowyVayRAWaK3zqsv9nVrZC",
+    "articleId": "forumowyVayRAWaK3zqsv9nVrZC",
     "title": "Dallagnol e MP usaram vizinhos de Zanin, advogado de Lula, pra ter informações de sua vida",
     "url": "https://revistaforum.com.br/noticias/dallagnol-e-mp-usaram-vizinhos-de-zanin-advogado-de-lula-pra-ter-informacoes-de-sua-vida/",
     "publishDate": "2021-02-09",
@@ -1413,7 +1413,7 @@
     "topics": ["Cristiano Zanin"]
   },
   {
-    "id": "uoljGVvPwX2mqZWUGbajZids5",
+    "articleId": "uoljGVvPwX2mqZWUGbajZids5",
     "title": "Moro pediu ajuda à Lava Jato quando já era ministro, indicam mensagens",
     "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2021/02/10/ja-ministro-moro-pediu-informacao-a-deltan-indicam-mensagens.htm",
     "publishDate": "2021-02-10",
@@ -1421,7 +1421,7 @@
     "topics": ["Moro", "Deltan Dallagnol"]
   },
   {
-    "id": "cnnkdfBkiYLZ3X8AFWtFfCtbo",
+    "articleId": "cnnkdfBkiYLZ3X8AFWtFfCtbo",
     "title": "Mensagens mostram que procuradores sabiam que Moro divulgaria conversas de Lula",
     "url": "https://www.cnnbrasil.com.br/politica/2021/02/09/mensagens-mostram-que-procuradores-sabiam-que-moro-divulgaria-conversas-de-lula",
     "publishDate": "2021-02-09",
@@ -1429,7 +1429,7 @@
     "topics": ["Moro", "Lula", "Jaques Wagner"]
   },
   {
-    "id": "jamilchadecZVBxiKTirTx42hE2yf6q2",
+    "articleId": "jamilchadecZVBxiKTirTx42hE2yf6q2",
     "title": "Suíços enviaram contas e offshores para Lava Jato pressionar investigados",
     "url": "https://noticias.uol.com.br/colunas/jamil-chade/2021/02/11/lava-jato-suicos.htm",
     "publishDate": "2021-02-11",
@@ -1437,7 +1437,7 @@
     "topics": ["Suíça", "Odebrecht"]
   },
   {
-    "id": "conjurbQEQevzxNk4GTkjnzrvmeW",
+    "articleId": "conjurbQEQevzxNk4GTkjnzrvmeW",
     "title": "Deltan antecipou denúncia do PowerPoint a Moro com meses de antecedência",
     "url": "https://www.conjur.com.br/2021-fev-10/deltan-antecipou-denuncia-moro-meses-antecedencia",
     "publishDate": "2021-02-10",
@@ -1445,7 +1445,7 @@
     "topics": ["Moro", "Lula", "Deltan Dallagnol"]
   },
   {
-    "id": "conjura9YoKEtjzsCyTdAjFywm9Q",
+    "articleId": "conjura9YoKEtjzsCyTdAjFywm9Q",
     "title": "Deltan informava Moro sobre andamento de processos do Supremo",
     "url": "https://www.conjur.com.br/2021-fev-10/moro-direcionava-atuacao-mpf-processos-supremo",
     "publishDate": "2021-02-10",
@@ -1453,7 +1453,7 @@
     "topics": ["Deltan Dallagnol", "Moro", "STF"]
   },
   {
-    "id": "conjur15GYeoXYK5jkc94ruCrUtv",
+    "articleId": "conjur15GYeoXYK5jkc94ruCrUtv",
     "title": "Jornalistas tiveram participação decisiva na \"lava jato\"",
     "url": "https://www.conjur.com.br/2021-fev-11/jornalistas-tiveram-participacao-decisiva-lava-jato",
     "publishDate": "2021-02-11",
@@ -1461,7 +1461,7 @@
     "topics": ["Imprensa"]
   },
   {
-    "id": "monicabergamooyW5YxAdm7Knr8tRAiaYDt",
+    "articleId": "monicabergamooyW5YxAdm7Knr8tRAiaYDt",
     "title": "'Precisamos atingir Lula na cabeça', diz procuradora em novas mensagens da Lava Jato entregues ao STF",
     "url": "https://www1.folha.uol.com.br/colunas/monicabergamo/2021/02/precisamos-atingir-lula-na-cabeca-diz-procuradora-em-novas-mensagens-da-lava-jato-entregues-ao-stf.shtml",
     "publishDate": "2021-02-12",
@@ -1469,7 +1469,7 @@
     "topics": ["STJ", "Lula"]
   },
   {
-    "id": "apublicar68ujpPic5zFUVXZNh5uFi",
+    "articleId": "apublicar68ujpPic5zFUVXZNh5uFi",
     "title": "Mensagens indicam parceria com FBI na operação que mirou tríplex do Guarujá",
     "url": "https://apublica.org/2021/02/mensagens-indicam-parceria-com-fbi-na-operacao-que-mirou-triplex-do-guaruja/",
     "publishDate": "2021-02-12",
@@ -1477,7 +1477,7 @@
     "topics": ["FBI", "Triplex"]
   },
   {
-    "id": "conjurowhvKjQ48wVRt4veaMbhjm",
+    "articleId": "conjurowhvKjQ48wVRt4veaMbhjm",
     "title": "MPF fez planilha para que Hardt julgasse primeiro o que interessava à \"lava jato\"",
     "url": "https://www.conjur.com.br/2021-fev-12/mpf-fez-planilha-indicar-prioridades-julgamento-hardt",
     "publishDate": "2021-02-12",
@@ -1485,7 +1485,7 @@
     "topics": ["Gabriela Hardt"]
   },
   {
-    "id": "uol1Jx57aFcQk6nzHY7Af7LZN",
+    "articleId": "uol1Jx57aFcQk6nzHY7Af7LZN",
     "title": "Deltan pediu checagem de viagens da defesa de Lula, indicam mensagens",
     "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2021/02/12/deltan-pediu-rastreamento-de-viagens-da-defesa-de-lula-indicam-mensagens.htm",
     "publishDate": "2021-02-12",
@@ -1493,7 +1493,7 @@
     "topics": ["Cristiano Zanin"]
   },
   {
-    "id": "conjur2RMvbTCrPmXqhyysQAAT9F",
+    "articleId": "conjur2RMvbTCrPmXqhyysQAAT9F",
     "title": "Cooperação entre \"lava jato\" e EUA acontecia fora dos canais oficiais",
     "url": "https://www.conjur.com.br/2021-fev-12/cooperacao-entre-lava-jato-eua-acontecia-fora-canais-oficiais",
     "publishDate": "2021-02-12",
@@ -1501,7 +1501,7 @@
     "topics": ["Deltan Dallagnol", "DOJ"]
   },
   {
-    "id": "forumeRdjHm4aV8XwFzXmXC9xR6",
+    "articleId": "forumeRdjHm4aV8XwFzXmXC9xR6",
     "title": "Lava Jato escondeu provas que mostravam inocência de Lula em palestras",
     "url": "https://revistaforum.com.br/noticias/lava-jato-escondeu-provas-que-mostravam-inocencia-de-lula-em-palestras/",
     "publishDate": "2021-02-12",
@@ -1509,7 +1509,7 @@
     "topics": ["Lula", "Palestras"]
   },
   {
-    "id": "jamilchade7aUqeghAnLiYURT8XPDXj4",
+    "articleId": "jamilchade7aUqeghAnLiYURT8XPDXj4",
     "title": "Missão de agentes dos EUA à Lava Jato gerou temor de crise diplomática",
     "url": "https://noticias.uol.com.br/colunas/jamil-chade/2021/02/13/americanos-curitiba-crise-diplomatica-eua.htm",
     "publishDate": "2021-02-13",
@@ -1517,7 +1517,7 @@
     "topics": ["FBI", "Dilma", "Petrobras", "Vladimir Aras"]
   },
   {
-    "id": "uolb4BYytBbHwoKcq8wXKaCX3",
+    "articleId": "uolb4BYytBbHwoKcq8wXKaCX3",
     "title": "Deltan indicou a juíza prioridades da Lava Jato após saída de Moro",
     "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2021/02/15/lava-jato-fases-substituta-moro.htm",
     "publishDate": "2021-02-15",
@@ -1525,7 +1525,7 @@
     "topics": ["Gabriela Hardt"]
   },
   {
-    "id": "monicabergamocDX5QzUZY7DqcQSRWv1xc1",
+    "articleId": "monicabergamocDX5QzUZY7DqcQSRWv1xc1",
     "title": "'Toffoli e Gilmar todo mundo quer pegar', diz procurador em mensagens; Alexandre de Moraes também era alvo",
     "url": "https://www1.folha.uol.com.br/colunas/monicabergamo/2021/02/toffoli-e-gilmar-todo-mundo-quer-pegar-dizem-procuradores-em-mensagens-que-colocam-tambem-alexandre-de-moraes-como-alvo.shtml",
     "publishDate": "2021-02-17",
@@ -1533,7 +1533,7 @@
     "topics": ["STF", "Gilmar Mendes", "Toffoli"]
   },
   {
-    "id": "conjurrjEbqh5xBUmWtGv82yDKYH",
+    "articleId": "conjurrjEbqh5xBUmWtGv82yDKYH",
     "title": "Procuradores sabiam que estavam grampeando advogados de Lula, mostra diálogo",
     "url": "https://www.conjur.com.br/2021-fev-17/procuradores-sabiam-estavam-grampeando-advogados-lula",
     "publishDate": "2021-02-17",
@@ -1541,7 +1541,7 @@
     "topics": ["Cristiano Zanin"]
   },
   {
-    "id": "uolvZLFZUpAVMBpw6mBCKgyDB",
+    "articleId": "uolvZLFZUpAVMBpw6mBCKgyDB",
     "title": "Deltan pediu para tirar foto de Lula de PowerPoint: 'Tá ficando shou'",
     "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2021/02/18/deltan-powerpoint-lula-lava-jato.htm",
     "publishDate": "2021-02-18",
@@ -1549,7 +1549,7 @@
     "topics": ["Deltan Dallagnol", "Lula"]
   },
   {
-    "id": "cartacapitalp9AQRhrqujTwzUL8tCM2mZ",
+    "articleId": "cartacapitalp9AQRhrqujTwzUL8tCM2mZ",
     "title": "Assessor do STF orientava a Lava Jato",
     "url": "https://www.cartacapital.com.br/politica/assessor-do-stf-orientava-a-lava-jato/",
     "publishDate": "2021-02-19",
@@ -1557,7 +1557,7 @@
     "topics": ["STF"]
   },
   {
-    "id": "conjur9g5hM6h2Rmgz5ts9VmHzZZ",
+    "articleId": "conjur9g5hM6h2Rmgz5ts9VmHzZZ",
     "title": "Castor pede trancamento de inquérito que apura se STJ foi investigado pela \"lava jato\"",
     "url": "https://www.conjur.com.br/2021-fev-21/castor-trancamento-inquerito-stj-investiga-lava-jato",
     "publishDate": "2021-02-21",
@@ -1565,7 +1565,7 @@
     "topics": ["STJ"]
   },
   {
-    "id": "uol9NgHXNBhsYzdsCHWkyfQdW",
+    "articleId": "uol9NgHXNBhsYzdsCHWkyfQdW",
     "title": "Deltan formulou proposta de mudanças no STF 'para não entrar um Toffoli'",
     "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2021/02/22/lava-jato-ministros-stf.htm",
     "publishDate": "2021-02-22",
@@ -1573,7 +1573,7 @@
     "topics": ["Deltan Dallagnol", "STF", "Toffoli"]
   },
   {
-    "id": "monicabergamo7EenmjqoS4GSoLyf499MR8",
+    "articleId": "monicabergamo7EenmjqoS4GSoLyf499MR8",
     "title": "PF registrou depoimento de testemunha que sequer foi ouvida, mostram novos diálogos da Lava Jato",
     "url": "https://www1.folha.uol.com.br/colunas/monicabergamo/2021/02/pf-registrou-depoimento-de-testemunha-que-sequer-foi-ouvida-mostram-novos-dialogos-da-lava-jato.shtml",
     "publishDate": "2021-02-22",
@@ -1581,7 +1581,7 @@
     "topics": ["PF", "Lula", "Erika Marena"]
   },
   {
-    "id": "conjurgBuEuo7Z6A9vqt8PYhfGYz",
+    "articleId": "conjurgBuEuo7Z6A9vqt8PYhfGYz",
     "title": "Em diálogo, procuradores admitem ter obtido material do exterior de forma ilegal",
     "url": "https://www.conjur.com.br/2021-fev-22/dialogo-procuradores-admitem-ilegalidade-noticiada-conjur",
     "publishDate": "2021-02-22",
@@ -1589,7 +1589,7 @@
     "topics": ["Suíça"]
   },
   {
-    "id": "conjurhfco33GMr45CzvEUqUYAuU",
+    "articleId": "conjurhfco33GMr45CzvEUqUYAuU",
     "title": "Via Telegram, Janot autorizou procurador a investigar autoridades com foro especial",
     "url": "https://www.conjur.com.br/2021-fev-22/via-telegram-janot-autorizou-procurador-investigar-autoridade",
     "publishDate": "2021-02-22",
@@ -1597,7 +1597,7 @@
     "topics": ["Suíça", "Rodrigo Janot"]
   },
   {
-    "id": "conjurp8w6xBAvP87XBfJEzppLZw",
+    "articleId": "conjurp8w6xBAvP87XBfJEzppLZw",
     "title": "MPF ocultou doença neurodegenerativa de delator da Odebrecht, mostra diálogo",
     "url": "https://www.conjur.com.br/2021-fev-22/procuradores-ocultaram-mal-alzheimer-delator-odebrecht",
     "publishDate": "2021-02-22",
@@ -1605,7 +1605,7 @@
     "topics": ["Odebrecht"]
   },
   {
-    "id": "estadaodhXg95TXwExTqviWmUinEU",
+    "articleId": "estadaodhXg95TXwExTqviWmUinEU",
     "title": "‘Deixe essa burocracia chata que não serve pra nada e vem pra cá você também, venha prender o Lula’, disse Deltan a colega, mostram diálogos hackeados da Lava Jato",
     "url": "https://politica.estadao.com.br/blogs/fausto-macedo/deixe-essa-burocracia-chata-que-nao-serve-pra-nada-e-vem-pra-ca-voce-tambem-venha-prender-o-lula-disse-deltan-a-colega-mostram-dialogos-hackeados-da-lava-jato/",
     "publishDate": "2021-02-22",
@@ -1613,7 +1613,7 @@
     "topics": ["Lula", "Deltan Dallagnol"]
   },
   {
-    "id": "conjurqbgFzw8wk3jk12F82c6GRV",
+    "articleId": "conjurqbgFzw8wk3jk12F82c6GRV",
     "title": "\"Lava jato\" do Rio era chamada de \"Santa Inquisição\" por procuradores",
     "url": "https://www.conjur.com.br/2021-fev-22/lava-jato-rio-chamada-santa-inquisicao-procuradores",
     "publishDate": "2021-02-22",
@@ -1621,7 +1621,7 @@
     "topics": ["Temer"]
   },
   {
-    "id": "conjuro3oNp9drDnKbzUAG8Yfe1k",
+    "articleId": "conjuro3oNp9drDnKbzUAG8Yfe1k",
     "title": "\"Faz tempo que não tenho vergonha na cara\", disse Dallagnol sobre cooperação informal",
     "url": "https://www.conjur.com.br/2021-fev-22/faz-tempo-nao-tenho-vergonha-cara-disse-deltan-monaco",
     "publishDate": "2021-02-22",
@@ -1629,7 +1629,7 @@
     "topics": ["Deltan Dallagnol", "Mônaco"]
   },
   {
-    "id": "conjurqRzApruuN8oGy5HwabNQKp",
+    "articleId": "conjurqRzApruuN8oGy5HwabNQKp",
     "title": "Procuradores planejaram afrontar Teori para manter investigação contra Lula",
     "url": "https://www.conjur.com.br/2021-fev-22/procuradores-planejaram-afrontar-teori-manter-lula",
     "publishDate": "2021-02-22",
@@ -1637,7 +1637,7 @@
     "topics": ["Lula", "Teori", "STF"]
   },
   {
-    "id": "conjurs66arETMhLerDtp1nJsSg6",
+    "articleId": "conjurs66arETMhLerDtp1nJsSg6",
     "title": "Procurador admitiu que competência de Curitiba era \"complexa e delicada\"",
     "url": "https://www.conjur.com.br/2021-fev-22/procurador-admitiu-competencia-curitiba-complexa",
     "publishDate": "2021-02-22",
@@ -1645,7 +1645,7 @@
     "topics": ["STF"]
   },
   {
-    "id": "conjurqkU38vdxKDbEeCiUcTPeds",
+    "articleId": "conjurqkU38vdxKDbEeCiUcTPeds",
     "title": "Deltan recebeu orientação de dentro do CNMP sobre processo do PowerPoint",
     "url": "https://www.conjur.com.br/2021-fev-22/deltan-recebeu-ajuda-dentro-cnmp-powerpoint",
     "publishDate": "2021-02-22",
@@ -1653,7 +1653,7 @@
     "topics": ["Deltan Dallagnol", "CNMP"]
   },
   {
-    "id": "conjurnD83PKnX9f5oJsp7zu4yds",
+    "articleId": "conjurnD83PKnX9f5oJsp7zu4yds",
     "title": "Investigar filhos de ministros é \"caminho\" para \"pegar Lula\", disse procurador",
     "url": "https://www.conjur.com.br/2021-fev-22/mpf-investigar-filhos-ministros-ajudar-pegar-lula",
     "publishDate": "2021-02-22",
@@ -1661,7 +1661,7 @@
     "topics": ["Lula", "STF", "STJ"]
   },
   {
-    "id": "conjurrDFGAzjuJwNJ5xir88AAvM",
+    "articleId": "conjurrDFGAzjuJwNJ5xir88AAvM",
     "title": "MPF distorceu notícia para desviar atenção da imprensa sobre decisão desfavorável",
     "url": "https://www.conjur.com.br/2021-fev-22/mpf-distorceu-noticia-abafar-decisao-desfavoravel-lava-jato",
     "publishDate": "2021-02-22",
@@ -1669,7 +1669,7 @@
     "topics": ["Imprensa", "Suíça"]
   },
   {
-    "id": "conjurde6cbqe2WPzTUiK1GkTPAB",
+    "articleId": "conjurde6cbqe2WPzTUiK1GkTPAB",
     "title": "Moro enviou a Dallagnol dossiê contra ministro do STJ Ribeiro Dantas",
     "url": "https://www.conjur.com.br/2021-fev-23/moro-enviou-dallagnol-dossie-ministro-stj-ribeiro-dantas",
     "publishDate": "2021-02-23",
@@ -1677,7 +1677,7 @@
     "topics": ["Moro", "Deltan Dallagnol", "STJ"]
   },
   {
-    "id": "uoltDcSUZwHB6tzja1HZgTX7o",
+    "articleId": "uoltDcSUZwHB6tzja1HZgTX7o",
     "title": "Lava Jato: Contratar ex-procurador suíço renderia 'docs da investigação'",
     "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2021/02/24/para-lava-jato-contratar-procurador-suico-renderia-docs-da-investigacao.htm",
     "publishDate": "2021-02-24",
@@ -1685,7 +1685,7 @@
     "topics": ["Suíça", "Odebrecht"]
   },
   {
-    "id": "intercept3wubNWXNCmudiTnC9aCD4R",
+    "articleId": "intercept3wubNWXNCmudiTnC9aCD4R",
     "title": "Doleiro mudou delação para inocentar procurador da Lava Jato a quem dizia pagar propina",
     "url": "https://theintercept.com/2021/02/24/doleiro-dario-messer-mudou-delacao-procurador-januario-paludo/",
     "publishDate": "2021-02-24",
@@ -1693,7 +1693,7 @@
     "topics": ["Januário Paludo", "Dario Messer"]
   },
   {
-    "id": "conjurcuVp6DCbjcbbZqmwf4U16Q",
+    "articleId": "conjurcuVp6DCbjcbbZqmwf4U16Q",
     "title": "Temos que proteger a Erika, disse Deltan ao saber que delegada forjou depoimento",
     "url": "https://www.conjur.com.br/2021-fev-24/temos-proteger-erika-disse-deltan-depoimento-forjado",
     "publishDate": "2021-02-24",
@@ -1701,7 +1701,7 @@
     "topics": ["Erika Marena"]
   },
   {
-    "id": "cnnppbLvT4NMymPzd17b8ScnE",
+    "articleId": "cnnppbLvT4NMymPzd17b8ScnE",
     "title": "Já ministro, Moro consultou Lava Jato sobre acordos internacionais",
     "url": "https://www.cnnbrasil.com.br/politica/2021/02/26/ja-ministro-moro-consultou-lava-jato-sobre-acordos-internacionais",
     "publishDate": "2021-02-26",
@@ -1709,7 +1709,7 @@
     "topics": ["Moro", "Deltan Dallagnol"]
   },
   {
-    "id": "cnnvVmDMwxt6yJGyhAvWuYyPH",
+    "articleId": "cnnvVmDMwxt6yJGyhAvWuYyPH",
     "title": "Lava Jato comemorou ida de Witzel ao segundo turno para governo do Rio",
     "url": "https://www.cnnbrasil.com.br/politica/2021/02/26/lava-jato-comemorou-ida-de-witzel-ao-segundo-turno-para-governo-do-rio",
     "publishDate": "2021-02-26",
@@ -1717,7 +1717,7 @@
     "topics": ["Deltan Dallagnol", "Wilson Witzel"]
   },
   {
-    "id": "cnne2SfHeuB9wT6AYqEp1eMnX",
+    "articleId": "cnne2SfHeuB9wT6AYqEp1eMnX",
     "title": "Em diálogo, Lava Jato comentou vazamento de dados de Flávio Bolsonaro",
     "url": "https://www.cnnbrasil.com.br/politica/2021/02/26/em-dialogo-lava-jato-comentou-vazamento-de-dados-de-flavio-bolsonaro",
     "publishDate": "2021-02-26",
@@ -1725,7 +1725,7 @@
     "topics": ["Deltan Dallagnol", "Flávio Bolsonaro", "Bolsonaro"]
   },
   {
-    "id": "monicabergamowQKB6DLcAQuhSSYzCvbnp4",
+    "articleId": "monicabergamowQKB6DLcAQuhSSYzCvbnp4",
     "title": "A OAS tem que mijar sangue', diz procurador em diálogos da Lava Jato",
     "url": "https://www1.folha.uol.com.br/colunas/monicabergamo/2021/03/a-oas-tem-que-mijar-sangue-diz-procurador-em-dialogos-da-lava-jato.shtml",
     "publishDate": "2021-03-01",
@@ -1733,7 +1733,7 @@
     "topics": ["OAS", "Lula", "Palocci"]
   },
   {
-    "id": "uolcyZ7vZgUSKW15YjLhUN5NM",
+    "articleId": "uolcyZ7vZgUSKW15YjLhUN5NM",
     "title": "Lava Jato descartou grampo sobre tríplex por receio de ajudar tese de Lula",
     "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2021/03/01/lava-jato-defesa-lula-stf-mensagens.htm",
     "publishDate": "2021-03-01",
@@ -1741,7 +1741,7 @@
     "topics": ["Lula", "Triplex"]
   },
   {
-    "id": "cartacapitalrr7fRY349eobc8rKMpH2Yu",
+    "articleId": "cartacapitalrr7fRY349eobc8rKMpH2Yu",
     "title": "Diálogos mostram que Lava Jato queria delação de Palocci para ‘detonar a imagem do 9’",
     "url": "https://www.cartacapital.com.br/politica/dialogos-mostram-que-lava-jato-queria-delacao-de-palocci-para-detonar-a-imagem-do-9/",
     "publishDate": "2021-03-01",
@@ -1749,7 +1749,7 @@
     "topics": ["Palocci", "Lula"]
   },
   {
-    "id": "conjuraWND8usYJgRcqj1WXrAvUW",
+    "articleId": "conjuraWND8usYJgRcqj1WXrAvUW",
     "title": "Divisão de dinheiro da Odebrecht ocorreu informalmente, admite procurador",
     "url": "https://www.conjur.com.br/2021-mar-01/divisao-dinheiro-eua-suica-foi-informal-admite-procurador",
     "publishDate": "2021-03-01",
@@ -1757,7 +1757,7 @@
     "topics": ["Odebrecht", "Suíça", "Luis Nassif"]
   },
   {
-    "id": "conjur3aPfPXRvEbyfCijcYsQPke",
+    "articleId": "conjur3aPfPXRvEbyfCijcYsQPke",
     "title": "Para procurador, compra de caças pela qual Lula é réu não tinha \"nada de anormal\"",
     "url": "https://www.conjur.com.br/2021-mar-01/compra-cacas-nao-teve-nada-anormal-disse-procurador",
     "publishDate": "2021-03-01",
@@ -1765,7 +1765,7 @@
     "topics": ["Lula"]
   },
   {
-    "id": "conjurnFkNArVSRci7ZLrSKvL1ba",
+    "articleId": "conjurnFkNArVSRci7ZLrSKvL1ba",
     "title": "Lavajatistas tentaram esconder conflito de interesses entre familiares",
     "url": "https://www.conjur.com.br/2021-mar-01/lavajatistas-tentaram-esconder-conflito-interesses-entre-familiares",
     "publishDate": "2021-03-01",
@@ -1773,7 +1773,7 @@
     "topics": ["Diogo Castor de Mattos"]
   },
   {
-    "id": "cnnx9XDaQ4Hr7euDceEuv4aDi",
+    "articleId": "cnnx9XDaQ4Hr7euDceEuv4aDi",
     "title": "Lava Jato sobre caso Flávio Bolsonaro: 'O pai vai deixar?'",
     "url": "https://www.cnnbrasil.com.br/politica/2021/03/01/lava-jato-sobre-caso-flavio-bolsonaro-o-pai-vai-deixar",
     "publishDate": "2021-03-01",
@@ -1781,7 +1781,7 @@
     "topics": ["Flávio Bolsonaro", "Bolsonaro"]
   },
   {
-    "id": "cnn8qDqx4bFm7qRzWFZi9BY7Z",
+    "articleId": "cnn8qDqx4bFm7qRzWFZi9BY7Z",
     "title": "Na campanha, Lava Jato considerou Bolsonaro de 'mito' a 'retrocesso'",
     "url": "https://www.cnnbrasil.com.br/politica/2021/03/01/na-campanha-lava-jato-considerou-bolsonaro-de-mito-a-retrocesso",
     "publishDate": "2021-03-01",
@@ -1789,7 +1789,7 @@
     "topics": ["Bolsonaro", "Haddad"]
   },
   {
-    "id": "metropolesjUrGYrvxmCM1vXXZYXSZ1T",
+    "articleId": "metropolesjUrGYrvxmCM1vXXZYXSZ1T",
     "title": "Lava Jato sobre Lula: “Dá pra gritar gol quando ele se ferrar?”",
     "url": "https://www.metropoles.com/brasil/politica-brasil/lava-jato-sobre-lula-da-pra-gritar-gol-quando-ele-se-ferrar",
     "publishDate": "2021-03-01",
@@ -1797,7 +1797,7 @@
     "topics": ["Lula"]
   },
   {
-    "id": "conjurtCaGMTL35Bis72sBbChC7X",
+    "articleId": "conjurtCaGMTL35Bis72sBbChC7X",
     "title": "Diálogo mostra como MPF usou denúncia \"capenga\" para obter condenação de Lula",
     "url": "https://www.conjur.com.br/2021-mar-02/dialogo-mostra-denuncia-capenga-serviu-condenar-lula",
     "publishDate": "2021-03-02",
@@ -1805,7 +1805,7 @@
     "topics": ["Deltan Dallagnol", "Lula", "Triplex"]
   },
   {
-    "id": "conjur7JLfPwSLsoDK4wLzTttUMH",
+    "articleId": "conjur7JLfPwSLsoDK4wLzTttUMH",
     "title": "Delegado da PF perseguido por lavajatistas pede acesso aos diálogos",
     "url": "https://www.conjur.com.br/2021-mar-02/delegado-pf-perseguido-lavajatistas-acesso-aos-dialogos",
     "publishDate": "2021-03-02",
@@ -1813,7 +1813,7 @@
     "topics": ["PF", "Erika Marena"]
   },
   {
-    "id": "conjursofpNY3AiKJ7kzPoCpRASV",
+    "articleId": "conjursofpNY3AiKJ7kzPoCpRASV",
     "title": "\"Se perdermos o HC do Palocci temos que pedir o impeachment do Gilmar\", disse Deltan",
     "url": "https://www.conjur.com.br/2021-mar-02/deltan-impeachment-gilmar-perdessem-hc-palocci",
     "publishDate": "2021-03-02",
@@ -1821,7 +1821,7 @@
     "topics": ["STF", "Gilmar Mendes", "Thaméa Danelon"]
   },
   {
-    "id": "conjurdwr6JNnAkM3EzzcuFCQxZ7",
+    "articleId": "conjurdwr6JNnAkM3EzzcuFCQxZ7",
     "title": "Investida contra escritórios autorizada por Bretas foi articulada por Deltan",
     "url": "https://www.conjur.com.br/2021-mar-04/deltan-articulou-investida-escritorios-autorizada-bretas?utm_source=dlvr.it&utm_medium=twitter",
     "publishDate": "2021-03-04",
@@ -1829,7 +1829,7 @@
     "topics": ["Deltan Dallagnol", "Marcelo Bretas", "Imprensa"]
   },
   {
-    "id": "conjurg6PRDnWfNaAbEUs51qvrBq",
+    "articleId": "conjurg6PRDnWfNaAbEUs51qvrBq",
     "title": "MPF queria dar imunidade a executivo e usar delação para investigar defesa de Lula",
     "url": "https://www.conjur.com.br/2021-mar-03/mpf-trocar-imunidade-delacao-atingir-defesa-lula",
     "publishDate": "2021-03-03",
@@ -1837,7 +1837,7 @@
     "topics": ["Lula", "Odebrecht"]
   },
   {
-    "id": "jota5JBGaGRJCUz6ZWFkxs3ZXz",
+    "articleId": "jota5JBGaGRJCUz6ZWFkxs3ZXz",
     "title": "Deltan, sobre ordem para soltar Lula: ‘Vou ligar pra PF pra pedir pra não cumprir’",
     "url": "https://www.jota.info/stf/do-supremo/deltan-sobre-ordem-para-soltar-lula-vou-ligar-pra-pf-pra-pedir-pra-nao-cumprir-04032021",
     "publishDate": "2021-03-04",
@@ -1845,7 +1845,7 @@
     "topics": ["Lula", "PF"]
   },
   {
-    "id": "uolqrXwcCJHHscXaNZoSgXjii",
+    "articleId": "uolqrXwcCJHHscXaNZoSgXjii",
     "title": "Em áudio, Deltan diz que juíza se comprometeu a sentenciar caso de Lula",
     "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2021/03/04/audio-lava-jato.htm",
     "publishDate": "2021-03-04",
@@ -1853,7 +1853,7 @@
     "topics": ["Deltan Dallagnol", "Lula", "Gabriela Hardt", "Sítio", "Áudio"]
   },
   {
-    "id": "monicabergamoiSsuBoo51pnL6NBbsysvUr",
+    "articleId": "monicabergamoiSsuBoo51pnL6NBbsysvUr",
     "title": "Cármen Lúcia mandou decisão judicial de soltar Lula ser descumprida, dizem procuradores da Lava Jato em diálogos",
     "url": "https://www1.folha.uol.com.br/colunas/monicabergamo/2021/03/carmen-lucia-mandou-decisao-judicial-de-soltar-lula-ser-descumprida-dizem-procuradores-da-lava-jato-em-dialogos.shtml",
     "publishDate": "2021-03-04",
@@ -1861,7 +1861,7 @@
     "topics": ["Lula", "PF", "Cármen Lúcia"]
   },
   {
-    "id": "cnnavm4WkQRahUNwb2cdnVD1w",
+    "articleId": "cnnavm4WkQRahUNwb2cdnVD1w",
     "title": "Lava Jato debateu cláusula anti-Bolsonaro em ranking de candidatos em 2018",
     "url": "https://www.cnnbrasil.com.br/politica/2021/03/06/lava-jato-debateu-clausula-anti-bolsonaro-em-ranking-de-candidatos-em-2018",
     "publishDate": "2021-03-06",
@@ -1869,7 +1869,7 @@
     "topics": ["Bolsonaro", "Transparência Internacional"]
   },
   {
-    "id": "conjur891MyKBtNyxZbNMi9iqZCo",
+    "articleId": "conjur891MyKBtNyxZbNMi9iqZCo",
     "title": "Após liminar, lavajatistas articularam plano para manter Lula na prisão",
     "url": "https://www.conjur.com.br/2021-mar-09/liminar-lavajatistas-articularam-plano-manter-lula-prisao",
     "publishDate": "2021-03-09",
@@ -1877,7 +1877,7 @@
     "topics": ["Lula", "STF"]
   },
   {
-    "id": "jamilchadeiLzFXCdWN9U8CCcxmruiGa",
+    "articleId": "jamilchadeiLzFXCdWN9U8CCcxmruiGa",
     "title": "Defesa de Lula diz que novos chats mostram \"plano político\" da Lava Jato",
     "url": "https://noticias.uol.com.br/colunas/jamil-chade/2021/03/09/defesa-de-lula-diz-que-novos-chats-mostram-plano-politico-da-lava-jato.htm",
     "publishDate": "2021-03-09",
@@ -1885,7 +1885,7 @@
     "topics": ["Deltan Dallagnol"]
   },
   {
-    "id": "conjurvWC9oRGDLHn2J1AFfYUtmg",
+    "articleId": "conjurvWC9oRGDLHn2J1AFfYUtmg",
     "title": "Deltan e Transparência Internacional tentaram criar plataforma de candidatos lavajatistas",
     "url": "https://www.conjur.com.br/2021-mar-08/deltan-ong-tentaram-criar-plataforma-candidatos-lavajatistas",
     "publishDate": "2021-03-08",
@@ -1893,7 +1893,7 @@
     "topics": ["Transparência Internacional", "Deltan Dallagnol"]
   },
   {
-    "id": "conjurmxE3A4esvTyjowkzAgin8h",
+    "articleId": "conjurmxE3A4esvTyjowkzAgin8h",
     "title": "Deltan queria que dinheiro da Petrobras fosse para os EUA, mostra áudio",
     "url": "https://www.conjur.com.br/2021-mar-09/deltan-dinheiro-petrobras-fosse-eua",
     "publishDate": "2021-03-09",
@@ -1901,7 +1901,7 @@
     "topics": ["Áudio", "Deltan Dallagnol", "Petrobras"]
   },
   {
-    "id": "conjurm9TN7WRet7m95sMoxvvAfq",
+    "articleId": "conjurm9TN7WRet7m95sMoxvvAfq",
     "title": "Lavajatistas criaram grupo para articular medidas contra Gilmar Mendes",
     "url": "https://www.conjur.com.br/2021-mar-10/lavajatistas-criaram-grupo-articular-gilmar",
     "publishDate": "2021-03-10",
@@ -1909,7 +1909,7 @@
     "topics": ["STF", "Gilmar Mendes", "Thaméa Danelon"]
   },
   {
-    "id": "conjur9nURNQZsNk1eFgJjJtVB6Y",
+    "articleId": "conjur9nURNQZsNk1eFgJjJtVB6Y",
     "title": "Deltan e Transparência Internacional queriam influenciadores de esquerda",
     "url": "https://www.conjur.com.br/2021-mar-10/deltan-ti-queriam-conquistar-influenciadores-esquerda",
     "publishDate": "2021-03-10",
@@ -1917,7 +1917,7 @@
     "topics": ["Transparência Internacional", "Deltan Dallagnol", "MBL"]
   },
   {
-    "id": "interceptjnsyHsEA9iENPRamQnCrKR",
+    "articleId": "interceptjnsyHsEA9iENPRamQnCrKR",
     "title": "Lava Jato tentou prender Lula por roubar Cristo que era dele mesmo",
     "url": "https://theintercept.com/2021/03/11/lava-jato-mentira-de-internet-prender-lula-em-flagrante/",
     "publishDate": "2021-03-11",
@@ -1925,7 +1925,7 @@
     "topics": ["Deltan Dallagnol", "Lula", "Áudio"]
   },
   {
-    "id": "uolaGs6yhE7jVUvAYsaUhWRQS",
+    "articleId": "uolaGs6yhE7jVUvAYsaUhWRQS",
     "title": "Lava Jato articulou para manter investigações sobre Lula em Curitiba",
     "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2021/03/10/lava-jato-articulou-para-manter-investigacoes-sobre-lula-em-curitiba.htm",
     "publishDate": "2021-03-10",
@@ -1933,7 +1933,7 @@
     "topics": ["Lula", "STF"]
   },
   {
-    "id": "uolwr8GFC8zbJmYJcZMFdGCTT",
+    "articleId": "uolwr8GFC8zbJmYJcZMFdGCTT",
     "title": "Conversas indicam articulações de Moro com TRF-4 contra Lula, diz defesa",
     "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2021/03/15/conversas-indicam-articulacoes-de-moro-com-trf4-contra-lula.htm",
     "publishDate": "2021-03-15",
@@ -1941,7 +1941,7 @@
     "topics": ["TRF4", "Lula", "Moro"]
   },
   {
-    "id": "uolfAQyTVhVLZ7HKpuwqLzXtG",
+    "articleId": "uolfAQyTVhVLZ7HKpuwqLzXtG",
     "title": "Lava Jato cogitou nova ordem de prisão contra Lula para atender Moro",
     "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2021/03/15/lava-jato-cogitou-nova-ordem-de-prisao-contra-lula-para-atender-moro.htm",
     "publishDate": "2021-03-15",
@@ -1949,7 +1949,7 @@
     "topics": ["Lula", "Moro"]
   },
   {
-    "id": "conjurfHw3ZFS9C5xA1CBXYmaSQw",
+    "articleId": "conjurfHw3ZFS9C5xA1CBXYmaSQw",
     "title": "\"Por companheirismo\", procurador cogitou preventiva de Lula para agradar Moro",
     "url": "https://www.conjur.com.br/2021-mar-15/novos-dialogos-mostram-moro-coordenava-lava-jato",
     "publishDate": "2021-03-15",
@@ -1957,7 +1957,7 @@
     "topics": ["Lula", "Moro"]
   },
   {
-    "id": "conjurwrLj6KUJkwqNkejKTCVhmz",
+    "articleId": "conjurwrLj6KUJkwqNkejKTCVhmz",
     "title": "Moro aceitou convite para ministério de olho em vaga no STF, mostram diálogos",
     "url": "https://www.conjur.com.br/2021-mar-15/moro-aceitou-convite-ministerio-olho-vaga-stf",
     "publishDate": "2021-03-15",
@@ -1965,7 +1965,7 @@
     "topics": ["Moro", "STF"]
   },
   {
-    "id": "conjur2KTrNUwHHzfhLhgTUjDucj",
+    "articleId": "conjur2KTrNUwHHzfhLhgTUjDucj",
     "title": "Processo \"invisível\" pode conter grampos ilegais, suspeitam advogados",
     "url": "https://www.conjur.com.br/2021-mar-15/processo-invisivel-conter-grampos-ilegais-suspeitam-advogados",
     "publishDate": "2021-03-15",
@@ -1973,7 +1973,7 @@
     "topics": ["Moro", "Gilmar Mendes", "Guido Mantega", "Odebrecht"]
   },
   {
-    "id": "conjurniwpGE3WPxwoEjdudEPrJJ",
+    "articleId": "conjurniwpGE3WPxwoEjdudEPrJJ",
     "title": "Substituto de Moro deu orientações a procuradores da \"lava jato\"",
     "url": "https://www.conjur.com.br/2021-mar-22/substituto-moro-deu-orientacoes-procuradores-lava-jato",
     "publishDate": "2021-03-22",
@@ -1981,7 +1981,7 @@
     "topics": ["Luiz Antônio Bonat"]
   },
   {
-    "id": "conjurgyMaWuG1eNT9Gcb13Hor1U",
+    "articleId": "conjurgyMaWuG1eNT9Gcb13Hor1U",
     "title": "\"Lava jato\" condicionava delações à menção de ministros de STJ, diz defesa de Lula",
     "url": "https://www.conjur.com.br/2021-mar-22/lava-jato-condicionava-delacoes-mencao-ministros-stj",
     "publishDate": "2021-03-22",
@@ -1989,7 +1989,7 @@
     "topics": ["STJ"]
   },
   {
-    "id": "conjurjT6QWvfBqweAiqG9tTcmcA",
+    "articleId": "conjurjT6QWvfBqweAiqG9tTcmcA",
     "title": "13ª Vara escondeu autos que basearam prisão um ano depois da investigação",
     "url": "https://www.conjur.com.br/2021-mar-22/advogado-descobre-outro-processo-secreto-lava-jato",
     "publishDate": "2021-03-22",
@@ -1997,7 +1997,7 @@
     "topics": ["Luiz Antônio Bonat", "PF"]
   },
   {
-    "id": "conjurwySWjqA9EC6HbMc13wUG7y",
+    "articleId": "conjurwySWjqA9EC6HbMc13wUG7y",
     "title": "MPF ouviu Palocci para impulsionar ação contra Lula que não tinha \"nada de anormal\"",
     "url": "https://www.conjur.com.br/2021-mar-22/mpf-ouviu-palocci-impulsionar-acao-lula-envolvendo-cacas",
     "publishDate": "2021-03-22",
@@ -2005,7 +2005,7 @@
     "topics": ["Palocci", "Lula"]
   },
   {
-    "id": "conjurbpJr6jPkK9jjyjzu18JTDK",
+    "articleId": "conjurbpJr6jPkK9jjyjzu18JTDK",
     "title": "MPF escondeu cargo de embaixadora para não perder foro contra Lula",
     "url": "https://www.conjur.com.br/2021-mar-22/mpf-escondeu-cargo-embaixadora-tentar-acusar-lula",
     "publishDate": "2021-03-22",
@@ -2013,7 +2013,7 @@
     "topics": ["Lula"]
   },
   {
-    "id": "uoliJHpbJPgDJn2ybuMgLo9sD",
+    "articleId": "uoliJHpbJPgDJn2ybuMgLo9sD",
     "title": "Substituto de Moro fez sugestão à Lava Jato, indicam novas mensagens",
     "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2021/03/22/bonat-substituto-moro-mensagem-lava-jato.htm",
     "publishDate": "2021-03-22",
@@ -2021,7 +2021,7 @@
     "topics": ["Luiz Antônio Bonat"]
   },
   {
-    "id": "monicabergamo9UmfPKUAjAkGzAKTaUN5Hz",
+    "articleId": "monicabergamo9UmfPKUAjAkGzAKTaUN5Hz",
     "title": "Lava Jato 'ajudou a eleger o Bozo' e é preciso se desvincular dele, diz procuradora a Dallagnol em diálogos",
     "url": "https://www1.folha.uol.com.br/colunas/monicabergamo/2021/03/lava-jato-ajudou-a-eleger-o-bozo-e-e-preciso-se-desvincular-dele-diz-procuradora-a-dallagnol-em-dialogos.shtml",
     "publishDate": "2021-03-29",
@@ -2029,7 +2029,7 @@
     "topics": ["Bolsonaro"]
   },
   {
-    "id": "conjur6CykfAfDRMssXHRTbGLCFV",
+    "articleId": "conjur6CykfAfDRMssXHRTbGLCFV",
     "title": "Réu que não delata deve contratar advogado menos \"agressivo\", disse procurador",
     "url": "https://www.conjur.com.br/2021-mar-29/procurador-sugeriu-pressao-reus-advogados-agressivos",
     "publishDate": "2021-03-29",
@@ -2037,7 +2037,7 @@
     "topics": ["Odebrecht"]
   },
   {
-    "id": "uolpKzpdJMqk4eM94ALZkU5xu",
+    "articleId": "uolpKzpdJMqk4eM94ALZkU5xu",
     "title": "Procuradores viram Lula favorito e torceram por 'sofrimento de eleitores'",
     "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2021/03/29/mensagem-anpr-lula.htm",
     "publishDate": "2021-03-29",
@@ -2045,7 +2045,7 @@
     "topics": ["Lula"]
   },
   {
-    "id": "forum4gwNx2EZuGFE1awZhGuaED",
+    "articleId": "forum4gwNx2EZuGFE1awZhGuaED",
     "title": "Em conversas, Dallagnol sugeriu adulterar datas do recebimento de documentos entregues ilegalmente",
     "url": "https://revistaforum.com.br/politica/em-conversas-dallagnol-sugeriu-adulterar-datas-do-recebimento-de-documentos-entregues-ilegalmente/",
     "publishDate": "2021-03-29",
@@ -2053,7 +2053,7 @@
     "topics": ["Deltan Dallagnol", "Vladimir Aras"]
   },
   {
-    "id": "intercept5hpxNyrRLivaD2FbEDEa3M",
+    "articleId": "intercept5hpxNyrRLivaD2FbEDEa3M",
     "title": "Lava Jato pagou R$ 374 mil para procurador de Curitiba ir a Curitiba",
     "url": "https://theintercept.com/2021/03/30/lava-jato-diarias-curitiba-deltan-castor/",
     "publishDate": "2021-03-30",
@@ -2061,7 +2061,7 @@
     "topics": ["Diogo Castor de Mattos", "TCU"]
   },
   {
-    "id": "interceptsQFF7XqspzHWRmdPDSEUD1",
+    "articleId": "interceptsQFF7XqspzHWRmdPDSEUD1",
     "title": "Lava Jato força a barra para processar jornalistas em Curitiba e com juízes alinhados",
     "url": "https://theintercept.com/2021/05/17/lava-jato-processos-jornalistas-danos-morais-juizado-especial/",
     "publishDate": "2021-05-17",
@@ -2074,7 +2074,7 @@
     ]
   },
   {
-    "id": "jamilchadeuuBitrTcadx4HhrteiSBYK",
+    "articleId": "jamilchadeuuBitrTcadx4HhrteiSBYK",
     "title": "Lava Jato negociou programa espião Pegasus com empresa israelense",
     "url": "https://noticias.uol.com.br/colunas/jamil-chade/2021/07/26/lava-jato-negociou-programa-espiao-pegasus-com-empresa-israelense.htm",
     "publishDate": "2021-07-26",
@@ -2082,7 +2082,7 @@
     "topics": ["Pegasus"]
   },
   {
-    "id": "jota5iPR7Qcgzu8TXKHGgm7PrE",
+    "articleId": "jota5iPR7Qcgzu8TXKHGgm7PrE",
     "title": "Lava Jato negociou aquisição do Pegasus com empresa israelense, diz defesa de Lula",
     "url": "https://www.jota.info/stf/do-supremo/lava-jato-negociou-aquisicao-do-pegasus-com-empresa-israelense-diz-defesa-de-lula-26072021",
     "publishDate": "2021-07-26",
@@ -2090,7 +2090,7 @@
     "topics": ["Pegasus"]
   },
   {
-    "id": "cnngTT4M4zXpwhh8RJLfLCLTv",
+    "articleId": "cnngTT4M4zXpwhh8RJLfLCLTv",
     "title": "Operação Lava Jato teria negociado a contratação do software espião Pegasus",
     "url": "https://www.cnnbrasil.com.br/politica/2021/07/26/operacao-lava-jato-teria-negociado-a-contratacao-do-software-espiao-pegasus",
     "publishDate": "2021-07-26",
@@ -2098,7 +2098,7 @@
     "topics": ["Pegasus"]
   },
   {
-    "id": "monicabergamoms1bfeZPNJTLUJbjRta9bn",
+    "articleId": "monicabergamoms1bfeZPNJTLUJbjRta9bn",
     "title": "Mensagens revelam apoio de Mendonça à Lava Jato e irritam senadores",
     "url": "https://www1.folha.uol.com.br/colunas/monicabergamo/2021/08/mensagens-revelam-apoio-de-mendonca-a-lava-jato-e-irritam-senadores.shtml",
     "publishDate": "2021-08-31",
@@ -2106,7 +2106,7 @@
     "topics": ["André Mendonça", "Deltan Dallagnol"]
   },
   {
-    "id": "uolqPxfcYPLzUrJwzA1kzcN6J",
+    "articleId": "uolqPxfcYPLzUrJwzA1kzcN6J",
     "title": "Mensagens mostram proximidade de André Mendonça e membros da Lava Jato",
     "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2021/09/01/mensagens-andre-mendonca-lava-jato.htm",
     "publishDate": "2021-09-01",
@@ -2114,7 +2114,7 @@
     "topics": ["André Mendonça", "Deltan Dallagnol"]
   },
   {
-    "id": "intercept48HZBQgDrBo1oqTMrS4ate",
+    "articleId": "intercept48HZBQgDrBo1oqTMrS4ate",
     "title": "Crítica feroz do Supremo, Thaméa Danelon já se gabou de ‘proximidade’ com Alexandre de Moraes",
     "url": "https://theintercept.com/notas/critica-feroz-do-supremo-thamea-danelon-ja-se-gabou-de-proximidade-com-alexandre-de-moraes/",
     "publishDate": "2022-03-24",

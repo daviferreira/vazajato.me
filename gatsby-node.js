@@ -150,11 +150,11 @@ exports.createPages = ({ graphql, actions }) => {
 
   return graphql(`
     query articlesListQuery {
-      allArticlesJson(sort: { fields: [publishDate], order: [ASC] }) {
+      allArticlesJson(sort: { publishDate: ASC }) {
         totalCount
         edges {
           node {
-            id
+            id: articleId
             title
             url
             publishDate

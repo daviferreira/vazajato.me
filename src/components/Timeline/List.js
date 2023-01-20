@@ -8,7 +8,7 @@ import Footer from '../Footer';
 import Section from './Section';
 import Header from './Header';
 
-import styles from './styles.module.css';
+import * as styles from './styles.module.css';
 
 const List = ({ articles, location, source, topic }) => {
   const [order, setOrder] = useState('desc');

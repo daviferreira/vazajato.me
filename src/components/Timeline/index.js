@@ -12,7 +12,7 @@ import Header from './Header';
 import data from '../../../public/pages/data.json';
 import monthsData from '../../../public/pages/months.json';
 
-import styles from './styles.module.css';
+import * as styles from './styles.module.css';
 
 const INITIAL_ARTICLES = data.slice();
 const MONTHS_ASC = monthsData.slice(1);

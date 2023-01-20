@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import Arrows from './sorting-arrows.svg';
 
-import styles from './styles.module.css';
+import * as styles from './styles.module.css';
 
 const Sort = ({ onClick, order }) => (
   <button

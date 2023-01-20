@@ -16,7 +16,7 @@ import Arrow from './arrow.svg';
 import Clear from './clear-circle.svg';
 
 import '@reach/menu-button/styles.css';
-import styles from './styles.module.css';
+import * as styles from './styles.module.css';
 
 const sourceKeys = Object.entries(sources)
   .sort(([, a], [, b]) => a.name.localeCompare(b.name))

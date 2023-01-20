@@ -5,7 +5,7 @@ import FacebookIcon from './facebook.svg';
 import TwitterIcon from './twitter.svg';
 import WhatsappIcon from './whatsapp.svg';
 
-import styles from './styles.module.css';
+import * as styles from './styles.module.css';
 
 const ShareBar = ({ text, url }) => (
   <div className={styles.root}>
