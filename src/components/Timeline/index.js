@@ -14,9 +14,9 @@ import monthsData from '../../../public/pages/months.json';
 
 import styles from './styles.module.css';
 
-const INITIAL_ARTICLES = data.slice().reverse();
-const MONTHS_ASC = monthsData.slice().reverse();
-const MONTHS_DESC = monthsData.slice(1);
+const INITIAL_ARTICLES = data.slice();
+const MONTHS_ASC = monthsData.slice(1);
+const MONTHS_DESC = monthsData.slice().reverse();
 
 const Loader = () => (
   <div className={styles.loader}>
@@ -32,9 +32,8 @@ export default class Timeline extends Component {
     cache: { [monthsData[0]]: data.slice() },
     hasNext: true,
     isLoading: false,
-    isLoadingArticles: false,
-    months: MONTHS_DESC,
-    order: 'desc',
+    months: MONTHS_ASC,
+    order: 'asc',
   };
 
   handleSortChange = () => {
@@ -49,12 +48,12 @@ export default class Timeline extends Component {
       };
     } else if (nextOrder === 'asc') {
       nextState = {
-        articles: [],
+        articles: INITIAL_ARTICLES,
         months: MONTHS_ASC,
       };
     } else {
       nextState = {
-        articles: INITIAL_ARTICLES,
+        articles: [],
         months: MONTHS_DESC,
       };
     }
@@ -62,7 +61,7 @@ export default class Timeline extends Component {
     this.setState({ order: nextOrder, ...nextState }, () => {
       window.scrollTo(0, 0);
 
-      return hasNext && nextOrder === 'asc' && this.loadArticles();
+      return hasNext && nextOrder === 'desc' && this.loadArticles();
     });
   };
 
@@ -124,37 +123,8 @@ export default class Timeline extends Component {
     }
   };
 
-  resetArticles() {
-    const { order } = this.state;
-
-    let nextState;
-    if (order === 'asc') {
-      nextState = {
-        articles: [],
-        months: MONTHS_ASC,
-      };
-    } else {
-      nextState = {
-        articles: INITIAL_ARTICLES,
-        months: MONTHS_DESC,
-      };
-    }
-
-    this.setState(
-      {
-        ...nextState,
-        hasNext: true,
-      },
-      () => {
-        window.scrollTo(0, 0);
-
-        return order === 'asc' && this.loadArticles();
-      }
-    );
-  }
-
   render() {
-    const { articles, hasNext, isLoadingArticles, order } = this.state;
+    const { articles, hasNext, isLoading, order } = this.state;
     const { location } = this.props;
 
     const groupedArticles = groupBy(articles, ({ publishDate }) =>
@@ -176,44 +146,44 @@ export default class Timeline extends Component {
           order={order}
           source="all"
         />
-        {isLoadingArticles ? (
-          <div className={styles.loaderContainer} style={{ paddingTop: 120 }}>
-            <Loader />
-          </div>
-        ) : (
-          <section className={styles.root}>
-            {map(groupedArticles, (group, month) => {
-              const sectionArticles = groupBy(group, 'publishDate');
 
-              const component = (
-                <Section
-                  group={sectionArticles}
-                  isFirst={count === 0}
-                  key={month}
-                  month={month}
-                  order={order}
-                  previousCount={articlesCount}
-                />
-              );
+        <section className={styles.root}>
+          {map(groupedArticles, (group, month) => {
+            const sectionArticles = groupBy(group, 'publishDate');
 
-              count++;
+            const component = (
+              <Section
+                group={sectionArticles}
+                isFirst={count === 0}
+                key={month}
+                month={month}
+                order={order}
+                previousCount={articlesCount}
+              />
+            );
 
-              articlesCount += Object.keys(sectionArticles).length;
+            count++;
 
-              return component;
-            })}
-          </section>
-        )}
-        {hasNext && (
-          <InView
-            as="div"
-            className={styles.loaderContainer}
-            onChange={this.handleLoadNext}
-            rootMargin="400px"
-          >
-            <Loader />
-          </InView>
-        )}
+            articlesCount += Object.keys(sectionArticles).length;
+
+            return component;
+          })}
+        </section>
+        {hasNext &&
+          (isLoading ? (
+            <div className={styles.loaderContainer}>
+              <Loader />
+            </div>
+          ) : (
+            <InView
+              as="div"
+              className={styles.loaderContainer}
+              onChange={this.handleLoadNext}
+              rootMargin="400px"
+            >
+              <Loader />
+            </InView>
+          ))}
         <div className={styles.footer}>
           <Footer />
         </div>

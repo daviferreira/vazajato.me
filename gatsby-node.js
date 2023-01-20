@@ -18,7 +18,7 @@ function createSourcePages(articles, createPage) {
       path,
       component: timelineTemplate,
       context: {
-        articles: group.reverse(),
+        articles: group,
         source,
       },
     });
@@ -68,7 +68,7 @@ function createTopicPages(articles, createPage) {
       path,
       component: timelineTemplate,
       context: {
-        articles: group.reverse(),
+        articles: group,
         topic: topicsLabels[topic],
       },
     });
@@ -83,8 +83,8 @@ function createArticlesPagination(articles) {
     publishDate.slice(0, 7)
   );
 
-  const months = Object.keys(groupedArticles).reverse();
-  const lastMonth = months[0];
+  const months = Object.keys(groupedArticles);
+  const firstMonth = months[0];
 
   map(groupedArticles, (group, month) => {
     createJSON({
@@ -97,7 +97,7 @@ function createArticlesPagination(articles) {
     // eslint-disable-next-line
     console.log(`\nCreated ${month}.json.`);
 
-    if (month === lastMonth) {
+    if (month === firstMonth) {
       createJSON({
         path: `/data`,
         context: {
