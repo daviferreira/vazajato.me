@@ -27,9 +27,18 @@ module.exports = {
         path: path.join(__dirname, `/src/images`),
       },
     },
-    `gatsby-plugin-image`,
+
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: [`auto`, `webp`],
+          breakpoints: [750, 1080],
+        },
+      },
+    },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    `gatsby-plugin-image`,
     'gatsby-plugin-react-svg',
     {
       resolve: `gatsby-plugin-manifest`,
