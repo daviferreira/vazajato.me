@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 export const images = graphql`
   fragment articleImage on File {
     childImageSharp {
-      gatsbyImageData(width: 800, placeholder: BLURRED, layout: CONSTRAINED)
+      gatsbyImageData(width: 800, placeholder: BLURRED, layout: FULL_WIDTH)
     }
   }
 
@@ -12,7 +12,7 @@ export const images = graphql`
       gatsbyImageData(
         width: 72
         formats: [AUTO, WEBP, AVIF]
-        layout: CONSTRAINED
+        layout: FULL_WIDTH
       )
     }
   }
