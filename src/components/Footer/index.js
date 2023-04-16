@@ -74,7 +74,7 @@ const Footer = () => {
         </span>
         &nbsp;por&nbsp;
         <a
-          href="https://www.twitter.com/davitferreira"
+          href="https://www.daviferreira.com"
           rel="noopener noreferrer"
           target="_blank"
         >
