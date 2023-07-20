@@ -2,7 +2,6 @@ const { getMetadata } = require('page-metadata-parser');
 const csv = require('csvtojson');
 const domino = require('domino');
 const download = require('image-downloader');
-const fetch = require('node-fetch');
 const fs = require('fs');
 const moment = require('moment');
 const path = require('path');
