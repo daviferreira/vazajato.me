@@ -46,7 +46,7 @@ function getArticle(data) {
     const { image } = metaData;
 
     const article = {
-      id,
+      articleId: id,
       title,
       url,
       publishDate: moment(publishDate, 'DD/MM/YYYY').format('YYYY-MM-DD'),
