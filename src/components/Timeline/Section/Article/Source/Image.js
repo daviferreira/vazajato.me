@@ -65,6 +65,9 @@ const Image = ({ alt, id }) => {
       jota: file(relativePath: { eq: "sources/jota.jpg" }) {
         ...sourceImage
       }
+      piaui: file(relativePath: { eq: "sources/piaui.jpg" }) {
+        ...sourceImage
+      }
     }
   `);
 

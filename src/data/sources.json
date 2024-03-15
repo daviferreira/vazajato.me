@@ -93,5 +93,10 @@
     "name": "JOTA",
     "url": "https://www.jota.info/",
     "color:": "#f05841"
+  },
+  "piaui": {
+    "name": "piauí",
+    "url": "https://piaui.folha.uol.com.br/",
+    "color:": "#f25b3f"
   }
 }
