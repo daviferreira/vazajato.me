@@ -80,7 +80,7 @@ function createTopicPages(articles, createPage) {
 
 function createArticlesPagination(articles) {
   const groupedArticles = groupBy(articles, ({ publishDate }) =>
-    publishDate.slice(0, 7)
+    publishDate.slice(0, 7),
   );
 
   const months = Object.keys(groupedArticles);

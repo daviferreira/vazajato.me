@@ -36,7 +36,7 @@
     "csvtojson": "^2.0.10",
     "domino": "^2.1.6",
     "eslint": "^8.35.0",
-    "eslint-config-prettier": "^8.6.0",
+    "eslint-config-prettier": "^9.1.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-config-standard-react": "^13.0.0",
     "eslint-plugin-import": "^2.22.1",
@@ -44,17 +44,17 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-standard": "^5.0.0",
-    "husky": "^8.0.3",
+    "husky": "^9.0.11",
     "image-downloader": "^4.3.0",
-    "lint-staged": "^13.1.2",
+    "lint-staged": "^15.2.2",
     "moment": "^2.29.1",
     "page-metadata-parser": "^1.1.4",
-    "prettier": "^2.8.4",
+    "prettier": "^3.2.5",
     "short-uuid": "^4.2.2",
     "signale": "^1.4.0",
     "slugify": "^1.4.6",
-    "stylelint": "^15.2.0",
-    "stylelint-config-recommended": "^10.0.1",
+    "stylelint": "^16.2.1",
+    "stylelint-config-recommended": "^14.0.0",
     "stylelint-order": "^6.0.2"
   },
   "overrides": {
@@ -64,8 +64,8 @@
     "svg-react-loader": "^0.4.6"
   },
   "engines": {
-    "node": "18.13.0",
-    "npm": "~8.19"
+    "node": "20.11.1",
+    "npm": "10.2.4"
   },
   "keywords": [
     "gatsby"
