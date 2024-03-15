@@ -82,7 +82,7 @@ export default class Timeline extends Component {
       {
         isLoading: true,
       },
-      () => this.fetchArticles(page)
+      () => this.fetchArticles(page),
     );
   };
 
@@ -95,7 +95,7 @@ export default class Timeline extends Component {
     if (cache[page]) {
       return this.setState({
         articles: articles.concat(
-          order === 'desc' ? cache[page].slice().reverse() : cache[page]
+          order === 'desc' ? cache[page].slice().reverse() : cache[page],
         ),
         hasNext,
         isLoading: false,
@@ -111,7 +111,7 @@ export default class Timeline extends Component {
 
       return this.setState({
         articles: articles.concat(
-          order === 'desc' ? nextArticles.slice().reverse() : nextArticles
+          order === 'desc' ? nextArticles.slice().reverse() : nextArticles,
         ),
         cache: nextCache,
         hasNext,
@@ -128,7 +128,7 @@ export default class Timeline extends Component {
     const { location } = this.props;
 
     const groupedArticles = groupBy(articles, ({ publishDate }) =>
-      publishDate.slice(0, 7)
+      publishDate.slice(0, 7),
     );
 
     let count = 0;

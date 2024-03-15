@@ -13,7 +13,7 @@ import * as styles from './styles.module.css';
 const List = ({ articles, location, source, topic }) => {
   const [order, setOrder] = useState('desc');
   const [groupedArticles, setGroupedArticles] = useState(
-    groupBy(articles, ({ publishDate }) => publishDate.slice(0, 7))
+    groupBy(articles, ({ publishDate }) => publishDate.slice(0, 7)),
   );
   let count = 0;
   let articlesCount = 0;
@@ -24,8 +24,8 @@ const List = ({ articles, location, source, topic }) => {
     setGroupedArticles(
       groupBy(
         nextOrder === 'asc' ? articles.slice().reverse() : articles,
-        ({ publishDate }) => publishDate.slice(0, 7)
-      )
+        ({ publishDate }) => publishDate.slice(0, 7),
+      ),
     );
     window.scrollTo(0, 0);
   };
