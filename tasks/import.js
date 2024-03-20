@@ -76,12 +76,16 @@ function getArticle(data) {
 
     signale.pending('Atualizando articles.json');
     articlesData.push(article);
-    fs.writeFileSync(
-      path.join(__dirname, '..', 'src', 'data', 'articles.json'),
-      prettier.format(JSON.stringify(articlesData), {
+    const formattedArticlesContent = await prettier.format(
+      JSON.stringify(articlesData),
+      {
         parser: 'json',
         ...prettierOptions,
-      }),
+      },
+    );
+    fs.writeFileSync(
+      path.join(__dirname, '..', 'src', 'data', 'articles.json'),
+      formattedArticlesContent,
     );
     signale.success('Articles.json atualizado');
 
@@ -97,13 +101,14 @@ function getArticle(data) {
       'Image.js',
     );
     const imagesFileContent = fs.readFileSync(imagesFilePath, 'utf8');
-    fs.writeFileSync(
-      imagesFilePath,
-      prettier.format(
-        imagesFileContent.replace('# NEW IMAGE PLACEHOLDER', articleImage),
-        prettierOptions,
-      ),
+    const formattedImagesContent = await prettier.format(
+      imagesFileContent.replace('# NEW IMAGE PLACEHOLDER', articleImage),
+      {
+        parser: 'babel',
+        ...prettierOptions,
+      },
     );
+    fs.writeFileSync(imagesFilePath, formattedImagesContent);
     signale.success('Image.js atualizado');
   };
 
