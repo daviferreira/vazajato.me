@@ -1,0 +1,197 @@
+---
+import ShareBar from './ShareBar.astro';
+import Sort from './Sort.astro';
+import Source from './Source.astro';
+
+import { slug, sourceKeys, sources, topics } from '../lib/data.js';
+
+import Arrow from '../icons/arrow.svg';
+import Clear from '../icons/clear-circle.svg';
+
+import styles from './TimelineHeader.module.css';
+
+// `source` is a key of sources.json, `topic` a topic label; both optional.
+const { source, topic } = Astro.props;
+
+const sourceUrl = (key) => `/veiculos/${key}`;
+const topicUrl = (label) => `/topicos/${slug(label)}`;
+---
+
+<div class={styles.mobile}>
+  <div class={styles.menuToggle}>
+    <input type="checkbox" aria-label="Menu" data-menu-toggle />
+    {(source || topic) && <div class={styles.badge}>1</div>}
+    <span></span>
+    <span></span>
+    <span></span>
+    <div class={styles.mobileMenu}>
+      <div class={styles.select}>
+        <label for="filter-source">Filtrar por veículo</label>
+        <select id="filter-source" data-navigate>
+          <option value="/">Todos os veículos</option>
+          {sourceKeys.map((key) => (
+            <option value={sourceUrl(key)} selected={key === source}>
+              {sources[key].name}
+            </option>
+          ))}
+        </select>
+      </div>
+      <div class={styles.select}>
+        <label for="filter-topic">Filtrar por tópico</label>
+        <select id="filter-topic" data-navigate>
+          <option value="/">Todos os tópicos</option>
+          {topics.map(({ label }) => (
+            <option value={topicUrl(label)} selected={label === topic}>
+              {label}
+            </option>
+          ))}
+        </select>
+      </div>
+      <button class={styles.mobileSort} data-sort="text">
+        Mais recentes primeiro
+      </button>
+      <ul class={styles.files}>
+        <li>
+          <a
+            href="https://docs.google.com/spreadsheets/d/1y9bixq_sZ5TOwwqfoagRKX4zCm1Ka6hXbch9qN6OtKI"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Planilha de dados
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.dropbox.com/sh/a2wijlhwezq8yyo/AABTEZI4XWfjPEmHeKT7bbcYa?dl=0"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Arquivos com diálogos
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div>
+    <ShareBar />
+  </div>
+</div>
+<div class={styles.root}>
+  <div class={styles.filter}>
+    {source && (
+      <a class={styles.clear} href="/" title="Limpar filtro">
+        <Clear />
+      </a>
+    )}
+    <details class={styles.dropdown} name="filter">
+      <summary
+        class={styles.button}
+        style={
+          source && {
+            boxShadow: `inset 0 -3px 0 ${sources[source].color}`,
+          }
+        }
+      >
+        <span>
+          {source ? <Source source={source} /> : 'Filtrar por veículo'}
+        </span>
+        <span aria-hidden="true">
+          <Arrow class={styles.arrow} />
+        </span>
+      </summary>
+      <ul class={styles.menu}>
+        {sourceKeys.map((key) => (
+          <li class={styles.item}>
+            <a href={sourceUrl(key)}>
+              <Source source={key} />
+            </a>
+          </li>
+        ))}
+      </ul>
+    </details>
+  </div>
+  <div class={styles.filter}>
+    {topic && (
+      <a class={styles.clear} href="/" title="Limpar filtro">
+        <Clear />
+      </a>
+    )}
+    <details class={styles.dropdown} name="filter">
+      <summary class={styles.button}>
+        <span>{topic || 'Filtrar por tópico'}</span>
+        <span aria-hidden="true">
+          <Arrow class={styles.arrow} />
+        </span>
+      </summary>
+      <ul class={styles.menu}>
+        {topics.map(({ label }) => (
+          <li class={styles.item}>
+            <a href={topicUrl(label)}>
+              <div>{label}</div>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </details>
+  </div>
+  <div class={styles.sort}>
+    <Sort />
+  </div>
+</div>
+
+<script>
+  const LABELS = {
+    asc: 'Mais recentes primeiro',
+    desc: 'Mais antigas primeiro',
+  };
+
+  const reverseChildren = (el) => el.append(...[...el.children].reverse());
+
+  const dropdowns = document.querySelectorAll('details[name="filter"]');
+  const menuToggle = document.querySelector('[data-menu-toggle]');
+  const sortButtons = document.querySelectorAll('[data-sort]');
+  let order = 'asc';
+
+  // Sort: flip the order of the months and of the days inside each month.
+  sortButtons.forEach((button) =>
+    button.addEventListener('click', () => {
+      order = order === 'asc' ? 'desc' : 'asc';
+
+      document
+        .querySelectorAll('[data-timeline], [data-days]')
+        .forEach(reverseChildren);
+
+      sortButtons.forEach((el) => {
+        el.dataset.order = order;
+        if (el.dataset.sort === 'text') {
+          el.textContent = LABELS[order];
+        } else {
+          el.title = LABELS[order];
+        }
+      });
+
+      menuToggle.checked = false;
+      window.scrollTo(0, 0);
+    }),
+  );
+
+  // Mobile filters: each <option> value is the URL of the filtered page.
+  document
+    .querySelectorAll('select[data-navigate]')
+    .forEach((select) =>
+      select.addEventListener('change', () => location.assign(select.value)),
+    );
+
+  // Desktop dropdowns: close on outside click and on Escape.
+  const closeDropdowns = (except) =>
+    dropdowns.forEach((dropdown) => {
+      if (dropdown !== except) dropdown.open = false;
+    });
+
+  document.addEventListener('click', (e) =>
+    closeDropdowns(e.target.closest('details[name="filter"]')),
+  );
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeDropdowns();
+  });
+</script>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.vazajato.me/sitemap-index.xml
+Host: https://www.vazajato.me

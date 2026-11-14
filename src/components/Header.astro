@@ -1,0 +1,14 @@
+---
+import ShareBar from './ShareBar.astro';
+
+import styles from './Header.module.css';
+---
+
+<header class={styles.root}>
+  <div class={styles.share}>
+    <ShareBar />
+  </div>
+  <h1 class={styles.title}>
+    <a href="/">#vazajato</a>
+  </h1>
+</header>

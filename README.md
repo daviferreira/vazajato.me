@@ -1,18 +1,13 @@
 # Linha do Tempo | VazaJato
 
-Página listando todas as reportagens publicadas até agora na #VazaJato.
+Página listando todas as reportagens publicadas na #VazaJato.
 
-1.  **Start developing.**
+Site estático feito com [Astro](https://astro.build). Os dados ficam em
+`src/data` e as imagens em `src/images`.
 
-    Navigate into the project directory and start it up.
-
-    ```sh
-    pnpm install
-    pnpm start
-    ```
-
-1.  **Open the source code and start editing!**
-
-    Your site is now running at `http://localhost:4000`!
-
-    _Note: You'll also see a second link: _`http://localhost:4000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+```sh
+pnpm install
+pnpm start    # http://localhost:4000
+pnpm build    # gera o site em dist/
+pnpm test     # prettier + build
+```

@@ -1,0 +1,38 @@
+---
+import FacebookIcon from '../icons/facebook.svg';
+import TwitterIcon from '../icons/twitter.svg';
+import WhatsappIcon from '../icons/whatsapp.svg';
+
+import styles from './ShareBar.module.css';
+
+const text = encodeURIComponent('Linha do tempo da Vaza Jato');
+const url = 'https://www.vazajato.me';
+---
+
+<div class={styles.root}>
+  <a
+    class={styles.button}
+    href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}
+    rel="noopener noreferrer"
+    target="_blank"
+    title="Compartilhe no Facebook"
+  >
+    <FacebookIcon />
+  </a>
+  <a
+    class={styles.button}
+    href={`https://twitter.com/share?text=${text}&url=${url}&hashtags=VazaJato`}
+    rel="noopener noreferrer"
+    target="_blank"
+    title="Compartilhe no Twitter"
+  >
+    <TwitterIcon />
+  </a>
+  <a
+    class={styles.button}
+    href={`whatsapp://send?text=${text}%20-%20${url}`}
+    title="Compartilhe no Whatsapp"
+  >
+    <WhatsappIcon />
+  </a>
+</div>

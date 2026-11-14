@@ -1,5 +1,5 @@
-coverage/
+dist/
+.astro/
 public/
 node_modules/
-.cache/
-package-lock.json
+pnpm-lock.yaml

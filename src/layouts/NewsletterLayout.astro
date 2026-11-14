@@ -1,0 +1,18 @@
+---
+import Layout from './Layout.astro';
+
+import styles from './Newsletter.module.css';
+
+const { title, description, date, dateLabel } = Astro.props;
+---
+
+<Layout title={title} description={description} header={false}>
+  <div class={styles.container}>
+    <div class={styles.back}>
+      <a href="/">&larr; Voltar para a linha do tempo</a>
+    </div>
+    <time datetime={date}>{dateLabel}</time>
+    <h1>{title}</h1>
+    <slot />
+  </div>
+</Layout>

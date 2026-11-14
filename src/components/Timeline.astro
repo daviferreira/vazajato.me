@@ -1,0 +1,22 @@
+---
+import Footer from './Footer.astro';
+import Month from './Month.astro';
+import TimelineHeader from './TimelineHeader.astro';
+
+import { groupByMonth } from '../lib/data.js';
+
+import styles from './Timeline.module.css';
+
+const { articles, source, topic } = Astro.props;
+---
+
+<TimelineHeader source={source} topic={topic} />
+
+<section class={styles.root} data-timeline>
+  {groupByMonth(articles).map((month) => (
+    <Month {...month} />
+  ))}
+</section>
+<div class={styles.footer}>
+  <Footer />
+</div>

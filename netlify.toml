@@ -1,2 +1,3 @@
-[[plugins]]
-  package = "netlify-plugin-gatsby-cache"
+[build]
+  command = "pnpm run build"
+  publish = "dist"

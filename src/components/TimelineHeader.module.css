@@ -1,0 +1,380 @@
+.root {
+  align-items: stretch;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  height: 66px;
+  justify-content: flex-start;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.filter,
+.sort {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.filter {
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.sort {
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  justify-self: flex-end;
+  margin-left: auto;
+  padding: 0 16px;
+}
+
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown {
+  height: 100%;
+}
+
+.button,
+.menu {
+  font-size: 14px;
+  width: 232px;
+}
+
+.menu {
+  animation: slide-down 0.2s ease;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  left: 1px;
+  list-style: none;
+  margin: 0;
+  max-height: 70vh;
+  overflow-y: auto;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  z-index: 200;
+}
+
+.button {
+  align-items: center;
+  appearance: none;
+  background: #fff;
+  border: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  height: 100%;
+  list-style: none;
+  padding: 16px;
+  text-align: left;
+}
+
+.button::-webkit-details-marker {
+  display: none;
+}
+
+.button span:first-child {
+  display: block;
+  flex: 2;
+  overflow: hidden;
+  padding-right: 24px;
+  text-overflow: ellipsis;
+  white-space: pre;
+}
+
+.button span:first-child > div {
+  padding: 0;
+}
+
+.item {
+  border-bottom: 1px solid rgb(0, 0, 0, 0.1);
+  color: #666;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.item a {
+  color: inherit;
+  display: block;
+  text-decoration: none;
+}
+
+.item:last-child {
+  border-bottom: 0;
+}
+
+.item a > div {
+  padding: 8px 16px;
+}
+
+.item a:hover,
+.item a:focus-visible {
+  background-color: rgb(0, 0, 0, 0.1);
+  color: #666;
+}
+
+.arrow {
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.dropdown[open] .arrow {
+  transform: rotate(-180deg);
+}
+
+.clear {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  height: 17px;
+  justify-content: center;
+  margin-left: 0.5em;
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 17px;
+  z-index: 3;
+}
+
+.clear svg {
+  transform: scale(1.4);
+}
+
+.clear svg path {
+  fill: #666;
+}
+
+@media (prefers-color-scheme: dark) {
+  .menu,
+  .root {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #8899a5;
+  }
+
+  .root {
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .item {
+    color: #fff;
+  }
+
+  .item a:hover,
+  .item a:focus-visible {
+    background-color: #8899a5;
+    color: #000;
+  }
+
+  .button {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #8899a5;
+  }
+
+  .filter {
+    border-right-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .sort {
+    border-left-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .clear svg path,
+  .arrow path {
+    fill: #8899a5;
+  }
+}
+
+.mobile {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .mobile {
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    font-size: 13px;
+    height: 75px;
+    justify-content: space-between;
+    left: 0;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    z-index: 1;
+  }
+
+  .badge {
+    align-items: center;
+    background-color: red;
+    border-radius: 100%;
+    display: flex;
+    font-size: 8px;
+    font-weight: bold;
+    height: 12px;
+    justify-content: center;
+    left: 40px;
+    line-height: 1;
+    position: absolute;
+    top: 20px;
+    width: 12px;
+    z-index: 3;
+  }
+
+  .menuToggle {
+    display: block;
+    user-select: none;
+    z-index: 1;
+  }
+
+  .menuToggle input {
+    cursor: pointer;
+    display: block;
+    height: 32px;
+    left: 10px;
+    opacity: 0;
+    position: absolute;
+    top: 20px;
+    -webkit-touch-callout: none;
+    width: 40px;
+    z-index: 2;
+  }
+
+  .menuToggle span {
+    background: #fff;
+    border-radius: 3px;
+    display: block;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    transform-origin: 4px 0px;
+    transition:
+      transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+      background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+      opacity 0.55s ease;
+    width: 33px;
+    z-index: 1;
+  }
+
+  .menuToggle span:first-child {
+    transform-origin: 0% 0%;
+  }
+
+  .menuToggle span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+  }
+
+  .menuToggle input:checked ~ span {
+    background: #000;
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+  }
+
+  .menuToggle input:checked ~ span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+  }
+
+  .menuToggle input:checked ~ span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+  }
+
+  .mobileMenu {
+    background: #fff;
+    color: #000;
+    -webkit-font-smoothing: antialiased;
+    left: 0;
+    min-height: 100vh;
+    padding: 80px 15px;
+    position: absolute;
+    top: 0;
+    transform: translate(-100vw, 0);
+    transform-origin: 0% 0%;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    width: 100vw;
+  }
+
+  .menuToggle input:checked ~ .mobileMenu {
+    transform: none;
+  }
+
+  .menuToggle input:checked ~ .badge {
+    display: none;
+  }
+
+  .select {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .select label {
+    display: block;
+    font-weight: bold;
+    padding-bottom: 6px;
+  }
+
+  .select select {
+    font-size: 16px;
+    padding: 6px;
+    width: 100%;
+  }
+
+  .mobileSort {
+    margin-top: 20px;
+  }
+
+  .root {
+    display: none;
+  }
+
+  .files {
+    font-size: 16px;
+    list-style: none;
+    margin: 40px 0 0;
+    padding: 0;
+  }
+
+  .files a {
+    color: #38444d;
+  }
+}
+
+@media screen and (max-width: 767px) and (prefers-color-scheme: dark) {
+  .mobile,
+  .mobileMenu {
+    background-color: #38444d;
+  }
+
+  .select label {
+    color: #fff;
+  }
+
+  .select select {
+    background-color: #000;
+    color: #fff;
+  }
+
+  .menuToggle input:checked ~ span {
+    background-color: #fff;
+  }
+
+  .files a {
+    color: #fff;
+  }
+}

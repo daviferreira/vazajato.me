@@ -1,0 +1,16 @@
+---
+import { Image } from 'astro:assets';
+
+import { sourceImage, sources } from '../lib/data.js';
+
+import styles from './Source.module.css';
+
+const { source } = Astro.props;
+---
+
+<div class={styles.root}>
+  <div class={styles.avatar}>
+    <Image src={sourceImage[source]} alt="" width={64} height={64} />
+  </div>
+  <div class={styles.name}>{sources[source].name}</div>
+</div>

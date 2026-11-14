@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+
+import Source from './Source.astro';
+
+import { articleImage, sources } from '../lib/data.js';
+
+import styles from './Article.module.css';
+
+const { articleId, source, title, url } = Astro.props;
+---
+
+<a class={styles.root} href={url} rel="noopener noreferrer" target="_blank">
+  <div class={styles.image} style={{ backgroundColor: sources[source].color }}>
+    <div class={styles.imageContainer}>
+      <Image
+        src={articleImage[articleId]}
+        alt=""
+        widths={[420, 840, 1260]}
+        sizes="(min-width: 768px) 420px, 100vw"
+      />
+    </div>
+  </div>
+  <h3 class={styles.title}>{title}</h3>
+  <Source source={source} />
+</a>

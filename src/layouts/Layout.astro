@@ -1,0 +1,50 @@
+---
+import Header from '../components/Header.astro';
+
+import '../styles/global.css';
+
+const {
+  title = 'Linha do tempo interativa da #VazaJato',
+  description = 'Leia todo o conteúdo já publicado da #VazaJato incluindo matérias de diferentes veículos, áudios e tuítes.',
+  header = true,
+} = Astro.props;
+
+const url = new URL(Astro.url.pathname.replace(/\/$/, ''), Astro.site).href;
+const canonical = url.replace(/\/$/, '');
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon-32x32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="theme-color" content="#000000" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta
+      property="og:image"
+      content="https://www.vazajato.me/images/telegram.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="675" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content="Davi Ferreira" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+  </head>
+  <body>
+    {header && <Header />}
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>

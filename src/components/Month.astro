@@ -1,0 +1,18 @@
+---
+import Day from './Day.astro';
+
+import { monthTitle } from '../lib/data.js';
+
+import styles from './Month.module.css';
+
+const { days, month } = Astro.props;
+---
+
+<div class={styles.root}>
+  <h2 class={styles.month}>{monthTitle(month)}</h2>
+  <div class={styles.days} data-days>
+    {days.map((day) => (
+      <Day {...day} />
+    ))}
+  </div>
+</div>
