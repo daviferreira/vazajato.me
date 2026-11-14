@@ -7,7 +7,8 @@ Página listando todas as reportagens publicadas até agora na #VazaJato.
     Navigate into the project directory and start it up.
 
     ```sh
-    npm start
+    pnpm install
+    pnpm start
     ```
 
 1.  **Open the source code and start editing!**

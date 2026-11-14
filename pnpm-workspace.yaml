@@ -1,0 +1,42 @@
+# Supply-chain hardening (https://pnpm.io/supply-chain-security)
+
+# Wait 1 day before installing newly published versions
+minimumReleaseAge: 1440
+
+# Refuse versions whose trust level (trusted publisher/provenance) dropped
+trustPolicy: no-downgrade
+
+# Transitive deps may only come from the registry (no git/tarball URLs)
+blockExoticSubdeps: true
+
+# Fail install when a dependency has unreviewed build scripts
+strictDepBuilds: true
+
+# Fail install when a package's engines don't match the current Node
+engineStrict: true
+
+# Only these packages may run install scripts
+# Gatsby/webpack resolve these loaders from the project root
+publicHoistPattern:
+  - svg-react-loader
+
+allowBuilds:
+  # native binaries / required setup
+  gatsby: true
+  lmdb: true
+  msgpackr-extract: true
+  sharp: true
+  # funding banners, telemetry notices, protestware messages
+  core-js: false
+  core-js-pure: false
+  es5-ext: false
+  gatsby-cli: false
+  gatsby-telemetry: false
+
+overrides:
+  axios: "^0.28.0"
+  loader-utils: "^1.4.2"
+  react: "^18.2.0"
+  react-dom: "^18.2.0"
+  svg-react-loader: "^0.4.6"
+  xml2js: "^0.5.0"

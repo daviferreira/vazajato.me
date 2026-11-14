@@ -57,17 +57,8 @@
     "stylelint-config-recommended": "^14.0.0",
     "stylelint-order": "^6.0.2"
   },
-  "overrides": {
-    "axios": "^0.28.0",
-    "loader-utils": "^1.4.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "svg-react-loader": "^0.4.6",
-    "xml2js": "^0.5.0"
-  },
   "engines": {
-    "node": "26.13.1",
-    "npm": "10.2.4"
+    "node": "26.13.1"
   },
   "keywords": [
     "gatsby"
@@ -78,11 +69,11 @@
     "develop": "gatsby develop --port 4000",
     "format": "prettier --write '**/*.{js,css,json}'",
     "clean": "gatsby clean",
-    "prepare": "husky install",
-    "start": "npm run develop",
+    "prepare": "husky",
+    "start": "pnpm run develop",
     "serve": "gatsby serve",
     "lint": "eslint . --cache --cache-location node_modules/.eslintcache && prettier --check '**/*.{js,css,json}' && stylelint './src/**/*.css'",
-    "test": "npm run lint",
+    "test": "pnpm run lint",
     "import": "node ./tasks/import"
   },
   "repository": {
@@ -112,5 +103,6 @@
     "**/*.json": [
       "prettier --check"
     ]
-  }
+  },
+  "packageManager": "pnpm@12.18.0"
 }

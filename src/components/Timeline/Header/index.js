@@ -2,7 +2,7 @@ import classnames from 'classnames';
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import slugify from 'slugify';
-import { navigate } from 'gatsby-link';
+import { navigate } from 'gatsby';
 
 import { Menu, MenuList, MenuButton, MenuItem } from '@reach/menu-button';
 import ShareBar from '../../ShareBar';
