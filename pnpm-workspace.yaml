@@ -12,20 +12,31 @@ blockExoticSubdeps: true
 # Fail install when a dependency has unreviewed build scripts
 strictDepBuilds: true
 
-# Fail install when a package's engines don't match the current Node
-engineStrict: true
+# Off: gatsby@5.16 declares node "<26" but builds fine on Node 26
+# (with the lmdb override below). Re-enable once Gatsby lifts the cap.
+engineStrict: false
 
-# Only these packages may run install scripts
-# Gatsby/webpack resolve these loaders from the project root
+# Gatsby's webpack resolves these from the project root
 publicHoistPattern:
   - svg-react-loader
+  - "@gatsbyjs/reach-router"
+  - gatsby-link
+  - gatsby-react-router-scroll
+  - gatsby-script
+  - mitt
+  - shallow-compare
+  - gatsby-core-utils
+  - style-to-object
 
+# Only these packages may run install scripts
 allowBuilds:
   # native binaries / required setup
   gatsby: true
   lmdb: true
   msgpackr-extract: true
   sharp: true
+  # prebuilt binaries ship via optional deps; script only builds from source
+  "@parcel/watcher": false
   # funding banners, telemetry notices, protestware messages
   core-js: false
   core-js-pure: false
@@ -36,7 +47,9 @@ allowBuilds:
 overrides:
   axios: "^0.28.0"
   loader-utils: "^1.4.2"
-  react: "^18.2.0"
-  react-dom: "^18.2.0"
+  react: "^18.3.1"
+  react-dom: "^18.3.1"
   svg-react-loader: "^0.4.6"
   xml2js: "^0.5.0"
+  # lmdb 2.5.x (pinned by gatsby) crashes on Node 26
+  lmdb: "2.9.4"
