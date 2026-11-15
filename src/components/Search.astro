@@ -262,6 +262,15 @@ import Icon from './Icon.astro';
     }
   }
 
+  /* iOS zooms into any field set under 16px; touch screens get 16,
+     pinned or not. */
+  @media (pointer: coarse) {
+    input,
+    :global([data-stuck]) input {
+      font-size: 1rem;
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .search::after,
     input {

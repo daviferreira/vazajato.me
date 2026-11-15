@@ -510,6 +510,13 @@ const { source, topic } = Astro.props;
     }
   }
 
+  /* iOS zooms into any field set under 16px; touch screens get 16. */
+  @media (pointer: coarse) {
+    .find {
+      font-size: 1rem;
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .menu,
     .sort path,
