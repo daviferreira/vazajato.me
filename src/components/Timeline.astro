@@ -1,8 +1,11 @@
 ---
 import Filters from './Filters.astro';
 import Footer from './Footer.astro';
+import ListView from './ListView.astro';
 import Month from './Month.astro';
 import SiteHeader from './SiteHeader.astro';
+import TableView from './TableView.astro';
+import ViewToggle from './ViewToggle.astro';
 
 import { groupByMonth, summary } from '../lib/data.js';
 
@@ -25,14 +28,26 @@ const { articles, intro, source, title, topic } = Astro.props;
           </>
         )}
       </p>
-      <Filters source={source} topic={topic} />
     </div>
   </div>
 
-  <div class="months" data-months>
-    {groupByMonth(articles).map((month) => (
-      <Month {...month} />
-    ))}
+  <div class="toolbar">
+    <Filters source={source} topic={topic} />
+    <ViewToggle />
+  </div>
+
+  <div class="panels">
+    <div class="panel" data-panel="cards" data-months>
+      {groupByMonth(articles).map((month) => (
+        <Month {...month} />
+      ))}
+    </div>
+    <div class="panel" data-panel="list">
+      <ListView articles={articles} />
+    </div>
+    <div class="panel" data-panel="table">
+      <TableView articles={articles} />
+    </div>
   </div>
 </main>
 
@@ -71,7 +86,7 @@ const { articles, intro, source, title, topic } = Astro.props;
   .intro {
     display: grid;
     gap: 14px;
-    padding: clamp(32px, 6vw, 88px) var(--gutter) clamp(24px, 4vw, 56px);
+    padding: clamp(28px, 4.5vw, 64px) var(--gutter) clamp(24px, 3vw, 40px);
   }
 
   h1 {
@@ -99,6 +114,7 @@ const { articles, intro, source, title, topic } = Astro.props;
     max-width: 62ch;
     font-size: clamp(1rem, 0.95rem + 0.3vw, 1.125rem);
     color: var(--body);
+    text-wrap: pretty;
   }
 
   .summary {
@@ -117,8 +133,30 @@ const { articles, intro, source, title, topic } = Astro.props;
     text-decoration-thickness: 2px;
   }
 
-  .months {
+  .toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px 24px;
+    padding: 0 var(--gutter) 24px;
+  }
+
+  .panels {
     padding-bottom: 32px;
     border-top: 1px solid var(--line);
+  }
+
+  /* Cards show by default and without JS; <html data-view> picks another. */
+  .panel[data-panel='list'],
+  .panel[data-panel='table'],
+  :global(html[data-view='list']) .panel[data-panel='cards'],
+  :global(html[data-view='table']) .panel[data-panel='cards'] {
+    display: none;
+  }
+
+  :global(html[data-view='list']) .panel[data-panel='list'],
+  :global(html[data-view='table']) .panel[data-panel='table'] {
+    display: block;
   }
 </style>

@@ -1,0 +1,137 @@
+---
+import Icon from './Icon.astro';
+
+const views = [
+  { id: 'cards', label: 'Cards' },
+  { id: 'list', label: 'Lista' },
+  { id: 'table', label: 'Tabela' },
+];
+---
+
+<div
+  class="views"
+  role="group"
+  aria-label="Visualização"
+  data-view-toggle
+  hidden
+>
+  <span class="pill" aria-hidden="true"></span>
+  {views.map(({ id, label }) => (
+    <button type="button" data-view={id} aria-pressed="false">
+      <Icon name={id} size={16} />
+      <span>{label}</span>
+    </button>
+  ))}
+</div>
+
+<script>
+  // The chosen view lives on <html data-view>; Layout restores it before paint.
+  const group = document.querySelector<HTMLElement>('[data-view-toggle]');
+  const buttons = group.querySelectorAll<HTMLButtonElement>('[data-view]');
+  const root = document.documentElement;
+
+  // The pill slides under the pressed button, like the theme toggle's ball.
+  const sync = () => {
+    const current = root.dataset.view || 'cards';
+    buttons.forEach((b) => {
+      const pressed = b.dataset.view === current;
+      b.setAttribute('aria-pressed', String(pressed));
+      if (pressed) {
+        group.style.setProperty('--pill-x', `${b.offsetLeft}px`);
+        group.style.setProperty('--pill-w', `${b.offsetWidth}px`);
+      }
+    });
+  };
+
+  buttons.forEach((button) =>
+    button.addEventListener('click', () => {
+      root.dataset.view = button.dataset.view;
+      try {
+        localStorage.setItem('view', button.dataset.view);
+      } catch {}
+      sync();
+    }),
+  );
+
+  group.hidden = false;
+  sync();
+  new ResizeObserver(sync).observe(group);
+  // Place the pill without animating, then let later moves slide.
+  requestAnimationFrame(() => group.classList.add('ready'));
+</script>
+
+<style>
+  .views {
+    position: relative;
+    display: flex;
+    padding: 3px;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    background: var(--raised);
+  }
+
+  .views[hidden] {
+    display: none;
+  }
+
+  .pill {
+    position: absolute;
+    top: 3px;
+    bottom: 3px;
+    left: 0;
+    width: var(--pill-w, 0);
+    border-radius: 4px;
+    background: var(--surface);
+    box-shadow: inset 0 0 0 1px var(--gold);
+    transform: translateX(var(--pill-x, 0));
+  }
+
+  .ready .pill {
+    transition:
+      transform 0.45s var(--ease-out),
+      width 0.45s var(--ease-out);
+  }
+
+  button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 36px;
+    padding: 0 12px;
+    border: 0;
+    border-radius: 4px;
+    background: none;
+    color: var(--muted);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+
+  button:hover {
+    color: var(--text);
+  }
+
+  button[aria-pressed='true'] {
+    color: var(--text);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ready .pill {
+      transition: none;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .views {
+      width: 100%;
+    }
+
+    button {
+      flex: 1;
+      font-size: 0.875rem;
+    }
+  }
+</style>

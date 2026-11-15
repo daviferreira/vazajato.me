@@ -114,7 +114,7 @@ const { source, topic } = Astro.props;
     open?.querySelector('summary')?.focus();
   });
 
-  // Sort: flip month order and the cards inside each month.
+  // Sort: flip months and the stories inside them, in every view.
   const button = document.querySelector<HTMLButtonElement>('[data-sort]');
   const label = button.querySelector('[data-sort-label]');
   const reverse = (el: Element) => el.append(...[...el.children].reverse());
@@ -123,7 +123,11 @@ const { source, topic } = Astro.props;
   button.hidden = false;
   button.addEventListener('click', () => {
     newestFirst = !newestFirst;
-    document.querySelectorAll('[data-months], [data-cards]').forEach(reverse);
+    document
+      .querySelectorAll(
+        '[data-months], [data-cards], [data-list], [data-items]',
+      )
+      .forEach(reverse);
     document
       .querySelectorAll('[data-row]')
       .forEach((row) => row.scrollTo({ left: 0 }));

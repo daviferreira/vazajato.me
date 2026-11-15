@@ -237,7 +237,8 @@ A colourless table with one warm light on it: every neutral is pure grey (chroma
 
 The page is full-bleed with a fluid side gutter (`spacing.gutter`, 16px to 64px). The top bar, intro, month headings and footer all align to that gutter; month rows scroll edge to edge while their first card snaps to the gutter (`scroll-padding-inline`).
 
-- **Intro:** a stack of title, lede, computed summary and filters. From 1100px it becomes two columns, title left and a column of up to 760px right, top-aligned with a 48px gap. Padding clamps 32px to 88px above and 24px to 56px below.
+- **Intro:** title, lede and computed summary. From 1100px it becomes two columns, title left and a column of up to 760px right, top-aligned with a 48px gap. Padding clamps 28px to 64px above and 24px to 40px below.
+- **Toolbar:** a full-width row under the intro: filters and sort on the left, the view toggle on the right; wraps on narrow screens.
 - **Month section:** heading, mono count and, when the row overflows, previous/next round buttons pushed to the right. Below it the row: fixed-width cards (`min(340px, 78vw)`) with a 20px gap, padded 16px above and 24px below, horizontal scroll with mandatory start snap and a hidden scrollbar. Arrow buttons page by 85% of the row width.
 - **Rhythm:** 6, 8, 14, 20, 24 and 48px recur (`spacing` scale); 14px is the default stack gap in intro and card bodies.
 - **Mobile (640px and below):** filters become a three-column grid (outlet, topic, square sort button); filter labels shorten; the month heading becomes a two-row grid with arrows spanning both rows; header links wrap onto their own line below the wordmark and toggle.
@@ -265,18 +266,30 @@ Small, firm corners on a three-step scale: 4px for tags, menu items and the clea
 
 ### Cards (article)
 
-The signature unit: a card that links to the original article in a new tab.
+The signature unit: a card whose title link covers the whole card (`.stretched`) and opens the original article in a new tab. The list view uses the same pattern. Only the table links outlet and topics to their filtered timelines.
 
 - **Corner Style:** 8px, overflow hidden.
 - **Background:** card face, body ink text; title in ink.
-- **Structure:** 2:1 cover image over a 3px strip in the outlet's colour (outlet colour also fills the cover while it loads); body padded 16px 18px 18px with 14px gaps: title, outlet (20px round avatar and name in muted ink, pushed to the bottom), then tags.
+- **Structure:** 2:1 cover image over a 3px strip in the outlet's colour (outlet colour also fills the cover while it loads); body padded 16px 18px 18px with 14px gaps: a mono dateline in muted ink, the title, the outlet (20px round avatar and name in muted ink, pushed to the bottom), then topic tags.
 - **Border:** 1px hairline in every state.
 - **States:** hover and focus rise 4px and take the lifted shadow (0.45s, expo-out ease); focus also shows the gold outline.
+
+### View toggle
+
+A segmented control at the right of the toolbar: Cards, Lista, Tabela, each a stroke icon plus label, in a raised track with a strong hairline. A card-face pill with an inset gold ring slides under the pressed option (0.45s, expo-out), like the theme toggle's ball; the pressed label is ink, the others muted. The choice is stored and restored before paint on `<html data-view>`; without JS only cards show and the toggle stays hidden. Full width on phones.
+
+### List view (news feed)
+
+Month sections; each story is a full-width row: a 2:1 cover up to 480px on the left (outlet colour behind it, 8px corners, 3% zoom on hover), then the topics as a kicker in body ink, the title as an Apfel Grotezk headline (700, clamp 1.375rem to 2rem, line-height 1.12, balanced), and a byline of avatar, outlet and date in muted ink. Hairlines between stories; the cover stacks above the text under 760px.
+
+### Table view
+
+One table of every story: Data (mono, ink), Título (500, ink, gold underline on hover), Veículo (avatar and name, no wrap), Tópicos (mono, muted, joined by middots). Mono column heads over a strong hairline, hairline rows, baseline-aligned cells, 24px column gaps, row hover in card face. Scrolls sideways inside its own region below 820px.
 
 ### Tags
 
 - **Style:** mono label, 4px 7px padding, 4px corners, 1px hairline, muted ink.
-- **Date tag:** always first; strong hairline and ink text so the date leads.
+- **Dates are not tags:** on cards the date is a plain mono dateline above the title, with no border; tags are only topics.
 
 ### Filter controls (outlet and topic menus, sort)
 

@@ -55,6 +55,10 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href.replace(
         if (theme === 'light' || theme === 'dark') {
           document.documentElement.dataset.theme = theme;
         }
+        const view = localStorage.getItem('view');
+        if (view === 'list' || view === 'table') {
+          document.documentElement.dataset.view = view;
+        }
       } catch {}
     </script>
     <meta property="og:title" content={title} />
@@ -217,6 +221,23 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href.replace(
   h1,
   h2 {
     font-family: var(--display);
+  }
+
+  /* Whole-card link: the title's link covers its positioned container. */
+  .stretched::after {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    content: '';
+  }
+
+  .stretched:focus-visible {
+    outline: none;
+  }
+
+  .stretched:focus-visible::after {
+    outline: 2px solid var(--gold);
+    outline-offset: -2px;
   }
 
   h1,
