@@ -5,7 +5,7 @@ reportagens da #VazaJato: as mensagens trocadas no Telegram entre procuradores
 da Lava Jato e o então juiz Sergio Moro, publicadas a partir de junho de 2019
 pelo The Intercept Brasil e por veículos parceiros.
 
-São 266 reportagens de 20 veículos, de junho de 2019 a março de 2024. O site é
+São 267 reportagens de 20 veículos, de junho de 2019 a março de 2024. O site é
 um índice: cada item leva à matéria original, no site de quem a publicou.
 
 ## Onde encontrar

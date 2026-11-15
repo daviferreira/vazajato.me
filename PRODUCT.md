@@ -31,7 +31,7 @@ The only place that gathers the whole series across every outlet, in order. Each
 
 ## Capabilities and Constraints
 
-- 266 articles from 20 outlets, June 2019 to March 2024, tagged with 99 topics. Data in `src/data/articles.json` and `src/data/sources.json`.
+- 267 articles from 20 outlets, June 2019 to March 2024, tagged with 99 topics. Data in `src/data/articles.json` and `src/data/sources.json`.
 - Every article has a cover image (`src/images/articles/<articleId>.jpg`); every outlet has an avatar (`src/images/sources/`).
 - Features to keep: chronological timeline grouped by month, filter by outlet, filter by topic, oldest/newest sort, share links, links to the public data spreadsheet and to the dialogue files on Dropbox, the two newsletter reprint pages, a 404 page.
 - Existing URLs must keep working.

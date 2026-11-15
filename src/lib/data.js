@@ -91,7 +91,7 @@ export const formatDate = (date) => {
   return `${Number(day)} ${SHORT_MONTHS[Number(month) - 1]} ${year}`;
 };
 
-// "266 reportagens de 20 veículos, de junho de 2019 a março de 2024"
+// "267 reportagens de 20 veículos, de junho de 2019 a março de 2024"
 export function summary(list) {
   const outlets = new Set(list.map((a) => a.source)).size;
   const first = monthTitle(list[0].publishDate.slice(0, 7)).toLowerCase();
