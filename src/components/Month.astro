@@ -142,6 +142,9 @@ const count = `${articles.length} ${articles.length === 1 ? 'reportagem' : 'repo
 
   .row {
     --fade: calc(var(--gutter) + 64px);
+    /* The right fade is on from the first paint; the script clears it for
+       rows that fit or are scrolled to the end. */
+    --fade-after: var(--fade);
 
     overflow-x: auto;
     overscroll-behavior-x: contain;
@@ -156,6 +159,10 @@ const count = `${articles.length} ${articles.length === 1 ? 'reportagem' : 'repo
       #000 calc(100% - var(--fade-after)),
       transparent
     );
+  }
+
+  /* Ease only once measured, so nothing animates in on load. */
+  .row[data-measured] {
     transition:
       --fade-before 0.3s,
       --fade-after 0.3s;
@@ -165,8 +172,8 @@ const count = `${articles.length} ${articles.length === 1 ? 'reportagem' : 'repo
     --fade-before: var(--fade);
   }
 
-  .row[data-more-after] {
-    --fade-after: var(--fade);
+  .row[data-at-end] {
+    --fade-after: 0px;
   }
 
   .row::-webkit-scrollbar {
