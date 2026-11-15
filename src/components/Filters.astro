@@ -384,7 +384,8 @@ const { source, topic } = Astro.props;
     }
   }
 
-  details::details-content {
+  /* Only on close: on open it must turn visible at once so the field can take focus. */
+  details:not([open])::details-content {
     transition: content-visibility 0.2s allow-discrete;
   }
 
@@ -517,7 +518,7 @@ const { source, topic } = Astro.props;
   @media (prefers-reduced-motion: reduce) {
     .menu,
     .sort path,
-    details::details-content {
+    details:not([open])::details-content {
       transition: none;
     }
 
