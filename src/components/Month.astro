@@ -5,7 +5,7 @@ import Icon from './Icon.astro';
 import { monthTitle, sources } from '../lib/data.js';
 import { searchText } from '../lib/search.js';
 
-const { articles, month } = Astro.props;
+const { articles, first, month } = Astro.props;
 const title = monthTitle(month);
 const id = `mes-${month}`;
 const count = `${articles.length} ${articles.length === 1 ? 'reportagem' : 'reportagens'}`;
@@ -28,9 +28,9 @@ const count = `${articles.length} ${articles.length === 1 ? 'reportagem' : 'repo
   </header>
   <div class="row" data-row tabindex="0" role="region" aria-label={title}>
     <ul class="cards" data-cards>
-      {articles.map((article) => (
+      {articles.map((article, i) => (
         <li data-search={searchText(article, sources[article.source].name)}>
-          <Article {...article} />
+          <Article {...article} priority={first && i === 0} />
         </li>
       ))}
     </ul>

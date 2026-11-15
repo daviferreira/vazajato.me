@@ -5,7 +5,8 @@ import { articleImage, formatDate, sourceImage, sources } from '../lib/data.js';
 
 // A newspaper-index entry: cover, kicker, headline, byline. No box; the
 // month row separates entries with column rules.
-const { articleId, publishDate, source, title, topics, url } = Astro.props;
+const { articleId, priority, publishDate, source, title, topics, url } =
+  Astro.props;
 const { color, name } = sources[source];
 const tags = topics.filter(Boolean);
 ---
@@ -17,6 +18,8 @@ const tags = topics.filter(Boolean);
       alt=""
       widths={[340, 680]}
       sizes="340px"
+      loading={priority ? 'eager' : 'lazy'}
+      fetchpriority={priority ? 'high' : 'auto'}
     />
   </div>
   <div class="body">

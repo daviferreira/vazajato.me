@@ -20,5 +20,7 @@ export default defineConfig({
       }),
     }),
   ],
+  // The CSS is ~6 KB; inlining saves a render-blocking round trip.
+  build: { inlineStylesheets: 'always' },
   server: { port: 4000 },
 });

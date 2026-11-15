@@ -59,8 +59,8 @@ const tableBones = [...Array(10).keys()];
   <div class="panels">
     <p class="search-status" data-search-status aria-live="polite"></p>
     <div class="panel" data-panel="cards" data-months>
-      {groupByMonth(articles).map((month) => (
-        <Month {...month} />
+      {groupByMonth(articles).map((month, i) => (
+        <Month {...month} first={i === 0} />
       ))}
     </div>
     <div class="panel" data-panel="list" data-src={`/vistas/lista${listing}`}>
@@ -205,7 +205,7 @@ const tableBones = [...Array(10).keys()];
   ).observe(toolbar);
 
   // Row arrows: scroll by one viewport of cards, disabled at either end.
-  document.querySelectorAll('.month').forEach((month) => {
+  document.querySelectorAll('section.month').forEach((month) => {
     const row = month.querySelector<HTMLElement>('[data-row]');
     const nav = month.querySelector<HTMLElement>('[data-row-nav]');
     const prev = month.querySelector<HTMLButtonElement>('[data-prev]');
