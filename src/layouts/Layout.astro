@@ -1,16 +1,13 @@
 ---
-import Header from '../components/Header.astro';
-
-import '../styles/global.css';
-
 const {
-  title = 'Linha do tempo interativa da #VazaJato',
-  description = 'Leia todo o conteúdo já publicado da #VazaJato incluindo matérias de diferentes veículos, áudios e tuítes.',
-  header = true,
+  title = 'Linha do tempo da Vaza Jato',
+  description = 'Índice de tudo o que foi publicado sobre as mensagens da Lava Jato reveladas pelo The Intercept Brasil, de todos os veículos, em ordem.',
 } = Astro.props;
 
-const url = new URL(Astro.url.pathname.replace(/\/$/, ''), Astro.site).href;
-const canonical = url.replace(/\/$/, '');
+const canonical = new URL(Astro.url.pathname, Astro.site).href.replace(
+  /\/$/,
+  '',
+);
 ---
 
 <!doctype html>
@@ -25,7 +22,27 @@ const canonical = url.replace(/\/$/, '');
     <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <meta name="theme-color" content="#000000" />
+    <meta
+      name="theme-color"
+      content="#f3f3f3"
+      media="(prefers-color-scheme: light)"
+      data-theme-color
+    />
+    <meta
+      name="theme-color"
+      content="#1b1b1b"
+      media="(prefers-color-scheme: dark)"
+      data-theme-color
+    />
+    <script is:inline>
+      // Apply a saved theme before first paint; otherwise follow the system.
+      try {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'light' || theme === 'dark') {
+          document.documentElement.dataset.theme = theme;
+        }
+      } catch {}
+    </script>
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
@@ -37,14 +54,145 @@ const canonical = url.replace(/\/$/, '');
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="675" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:creator" content="Davi Ferreira" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
   </head>
   <body>
-    {header && <Header />}
-    <main>
-      <slot />
-    </main>
+    <slot />
   </body>
 </html>
+
+<style is:global>
+  :root {
+    color-scheme: dark;
+
+    --bg: oklch(0.22 0 0);
+    --surface: oklch(0.25 0 0);
+    --raised: oklch(0.28 0 0);
+    --line: oklch(0.93 0 0 / 0.16);
+    --line-strong: oklch(0.93 0 0 / 0.42);
+    --text: oklch(0.94 0 0);
+    --body: oklch(0.86 0 0);
+    --muted: oklch(0.74 0 0);
+    --gold: oklch(0.82 0.15 84);
+    --gold-ink: oklch(0.24 0.04 84);
+    --scrollbar: oklch(0.42 0 0);
+
+    --sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    --mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+    --gutter: clamp(16px, 4vw, 64px);
+    --radius: 6px;
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme='dark']) {
+      color-scheme: light;
+
+      --bg: oklch(0.965 0 0);
+      --surface: oklch(1 0 0);
+      --raised: oklch(0.93 0 0);
+      --line: oklch(0.2 0 0 / 0.14);
+      --line-strong: oklch(0.2 0 0 / 0.4);
+      --text: oklch(0.2 0 0);
+      --body: oklch(0.3 0 0);
+      --muted: oklch(0.47 0 0);
+      --gold: oklch(0.6 0.13 84);
+      --gold-ink: oklch(0.15 0.02 84);
+      --scrollbar: oklch(0.75 0 0);
+    }
+  }
+
+  :root[data-theme='light'] {
+    color-scheme: light;
+
+    --bg: oklch(0.965 0 0);
+    --surface: oklch(1 0 0);
+    --raised: oklch(0.93 0 0);
+    --line: oklch(0.2 0 0 / 0.14);
+    --line-strong: oklch(0.2 0 0 / 0.4);
+    --text: oklch(0.2 0 0);
+    --body: oklch(0.3 0 0);
+    --muted: oklch(0.47 0 0);
+    --gold: oklch(0.6 0.13 84);
+    --gold-ink: oklch(0.15 0.02 84);
+    --scrollbar: oklch(0.75 0 0);
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scrollbar-color: var(--scrollbar) var(--bg);
+  }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--body);
+    font: 400 1rem/1.5 var(--sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    accent-color: var(--gold);
+  }
+
+  h1,
+  h2,
+  h3,
+  p,
+  ul {
+    margin: 0;
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: var(--text);
+    text-wrap: balance;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+  }
+
+  ::selection {
+    background: var(--gold);
+    color: var(--gold-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+  }
+
+  .mono {
+    font-family: var(--mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+</style>

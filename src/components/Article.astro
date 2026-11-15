@@ -1,26 +1,144 @@
 ---
 import { Image } from 'astro:assets';
 
-import Source from './Source.astro';
+import { articleImage, formatDate, sourceImage, sources } from '../lib/data.js';
 
-import { articleImage, sources } from '../lib/data.js';
-
-import styles from './Article.module.css';
-
-const { articleId, source, title, url } = Astro.props;
+const { articleId, publishDate, source, title, topics, url } = Astro.props;
+const { color, name } = sources[source];
 ---
 
-<a class={styles.root} href={url} rel="noopener noreferrer" target="_blank">
-  <div class={styles.image} style={{ backgroundColor: sources[source].color }}>
-    <div class={styles.imageContainer}>
-      <Image
-        src={articleImage[articleId]}
-        alt=""
-        widths={[420, 840, 1260]}
-        sizes="(min-width: 768px) 420px, 100vw"
-      />
-    </div>
+<a
+  class="card"
+  href={url}
+  rel="noopener noreferrer"
+  target="_blank"
+  style={`--outlet: ${color}`}
+>
+  <div class="cover">
+    <Image
+      src={articleImage[articleId]}
+      alt=""
+      widths={[340, 680]}
+      sizes="340px"
+    />
   </div>
-  <h3 class={styles.title}>{title}</h3>
-  <Source source={source} />
+  <div class="body">
+    <h3>{title}</h3>
+    <p class="source">
+      <Image src={sourceImage[source]} alt="" width={40} height={40} />
+      <span>{name}</span>
+    </p>
+    <ul class="tags">
+      <li class="mono">
+        <time datetime={publishDate}>{formatDate(publishDate)}</time>
+      </li>
+      {topics.filter(Boolean).map((topic) => (
+        <li class="mono">{topic}</li>
+      ))}
+    </ul>
+  </div>
+  <span class="visually-hidden">(abre em nova aba)</span>
 </a>
+
+<style>
+  .card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--body);
+    text-decoration: none;
+    transition:
+      transform 0.45s var(--ease-out),
+      box-shadow 0.45s var(--ease-out);
+  }
+
+  .card:hover,
+  .card:focus-visible {
+    box-shadow: 0 14px 30px -12px oklch(0 0 0 / 0.45);
+    transform: translateY(-4px);
+  }
+
+  .card:focus-visible {
+    outline-offset: 2px;
+  }
+
+  .cover {
+    aspect-ratio: 2 / 1;
+    overflow: hidden;
+    /* The outlet's colour: behind the cover while it loads, and as a strip. */
+    border-bottom: 3px solid var(--outlet);
+    background: var(--outlet);
+  }
+
+  .cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 14px;
+    padding: 16px 18px 18px;
+  }
+
+  h3 {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: -0.005em;
+  }
+
+  .source {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+    color: var(--muted);
+    font-size: 0.875rem;
+  }
+
+  .source img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .tags li {
+    padding: 4px 7px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    color: var(--muted);
+    line-height: 1.3;
+  }
+
+  .tags li:first-child {
+    border-color: var(--line-strong);
+    color: var(--text);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .card {
+      transition: none;
+    }
+
+    .card:hover,
+    .card:focus-visible {
+      transform: none;
+    }
+  }
+</style>

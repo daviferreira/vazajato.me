@@ -1,22 +1,124 @@
 ---
+import Filters from './Filters.astro';
 import Footer from './Footer.astro';
 import Month from './Month.astro';
-import TimelineHeader from './TimelineHeader.astro';
+import SiteHeader from './SiteHeader.astro';
 
-import { groupByMonth } from '../lib/data.js';
+import { groupByMonth, summary } from '../lib/data.js';
 
-import styles from './Timeline.module.css';
-
-const { articles, source, topic } = Astro.props;
+// `title` and `intro` describe the page; `source` / `topic` set the filters.
+const { articles, intro, source, title, topic } = Astro.props;
 ---
 
-<TimelineHeader source={source} topic={topic} />
+<SiteHeader />
 
-<section class={styles.root} data-timeline>
-  {groupByMonth(articles).map((month) => (
-    <Month {...month} />
-  ))}
-</section>
-<div class={styles.footer}>
-  <Footer />
-</div>
+<main>
+  <div class="intro">
+    <h1>{title}</h1>
+    <div class="aside">
+      <p class="lede">{intro}</p>
+      <p class="summary">
+        {summary(articles)}
+        {(source || topic) && (
+          <>
+            . <a href="/">Ver todas</a>
+          </>
+        )}
+      </p>
+      <Filters source={source} topic={topic} />
+    </div>
+  </div>
+
+  <div class="months" data-months>
+    {groupByMonth(articles).map((month) => (
+      <Month {...month} />
+    ))}
+  </div>
+</main>
+
+<Footer />
+
+<script>
+  // Row arrows: scroll by one viewport of cards, disabled at either end.
+  document.querySelectorAll('.month').forEach((month) => {
+    const row = month.querySelector<HTMLElement>('[data-row]');
+    const nav = month.querySelector<HTMLElement>('[data-row-nav]');
+    const prev = month.querySelector<HTMLButtonElement>('[data-prev]');
+    const next = month.querySelector<HTMLButtonElement>('[data-next]');
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+
+    const update = () => {
+      const max = row.scrollWidth - row.clientWidth;
+      nav.hidden = max < 4;
+      prev.disabled = row.scrollLeft < 4;
+      next.disabled = row.scrollLeft > max - 4;
+    };
+
+    const page = (direction: number) =>
+      row.scrollBy({
+        left: direction * row.clientWidth * 0.85,
+        behavior: reduce.matches ? 'auto' : 'smooth',
+      });
+
+    prev.addEventListener('click', () => page(-1));
+    next.addEventListener('click', () => page(1));
+    row.addEventListener('scroll', update, { passive: true });
+    new ResizeObserver(update).observe(row);
+  });
+</script>
+
+<style>
+  .intro {
+    display: grid;
+    gap: 14px;
+    padding: clamp(32px, 6vw, 88px) var(--gutter) clamp(24px, 4vw, 56px);
+  }
+
+  h1 {
+    max-width: 18ch;
+    font-size: clamp(2.25rem, 1.4rem + 3.6vw, 4.25rem);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.035em;
+  }
+
+  .aside {
+    display: grid;
+    gap: 14px;
+  }
+
+  @media (min-width: 1100px) {
+    .intro {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 760px);
+      align-items: start;
+      column-gap: 48px;
+    }
+  }
+
+  .lede {
+    max-width: 62ch;
+    font-size: clamp(1rem, 0.95rem + 0.3vw, 1.125rem);
+    color: var(--body);
+  }
+
+  .summary {
+    margin-bottom: 6px;
+    color: var(--muted);
+    font-size: 0.9375rem;
+  }
+
+  .summary a {
+    color: var(--text);
+    text-underline-offset: 3px;
+  }
+
+  .summary a:hover {
+    text-decoration-color: var(--gold);
+    text-decoration-thickness: 2px;
+  }
+
+  .months {
+    padding-bottom: 32px;
+    border-top: 1px solid var(--line);
+  }
+</style>

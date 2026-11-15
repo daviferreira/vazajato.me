@@ -1,50 +1,174 @@
 ---
-import Pdf from '../icons/pdf.svg';
-import Spreadsheet from '../icons/spreadsheet.svg';
+import Icon from './Icon.astro';
 
-import styles from './Footer.module.css';
+const site = 'https://www.vazajato.me';
+const text = encodeURIComponent('Linha do tempo da Vaza Jato');
+const share = [
+  {
+    icon: 'whatsapp',
+    label: 'WhatsApp',
+    href: `https://wa.me/?text=${text}%20${encodeURIComponent(site)}`,
+  },
+  {
+    icon: 'twitter',
+    label: 'Twitter',
+    href: `https://twitter.com/intent/tweet?text=${text}&url=${site}&hashtags=VazaJato`,
+  },
+  {
+    icon: 'facebook',
+    label: 'Facebook',
+    href: `https://www.facebook.com/sharer/sharer.php?u=${site}`,
+  },
+];
 ---
 
-<a
-  class={styles.spreadsheet}
-  href="https://docs.google.com/spreadsheets/d/1y9bixq_sZ5TOwwqfoagRKX4zCm1Ka6hXbch9qN6OtKI"
-  rel="noopener noreferrer"
-  target="_blank"
-  title="Planilha de dados"
->
-  <Spreadsheet />
-</a>
-<a
-  class={styles.pdf}
-  href="https://www.dropbox.com/sh/a2wijlhwezq8yyo/AABTEZI4XWfjPEmHeKT7bbcYa?dl=0"
-  rel="noopener noreferrer"
-  target="_blank"
-  title="Arquivos com diálogos"
->
-  <Pdf />
-</a>
-<div class={styles.about} title="Sobre este site">
-  ?
-</div>
-<footer class={styles.root}>
-  <a
-    href="https://www.github.com/daviferreira/vazajato.me"
-    rel="noopener noreferrer"
-    target="_blank"
-  >
-    Desenvolvido
-  </a>
-  &nbsp;com&nbsp;
-  <span class={styles.communist}>
-    <span>&hearts;</span>
-    <span>☭</span>
-  </span>
-  &nbsp;por&nbsp;
-  <a
-    href="https://www.daviferreira.com"
-    rel="noopener noreferrer"
-    target="_blank"
-  >
-    Davi Ferreira
-  </a>
+<footer class="footer">
+  <div class="share">
+    <ul>
+      {share.map(({ icon, label, href }) => (
+        <li>
+          <a
+            href={href}
+            rel="noopener noreferrer"
+            target="_blank"
+            aria-label={`Compartilhar no ${label}`}
+          >
+            <Icon name={icon} size={16} />
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+  <nav class="files" aria-label="Arquivos">
+    <a
+      href="https://docs.google.com/spreadsheets/d/1y9bixq_sZ5TOwwqfoagRKX4zCm1Ka6hXbch9qN6OtKI"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Planilha de dados
+    </a>
+    <a
+      href="https://www.dropbox.com/sh/a2wijlhwezq8yyo/AABTEZI4XWfjPEmHeKT7bbcYa?dl=0"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Arquivos com diálogos
+    </a>
+  </nav>
+  <p class="credit">
+    <a
+      href="https://www.github.com/daviferreira/vazajato.me"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Desenvolvido
+    </a>
+    com{' '}
+    <span class="love" aria-label="amor">
+      <span>&hearts;</span>
+      <span>☭</span>
+    </span>{' '}
+    por{' '}
+    <a
+      href="https://www.daviferreira.com"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Davi Ferreira
+    </a>
+  </p>
 </footer>
+
+<style>
+  .footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px 32px;
+    padding: 28px var(--gutter) 40px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.875rem;
+  }
+
+  .share {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .share ul {
+    display: flex;
+    gap: 8px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .share a {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--line-strong);
+    border-radius: 50%;
+    background: var(--raised);
+    color: var(--text);
+    transition: border-color 0.2s;
+  }
+
+  .share a:hover {
+    border-color: var(--gold);
+  }
+
+  .files {
+    display: flex;
+    gap: 20px;
+  }
+
+  a {
+    color: var(--body);
+    text-underline-offset: 3px;
+  }
+
+  .files a,
+  .credit a {
+    text-decoration: none;
+  }
+
+  .files a:hover,
+  .credit a:hover {
+    color: var(--text);
+    text-decoration: underline;
+  }
+
+  .credit {
+    margin-left: auto;
+  }
+
+  /* The heart turns into a hammer and sickle on hover. */
+  .love {
+    display: inline-grid;
+    width: 1.1em;
+    color: oklch(0.65 0.22 25);
+    text-align: center;
+  }
+
+  .love span {
+    grid-area: 1 / 1;
+  }
+
+  .love span:last-child,
+  .footer:hover .love span:first-child {
+    visibility: hidden;
+  }
+
+  .footer:hover .love span:last-child {
+    visibility: visible;
+  }
+
+  @media (max-width: 640px) {
+    .credit {
+      margin-left: 0;
+    }
+  }
+</style>

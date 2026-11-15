@@ -71,22 +71,39 @@ export const monthTitle = (month) => {
   return `${MONTHS[Number(digits) - 1]} de ${year}`;
 };
 
-export const formatDay = (day) => day.split('-').reverse().join('/');
+const SHORT_MONTHS = [
+  'jan',
+  'fev',
+  'mar',
+  'abr',
+  'mai',
+  'jun',
+  'jul',
+  'ago',
+  'set',
+  'out',
+  'nov',
+  'dez',
+];
 
-// [{ month, days: [{ day, articles, left }] }], days alternate sides.
-export function groupByMonth(list) {
-  let count = 0;
+export const formatDate = (date) => {
+  const [year, month, day] = date.split('-');
+  return `${Number(day)} ${SHORT_MONTHS[Number(month) - 1]} ${year}`;
+};
 
-  return Object.entries(
-    Object.groupBy(list, (a) => a.publishDate.slice(0, 7)),
-  ).map(([month, monthArticles]) => ({
-    month,
-    days: Object.entries(
-      Object.groupBy(monthArticles, (a) => a.publishDate),
-    ).map(([day, dayArticles]) => ({
-      day,
-      articles: dayArticles,
-      left: count++ % 2 === 1,
-    })),
-  }));
+// "266 reportagens de 20 veículos, de junho de 2019 a março de 2024"
+export function summary(list) {
+  const outlets = new Set(list.map((a) => a.source)).size;
+  const first = monthTitle(list[0].publishDate.slice(0, 7)).toLowerCase();
+  const last = monthTitle(list.at(-1).publishDate.slice(0, 7)).toLowerCase();
+  const count = `${list.length} ${list.length === 1 ? 'reportagem' : 'reportagens'}`;
+  const from = outlets === 1 ? '' : ` de ${outlets} veículos`;
+  const span = first === last ? `, em ${first}` : `, de ${first} a ${last}`;
+  return `${count}${from}${span}`;
 }
+
+// [{ month, articles }] in chronological order.
+export const groupByMonth = (list) =>
+  Object.entries(Object.groupBy(list, (a) => a.publishDate.slice(0, 7))).map(
+    ([month, articles]) => ({ month, articles }),
+  );

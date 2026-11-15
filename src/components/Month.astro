@@ -1,18 +1,148 @@
 ---
-import Day from './Day.astro';
+import Article from './Article.astro';
+import Icon from './Icon.astro';
 
 import { monthTitle } from '../lib/data.js';
 
-import styles from './Month.module.css';
-
-const { days, month } = Astro.props;
+const { articles, month } = Astro.props;
+const title = monthTitle(month);
+const id = `mes-${month}`;
+const count = `${articles.length} ${articles.length === 1 ? 'reportagem' : 'reportagens'}`;
 ---
 
-<div class={styles.root}>
-  <h2 class={styles.month}>{monthTitle(month)}</h2>
-  <div class={styles.days} data-days>
-    {days.map((day) => (
-      <Day {...day} />
-    ))}
+<section class="month" aria-labelledby={id}>
+  <header class="head">
+    <h2 id={id}>{title}</h2>
+    <span class="count mono">{count}</span>
+    <div class="nav" data-row-nav hidden>
+      <button type="button" aria-label={`Anteriores de ${title}`} data-prev>
+        <Icon name="left" />
+      </button>
+      <button type="button" aria-label={`Próximas de ${title}`} data-next>
+        <Icon name="right" />
+      </button>
+    </div>
+  </header>
+  <div class="row" data-row tabindex="0" role="region" aria-label={title}>
+    <ul class="cards" data-cards>
+      {articles.map((article) => (
+        <li>
+          <Article {...article} />
+        </li>
+      ))}
+    </ul>
   </div>
-</div>
+</section>
+
+<style>
+  .month {
+    padding-block: 24px 12px;
+  }
+
+  .head {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding-inline: var(--gutter);
+  }
+
+  h2 {
+    font-size: clamp(1.375rem, 1.1rem + 1vw, 1.75rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  .count {
+    color: var(--muted);
+  }
+
+  @media (max-width: 640px) {
+    .head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 6px 16px;
+    }
+
+    h2 {
+      white-space: nowrap;
+    }
+
+    .count {
+      grid-row: 2;
+    }
+
+    .nav {
+      grid-row: 1 / span 2;
+      grid-column: 2;
+    }
+  }
+
+  .nav {
+    display: flex;
+    gap: 8px;
+    margin-left: auto;
+    align-self: center;
+  }
+
+  .nav[hidden] {
+    display: none;
+  }
+
+  .nav button {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--line-strong);
+    border-radius: 50%;
+    background: var(--raised);
+    cursor: pointer;
+    transition:
+      border-color 0.2s,
+      opacity 0.2s;
+  }
+
+  .nav button:hover:not(:disabled) {
+    border-color: var(--gold);
+  }
+
+  .nav button:disabled {
+    cursor: default;
+    opacity: 0.35;
+  }
+
+  .row {
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--gutter);
+    scrollbar-width: none;
+  }
+
+  .row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .row:focus-visible {
+    outline-offset: -2px;
+  }
+
+  .cards {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    padding: 16px var(--gutter) 24px;
+    list-style: none;
+  }
+
+  .cards li {
+    width: min(340px, 78vw);
+    scroll-snap-align: start;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .row {
+      scroll-behavior: auto;
+    }
+  }
+</style>

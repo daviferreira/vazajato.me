@@ -1,12 +1,47 @@
 ---
+import SiteHeader from '../components/SiteHeader.astro';
 import Layout from '../layouts/Layout.astro';
 
-import styles from '../components/NotFound.module.css';
+import deltan from '../components/deltan.gif';
 ---
 
-<Layout title="404: Not found">
-  <div class={styles.root}>
-    <h1 class={styles.title}>Página não encontrada.</h1>
-    <a href="/">Linha do tempo</a>
-  </div>
+<Layout title="Página não encontrada | Vaza Jato">
+  <SiteHeader />
+  <main class="lost" style={`--deltan: url(${deltan.src})`}>
+    <h1>Página não encontrada.</h1>
+    <a href="/">Voltar para a linha do tempo</a>
+  </main>
 </Layout>
+
+<style>
+  .lost {
+    display: grid;
+    place-content: center;
+    gap: 20px;
+    min-height: calc(100svh - 84px);
+    padding: var(--gutter);
+    background:
+      linear-gradient(oklch(0 0 0 / 0.45), oklch(0 0 0 / 0.45)),
+      var(--deltan) center / cover no-repeat;
+    color: #fff;
+    text-align: center;
+  }
+
+  h1 {
+    color: #fff;
+    font-size: clamp(2rem, 1.4rem + 2.6vw, 3.25rem);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+  }
+
+  a {
+    justify-self: center;
+    padding: 12px 18px;
+    border-radius: var(--radius);
+    background: var(--gold);
+    color: var(--gold-ink);
+    font-weight: 600;
+    text-decoration: none;
+  }
+</style>

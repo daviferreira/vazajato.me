@@ -1,0 +1,96 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+---
+
+<header class="bar">
+  <a class="wordmark" href="/" aria-label="vazajato.me, página inicial">
+    <span class="hash" aria-hidden="true">
+      #
+    </span>
+    vazajato
+  </a>
+  <nav class="links" aria-label="Arquivos">
+    <a
+      href="https://docs.google.com/spreadsheets/d/1y9bixq_sZ5TOwwqfoagRKX4zCm1Ka6hXbch9qN6OtKI"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Planilha de dados
+    </a>
+    <a
+      href="https://www.dropbox.com/sh/a2wijlhwezq8yyo/AABTEZI4XWfjPEmHeKT7bbcYa?dl=0"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Arquivos com diálogos
+    </a>
+  </nav>
+  <ThemeToggle />
+</header>
+
+<style>
+  .bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 24px;
+    padding: 20px var(--gutter);
+  }
+
+  .wordmark {
+    color: var(--text);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .hash {
+    display: inline-grid;
+    place-items: center;
+    width: 1.6em;
+    height: 1.6em;
+    margin-right: 0.6em;
+    border: 1.5px solid currentColor;
+    border-radius: 4px;
+    font-weight: 800;
+    letter-spacing: 0;
+    transform: skewX(-10deg);
+  }
+
+  .links {
+    display: flex;
+    gap: 20px;
+    margin-left: auto;
+    font-size: 0.875rem;
+  }
+
+  .links a {
+    color: var(--muted);
+    text-decoration: none;
+  }
+
+  .links a:hover {
+    color: var(--text);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  @media (max-width: 640px) {
+    .bar {
+      padding-bottom: 8px;
+    }
+
+    .links {
+      order: 3;
+      width: 100%;
+      margin-left: 0;
+      font-size: 0.875rem;
+    }
+
+    .bar :global(.toggle) {
+      margin-left: auto;
+    }
+  }
+</style>
