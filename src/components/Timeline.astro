@@ -77,7 +77,8 @@ const listing = source
   // bring it into the current sort order.
   const loadView = async (view: string) => {
     const panel = document.querySelector<HTMLElement>(`[data-panel="${view}"]`);
-    if (!panel || panel.dataset.loaded) return;
+    // Only the list and table panels are fragments; the gallery is inline.
+    if (!panel?.dataset.src || panel.dataset.loaded) return;
     panel.dataset.loaded = 'true';
     const newestFirst = document.documentElement.dataset.order === 'desc';
     try {
