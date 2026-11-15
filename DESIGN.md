@@ -133,10 +133,10 @@ components:
   menu-item-hover:
     backgroundColor: '{colors.raised-control}'
     textColor: '{colors.ink}'
-  round-icon-button:
+  icon-button:
     backgroundColor: '{colors.raised-control}'
     textColor: '{colors.ink}'
-    rounded: '{rounded.circle}'
+    rounded: '{rounded.sm}'
     size: '40px'
   theme-toggle:
     backgroundColor: '{colors.card-face}'
@@ -181,14 +181,14 @@ A colourless table with one blue light on it: every neutral is pure grey (chroma
 
 ### Primary
 
-- **Telegram Blue** (`accent` dark, `paper-accent` light): focus outline (2px, 3px offset), the active filter's double border, the current-item dot in menus, hovered round button and toggle borders, the toggle ball, text selection, the wordmark's blinking cursor, the newsletter link underline, and the fill of the 404 return button. Dark blue is #47b7f1 (7.7:1 on the ground); light theme uses a deeper #00568a (7.1:1 on paper) so the focus ring and fills keep contrast.
+- **Telegram Blue** (`accent` dark, `paper-accent` light): focus outline (2px, 3px offset), the active filter's double border, the current-item dot in menus, hovered icon button and toggle borders, the toggle ball, text selection, the wordmark's blinking cursor, the newsletter link underline, and the fill of the 404 return button. Dark blue is #47b7f1 (7.7:1 on the ground); light theme uses a deeper #00568a (7.1:1 on paper) so the focus ring and fills keep contrast.
 - **Accent Ink** (`accent-ink` / `paper-accent-ink`): text and glyphs set on blue: near-black in dark (8.0:1), white in light (7.6:1) (selection text, the toggle's active icon, the 404 button label).
 
 ### Neutral
 
 - **Charcoal Ground / Paper Ground** (`charcoal-ground` / `paper-ground`): page background; also the browser theme colour (#1b1b1b / #f3f3f3).
 - **Card Face** (`card-face` / `paper-card-face`): card bodies, dropdown menus, the theme toggle track.
-- **Raised Control** (`raised-control` / `paper-raised-control`): filter controls, round icon buttons, cover image placeholder, menu item hover.
+- **Raised Control** (`raised-control` / `paper-raised-control`): filter controls, icon buttons, cover image placeholder, menu item hover.
 - **Hairline** (`hairline` / `paper-hairline`): card borders, cover divider, menu border, section rules, quiet tag outlines.
 - **Strong Hairline** (`hairline-strong` / `paper-hairline-strong`): borders of interactive controls and the month section rules, so actionable things read one notch firmer than containers.
 - **Ink** (`ink` / `paper-ink`): headings, control labels, the wordmark, emphasised text.
@@ -240,7 +240,7 @@ The page is full-bleed with a fluid side gutter (`spacing.gutter`, 16px to 64px)
 
 - **Intro:** the title and, under it, the computed summary ("267 reportagens de 20 veículos, de junho de 2019 a março de 2024", plus "Ver todas" on filtered pages), stacked at the gutter with a 14px gap; no description. The title stays on one line from tablet up; on phones it reserves two lines (a one-line name sits on the second), so the hero, and the toolbar below it, keeps one height across home, outlet and topic pages. Padding clamps 36px to 88px above and 20px to 44px below.
 - **Toolbar:** a full-width row under the intro (12px vertical padding, ground background; a hairline below only while pinned): filters and sort on the left, the view toggle on the right; wraps on narrow screens. From 641px it sticks to the top of the viewport while scrolling; phones leave it in flow. While pinned (`data-stuck`, set by an IntersectionObserver on a 1px sentinel) it compacts: 8px padding, 36px filter controls at 0.875rem and 210px wide, and the view toggle drops to icons (each button keeps an `aria-label`; hover or keyboard focus shows a small square tooltip in ink under the icon, only while pinned).
-- **Month section:** separated by space alone (clamp 32px to 56px above, no rule): heading, count (0.875rem, tabular) and, when the row overflows, previous/next round buttons pushed to the right. Below it the row: entries `min(320px, 74vw)` wide as columns with 28px padding either side of a 1px hairline column rule (none before the first), padded 24px above and 32px below, horizontal scroll with mandatory start snap and a hidden scrollbar; the scrollport fades out (gutter + 64px) on any side with more cards. The right fade is present from the first paint and cleared for rows that fit; the 0.3s easing only starts after the first measurement, so nothing animates in on load. Arrow buttons page by 85% of the row width.
+- **Month section:** separated by space alone (clamp 32px to 56px above, no rule): heading, count (0.875rem, tabular) and, when the row overflows, previous/next square buttons pushed to the right. Below it the row: entries `min(320px, 74vw)` wide as columns with 28px padding either side of a 1px hairline column rule (none before the first), padded 24px above and 32px below, horizontal scroll with mandatory start snap and a hidden scrollbar; the scrollport fades out (gutter + 64px) on any side with more cards. The right fade is present from the first paint and cleared for rows that fit; the 0.3s easing only starts after the first measurement, so nothing animates in on load. Arrow buttons page by 85% of the row width.
 - **Rhythm:** 6, 8, 14, 20, 24 and 48px recur (`spacing` scale); 14px is the default stack gap in intro and card bodies.
 - **Mobile (640px and below):** filters become a three-column grid (outlet, topic, square sort button); filter labels shorten; the month heading becomes a two-row grid with arrows spanning both rows; header links wrap onto their own line below the wordmark and toggle.
 - **Reading pages:** newsletter articles are a centred 68ch column under a back link.
@@ -260,7 +260,7 @@ Flat. Stories sit straight on the ground, separated by rules; only controls take
 
 ## Shapes
 
-Square corners everywhere (`--radius: 0`): covers, controls, menus, the view toggle, buttons and embedded frames, as on a printed page. Round shapes are reserved for circular things: the month arrows and share buttons, outlet avatars (20px circles), the current-item dot. The theme toggle is square like the view toggle. Borders are 1px hairlines everywhere.
+Square corners everywhere (`--radius: 0`): covers, controls, menus, the view toggle, buttons and embedded frames, as on a printed page. Round shapes are reserved for things that are circular in themselves: outlet avatars (20px circles) and the current-item dot. Buttons are square, including the month arrows and share links. The theme toggle is square like the view toggle. Borders are 1px hairlines everywhere.
 
 ## Components
 
@@ -305,9 +305,9 @@ Set as type, like a newspaper's section navigation, not as app controls.
 
 ### Round icon buttons
 
-Footer share links: 40px circles, raised background, strong hairline, ink glyph; border turns blue on hover.
+Footer share links: 40px squares, raised background, strong hairline, ink glyph; border turns blue on hover.
 
-Month previous/next: 44px solid ink circles with a 2px blue border and a ground-coloured 20px chevron, so the way through a row is hard to miss; hover fills them blue with accent-ink glyph, press scales to 94%; at the end of a row the button drops to a strong-hairline outline with a muted glyph at 60% opacity.
+Month previous/next: 44px solid ink squares with a 2px blue border and a ground-coloured 20px chevron, so the way through a row is hard to miss; hover fills them blue with accent-ink glyph, press scales to 94%; at the end of a row the button drops to a strong-hairline outline with a muted glyph at 60% opacity.
 
 ### Theme toggle
 
