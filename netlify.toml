@@ -2,6 +2,16 @@
   command = "pnpm run build"
   publish = "dist"
 
+# Security headers for every response.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=31536000"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
 # List and table view fragments: fetched by the page, never indexed.
 [[headers]]
   for = "/vistas/*"
