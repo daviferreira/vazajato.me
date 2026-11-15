@@ -227,7 +227,8 @@ const count = `${articles.length} ${articles.length === 1 ? 'reportagem' : 'repo
     .row {
       --card: min(400px, calc(100vw - 80px));
       --space: 8px;
-      --fade: 36px;
+      /* No edge fade: the dimmed neighbours do that job. */
+      --fade: 0px;
       scroll-padding-inline: 0;
     }
 
@@ -243,6 +244,30 @@ const count = `${articles.length} ${articles.length === 1 ? 'reportagem' : 'repo
       padding-inline: var(--space);
       border-left: 0;
       scroll-snap-align: center;
+    }
+
+    /* Dim the neighbours: opacity follows each card's place in the row,
+       full in the middle. Without scroll timelines all stay at full. */
+    @supports (animation-timeline: view()) {
+      .cards li {
+        /* Longhands: the minifier folds a shorthand + timeline into an
+           invalid animation shorthand. */
+        animation-name: focus;
+        animation-timing-function: linear;
+        animation-fill-mode: both;
+        animation-timeline: view(inline);
+      }
+    }
+  }
+
+  @keyframes focus {
+    0%,
+    100% {
+      opacity: 0.4;
+    }
+
+    50% {
+      opacity: 1;
     }
   }
 
