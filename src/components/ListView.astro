@@ -19,7 +19,7 @@ const { articles } = Astro.props;
     <section class="group" aria-labelledby={`lista-${month}`}>
       <header class="head">
         <h2 id={`lista-${month}`}>{monthTitle(month)}</h2>
-        <span class="count mono">
+        <span class="count">
           {articles.length}{' '}
           {articles.length === 1 ? 'reportagem' : 'reportagens'}
         </span>
@@ -92,8 +92,8 @@ const { articles } = Astro.props;
     display: flex;
     align-items: baseline;
     gap: 16px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid var(--line-strong);
+    padding: 12px 0 4px;
+    border-top: 1px solid var(--line-strong);
   }
 
   h2 {
@@ -104,6 +104,8 @@ const { articles } = Astro.props;
 
   .count {
     color: var(--muted);
+    font-size: 0.875rem;
+    font-variant-numeric: tabular-nums;
   }
 
   .stories {
@@ -129,7 +131,7 @@ const { articles } = Astro.props;
   .cover {
     aspect-ratio: 2 / 1;
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: 0;
     background: var(--outlet);
   }
 

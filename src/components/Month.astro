@@ -13,7 +13,7 @@ const count = `${articles.length} ${articles.length === 1 ? 'reportagem' : 'repo
 <section class="month" aria-labelledby={id}>
   <header class="head">
     <h2 id={id}>{title}</h2>
-    <span class="count mono">{count}</span>
+    <span class="count">{count}</span>
     <div class="nav" data-row-nav hidden>
       <button type="button" aria-label={`Anteriores de ${title}`} data-prev>
         <Icon name="left" size={20} />
@@ -39,11 +39,14 @@ const count = `${articles.length} ${articles.length === 1 ? 'reportagem' : 'repo
     padding-block: 24px 12px;
   }
 
+  /* A newspaper section head: a rule, then the month. */
   .head {
     display: flex;
     align-items: baseline;
     gap: 16px;
-    padding-inline: var(--gutter);
+    margin-inline: var(--gutter);
+    padding-top: 12px;
+    border-top: 1px solid var(--line-strong);
   }
 
   h2 {
@@ -54,6 +57,8 @@ const count = `${articles.length} ${articles.length === 1 ? 'reportagem' : 'repo
 
   .count {
     color: var(--muted);
+    font-size: 0.875rem;
+    font-variant-numeric: tabular-nums;
   }
 
   @media (max-width: 640px) {
@@ -143,15 +148,23 @@ const count = `${articles.length} ${articles.length === 1 ? 'reportagem' : 'repo
 
   .cards {
     display: flex;
-    gap: 20px;
     width: max-content;
-    padding: 16px var(--gutter) 24px;
+    padding: 20px var(--gutter) 28px;
     list-style: none;
   }
 
+  /* Entries are columns divided by hairline rules, not boxes. */
   .cards li {
-    width: min(340px, 78vw);
+    box-sizing: content-box;
+    width: min(320px, 74vw);
+    padding-inline: 20px;
+    border-left: 1px solid var(--line);
     scroll-snap-align: start;
+  }
+
+  .cards li:first-child {
+    padding-left: 0;
+    border-left: 0;
   }
 
   @media (prefers-reduced-motion: reduce) {

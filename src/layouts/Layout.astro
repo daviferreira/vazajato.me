@@ -158,8 +158,9 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href.replace(
     --sans: 'Ronzino', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
     --mono: 'Necto Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
 
+    --highlight: color-mix(in oklch, var(--accent) 62%, transparent);
     --gutter: clamp(16px, 4vw, 64px);
-    --radius: 6px;
+    --radius: 0;
     --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   }
 
@@ -270,20 +271,34 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href.replace(
   }
 
   ::selection {
-    background: var(--accent);
-    color: var(--accent-ink);
+    background: var(--highlight);
+    color: var(--text);
+  }
+
+  /* The accent as a reporter's highlighter: a pink swipe under the lower
+     part of the words, as if marked up on a printed page. */
+  mark {
+    margin: 0 -0.08em;
+    padding: 0 0.08em;
+    border-radius: 0.12em 0.3em 0.18em 0.25em;
+    background: linear-gradient(
+      100deg,
+      transparent 0.04em,
+      var(--highlight) 0.1em,
+      var(--highlight) calc(100% - 0.1em),
+      transparent calc(100% - 0.04em)
+    );
+    background-position: 0 88%;
+    background-repeat: no-repeat;
+    background-size: 100% 48%;
+    color: inherit;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
   }
 
   :focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 3px;
-  }
-
-  .mono {
-    font-family: var(--mono);
-    font-size: 0.6875rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
   }
 
   .visually-hidden {

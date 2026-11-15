@@ -47,7 +47,7 @@ const columns = [
           data-title={title}
           data-outlet={sources[source].name}
         >
-          <td class="date mono">
+          <td class="date">
             <time datetime={publishDate}>{formatDate(publishDate)}</time>
           </td>
           <td class="title">
@@ -62,7 +62,7 @@ const columns = [
               {sources[source].name}
             </a>
           </td>
-          <td class="topics mono">
+          <td class="topics">
             {topics.filter(Boolean).map((topic, i) => (
               <>
                 {i > 0 && <span aria-hidden="true"> · </span>}
@@ -163,7 +163,7 @@ const columns = [
     margin: -6px 0 -6px -6px;
     padding: 6px;
     border: 0;
-    border-radius: 4px;
+    border-radius: 0;
     background: none;
     color: inherit;
     font: inherit;
@@ -197,11 +197,8 @@ const columns = [
     padding-bottom: 12px;
     border-bottom: 1px solid var(--line-strong);
     color: var(--muted);
-    font-family: var(--mono);
-    font-size: 0.6875rem;
-    font-weight: 400;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
+    font-size: 0.8125rem;
+    font-weight: 500;
   }
 
   td {
@@ -213,8 +210,9 @@ const columns = [
   }
 
   .date {
-    width: 8.5rem;
-    color: var(--text);
+    width: 7.5rem;
+    color: var(--body);
+    font-variant-numeric: tabular-nums;
     white-space: nowrap;
   }
 
@@ -267,6 +265,7 @@ const columns = [
   .topics {
     width: 16rem;
     color: var(--muted);
-    line-height: 1.6;
+    font-size: 0.875rem;
+    line-height: 1.5;
   }
 </style>

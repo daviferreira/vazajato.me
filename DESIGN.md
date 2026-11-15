@@ -80,9 +80,9 @@ typography:
     lineHeight: 1.3
     letterSpacing: '0.14em'
 rounded:
-  sm: '4px'
-  md: '6px'
-  lg: '8px'
+  sm: '0'
+  md: '0'
+  lg: '0'
   pill: '999px'
   circle: '50%'
 spacing:
@@ -162,15 +162,15 @@ components:
 
 The archive is a hand of cards dealt on a plain charcoal table. Every month is one horizontal row of cards laid left to right, and the months stack in order down the page, so chronology reads twice: across a row and down the page. Cards sit square and rise when the pointer or focus reaches them. The table is quiet so the reporting, its cover images and its outlets, carries the colour.
 
-The material is neutral and documentary: an achromatic ground, card faces one lightness step above it, hairline borders, a grotesk for headings and a quiet sans for everything a person reads, and small tracked monospace capitals for data (dates, counts, topic tags). There is exactly one accent, a hot pink, and it is rationed to state: focus, the active filter, the current menu item, the hovered control, the theme toggle's ball, the wordmark's cursor, and the 404 page's single action. Density is moderate: generous gutters, cards sized for a cover and a three-line title, rows that bleed off the right edge to show they scroll.
+The material is neutral and documentary: an achromatic ground, hairline rules instead of boxes, square corners, a grotesk for headings and a quiet sans for everything a person reads, set like a newspaper index rather than an app. There is exactly one accent, a hot pink, and it is rationed to state: focus, the active filter, the current menu item, the hovered control, the theme toggle's ball, the wordmark's cursor, and the 404 page's single action. Density is moderate: generous gutters, cards sized for a cover and a three-line title, rows that bleed off the right edge to show they scroll.
 
 Two themes ship and share every token name. Dark (charcoal) is the default and is used whenever the system prefers dark or gives no preference; light (paper) is used when the system prefers light or the reader picks it with the toggle, which remembers the choice.
 
 **Key Characteristics:**
 
-- Achromatic charcoal or paper ground; card faces one step off the ground; hairline borders instead of fills.
+- Achromatic charcoal or paper ground; entries sit straight on it, divided by column and section rules; corners are square.
 - One pink accent, spent only on state and on a few small marks.
-- Apfel Grotezk for headings, Ronzino for reading; tracked mono capitals only for data attached to content.
+- Apfel Grotezk for headings, Ronzino for reading; mono only in the wordmark.
 - Month rows of fixed-width cards that scroll horizontally with snap.
 - Flat at rest; lift and shadow appear only in response to hover, focus or an open menu.
 - Light and dark are equal citizens with the same token names.
@@ -190,10 +190,10 @@ A colourless table with one hot light on it: every neutral is pure grey (chroma 
 - **Card Face** (`card-face` / `paper-card-face`): card bodies, dropdown menus, the theme toggle track.
 - **Raised Control** (`raised-control` / `paper-raised-control`): filter controls, round icon buttons, cover image placeholder, menu item hover.
 - **Hairline** (`hairline` / `paper-hairline`): card borders, cover divider, menu border, section rules, quiet tag outlines.
-- **Strong Hairline** (`hairline-strong` / `paper-hairline-strong`): borders of interactive controls and of the date tag, so actionable things read one notch firmer than containers.
+- **Strong Hairline** (`hairline-strong` / `paper-hairline-strong`): borders of interactive controls and the month section rules, so actionable things read one notch firmer than containers.
 - **Ink** (`ink` / `paper-ink`): headings, control labels, the wordmark, emphasised text.
 - **Body Ink** (`body-ink` / `paper-body-ink`): running text and card text.
-- **Muted Ink** (`muted-ink` / `paper-muted-ink`): outlet names, counts, topic tags, header links, footer, bylines, chevrons.
+- **Muted Ink** (`muted-ink` / `paper-muted-ink`): outlet names, counts, kickers in the table, header links, footer, bylines, chevrons.
 - **Scrollbar Thumb** (`scrollbar-thumb` / `paper-scrollbar-thumb`): page scrollbar only; month rows hide theirs.
 
 ### One-offs
@@ -212,9 +212,9 @@ A colourless table with one hot light on it: every neutral is pure grey (chroma 
 
 **Display Font:** Apfel Grotezk (Collletttivo, OFL; Regular, Mittel, Fett), falling back to system-ui
 **Body Font:** Ronzino (Collletttivo, OFL; Regular, Oblique, Medium, Bold), falling back to the system sans
-**Label/Mono Font:** Necto Mono (Collletttivo, OFL; Regular), falling back to ui-monospace
+**Mono Font:** Necto Mono (Collletttivo, OFL; Regular), falling back to ui-monospace; wordmark only
 
-**Character:** Three free Collletttivo faces. Apfel Grotezk sets the display, page-title and month headings (`h1`, `h2` via `--display`); Ronzino does all the reading and controls, carried by weight (600 for headings, 500 for controls) and tight negative tracking at size; a small, widely tracked mono capital sets data apart as data.
+**Character:** Three free Collletttivo faces. Apfel Grotezk sets the display, page-title and month headings (`h1`, `h2` via `--display`); Ronzino does all the reading and controls, carried by weight (600 for headings, 500 for controls) and tight negative tracking at size. Dates and counts use tabular figures in the body face.
 
 ### Hierarchy
 
@@ -226,41 +226,41 @@ A colourless table with one hot light on it: every neutral is pure grey (chroma 
 - **Prose** (400, 1.125rem, 1.7, max 68ch): newsletter reprints.
 - **Caption** (400, 0.875rem): outlet names on cards, header links, the footer, the back link, and filter controls on phones.
 - **Control** (500, 0.9375rem): filter controls and menu items.
-- **Wordmark** (mono, 1rem, 0.04em, lowercase): `#vazajato_` in the top bar, the one mono use that is not data.
-- **Label** (mono, 0.6875rem, 0.14em, uppercase): dates, article counts, topic tags.
+- **Wordmark** (mono, 1rem, 0.04em, lowercase): `#vazajato_` in the top bar, the only mono on the page.
+- **Kicker** (500, 0.8125rem, body ink): the topics above a headline, joined by middots.
+- **Byline** (400, 0.8125rem, muted, tabular figures): avatar, outlet, em dash, date.
 
 ### Named Rules
 
-**The Data Wears Mono Rule.** Monospace capitals are reserved for values that belong to content: a date, a count, a topic. They never introduce or label a heading.
+**The Newspaper Index Rule.** Entries are set like a printed index: kicker, headline, byline, divided by rules. No boxes around stories, no tracked mono capitals, no app chrome inside the content.
 
 ## Layout
 
 The page is full-bleed with a fluid side gutter (`spacing.gutter`, 16px to 64px). The top bar, intro, month headings and footer all align to that gutter; month rows scroll edge to edge while their first card snaps to the gutter (`scroll-padding-inline`).
 
 - **Intro:** title, lede and computed summary. From 1100px it becomes two columns, title left and a column of up to 760px right with a 48px gap, aligned on their last baselines so the summary line sits on the title's last line. Padding clamps 28px to 64px above and 24px to 40px below.
-- **Toolbar:** a full-width row under the intro (12px vertical padding, hairline below, ground background): filters and sort on the left, the view toggle on the right; wraps on narrow screens. From 641px it sticks to the top of the viewport while scrolling; phones leave it in flow. While pinned (`data-stuck`, set by an IntersectionObserver on a 1px sentinel) it compacts: 8px padding, 36px filter controls at 0.875rem and 210px wide, and the view toggle drops to icons (labels stay for screen readers, `title` gives a tooltip).
-- **Month section:** heading, mono count and, when the row overflows, previous/next round buttons pushed to the right. Below it the row: fixed-width cards (`min(340px, 78vw)`) with a 20px gap, padded 16px above and 24px below, horizontal scroll with mandatory start snap and a hidden scrollbar. Arrow buttons page by 85% of the row width.
+- **Toolbar:** a full-width row under the intro (12px vertical padding, ground background; a hairline below only while pinned): filters and sort on the left, the view toggle on the right; wraps on narrow screens. From 641px it sticks to the top of the viewport while scrolling; phones leave it in flow. While pinned (`data-stuck`, set by an IntersectionObserver on a 1px sentinel) it compacts: 8px padding, 36px filter controls at 0.875rem and 210px wide, and the view toggle drops to icons (labels stay for screen readers, `title` gives a tooltip).
+- **Month section:** a 1px strong-hairline rule across the gutter, then heading, count (0.875rem, tabular) and, when the row overflows, previous/next round buttons pushed to the right. Below it the row: entries `min(320px, 74vw)` wide as columns with 20px padding either side of a 1px hairline column rule (none before the first), padded 20px above and 28px below, horizontal scroll with mandatory start snap and a hidden scrollbar. Arrow buttons page by 85% of the row width.
 - **Rhythm:** 6, 8, 14, 20, 24 and 48px recur (`spacing` scale); 14px is the default stack gap in intro and card bodies.
 - **Mobile (640px and below):** filters become a three-column grid (outlet, topic, square sort button); filter labels shorten; the month heading becomes a two-row grid with arrows spanning both rows; header links wrap onto their own line below the wordmark and toggle.
 - **Reading pages:** newsletter articles are a centred 68ch column under a back link.
 
 ## Elevation & Depth
 
-Flat by default. Depth comes from tone: the ground, a card face one step off it, and a raised control one step further, all edged by hairlines. Shadows exist only as a response to state.
+Flat. Stories sit straight on the ground, separated by rules; only controls take a raised tone. The one shadow is the open menu.
 
 ### Shadow Vocabulary
 
-- **Lifted card** (`box-shadow: 0 14px 30px -12px oklch(0 0 0 / 0.45)`): a hovered or focused card, together with a 4px rise.
 - **Open menu** (`box-shadow: 0 12px 32px oklch(0 0 0 / 0.28)`): dropdown menus while open.
 - **Active ring** (`box-shadow: inset 0 0 0 1px pink`): doubles the pink border of an active filter control. Not depth; a weight cue.
 
 ### Named Rules
 
-**The Flat-At-Rest Rule.** Nothing casts a shadow until the reader acts on it: hover, focus, or opening a menu.
+**The Flat-At-Rest Rule.** Nothing casts a shadow except an open menu.
 
 ## Shapes
 
-Small, firm corners on a three-step scale: 4px for tags, menu items and the clear button; 6px (`--radius`) for filter controls and the pink button; 8px for cards, menus and embedded frames. Round shapes are reserved for circular things: 40px icon buttons, outlet avatars (20px circles), the toggle's pill track and ball, the current-item dot. Borders are 1px hairlines everywhere.
+Square corners everywhere (`--radius: 0`): covers, controls, menus, the view toggle, buttons and embedded frames, as on a printed page. Round shapes are reserved for circular things: the month arrows and share buttons, outlet avatars (20px circles), the toggle's pill track and ball, the current-item dot. Borders are 1px hairlines everywhere.
 
 ## Components
 
@@ -268,11 +268,9 @@ Small, firm corners on a three-step scale: 4px for tags, menu items and the clea
 
 The signature unit: a card whose title link covers the whole card (`.stretched`) and opens the original article in a new tab. The list view uses the same pattern. Only the table links outlet and topics to their filtered timelines.
 
-- **Corner Style:** 8px, overflow hidden.
-- **Background:** card face, body ink text; title in ink.
-- **Structure:** 2:1 cover image over a 3px strip in the outlet's colour (outlet colour also fills the cover while it loads); body padded 16px 18px 18px with 14px gaps: a mono dateline in muted ink, the title, the outlet (20px round avatar and name in muted ink, pushed to the bottom), then topic tags.
-- **Border:** 1px hairline in every state.
-- **States:** hover and focus rise 4px and take the lifted shadow (0.45s, expo-out ease); focus also shows the pink outline.
+- **No box:** no background, border or corner; the row's column rules separate entries.
+- **Structure:** square 2:1 cover over a 3px strip in the outlet's colour (outlet colour also fills the cover while it loads), then 14px below: the topics as a kicker, the title as an Apfel Grotezk headline (700, 1.25rem, line-height 1.15), and a byline pushed to the bottom (18px avatar, outlet, em dash, date).
+- **States:** hover and focus zoom the cover 3% (0.45s, expo-out); focus also draws the pink outline round the entry. Reduced motion drops the zoom.
 
 ### View toggle
 
@@ -280,24 +278,23 @@ A segmented control at the right of the toolbar: Cards, Lista, Tabela, each a st
 
 ### List view (news feed)
 
-Month sections; each story is a full-width row: a 2:1 cover up to 480px on the left (outlet colour behind it, 8px corners, 3% zoom on hover), then the topics as a kicker in body ink, the title as an Apfel Grotezk headline (700, clamp 1.375rem to 2rem, line-height 1.12, balanced), and a byline of avatar, outlet and date in muted ink. Hairlines between stories; the cover stacks above the text under 760px.
+Month sections under the same strong-hairline rule as the cards; each story is a full-width row: a 2:1 cover up to 480px on the left (outlet colour behind it, square, 3% zoom on hover), then the topics as a kicker in body ink, the title as an Apfel Grotezk headline (700, clamp 1.375rem to 2rem, line-height 1.12, balanced), and a byline of avatar, outlet and date in muted ink. Hairlines between stories; the cover stacks above the text under 760px.
 
 ### Table view
 
-One table of every story: Data (mono, ink), Título (500, ink, pink underline on hover), Veículo (avatar and name, no wrap), Tópicos (mono, muted, joined by middots). Mono column heads over a strong hairline, hairline rows, baseline-aligned cells, 24px column gaps, row hover in card face. Scrolls sideways inside its own region below 820px. Data, Título and Veículo heads are sort buttons: click sorts ascending, again descending (pt-BR collation, punctuation ignored); the sorted head turns ink with an up or down arrow and carries `aria-sort`, idle heads preview the arrow on hover. The toolbar sort button re-sorts the table by date in its direction.
+One table of every story: Data (tabular figures, body ink), Título (500, ink, pink underline on hover), Veículo (avatar and name, no wrap), Tópicos (0.875rem, muted, joined by middots). Column heads in 500 weight, 0.8125rem, muted, over a strong hairline, hairline rows, baseline-aligned cells, 24px column gaps, row hover in card face. Scrolls sideways inside its own region below 820px. Data, Título and Veículo heads are sort buttons: click sorts ascending, again descending (pt-BR collation, punctuation ignored); the sorted head turns ink with an up or down arrow and carries `aria-sort`, idle heads preview the arrow on hover. The toolbar sort button re-sorts the table by date in its direction.
 
-### Tags
+### Highlighter
 
-- **Style:** mono label, 4px 7px padding, 4px corners, 1px hairline, muted ink.
-- **Dates are not tags:** on cards the date is a plain mono dateline above the title, with no border; tags are only topics.
+The accent's second job: a pink marker swipe (`mark`, `--highlight` = accent at 62% over the ground) under the lower half of words, with slightly ragged ends. Used on the page title ("Vaza Jato" on the home page, the outlet or topic name elsewhere) and for text selection. It marks what a reader would mark; never a whole paragraph.
 
 ### Filter controls (outlet and topic menus, sort)
 
-- **Shape:** 6px corners, 44px minimum height, 260px wide on desktop and full cell width on mobile.
+- **Shape:** square corners, 44px minimum height, 260px wide on desktop and full cell width on mobile.
 - **Default:** raised background, strong hairline, ink text at control size, muted chevron on the right that rotates 180deg when open.
 - **Hover:** border goes to ink.
 - **Active (a filter is applied):** pink border doubled by an inset pink ring; the chevron is replaced by a 30px clear (x) button.
-- **Menu:** native `details` disclosure; a card-face panel with hairline border, 8px corners, 6px padding, open-menu shadow, 300px minimum width, scrolls past 60vh; drops in 6px over 0.22s. Items are 8px 10px with 4px corners, raised on hover; the current item is ink, 600 weight, with a 7px pink dot at the right.
+- **Menu:** native `details` disclosure; a card-face panel with hairline border, square corners, 6px padding, open-menu shadow, 300px minimum width, scrolls past 60vh; drops in 6px over 0.22s. Items are 8px 10px, square, raised on hover; the current item is ink, 600 weight, with a 7px pink dot at the right.
 - **Sort:** same control shape with a sort glyph; collapses to a 44px square on mobile.
 
 ### Round icon buttons
@@ -320,7 +317,7 @@ One stroke family on a 24px grid at 1.75 stroke, round caps and joins, inheritin
 
 ### Accent button
 
-Used once, on the 404 page: pink fill, accent-ink label at 600, 12px 18px padding, 6px corners.
+Used once, on the 404 page: pink fill, accent-ink label at 600, 12px 18px padding, square corners.
 
 ## Do's and Don'ts
 
@@ -328,9 +325,9 @@ Used once, on the 404 page: pink fill, accent-ink label at 600, 12px 18px paddin
 
 - **Do** reference the shared custom properties so every surface works in both themes without extra rules.
 - **Do** keep pink to state and single actions: focus, active, current, hover, the toggle ball, one pink button per page at most.
-- **Do** edge surfaces with 1px hairlines; use the strong hairline for anything interactive.
-- **Do** set dates, counts and topics in the mono label style, and give the date the firmer treatment.
-- **Do** lay new collections of articles out as month rows of 340px cards, scrolling horizontally with snap.
+- **Do** divide with 1px rules; use the strong hairline for controls and section heads.
+- **Do** set entries as kicker, headline and byline, with dates and counts in tabular body figures.
+- **Do** lay new collections of articles out as month rows of ruled columns, scrolling horizontally with snap.
 - **Do** honour reduced motion: keep colour changes, drop rises, slides and drop-in animations.
 - **Do** keep targets at least 40px (44px for filter controls).
 
@@ -340,5 +337,5 @@ Used once, on the 404 page: pink fill, accent-ink label at 600, 12px 18px paddin
 - **Don't** add a second accent hue; the only other colour on the page comes from cover images, outlet avatars and outlet colour strips.
 - **Don't** put shadows on surfaces at rest.
 - **Don't** tilt or rotate cards.
-- **Don't** use mono capitals as eyebrow labels or kickers above headings.
+- **Don't** box stories, round corners, or bring back tracked mono capitals for data.
 - **Don't** replace month rows with a uniform grid of identical boxes or a single centre-line timeline.

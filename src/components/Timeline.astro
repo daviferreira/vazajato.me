@@ -17,7 +17,16 @@ const { articles, intro, source, title, topic } = Astro.props;
 
 <main>
   <div class="intro">
-    <h1>{title}</h1>
+    <h1>
+      {title.includes('Vaza Jato') ? (
+        <>
+          {title.replace('Vaza Jato', '')}
+          <mark>Vaza Jato</mark>
+        </>
+      ) : (
+        <mark>{title}</mark>
+      )}
+    </h1>
     <div class="aside">
       <p class="lede">{intro}</p>
       <p class="summary">
@@ -151,9 +160,11 @@ const { articles, intro, source, title, topic } = Astro.props;
     justify-content: space-between;
     gap: 10px 24px;
     padding: 12px var(--gutter);
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid transparent;
     background: var(--bg);
-    transition: padding 0.3s var(--ease-out);
+    transition:
+      padding 0.3s var(--ease-out),
+      border-color 0.3s;
   }
 
   /* Pinned while scrolling; phones skip it, where it would take two rows. */
@@ -165,8 +176,10 @@ const { articles, intro, source, title, topic } = Astro.props;
     }
   }
 
+  /* The hairline only appears once pinned, to separate it from what scrolls. */
   .toolbar[data-stuck] {
     padding-block: 8px;
+    border-bottom-color: var(--line);
   }
 
   .sentinel {
