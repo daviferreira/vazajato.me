@@ -20,6 +20,9 @@ import Icon from './Icon.astro';
     enterkeyhint="search"
   />
   <kbd aria-hidden="true">/</kbd>
+  <button class="clear" type="button" aria-label="Limpar busca" data-clear>
+    <Icon name="close" size={16} />
+  </button>
 </form>
 
 <script>
@@ -91,15 +94,20 @@ import Icon from './Icon.astro';
     e.preventDefault();
     input.blur();
   });
+  const clear = () => {
+    input.value = '';
+    apply();
+    sync();
+  };
+
+  form.querySelector('[data-clear]').addEventListener('click', () => {
+    clear();
+    input.focus();
+  });
   input.addEventListener('keydown', (e) => {
     if (e.key !== 'Escape') return;
-    if (input.value) {
-      input.value = '';
-      apply();
-      sync();
-    } else {
-      input.blur();
-    }
+    if (input.value) clear();
+    else input.blur();
   });
 
   // "/" jumps to the search box from anywhere but another field.
@@ -204,6 +212,35 @@ import Icon from './Icon.astro';
 
   .search:focus-within kbd,
   input:not(:placeholder-shown) ~ kbd {
+    display: none;
+  }
+
+  /* The browser's own clear button ignores the theme; ours matches the
+     filters' quiet ×, and only shows once there is something to clear. */
+  input::-webkit-search-cancel-button {
+    appearance: none;
+  }
+
+  .clear {
+    display: grid;
+    flex: none;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    margin-right: -6px;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--muted);
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+
+  .clear:hover {
+    color: var(--text);
+  }
+
+  input:placeholder-shown ~ .clear {
     display: none;
   }
 
