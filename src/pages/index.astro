@@ -1,0 +1,10 @@
+---
+import Timeline from '../components/Timeline.astro';
+import Layout from '../layouts/Layout.astro';
+
+import { articles } from '../lib/data.js';
+---
+
+<Layout>
+  <Timeline articles={articles} title="Linha do tempo da Vaza Jato" />
+</Layout>

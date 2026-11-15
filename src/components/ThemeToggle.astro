@@ -1,0 +1,154 @@
+---
+// Pill switch with a sliding ball, after the Astro error overlay's toggle.
+---
+
+<button
+  class="toggle"
+  type="button"
+  role="switch"
+  aria-checked="true"
+  aria-label="Tema escuro"
+  data-theme-toggle
+  hidden
+>
+  <svg
+    class="sun"
+    width="15"
+    height="15"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.75"
+    stroke-linecap="round"
+    aria-hidden="true"
+  >
+    <circle cx="12" cy="12" r="4"></circle>
+    <path d="M3 12h1m8-9v1m8 8h1m-9 8v1M5.6 5.6l.7.7m12.1-.7-.7.7m0 11.4.7.7m-12.1-.7-.7.7"></path>
+  </svg>
+  <svg
+    class="moon"
+    width="15"
+    height="15"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.75"
+    stroke-linejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M12 3h.4a7.5 7.5 0 0 0 7.9 12.4A9 9 0 1 1 12 3z"></path>
+  </svg>
+  <span class="ball"></span>
+</button>
+
+<script>
+  const root = document.documentElement;
+  const toggle = document.querySelector<HTMLButtonElement>(
+    '[data-theme-toggle]',
+  );
+  const system = matchMedia('(prefers-color-scheme: dark)');
+  const current = () =>
+    root.dataset.theme ?? (system.matches ? 'dark' : 'light');
+  const metas =
+    document.querySelectorAll<HTMLMetaElement>('[data-theme-color]');
+  const sync = () => {
+    const dark = current() === 'dark';
+    toggle.setAttribute('aria-checked', String(dark));
+    // Browser chrome follows the chosen theme, not only the system one.
+    metas.forEach((meta) => {
+      meta.content = dark ? '#1b1b1b' : '#f3f3f3';
+    });
+  };
+
+  toggle.hidden = false;
+  sync();
+  system.addEventListener('change', sync);
+
+  toggle.addEventListener('click', () => {
+    const next = current() === 'dark' ? 'light' : 'dark';
+    root.dataset.theme = next;
+    try {
+      localStorage.setItem('theme', next);
+    } catch {}
+    sync();
+  });
+</script>
+
+<style>
+  .toggle {
+    --pad: 4px;
+    --ball: 24px;
+
+    position: relative;
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    justify-content: space-between;
+    width: 60px;
+    height: calc(var(--ball) + var(--pad) * 2);
+    padding: 0 9px;
+    border: 1px solid var(--line-strong);
+    border-radius: 0;
+    background: var(--surface);
+    cursor: pointer;
+  }
+
+  .toggle[hidden] {
+    display: none;
+  }
+
+  svg {
+    position: relative;
+    z-index: 1;
+    transition: color 0.4s var(--ease-out);
+  }
+
+  .ball {
+    position: absolute;
+    top: var(--pad);
+    left: var(--pad);
+    width: var(--ball);
+    height: var(--ball);
+    border-radius: 0;
+    background: var(--accent);
+    transition: transform 0.45s var(--ease-out);
+  }
+
+  /* Light: ball under the sun. Dark: ball slides under the moon. */
+  .sun {
+    color: var(--accent-ink);
+  }
+
+  .moon {
+    color: var(--muted);
+  }
+
+  .toggle[aria-checked='true'] .ball {
+    transform: translateX(calc(60px - var(--ball) - var(--pad) * 2 - 2px));
+  }
+
+  .toggle[aria-checked='true'] .sun {
+    color: var(--muted);
+  }
+
+  .toggle[aria-checked='true'] .moon {
+    color: var(--accent-ink);
+  }
+
+  .toggle:hover {
+    border-color: var(--accent);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ball,
+    svg {
+      transition: none;
+    }
+  }
+
+  @media (forced-colors: active) {
+    .ball {
+      background: SelectedItem;
+    }
+  }
+</style>

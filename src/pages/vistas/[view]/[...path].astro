@@ -1,0 +1,45 @@
+---
+// HTML fragments for the list and table views, fetched by the timeline the
+// first time a reader switches to them. Not pages: no layout, kept out of
+// the sitemap and robots, and served with noindex (netlify.toml).
+import ListView from '../../../components/ListView.astro';
+import TableView from '../../../components/TableView.astro';
+
+import {
+  articles,
+  articlesBySource,
+  sourceKeys,
+  topics,
+  topicsBySlug,
+} from '../../../lib/data.js';
+
+export function getStaticPaths() {
+  const listings = [
+    { path: undefined, articles },
+    ...sourceKeys.map((key) => ({
+      path: `veiculos/${key}`,
+      articles: articlesBySource[key],
+    })),
+    ...topics.map(({ slug }) => ({
+      path: `topicos/${slug}`,
+      articles: topicsBySlug[slug].articles,
+    })),
+  ];
+
+  return ['lista', 'tabela'].flatMap((view) =>
+    listings.map(({ path, articles }) => ({
+      params: { view, path },
+      props: { articles },
+    })),
+  );
+}
+
+const { view } = Astro.params;
+const { articles: list } = Astro.props;
+---
+
+{view === 'lista' ? (
+  <ListView articles={list} />
+) : (
+  <TableView articles={list} />
+)}

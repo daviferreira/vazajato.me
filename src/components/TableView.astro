@@ -1,0 +1,79 @@
+---
+import { Image } from 'astro:assets';
+
+import Icon from './Icon.astro';
+
+import { formatDate, slug, sourceImage, sources } from '../lib/data.js';
+
+// Rendered as a fragment (/vistas/tabela/...) and fetched when first shown;
+// styles live in src/styles/views.css, sorting in src/scripts/table-sort.ts.
+const { articles } = Astro.props;
+
+// Sortable columns; rows carry the matching data-* key.
+const columns = [
+  { key: 'date', label: 'Data' },
+  { key: 'title', label: 'Título' },
+  { key: 'outlet', label: 'Veículo' },
+];
+---
+
+<div
+  class="table-view"
+  tabindex="0"
+  role="region"
+  aria-label="Tabela de reportagens"
+>
+  <table>
+    <thead>
+      <tr>
+        {columns.map(({ key, label }) => (
+          <th
+            scope="col"
+            aria-sort={key === 'date' ? 'ascending' : undefined}
+            data-column={key}
+          >
+            <button type="button" data-sort-column={key}>
+              {label}
+              <Icon name="up" size={14} class="arrow up" />
+              <Icon name="down" size={14} class="arrow down" />
+            </button>
+          </th>
+        ))}
+        <th scope="col">Tópicos</th>
+      </tr>
+    </thead>
+    <tbody data-table-rows>
+      {articles.map(({ publishDate, source, title, topics, url }) => (
+        <tr
+          data-date={publishDate}
+          data-title={title}
+          data-outlet={sources[source].name}
+        >
+          <td class="date">
+            <time datetime={publishDate}>{formatDate(publishDate)}</time>
+          </td>
+          <td class="title">
+            <a href={url} rel="noopener noreferrer" target="_blank">
+              {title}
+              <span class="visually-hidden">(abre em nova aba)</span>
+            </a>
+          </td>
+          <td class="outlet">
+            <a href={`/veiculos/${source}`}>
+              <Image src={sourceImage[source]} alt="" width={40} height={40} />
+              {sources[source].name}
+            </a>
+          </td>
+          <td class="topics">
+            {topics.filter(Boolean).map((topic, i) => (
+              <>
+                {i > 0 && <span aria-hidden="true"> · </span>}
+                <a href={`/topicos/${slug(topic)}`}>{topic}</a>
+              </>
+            ))}
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,192 @@
+---
+import Icon from './Icon.astro';
+
+const views = [
+  { id: 'cards', label: 'Galeria' },
+  { id: 'list', label: 'Lista' },
+  { id: 'table', label: 'Tabela' },
+];
+---
+
+<div
+  class="views"
+  role="group"
+  aria-label="Visualização"
+  data-view-toggle
+  hidden
+>
+  <span class="pill" aria-hidden="true"></span>
+  {views.map(({ id, label }) => (
+    <button
+      type="button"
+      data-view={id}
+      data-tip={label}
+      aria-label={label}
+      aria-pressed="false"
+    >
+      <Icon name={id} size={16} />
+      <span>{label}</span>
+    </button>
+  ))}
+</div>
+
+<script>
+  // The chosen view lives on <html data-view>; Layout restores it before paint.
+  const group = document.querySelector<HTMLElement>('[data-view-toggle]');
+  const buttons = group.querySelectorAll<HTMLButtonElement>('[data-view]');
+  const root = document.documentElement;
+
+  // The pill slides under the pressed button, like the theme toggle's ball.
+  const sync = () => {
+    const current = root.dataset.view || 'cards';
+    buttons.forEach((b) => {
+      const pressed = b.dataset.view === current;
+      b.setAttribute('aria-pressed', String(pressed));
+      if (pressed) {
+        group.style.setProperty('--pill-x', `${b.offsetLeft}px`);
+        group.style.setProperty('--pill-w', `${b.offsetWidth}px`);
+      }
+    });
+  };
+
+  buttons.forEach((button) =>
+    button.addEventListener('click', () => {
+      root.dataset.view = button.dataset.view;
+      document.dispatchEvent(new CustomEvent('timeline:view'));
+      try {
+        localStorage.setItem('view', button.dataset.view);
+      } catch {}
+      sync();
+    }),
+  );
+
+  group.hidden = false;
+  sync();
+  // While the buttons resize (the pinned toolbar folds its labels), the
+  // pill tracks them exactly; it only slides when the choice changes.
+  new ResizeObserver(() => {
+    group.classList.remove('ready');
+    sync();
+    requestAnimationFrame(() => group.classList.add('ready'));
+  }).observe(group);
+  // Place the pill without animating, then let later moves slide.
+  requestAnimationFrame(() => group.classList.add('ready'));
+</script>
+
+<style>
+  /* Set as type like the filters; a thin accent underline marks the
+     pressed view and slides between options. */
+  .views {
+    position: relative;
+    display: flex;
+    gap: 6px;
+  }
+
+  .views[hidden] {
+    display: none;
+  }
+
+  .pill {
+    position: absolute;
+    bottom: 6px;
+    left: 0;
+    width: var(--pill-w, 0);
+    height: 2px;
+    background: var(--accent);
+    transform: translateX(var(--pill-x, 0));
+  }
+
+  .ready .pill {
+    transition:
+      transform 0.45s var(--ease-out),
+      width 0.45s var(--ease-out);
+  }
+
+  button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 44px;
+    padding: 0 6px;
+    border: 0;
+    background: none;
+    color: var(--muted);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition:
+      color 0.2s,
+      gap 0.3s var(--ease-out),
+      min-height 0.3s var(--ease-out);
+  }
+
+  button:hover,
+  button[aria-pressed='true'] {
+    color: var(--text);
+  }
+
+  /* Labels fold away while pinned; aria-label keeps each button named. */
+  button span {
+    display: inline-block;
+    max-width: 5em;
+    overflow: hidden;
+    white-space: nowrap;
+    transition:
+      max-width 0.3s var(--ease-out),
+      opacity 0.2s;
+  }
+
+  :global([data-stuck]) button {
+    gap: 0;
+    min-height: 36px;
+  }
+
+  :global([data-stuck]) button span {
+    max-width: 0;
+    opacity: 0;
+  }
+
+  /* Icon-only while pinned, so each option names itself on hover or focus. */
+  button::after {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 50%;
+    z-index: 40;
+    padding: 4px 8px;
+    background: var(--text);
+    color: var(--bg);
+    font-size: 0.75rem;
+    font-weight: 500;
+    white-space: nowrap;
+    content: attr(data-tip);
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -2px);
+    transition:
+      opacity 0.15s,
+      transform 0.15s var(--ease-out);
+    visibility: hidden;
+  }
+
+  :global([data-stuck]) button:hover::after,
+  :global([data-stuck]) button:focus-visible::after {
+    opacity: 1;
+    transform: translate(-50%, 0);
+    visibility: visible;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ready .pill,
+    button,
+    button span {
+      transition: none;
+    }
+  }
+
+  @media (max-width: 640px) {
+    button {
+      font-size: 0.875rem;
+    }
+  }
+</style>

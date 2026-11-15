@@ -1,0 +1,115 @@
+---
+import Footer from '../components/Footer.astro';
+import Icon from '../components/Icon.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import Layout from './Layout.astro';
+
+const { title, description, date, dateLabel } = Astro.props;
+---
+
+<Layout title={`${title} | Vaza Jato`} description={description}>
+  <SiteHeader />
+  <main class="page">
+    <a class="back" href="/">
+      <Icon name="left" size={16} /> Voltar para a linha do tempo
+    </a>
+    <article>
+      <header>
+        <h1>{title}</h1>
+        <p class="byline">
+          {'Newsletter do The Intercept Brasil · '}
+          <time datetime={date}>{dateLabel}</time>
+        </p>
+      </header>
+      <div class="prose">
+        <slot />
+      </div>
+    </article>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .page {
+    padding: 24px var(--gutter) 64px;
+  }
+
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--muted);
+    font-size: 0.875rem;
+    text-decoration: none;
+  }
+
+  .back:hover {
+    color: var(--text);
+  }
+
+  article {
+    max-width: 68ch;
+    margin: 40px auto 0;
+  }
+
+  header {
+    display: grid;
+    gap: 14px;
+    margin-bottom: 36px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .byline {
+    color: var(--muted);
+    font-size: 0.9375rem;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 1.4rem + 2.6vw, 3.25rem);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+  }
+
+  .prose {
+    color: var(--body);
+    font-size: 1.125rem;
+    line-height: 1.7;
+  }
+
+  .prose :global(p) {
+    margin-bottom: 1.2em;
+  }
+
+  .prose :global(strong) {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .prose :global(a) {
+    color: var(--text);
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+
+  .prose :global(a:hover) {
+    text-decoration-thickness: 2px;
+  }
+
+  .prose :global(hr) {
+    height: 1px;
+    margin: 2em 0;
+    border: 0;
+    background: var(--line);
+  }
+
+  .prose :global(iframe) {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border: 0;
+    border-radius: 0;
+  }
+</style>

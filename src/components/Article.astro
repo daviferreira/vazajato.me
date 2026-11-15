@@ -1,0 +1,125 @@
+---
+import { Image } from 'astro:assets';
+
+import { articleImage, formatDate, sourceImage, sources } from '../lib/data.js';
+
+// A newspaper-index entry: cover, kicker, headline, byline. No box; the
+// month row separates entries with column rules.
+const { articleId, publishDate, source, title, topics, url } = Astro.props;
+const { color, name } = sources[source];
+const tags = topics.filter(Boolean);
+---
+
+<article class="card" style={`--outlet: ${color}`}>
+  <div class="cover">
+    <Image
+      src={articleImage[articleId]}
+      alt=""
+      widths={[340, 680]}
+      sizes="340px"
+    />
+  </div>
+  <div class="body">
+    {tags.length > 0 && <p class="kicker">{tags.join(' · ')}</p>}
+    <h3>
+      <a class="stretched" href={url} rel="noopener noreferrer" target="_blank">
+        {title}
+        <span class="visually-hidden">(abre em nova aba)</span>
+      </a>
+    </h3>
+    <p class="byline">
+      <Image src={sourceImage[source]} alt="" width={40} height={40} />
+      <span>{name}</span>
+      <span aria-hidden="true">—</span>
+      <time datetime={publishDate}>{formatDate(publishDate)}</time>
+    </p>
+  </div>
+</article>
+
+<style>
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    color: var(--body);
+  }
+
+  .cover {
+    aspect-ratio: 2 / 1;
+    overflow: hidden;
+    /* The outlet's colour: behind the cover while it loads, and as a strip. */
+    border-bottom: 3px solid var(--outlet);
+    background: var(--outlet);
+  }
+
+  .cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.45s var(--ease-out);
+  }
+
+  .card:hover .cover img,
+  .card:focus-within .cover img {
+    transform: scale(1.03);
+  }
+
+  .body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 18px;
+  }
+
+  .kicker {
+    color: var(--body);
+    font-size: 0.8125rem;
+    font-weight: 500;
+  }
+
+  h3 {
+    font-family: var(--display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    text-wrap: pretty;
+  }
+
+  h3 a {
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .byline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    margin-top: auto;
+    padding-top: 6px;
+    color: var(--muted);
+    font-size: 0.8125rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .byline img {
+    width: 18px;
+    height: 18px;
+    margin-right: 2px;
+    border-radius: 50%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cover img {
+      transition: none;
+    }
+
+    .card:hover .cover img,
+    .card:focus-within .cover img {
+      transform: none;
+    }
+  }
+</style>

@@ -1,0 +1,286 @@
+/* List and table views. They are fetched as fragments when first shown,
+   so their styles load with the page instead of with the components. */
+.list-view .group {
+  padding: clamp(32px, 4vw, 56px) var(--gutter) 0;
+}
+
+.list-view .head {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding-bottom: 8px;
+}
+
+.list-view h2 {
+  font-size: clamp(1.375rem, 1.1rem + 1vw, 1.75rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.list-view .count {
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.list-view .stories {
+  padding: 0;
+  list-style: none;
+}
+
+.list-view .story {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 480px) minmax(0, 1fr);
+  align-items: start;
+  gap: 36px;
+  padding: 32px 0;
+  color: var(--body);
+  text-decoration: none;
+}
+
+.list-view .cover {
+  aspect-ratio: 2 / 1;
+  overflow: hidden;
+  border-radius: 0;
+  background: var(--outlet);
+}
+
+.list-view .cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s var(--ease-out);
+}
+
+.list-view .story:hover .cover img {
+  transform: scale(1.03);
+}
+
+.list-view .text {
+  display: grid;
+  gap: 10px;
+}
+
+.list-view .kicker {
+  color: var(--body);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.list-view .outlet {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.list-view .outlet img {
+  flex: none;
+}
+
+.list-view .headline {
+  color: var(--text);
+  font-family: var(--display);
+  font-size: clamp(1.375rem, 1.05rem + 1.1vw, 2rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.list-view .headline a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.list-view .byline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+.list-view .byline img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+@media (max-width: 760px) {
+  .list-view .story {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 28px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .list-view .cover img {
+    transition: none;
+  }
+
+  .list-view .story:hover .cover img {
+    transform: none;
+  }
+}
+
+.table-view {
+  overflow-x: auto;
+  padding: 8px var(--gutter) 24px;
+}
+
+.table-view:focus-visible {
+  outline-offset: -2px;
+}
+
+.table-view table {
+  width: 100%;
+  min-width: 820px;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.table-view th,
+.table-view td {
+  padding: 14px 24px 14px 0;
+  text-align: left;
+  vertical-align: baseline;
+}
+
+.table-view th:last-child,
+.table-view td:last-child {
+  padding-right: 0;
+}
+
+.table-view th button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: -6px 0 -6px -6px;
+  padding: 6px;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  cursor: pointer;
+}
+
+.table-view th button:hover,
+.table-view th[aria-sort] button {
+  color: var(--text);
+}
+
+/* Arrows: hidden until hover on idle columns; one shows on the sorted one. */
+.table-view th .arrow {
+  display: none;
+}
+
+.table-view th:not([aria-sort]) button:hover .up,
+.table-view th[aria-sort='ascending'] .up,
+.table-view th[aria-sort='descending'] .down {
+  display: block;
+}
+
+.table-view th:not([aria-sort]) button:hover .up {
+  color: var(--muted);
+}
+
+.table-view th {
+  padding-top: 16px;
+  padding-bottom: 12px;
+  background: var(--bg);
+  box-shadow: inset 0 -1px var(--line-strong);
+  color: var(--muted);
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+/* Where the table fits without sideways scroll, drop the scroll box so the
+     header can stick to the page, just below the pinned toolbar. */
+@media (min-width: 960px) {
+  .table-view {
+    overflow-x: visible;
+  }
+
+  .table-view th {
+    position: sticky;
+    top: var(--toolbar-h, 0);
+    z-index: 5;
+  }
+}
+
+.table-view td {
+  border-bottom: 1px solid var(--line);
+}
+
+.table-view tbody tr:hover {
+  background: var(--surface);
+}
+
+.table-view .date {
+  width: 7.5rem;
+  color: var(--body);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.table-view .title {
+  position: relative;
+}
+
+.table-view .title a {
+  color: var(--text);
+  font-weight: 500;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.table-view .title a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.table-view .outlet {
+  width: 14rem;
+  color: var(--body);
+  white-space: nowrap;
+}
+
+.table-view .outlet img {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  border-radius: 50%;
+  vertical-align: -4px;
+}
+
+.table-view .outlet a,
+.table-view .topics a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.table-view .outlet a:hover,
+.table-view .topics a:hover {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.table-view .topics {
+  width: 16rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}

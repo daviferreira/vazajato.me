@@ -1,0 +1,313 @@
+---
+const {
+  title = 'Linha do tempo da Vaza Jato',
+  description = 'Índice de tudo o que foi publicado sobre as mensagens da Lava Jato reveladas pelo The Intercept Brasil, de todos os veículos, em ordem.',
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site).href.replace(
+  /\/$/,
+  '',
+);
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon-32x32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link
+      rel="preload"
+      href="/fonts/Ronzino-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/ApfelGrotezk-Mittel.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <meta
+      name="theme-color"
+      content="#f3f3f3"
+      media="(prefers-color-scheme: light)"
+      data-theme-color
+    />
+    <meta
+      name="theme-color"
+      content="#1b1b1b"
+      media="(prefers-color-scheme: dark)"
+      data-theme-color
+    />
+    <script is:inline>
+      // Apply a saved theme before first paint; otherwise follow the system.
+      try {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'light' || theme === 'dark') {
+          document.documentElement.dataset.theme = theme;
+        }
+        const view = localStorage.getItem('view');
+        if (view === 'list' || view === 'table') {
+          document.documentElement.dataset.view = view;
+        }
+      } catch {}
+    </script>
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta
+      property="og:image"
+      content="https://www.vazajato.me/images/telegram.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="675" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  /* Collletttivo typefaces (OFL): Apfel Grotezk, Ronzino, Necto Mono. */
+  @font-face {
+    font-family: 'Apfel Grotezk';
+    src: url('/fonts/ApfelGrotezk-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Apfel Grotezk';
+    src: url('/fonts/ApfelGrotezk-Mittel.woff2') format('woff2');
+    font-weight: 500 600;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Apfel Grotezk';
+    src: url('/fonts/ApfelGrotezk-Fett.woff2') format('woff2');
+    font-weight: 700 900;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Ronzino';
+    src: url('/fonts/Ronzino-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Ronzino';
+    src: url('/fonts/Ronzino-Oblique.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Ronzino';
+    src: url('/fonts/Ronzino-Medium.woff2') format('woff2');
+    font-weight: 500 600;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Ronzino';
+    src: url('/fonts/Ronzino-Bold.woff2') format('woff2');
+    font-weight: 700 900;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Necto Mono';
+    src: url('/fonts/NectoMono-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+  }
+
+  :root {
+    color-scheme: dark;
+
+    --bg: oklch(0.22 0 0);
+    --surface: oklch(0.25 0 0);
+    --raised: oklch(0.28 0 0);
+    --line: oklch(0.93 0 0 / 0.16);
+    --line-strong: oklch(0.93 0 0 / 0.42);
+    --text: oklch(0.94 0 0);
+    --body: oklch(0.86 0 0);
+    --muted: oklch(0.74 0 0);
+    --accent: oklch(0.74 0.13 235);
+    --accent-ink: oklch(0.2 0.04 235);
+    --scrollbar: oklch(0.42 0 0);
+
+    --display: 'Apfel Grotezk', system-ui, sans-serif;
+    --sans: 'Ronzino', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    --mono: 'Necto Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+    --highlight: color-mix(in oklch, var(--accent) 62%, transparent);
+    --gutter: clamp(16px, 4vw, 64px);
+    --radius: 0;
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme='dark']) {
+      color-scheme: light;
+
+      --bg: oklch(0.965 0 0);
+      --surface: oklch(1 0 0);
+      --raised: oklch(0.93 0 0);
+      --line: oklch(0.2 0 0 / 0.14);
+      --line-strong: oklch(0.2 0 0 / 0.4);
+      --text: oklch(0.2 0 0);
+      --body: oklch(0.3 0 0);
+      --muted: oklch(0.47 0 0);
+      --accent: oklch(0.52 0.12 240);
+      --accent-ink: oklch(0.99 0.01 240);
+      --scrollbar: oklch(0.75 0 0);
+    }
+  }
+
+  :root[data-theme='light'] {
+    color-scheme: light;
+
+    --bg: oklch(0.965 0 0);
+    --surface: oklch(1 0 0);
+    --raised: oklch(0.93 0 0);
+    --line: oklch(0.2 0 0 / 0.14);
+    --line-strong: oklch(0.2 0 0 / 0.4);
+    --text: oklch(0.2 0 0);
+    --body: oklch(0.3 0 0);
+    --muted: oklch(0.47 0 0);
+    --accent: oklch(0.52 0.12 240);
+    --accent-ink: oklch(0.99 0.01 240);
+    --scrollbar: oklch(0.75 0 0);
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scrollbar-color: var(--scrollbar) var(--bg);
+  }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--body);
+    font: 400 1rem/1.5 var(--sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    accent-color: var(--accent);
+  }
+
+  h1,
+  h2 {
+    font-family: var(--display);
+  }
+
+  /* Whole-card link: the title's link covers its positioned container. */
+  .stretched::after {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    content: '';
+  }
+
+  .stretched:focus-visible {
+    outline: none;
+  }
+
+  .stretched:focus-visible::after {
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
+  }
+
+  h1,
+  h2,
+  h3,
+  p,
+  ul {
+    margin: 0;
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: var(--text);
+    text-wrap: balance;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+  }
+
+  ::selection {
+    background: var(--highlight);
+    color: var(--text);
+  }
+
+  /* The accent as a reporter's highlighter: a blue swipe under the lower
+     part of the words, as if marked up on a printed page. */
+  mark,
+  .highlight {
+    margin: 0 -0.08em;
+    padding: 0 0.08em;
+    border-radius: 0.12em 0.3em 0.18em 0.25em;
+    background: linear-gradient(
+      100deg,
+      transparent 0.04em,
+      var(--highlight) 0.1em,
+      var(--highlight) calc(100% - 0.1em),
+      transparent calc(100% - 0.04em)
+    );
+    background-position: 0 88%;
+    background-repeat: no-repeat;
+    background-size: 100% 48%;
+    color: inherit;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+</style>

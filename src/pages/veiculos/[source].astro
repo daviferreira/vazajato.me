@@ -1,0 +1,24 @@
+---
+import Timeline from '../../components/Timeline.astro';
+import Layout from '../../layouts/Layout.astro';
+
+import { articlesBySource, sources } from '../../lib/data.js';
+
+export function getStaticPaths() {
+  return Object.entries(articlesBySource).map(([source, articles]) => ({
+    params: { source },
+    props: { articles },
+  }));
+}
+
+const { source } = Astro.params;
+const { articles } = Astro.props;
+const { name } = sources[source];
+---
+
+<Layout
+  title={`${name} | Linha do tempo da Vaza Jato`}
+  description={`Todas as reportagens da Vaza Jato publicadas por ${name}.`}
+>
+  <Timeline articles={articles} source={source} title={name} />
+</Layout>

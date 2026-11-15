@@ -1,0 +1,100 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+---
+
+<header class="bar">
+  <a class="wordmark" href="/" aria-label="vazajato.me, página inicial">
+    #vazajato
+    <span class="cursor" aria-hidden="true">
+      _
+    </span>
+  </a>
+  <nav class="links" aria-label="Arquivos">
+    <a
+      href="https://docs.google.com/spreadsheets/d/1y9bixq_sZ5TOwwqfoagRKX4zCm1Ka6hXbch9qN6OtKI"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Planilha de dados
+    </a>
+    <a
+      href="https://www.dropbox.com/sh/a2wijlhwezq8yyo/AABTEZI4XWfjPEmHeKT7bbcYa?dl=0"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Arquivos com diálogos
+    </a>
+  </nav>
+  <ThemeToggle />
+</header>
+
+<style>
+  .bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 24px;
+    padding: 20px var(--gutter);
+  }
+
+  .wordmark {
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+  }
+
+  /* A terminal cursor after the name; holds still for reduced motion. */
+  .cursor {
+    color: var(--accent);
+    animation: blink 1.1s steps(1) infinite;
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cursor {
+      animation: none;
+    }
+  }
+
+  .links {
+    display: flex;
+    gap: 20px;
+    margin-left: auto;
+    font-size: 0.875rem;
+  }
+
+  .links a {
+    color: var(--muted);
+    text-decoration: none;
+  }
+
+  .links a:hover {
+    color: var(--text);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  @media (max-width: 640px) {
+    .bar {
+      padding-bottom: 8px;
+    }
+
+    .links {
+      order: 3;
+      width: 100%;
+      margin-left: 0;
+      font-size: 0.875rem;
+    }
+
+    .bar :global(.toggle) {
+      margin-left: auto;
+    }
+  }
+</style>

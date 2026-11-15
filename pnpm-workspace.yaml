@@ -1,0 +1,13 @@
+# Supply-chain hardening (https://pnpm.io/supply-chain-security)
+
+# Wait 1 day before installing newly published versions
+minimumReleaseAge: 1440
+
+# Refuse versions whose trust level (trusted publisher/provenance) dropped
+trustPolicy: no-downgrade
+
+# Transitive deps may only come from the registry (no git/tarball URLs)
+blockExoticSubdeps: true
+
+# Fail install when a dependency has unreviewed build scripts
+strictDepBuilds: true

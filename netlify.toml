@@ -1,2 +1,9 @@
-[[plugins]]
-  package = "netlify-plugin-gatsby-cache"
+[build]
+  command = "pnpm run build"
+  publish = "dist"
+
+# List and table view fragments: fetched by the page, never indexed.
+[[headers]]
+  for = "/vistas/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"

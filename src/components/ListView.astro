@@ -1,0 +1,86 @@
+---
+import { Image } from 'astro:assets';
+
+import {
+  articleImage,
+  formatDate,
+  groupByMonth,
+  monthTitle,
+  sourceImage,
+  sources,
+} from '../lib/data.js';
+
+// A news-site feed: cover left, kicker, headline and byline right.
+// Rendered as a fragment (/vistas/lista/...) and fetched when first shown;
+// styles live in src/styles/views.css.
+const { articles } = Astro.props;
+---
+
+<div class="list-view" data-list>
+  {groupByMonth(articles).map(({ month, articles }) => (
+    <section class="group" aria-labelledby={`lista-${month}`}>
+      <header class="head">
+        <h2 id={`lista-${month}`}>{monthTitle(month)}</h2>
+        <span class="count">
+          {articles.length}{' '}
+          {articles.length === 1 ? 'reportagem' : 'reportagens'}
+        </span>
+      </header>
+      <ol class="stories" data-items>
+        {articles.map(
+          ({ articleId, publishDate, source, title, topics, url }) => {
+            const tags = topics.filter(Boolean);
+            return (
+              <li>
+                <article class="story">
+                  <span
+                    class="cover"
+                    style={`--outlet: ${sources[source].color}`}
+                  >
+                    <Image
+                      src={articleImage[articleId]}
+                      alt=""
+                      widths={[420, 840]}
+                      sizes="(min-width: 760px) 420px, 100vw"
+                    />
+                  </span>
+                  <span class="text">
+                    {tags.length > 0 && (
+                      <span class="kicker">{tags.join(' · ')}</span>
+                    )}
+                    <h3 class="headline">
+                      <a
+                        class="stretched"
+                        href={url}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        {title}
+                        <span class="visually-hidden">(abre em nova aba)</span>
+                      </a>
+                    </h3>
+                    <span class="byline">
+                      <span class="outlet">
+                        <Image
+                          src={sourceImage[source]}
+                          alt=""
+                          width={40}
+                          height={40}
+                        />
+                        {sources[source].name}
+                      </span>
+                      <span aria-hidden="true">—</span>
+                      <time datetime={publishDate}>
+                        {formatDate(publishDate)}
+                      </time>
+                    </span>
+                  </span>
+                </article>
+              </li>
+            );
+          },
+        )}
+      </ol>
+    </section>
+  ))}
+</div>

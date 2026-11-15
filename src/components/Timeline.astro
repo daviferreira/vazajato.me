@@ -1,0 +1,469 @@
+---
+import Filters from './Filters.astro';
+import Footer from './Footer.astro';
+import Month from './Month.astro';
+import SiteHeader from './SiteHeader.astro';
+import ViewToggle from './ViewToggle.astro';
+
+import { groupByMonth, slug, summary } from '../lib/data.js';
+
+import '../styles/views.css';
+
+// `title` names the page; `source` / `topic` set the filters.
+const { articles, source, title, topic } = Astro.props;
+
+// The key words of the title unscramble on load.
+const key = title.includes('Vaza Jato') ? 'Vaza Jato' : title;
+const lead = title.slice(0, title.length - key.length);
+
+// List and table views are fragments fetched on first use (see vistas/).
+const listing = source
+  ? `/veiculos/${source}`
+  : topic
+    ? `/topicos/${slug(topic)}`
+    : '';
+const listBones = [0, 1, 2];
+const tableBones = [...Array(10).keys()];
+---
+
+<SiteHeader />
+
+<main>
+  <div class="intro">
+    <h1>
+      <span>
+        {lead}
+        <span class="key" data-scramble>
+          {key}
+        </span>
+      </span>
+    </h1>
+    <p class="summary">
+      {summary(articles)}
+      {(source || topic) && (
+        <>
+          . <a href="/">Ver todas</a>
+        </>
+      )}
+    </p>
+  </div>
+
+  <div class="sentinel" data-toolbar-sentinel aria-hidden="true"></div>
+  <div class="toolbar" data-toolbar>
+    <Filters source={source} topic={topic} />
+    <ViewToggle />
+  </div>
+
+  <div class="panels">
+    <div class="panel" data-panel="cards" data-months>
+      {groupByMonth(articles).map((month) => (
+        <Month {...month} />
+      ))}
+    </div>
+    <div class="panel" data-panel="list" data-src={`/vistas/lista${listing}`}>
+      <p class="visually-hidden" role="status">
+        Carregando…
+      </p>
+      <div class="skeleton" aria-hidden="true">
+        <span class="bone month"></span>
+        {listBones.map(() => (
+          <div class="bone-story">
+            <span class="bone cover"></span>
+            <span class="bone-text">
+              <span class="bone kicker"></span>
+              <span class="bone headline"></span>
+              <span class="bone headline short"></span>
+              <span class="bone byline"></span>
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+    <div class="panel" data-panel="table" data-src={`/vistas/tabela${listing}`}>
+      <p class="visually-hidden" role="status">
+        Carregando…
+      </p>
+      <div class="skeleton" aria-hidden="true">
+        <div class="bone-row head">
+          <span class="bone cell"></span>
+          <span class="bone cell"></span>
+          <span class="bone cell"></span>
+          <span class="bone cell"></span>
+        </div>
+        {tableBones.map(() => (
+          <div class="bone-row">
+            <span class="bone cell"></span>
+            <span class="bone cell wide"></span>
+            <span class="bone cell"></span>
+            <span class="bone cell"></span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</main>
+
+<Footer />
+
+<script>
+  import { initTableSort } from '../scripts/table-sort';
+
+  // Fetch the list or table fragment the first time its view is shown, then
+  // bring it into the current sort order.
+  const loadView = async (view: string) => {
+    const panel = document.querySelector<HTMLElement>(`[data-panel="${view}"]`);
+    // Only the list and table panels are fragments; the gallery is inline.
+    if (!panel?.dataset.src || panel.dataset.loaded) return;
+    panel.dataset.loaded = 'true';
+    const newestFirst = document.documentElement.dataset.order === 'desc';
+    try {
+      const response = await fetch(panel.dataset.src);
+      if (!response.ok) throw new Error(String(response.status));
+      panel.innerHTML = await response.text();
+    } catch {
+      delete panel.dataset.loaded;
+      panel.innerHTML =
+        '<p class="loading">Não foi possível carregar. Tente de novo.</p>';
+      return;
+    }
+    if (view === 'table') {
+      initTableSort(panel, newestFirst);
+    } else if (newestFirst) {
+      panel
+        .querySelectorAll('[data-list], [data-items]')
+        .forEach((el) => el.append(...[...el.children].reverse()));
+    }
+  };
+
+  const shown = () => document.documentElement.dataset.view;
+  if (shown() === 'list' || shown() === 'table') loadView(shown());
+  document.addEventListener('timeline:view', () => loadView(shown()));
+
+  // Title scramble: each letter of the key words flickers through random
+  // glyphs, then settles, left to right, and stays as settled spans. Every glyph is drawn centred in its
+  // own letter's slot (the real letter is only painted transparent), so the
+  // line never moves. Screen readers get the plain words throughout.
+  const key = document.querySelector<HTMLElement>('[data-scramble]');
+  if (key && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const text = key.textContent.trim();
+    const glyphs = 'abcdefghijklmnopqrstuvwxyz#%&*+=/<>_';
+    const spoken = document.createElement('span');
+    spoken.className = 'visually-hidden';
+    spoken.textContent = text;
+    const shown = document.createElement('span');
+    shown.setAttribute('aria-hidden', 'true');
+    const slots = [...text].map((char) => {
+      const slot = document.createElement('span');
+      slot.textContent = char;
+      shown.append(slot);
+      return slot;
+    });
+    key.replaceChildren(spoken, shown);
+
+    const start = performance.now();
+    const settle = (i: number) => 250 + i * 55;
+    const end = settle(text.length - 1);
+
+    const frame = (now: number) => {
+      const t = now - start;
+      slots.forEach((slot, i) => {
+        const scrambling = text[i] !== ' ' && t < settle(i);
+        slot.classList.toggle('glyph', scrambling);
+        if (scrambling) {
+          slot.dataset.glyph =
+            glyphs[Math.floor(Math.random() * glyphs.length)];
+        }
+      });
+      // The last frame settles every slot; the spans stay, so the
+      // words keep exactly the width they had while scrambling.
+      if (t < end) setTimeout(() => requestAnimationFrame(frame), 50);
+    };
+    requestAnimationFrame(frame);
+  }
+
+  // Mark the toolbar while it is pinned so it can compact itself.
+  const toolbar = document.querySelector<HTMLElement>('[data-toolbar]');
+  const sentinel = document.querySelector('[data-toolbar-sentinel]');
+  const pins = matchMedia('(min-width: 641px)');
+  new IntersectionObserver(([entry]) =>
+    toolbar.toggleAttribute(
+      'data-stuck',
+      pins.matches && !entry.isIntersecting && entry.boundingClientRect.top < 0,
+    ),
+  ).observe(sentinel);
+
+  // Expose the toolbar's live height so the table header can pin below it.
+  new ResizeObserver(() =>
+    document.documentElement.style.setProperty(
+      '--toolbar-h',
+      `${toolbar.offsetHeight}px`,
+    ),
+  ).observe(toolbar);
+
+  // Row arrows: scroll by one viewport of cards, disabled at either end.
+  document.querySelectorAll('.month').forEach((month) => {
+    const row = month.querySelector<HTMLElement>('[data-row]');
+    const nav = month.querySelector<HTMLElement>('[data-row-nav]');
+    const prev = month.querySelector<HTMLButtonElement>('[data-prev]');
+    const next = month.querySelector<HTMLButtonElement>('[data-next]');
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+
+    const update = () => {
+      const max = row.scrollWidth - row.clientWidth;
+      nav.hidden = max < 4;
+      prev.disabled = row.scrollLeft < 4;
+      next.disabled = row.scrollLeft > max - 4;
+      // Edge fades show where there is more to scroll.
+      row.toggleAttribute('data-more-before', !prev.disabled);
+      row.toggleAttribute('data-at-end', max < 4 || next.disabled);
+      if (!row.hasAttribute('data-measured')) {
+        requestAnimationFrame(() => row.setAttribute('data-measured', ''));
+      }
+    };
+
+    const page = (direction: number) =>
+      row.scrollBy({
+        left: direction * row.clientWidth * 0.85,
+        behavior: reduce.matches ? 'auto' : 'smooth',
+      });
+
+    prev.addEventListener('click', () => page(-1));
+    next.addEventListener('click', () => page(1));
+    row.addEventListener('scroll', update, { passive: true });
+    new ResizeObserver(update).observe(row);
+  });
+</script>
+
+<style>
+  .intro {
+    display: grid;
+    gap: 14px;
+    padding: clamp(36px, 6vw, 88px) var(--gutter) clamp(20px, 3vw, 44px);
+  }
+
+  h1 {
+    font-size: clamp(2.25rem, 1.4rem + 3.6vw, 4.25rem);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.035em;
+  }
+
+  /* Scramble (see script): glyphs are drawn centred in each letter's slot
+     while the real letter is transparent, so the line never shifts. */
+  .key :global(.glyph) {
+    position: relative;
+    color: transparent;
+  }
+
+  .key :global(.glyph)::after {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    color: var(--accent);
+    content: attr(data-glyph);
+    transform: translateX(-50%);
+  }
+
+  .summary {
+    color: var(--muted);
+    font-size: 0.9375rem;
+  }
+
+  /* The title stays on one line from tablet up; on phones, where the home
+     title wraps, it reserves two lines (a one-line name sits on the second)
+     so the toolbar lands in the same place on every page. */
+  @media (max-width: 640px) {
+    h1 {
+      display: grid;
+      align-content: end;
+      min-height: 2lh;
+    }
+  }
+
+  .summary a {
+    color: var(--text);
+    text-underline-offset: 3px;
+  }
+
+  .summary a:hover {
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 2px;
+  }
+
+  .toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px 24px;
+    padding: 12px var(--gutter);
+    border-bottom: 1px solid transparent;
+    background: var(--bg);
+    transition:
+      padding 0.3s var(--ease-out),
+      border-color 0.3s;
+  }
+
+  /* Pinned while scrolling; phones skip it, where it would take two rows. */
+  @media (min-width: 641px) {
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+    }
+  }
+
+  /* The hairline only appears once pinned, to separate it from what scrolls. */
+  .toolbar[data-stuck] {
+    padding-block: 8px;
+    border-bottom-color: var(--line);
+  }
+
+  .sentinel {
+    height: 1px;
+    margin-bottom: -1px;
+  }
+
+  .panels {
+    padding-bottom: 32px;
+  }
+
+  .panels :global(.loading) {
+    min-height: 60vh;
+    padding: 48px var(--gutter);
+    color: var(--muted);
+  }
+
+  /* Placeholders shaped like each view while its fragment loads, tall
+     enough that the footer stays below the fold. */
+  .skeleton {
+    min-height: 100vh;
+    padding: clamp(32px, 4vw, 56px) var(--gutter) 0;
+  }
+
+  .bone {
+    display: block;
+    background: var(--raised);
+    animation: pulse 1.1s ease-in-out infinite alternate;
+  }
+
+  .month {
+    width: 200px;
+    height: 28px;
+    margin-bottom: 8px;
+  }
+
+  .bone-story {
+    display: grid;
+    grid-template-columns: minmax(0, 480px) minmax(0, 1fr);
+    gap: 36px;
+    padding: 32px 0;
+  }
+
+  .cover {
+    aspect-ratio: 2 / 1;
+  }
+
+  .bone-text {
+    display: grid;
+    align-content: start;
+    gap: 12px;
+  }
+
+  .kicker {
+    width: 120px;
+    height: 14px;
+  }
+
+  .headline {
+    width: min(100%, 640px);
+    height: 28px;
+  }
+
+  .headline.short {
+    width: min(70%, 420px);
+  }
+
+  .byline {
+    width: 220px;
+    height: 14px;
+    margin-top: 4px;
+  }
+
+  .bone-row {
+    display: grid;
+    grid-template-columns: 7.5rem minmax(0, 1fr) 14rem 16rem;
+    gap: 24px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .bone-row.head {
+    border-bottom-color: var(--line-strong);
+  }
+
+  .bone-row.head .cell {
+    height: 10px;
+  }
+
+  .cell {
+    height: 14px;
+  }
+
+  .cell.wide {
+    width: 85%;
+  }
+
+  @keyframes pulse {
+    to {
+      opacity: 0.45;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .bone-story {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .bone-row {
+      grid-template-columns: 5rem minmax(0, 1fr);
+    }
+
+    .bone-row .cell:nth-child(n + 3) {
+      display: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bone {
+      animation: none;
+    }
+  }
+
+  /* The pinned toolbar is shorter. Without this, scroll anchoring shifts the
+     page to compensate, which unpins it, and it loops at the threshold. */
+  .toolbar,
+  .panels {
+    overflow-anchor: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .toolbar {
+      transition: none;
+    }
+  }
+
+  /* Cards show by default and without JS; <html data-view> picks another. */
+  .panel[data-panel='list'],
+  .panel[data-panel='table'],
+  :global(html[data-view='list']) .panel[data-panel='cards'],
+  :global(html[data-view='table']) .panel[data-panel='cards'] {
+    display: none;
+  }
+
+  :global(html[data-view='list']) .panel[data-panel='list'],
+  :global(html[data-view='table']) .panel[data-panel='table'] {
+    display: block;
+  }
+</style>

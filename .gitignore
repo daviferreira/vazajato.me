@@ -54,9 +54,9 @@ typings/
 # dotenv environment variables file
 .env
 
-# gatsby files
-.cache/
-public
+# astro
+dist/
+.astro/
 
 # Mac files
 .DS_Store
@@ -67,3 +67,6 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+
+# impeccable working files
+.impeccable/

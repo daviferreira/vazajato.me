@@ -1,0 +1,218 @@
+---
+import Article from './Article.astro';
+import Icon from './Icon.astro';
+
+import { monthTitle } from '../lib/data.js';
+
+const { articles, month } = Astro.props;
+const title = monthTitle(month);
+const id = `mes-${month}`;
+const count = `${articles.length} ${articles.length === 1 ? 'reportagem' : 'reportagens'}`;
+---
+
+<section class="month" aria-labelledby={id}>
+  <header class="head">
+    <h2 id={id}>{title}</h2>
+    <span class="count">{count}</span>
+    <div class="nav" data-row-nav hidden>
+      <button type="button" aria-label={`Anteriores de ${title}`} data-prev>
+        <Icon name="left" size={20} />
+      </button>
+      <button type="button" aria-label={`Próximas de ${title}`} data-next>
+        <Icon name="right" size={20} />
+      </button>
+    </div>
+  </header>
+  <div class="row" data-row tabindex="0" role="region" aria-label={title}>
+    <ul class="cards" data-cards>
+      {articles.map((article) => (
+        <li>
+          <Article {...article} />
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .month {
+    padding-block: clamp(32px, 4vw, 56px) 0;
+  }
+
+  .head {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding-inline: var(--gutter);
+  }
+
+  h2 {
+    font-size: clamp(1.375rem, 1.1rem + 1vw, 1.75rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  .count {
+    color: var(--muted);
+    font-size: 0.875rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  @media (max-width: 640px) {
+    .head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 6px 16px;
+    }
+
+    h2 {
+      white-space: nowrap;
+    }
+
+    .count {
+      grid-row: 2;
+    }
+
+    .nav {
+      grid-row: 1 / span 2;
+      grid-column: 2;
+    }
+  }
+
+  .nav {
+    display: flex;
+    gap: 8px;
+    margin-left: auto;
+    align-self: center;
+  }
+
+  .nav[hidden] {
+    display: none;
+  }
+
+  /* Solid ink buttons so the way through a row is hard to miss; the accent under
+     the pointer; an outline only once there is nothing more that way. */
+  .nav button {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    background: var(--text);
+    color: var(--bg);
+    cursor: pointer;
+    transition:
+      background-color 0.2s,
+      border-color 0.2s,
+      color 0.2s,
+      transform 0.25s var(--ease-out);
+  }
+
+  .nav button:hover:not(:disabled) {
+    border-color: var(--accent);
+    background: var(--accent);
+    color: var(--accent-ink);
+  }
+
+  .nav button:active:not(:disabled) {
+    transform: scale(0.94);
+  }
+
+  .nav button:disabled {
+    border-color: var(--line-strong);
+    background: transparent;
+    color: var(--muted);
+    cursor: default;
+    opacity: 0.6;
+  }
+
+  /* Registered so the fades can ease in and out. */
+  @property --fade-before {
+    syntax: '<length>';
+    inherits: false;
+    initial-value: 0px;
+  }
+
+  @property --fade-after {
+    syntax: '<length>';
+    inherits: false;
+    initial-value: 0px;
+  }
+
+  .row {
+    --fade: calc(var(--gutter) + 64px);
+    /* The right fade is on from the first paint; the script clears it for
+       rows that fit or are scrolled to the end. */
+    --fade-after: var(--fade);
+
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--gutter);
+    scrollbar-width: none;
+    /* The scrollport fades out on any side that has more cards. */
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 var(--fade-before),
+      #000 calc(100% - var(--fade-after)),
+      transparent
+    );
+  }
+
+  /* Ease only once measured, so nothing animates in on load. */
+  .row[data-measured] {
+    transition:
+      --fade-before 0.3s,
+      --fade-after 0.3s;
+  }
+
+  .row[data-more-before] {
+    --fade-before: var(--fade);
+  }
+
+  .row[data-at-end] {
+    --fade-after: 0px;
+  }
+
+  .row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .row:focus-visible {
+    outline-offset: -2px;
+  }
+
+  .cards {
+    display: flex;
+    width: max-content;
+    padding: 24px var(--gutter) 32px;
+    list-style: none;
+  }
+
+  /* Entries are columns divided by hairline rules, not boxes. */
+  .cards li {
+    box-sizing: content-box;
+    width: min(320px, 74vw);
+    padding-inline: 28px;
+    border-left: 1px solid var(--line);
+    scroll-snap-align: start;
+  }
+
+  .cards li:first-child {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .row {
+      scroll-behavior: auto;
+      transition: none;
+    }
+
+    .nav button {
+      transition: none;
+    }
+  }
+</style>
