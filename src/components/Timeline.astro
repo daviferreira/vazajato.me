@@ -1,13 +1,13 @@
 ---
 import Filters from './Filters.astro';
 import Footer from './Footer.astro';
-import ListView from './ListView.astro';
 import Month from './Month.astro';
 import SiteHeader from './SiteHeader.astro';
-import TableView from './TableView.astro';
 import ViewToggle from './ViewToggle.astro';
 
-import { groupByMonth, summary } from '../lib/data.js';
+import { groupByMonth, slug, summary } from '../lib/data.js';
+
+import '../styles/views.css';
 
 // `title` and `intro` describe the page; `source` / `topic` set the filters.
 const { articles, intro, source, title, topic } = Astro.props;
@@ -15,6 +15,13 @@ const { articles, intro, source, title, topic } = Astro.props;
 // The key words of the title unscramble on load.
 const key = title.includes('Vaza Jato') ? 'Vaza Jato' : title;
 const lead = title.slice(0, title.length - key.length);
+
+// List and table views are fragments fetched on first use (see vistas/).
+const listing = source
+  ? `/veiculos/${source}`
+  : topic
+    ? `/topicos/${slug(topic)}`
+    : '';
 ---
 
 <SiteHeader />
@@ -52,11 +59,11 @@ const lead = title.slice(0, title.length - key.length);
         <Month {...month} />
       ))}
     </div>
-    <div class="panel" data-panel="list">
-      <ListView articles={articles} />
+    <div class="panel" data-panel="list" data-src={`/vistas/lista${listing}`}>
+      <p class="loading">Carregando…</p>
     </div>
-    <div class="panel" data-panel="table">
-      <TableView articles={articles} />
+    <div class="panel" data-panel="table" data-src={`/vistas/tabela${listing}`}>
+      <p class="loading">Carregando…</p>
     </div>
   </div>
 </main>
@@ -64,6 +71,38 @@ const lead = title.slice(0, title.length - key.length);
 <Footer />
 
 <script>
+  import { initTableSort } from '../scripts/table-sort';
+
+  // Fetch the list or table fragment the first time its view is shown, then
+  // bring it into the current sort order.
+  const loadView = async (view: string) => {
+    const panel = document.querySelector<HTMLElement>(`[data-panel="${view}"]`);
+    if (!panel || panel.dataset.loaded) return;
+    panel.dataset.loaded = 'true';
+    const newestFirst = document.documentElement.dataset.order === 'desc';
+    try {
+      const response = await fetch(panel.dataset.src);
+      if (!response.ok) throw new Error(String(response.status));
+      panel.innerHTML = await response.text();
+    } catch {
+      delete panel.dataset.loaded;
+      panel.innerHTML =
+        '<p class="loading">Não foi possível carregar. Tente de novo.</p>';
+      return;
+    }
+    if (view === 'table') {
+      initTableSort(panel, newestFirst);
+    } else if (newestFirst) {
+      panel
+        .querySelectorAll('[data-list], [data-items]')
+        .forEach((el) => el.append(...[...el.children].reverse()));
+    }
+  };
+
+  const shown = () => document.documentElement.dataset.view;
+  if (shown() === 'list' || shown() === 'table') loadView(shown());
+  document.addEventListener('timeline:view', () => loadView(shown()));
+
   // Title scramble: each letter of the key words flickers through random
   // glyphs, then settles, left to right, and stays as settled spans. Every glyph is drawn centred in its
   // own letter's slot (the real letter is only painted transparent), so the
@@ -258,6 +297,11 @@ const lead = title.slice(0, title.length - key.length);
 
   .panels {
     padding-bottom: 32px;
+  }
+
+  .loading {
+    padding: 48px var(--gutter);
+    color: var(--muted);
   }
 
   /* The pinned toolbar is shorter. Without this, scroll anchoring shifts the

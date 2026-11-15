@@ -274,7 +274,7 @@ The signature unit: a card whose title link covers the whole card (`.stretched`)
 
 ### View toggle
 
-Text options at the right of the toolbar: Galeria (the month rows), Lista, Tabela, each a muted stroke icon plus label, no track or border. The pressed option is ink with a 2px accent underline that slides between options (0.45s, expo-out); the others are muted and turn ink on hover. The choice is stored and restored before paint on `<html data-view>`; without JS only cards show and the toggle stays hidden. Full width on phones.
+Text options at the right of the toolbar: Galeria (the month rows), Lista, Tabela, each a muted stroke icon plus label, no track or border. The pressed option is ink with a 2px accent underline that slides between options (0.45s, expo-out); the others are muted and turn ink on hover. The choice is stored and restored before paint on `<html data-view>`; without JS only cards show and the toggle stays hidden. Only the gallery is in each page's HTML: the list and table are static fragments (`/vistas/lista/…`, `/vistas/tabela/…`, noindex and out of the sitemap) fetched the first time their view is shown, styled by `src/styles/views.css` and brought into the current sort order on arrival. A muted "Carregando…" line holds their place meanwhile. Full width on phones.
 
 ### List view (news feed)
 

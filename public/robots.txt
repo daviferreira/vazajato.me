@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /vistas/
 Sitemap: https://www.vazajato.me/sitemap-index.xml
 Host: https://www.vazajato.me

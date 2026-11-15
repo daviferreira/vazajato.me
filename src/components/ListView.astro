@@ -11,10 +11,12 @@ import {
 } from '../lib/data.js';
 
 // A news-site feed: cover left, kicker, headline and byline right.
+// Rendered as a fragment (/vistas/lista/...) and fetched when first shown;
+// styles live in src/styles/views.css.
 const { articles } = Astro.props;
 ---
 
-<div data-list>
+<div class="list-view" data-list>
   {groupByMonth(articles).map(({ month, articles }) => (
     <section class="group" aria-labelledby={`lista-${month}`}>
       <header class="head">
@@ -82,134 +84,3 @@ const { articles } = Astro.props;
     </section>
   ))}
 </div>
-
-<style>
-  .group {
-    padding: clamp(32px, 4vw, 56px) var(--gutter) 0;
-  }
-
-  .head {
-    display: flex;
-    align-items: baseline;
-    gap: 16px;
-    padding-bottom: 8px;
-  }
-
-  h2 {
-    font-size: clamp(1.375rem, 1.1rem + 1vw, 1.75rem);
-    font-weight: 600;
-    letter-spacing: -0.02em;
-  }
-
-  .count {
-    color: var(--muted);
-    font-size: 0.875rem;
-    font-variant-numeric: tabular-nums;
-  }
-
-  .stories {
-    padding: 0;
-    list-style: none;
-  }
-
-  .story {
-    position: relative;
-    display: grid;
-    grid-template-columns: minmax(0, 480px) minmax(0, 1fr);
-    align-items: start;
-    gap: 36px;
-    padding: 32px 0;
-    color: var(--body);
-    text-decoration: none;
-  }
-
-  .cover {
-    aspect-ratio: 2 / 1;
-    overflow: hidden;
-    border-radius: 0;
-    background: var(--outlet);
-  }
-
-  .cover img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.45s var(--ease-out);
-  }
-
-  .story:hover .cover img {
-    transform: scale(1.03);
-  }
-
-  .text {
-    display: grid;
-    gap: 10px;
-  }
-
-  .kicker {
-    color: var(--body);
-    font-size: 1rem;
-    font-weight: 500;
-  }
-
-  .outlet {
-    display: inline-flex;
-    flex: none;
-    align-items: center;
-    gap: 8px;
-    white-space: nowrap;
-  }
-
-  .outlet img {
-    flex: none;
-  }
-
-  .headline {
-    color: var(--text);
-    font-family: var(--display);
-    font-size: clamp(1.375rem, 1.05rem + 1.1vw, 2rem);
-    font-weight: 700;
-    line-height: 1.12;
-    letter-spacing: -0.02em;
-    text-wrap: balance;
-  }
-
-  .headline a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .byline {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px;
-    margin-top: 4px;
-    color: var(--muted);
-    font-size: 0.9375rem;
-  }
-
-  .byline img {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-  }
-
-  @media (max-width: 760px) {
-    .story {
-      grid-template-columns: 1fr;
-      gap: 16px;
-      padding: 28px 0;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .cover img {
-      transition: none;
-    }
-
-    .story:hover .cover img {
-      transform: none;
-    }
-  }
-</style>

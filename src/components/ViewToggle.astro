@@ -46,6 +46,7 @@ const views = [
   buttons.forEach((button) =>
     button.addEventListener('click', () => {
       root.dataset.view = button.dataset.view;
+      document.dispatchEvent(new CustomEvent('timeline:view'));
       try {
         localStorage.setItem('view', button.dataset.view);
       } catch {}

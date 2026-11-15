@@ -123,6 +123,7 @@ const { source, topic } = Astro.props;
   button.hidden = false;
   button.addEventListener('click', () => {
     newestFirst = !newestFirst;
+    document.documentElement.dataset.order = newestFirst ? 'desc' : 'asc';
     document
       .querySelectorAll(
         '[data-months], [data-cards], [data-list], [data-items]',
