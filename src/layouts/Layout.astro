@@ -77,6 +77,9 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href.replace(
     <meta name="twitter:description" content={description} />
   </head>
   <body>
+    <a class="skip" href="#conteudo">
+      Pular para o conteúdo
+    </a>
     <slot />
   </body>
 </html>
@@ -301,6 +304,36 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href.replace(
   :focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 3px;
+  }
+
+  /* First stop for the keyboard: hidden until focused, then a blue tab
+     over the top-left corner. */
+  .skip {
+    position: fixed;
+    top: 8px;
+    left: 8px;
+    z-index: 100;
+    padding: 10px 14px;
+    background: var(--accent);
+    color: var(--accent-ink);
+    font-weight: 600;
+    text-decoration: none;
+    transform: translateY(calc(-100% - 16px));
+  }
+
+  .skip:focus {
+    transform: none;
+  }
+
+  .skip:focus-visible {
+    outline: 2px solid var(--text);
+    outline-offset: 2px;
+  }
+
+  /* <main> takes focus from the skip link only so the next Tab starts
+     there; it needs no ring of its own. */
+  #conteudo:focus {
+    outline: none;
   }
 
   .visually-hidden {

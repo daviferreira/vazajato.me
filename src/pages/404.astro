@@ -7,7 +7,12 @@ import deltan from '../components/deltan.gif';
 
 <Layout title="Página não encontrada | Vaza Jato">
   <SiteHeader />
-  <main class="lost" style={`--deltan: url(${deltan.src})`}>
+  <main
+    class="lost"
+    id="conteudo"
+    tabindex="-1"
+    style={`--deltan: url(${deltan.src})`}
+  >
     <h1>Página não encontrada.</h1>
     <a href="/">Voltar para a linha do tempo</a>
   </main>

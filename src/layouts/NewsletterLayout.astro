@@ -9,7 +9,7 @@ const { title, description, date, dateLabel } = Astro.props;
 
 <Layout title={`${title} | Vaza Jato`} description={description}>
   <SiteHeader />
-  <main class="page">
+  <main class="page" id="conteudo" tabindex="-1">
     <a class="back" href="/">
       <Icon name="left" size={16} /> Voltar para a linha do tempo
     </a>
