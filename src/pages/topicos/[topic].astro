@@ -18,10 +18,5 @@ const { articles, label } = Astro.props;
   title={`${label} | Linha do tempo da Vaza Jato`}
   description={`Todas as reportagens da Vaza Jato sobre ${label}.`}
 >
-  <Timeline
-    articles={articles}
-    topic={label}
-    title={label}
-    intro={`Reportagens da Vaza Jato sobre ${label}.`}
-  />
+  <Timeline articles={articles} topic={label} title={label} />
 </Layout>

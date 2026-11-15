@@ -218,11 +218,11 @@ A colourless table with one blue light on it: every neutral is pure grey (chroma
 
 ### Hierarchy
 
-- **Display** (600, clamp 2.25rem to 4.25rem, line-height 1, -0.035em, max 18ch): the page title only.
+- **Display** (600, clamp 2.25rem to 4.25rem, line-height 1, -0.035em): the page title only, on one line from tablet up.
 - **Page Title** (600, clamp 2rem to 3.25rem, line-height 1.05, -0.03em): the newsletter and 404 titles, a step below Display.
 - **Headline** (600, clamp 1.375rem to 1.75rem, -0.02em): month headings above each row.
 - **Title** (600, 1.0625rem, 1.35, -0.005em): card titles.
-- **Body** (400, 1rem, 1.5): default text; the intro lede steps to clamp 1rem to 1.125rem at max 62ch. Secondary lines (summary, byline) sit at 0.9375rem in muted ink.
+- **Body** (400, 1rem, 1.5): default text. Secondary lines (summary, byline) sit at 0.9375rem in muted ink.
 - **Prose** (400, 1.125rem, 1.7, max 68ch): newsletter reprints.
 - **Caption** (400, 0.875rem): outlet names on cards, header links, the footer, the back link, and filter controls on phones.
 - **Control** (500, 0.9375rem): filter controls and menu items.
@@ -238,8 +238,8 @@ A colourless table with one blue light on it: every neutral is pure grey (chroma
 
 The page is full-bleed with a fluid side gutter (`spacing.gutter`, 16px to 64px). The top bar, intro, month headings and footer all align to that gutter; month rows scroll edge to edge while their first card snaps to the gutter (`scroll-padding-inline`).
 
-- **Intro:** title, lede and computed summary. From 1100px it becomes two columns, title left and a column of up to 760px right with a 48px gap, aligned on their last baselines so the summary line sits on the title's last line. Padding clamps 28px to 64px above and 24px to 40px below.
-- **Toolbar:** a full-width row under the intro (12px vertical padding, ground background; a hairline below only while pinned): filters and sort on the left, the view toggle on the right; wraps on narrow screens. From 641px it sticks to the top of the viewport while scrolling; phones leave it in flow. While pinned (`data-stuck`, set by an IntersectionObserver on a 1px sentinel) it compacts: 8px padding, 36px filter controls at 0.875rem and 210px wide, and the view toggle drops to icons (labels stay for screen readers, `title` gives a tooltip).
+- **Intro:** the title and, under it, the computed summary ("266 reportagens de 20 veículos, de junho de 2019 a março de 2024", plus "Ver todas" on filtered pages), stacked at the gutter with a 14px gap; no description. The title stays on one line from tablet up; on phones it reserves two lines (a one-line name sits on the second), so the hero, and the toolbar below it, keeps one height across home, outlet and topic pages. Padding clamps 36px to 88px above and 20px to 44px below.
+- **Toolbar:** a full-width row under the intro (12px vertical padding, ground background; a hairline below only while pinned): filters and sort on the left, the view toggle on the right; wraps on narrow screens. From 641px it sticks to the top of the viewport while scrolling; phones leave it in flow. While pinned (`data-stuck`, set by an IntersectionObserver on a 1px sentinel) it compacts: 8px padding, 36px filter controls at 0.875rem and 210px wide, and the view toggle drops to icons (each button keeps an `aria-label`; hover or keyboard focus shows a small square tooltip in ink under the icon, only while pinned).
 - **Month section:** separated by space alone (clamp 32px to 56px above, no rule): heading, count (0.875rem, tabular) and, when the row overflows, previous/next round buttons pushed to the right. Below it the row: entries `min(320px, 74vw)` wide as columns with 28px padding either side of a 1px hairline column rule (none before the first), padded 24px above and 32px below, horizontal scroll with mandatory start snap and a hidden scrollbar; the scrollport fades out (gutter + 64px) on any side with more cards. The right fade is present from the first paint and cleared for rows that fit; the 0.3s easing only starts after the first measurement, so nothing animates in on load. Arrow buttons page by 85% of the row width.
 - **Rhythm:** 6, 8, 14, 20, 24 and 48px recur (`spacing` scale); 14px is the default stack gap in intro and card bodies.
 - **Mobile (640px and below):** filters become a three-column grid (outlet, topic, square sort button); filter labels shorten; the month heading becomes a two-row grid with arrows spanning both rows; header links wrap onto their own line below the wordmark and toggle.

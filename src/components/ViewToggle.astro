@@ -17,7 +17,13 @@ const views = [
 >
   <span class="pill" aria-hidden="true"></span>
   {views.map(({ id, label }) => (
-    <button type="button" data-view={id} aria-pressed="false" title={label}>
+    <button
+      type="button"
+      data-view={id}
+      data-tip={label}
+      aria-label={label}
+      aria-pressed="false"
+    >
       <Icon name={id} size={16} />
       <span>{label}</span>
     </button>
@@ -120,7 +126,7 @@ const views = [
     color: var(--text);
   }
 
-  /* Labels fold away (still read by screen readers) while pinned. */
+  /* Labels fold away while pinned; aria-label keeps each button named. */
   button span {
     display: inline-block;
     max-width: 5em;
@@ -139,6 +145,35 @@ const views = [
   :global([data-stuck]) button span {
     max-width: 0;
     opacity: 0;
+  }
+
+  /* Icon-only while pinned, so each option names itself on hover or focus. */
+  button::after {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 50%;
+    z-index: 40;
+    padding: 4px 8px;
+    background: var(--text);
+    color: var(--bg);
+    font-size: 0.75rem;
+    font-weight: 500;
+    white-space: nowrap;
+    content: attr(data-tip);
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -2px);
+    transition:
+      opacity 0.15s,
+      transform 0.15s var(--ease-out);
+    visibility: hidden;
+  }
+
+  :global([data-stuck]) button:hover::after,
+  :global([data-stuck]) button:focus-visible::after {
+    opacity: 1;
+    transform: translate(-50%, 0);
+    visibility: visible;
   }
 
   @media (prefers-reduced-motion: reduce) {

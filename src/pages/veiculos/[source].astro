@@ -20,10 +20,5 @@ const { name } = sources[source];
   title={`${name} | Linha do tempo da Vaza Jato`}
   description={`Todas as reportagens da Vaza Jato publicadas por ${name}.`}
 >
-  <Timeline
-    articles={articles}
-    source={source}
-    title={name}
-    intro={`Reportagens da Vaza Jato publicadas por ${name}.`}
-  />
+  <Timeline articles={articles} source={source} title={name} />
 </Layout>

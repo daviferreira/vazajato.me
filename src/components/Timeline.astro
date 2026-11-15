@@ -9,8 +9,8 @@ import { groupByMonth, slug, summary } from '../lib/data.js';
 
 import '../styles/views.css';
 
-// `title` and `intro` describe the page; `source` / `topic` set the filters.
-const { articles, intro, source, title, topic } = Astro.props;
+// `title` names the page; `source` / `topic` set the filters.
+const { articles, source, title, topic } = Astro.props;
 
 // The key words of the title unscramble on load.
 const key = title.includes('Vaza Jato') ? 'Vaza Jato' : title;
@@ -31,22 +31,21 @@ const tableBones = [...Array(10).keys()];
 <main>
   <div class="intro">
     <h1>
-      {lead}
-      <span class="key" data-scramble>
-        {key}
+      <span>
+        {lead}
+        <span class="key" data-scramble>
+          {key}
+        </span>
       </span>
     </h1>
-    <div class="aside">
-      <p class="lede">{intro}</p>
-      <p class="summary">
-        {summary(articles)}
-        {(source || topic) && (
-          <>
-            . <a href="/">Ver todas</a>
-          </>
-        )}
-      </p>
-    </div>
+    <p class="summary">
+      {summary(articles)}
+      {(source || topic) && (
+        <>
+          . <a href="/">Ver todas</a>
+        </>
+      )}
+    </p>
   </div>
 
   <div class="sentinel" data-toolbar-sentinel aria-hidden="true"></div>
@@ -243,7 +242,6 @@ const tableBones = [...Array(10).keys()];
   }
 
   h1 {
-    max-width: 18ch;
     font-size: clamp(2.25rem, 1.4rem + 3.6vw, 4.25rem);
     font-weight: 600;
     line-height: 1;
@@ -266,29 +264,20 @@ const tableBones = [...Array(10).keys()];
     transform: translateX(-50%);
   }
 
-  .aside {
-    display: grid;
-    gap: 14px;
-  }
-
-  @media (min-width: 1100px) {
-    .intro {
-      grid-template-columns: minmax(0, 1fr) minmax(0, 760px);
-      align-items: last baseline;
-      column-gap: 48px;
-    }
-  }
-
-  .lede {
-    max-width: 62ch;
-    font-size: clamp(1rem, 0.95rem + 0.3vw, 1.125rem);
-    color: var(--body);
-    text-wrap: pretty;
-  }
-
   .summary {
     color: var(--muted);
     font-size: 0.9375rem;
+  }
+
+  /* The title stays on one line from tablet up; on phones, where the home
+     title wraps, it reserves two lines (a one-line name sits on the second)
+     so the toolbar lands in the same place on every page. */
+  @media (max-width: 640px) {
+    h1 {
+      display: grid;
+      align-content: end;
+      min-height: 2lh;
+    }
   }
 
   .summary a {
