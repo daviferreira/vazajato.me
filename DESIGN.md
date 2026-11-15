@@ -28,53 +28,53 @@ colors:
   photo-scrim: 'oklch(0 0 0 / 0.45)'
 typography:
   display:
-    fontFamily: "system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+    fontFamily: "'Apfel Grotezk', system-ui, sans-serif"
     fontSize: 'clamp(2.25rem, 1.4rem + 3.6vw, 4.25rem)'
     fontWeight: 600
     lineHeight: 1
     letterSpacing: '-0.035em'
   page-title:
-    fontFamily: "system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+    fontFamily: "'Apfel Grotezk', system-ui, sans-serif"
     fontSize: 'clamp(2rem, 1.4rem + 2.6vw, 3.25rem)'
     fontWeight: 600
     lineHeight: 1.05
     letterSpacing: '-0.03em'
   headline:
-    fontFamily: "system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+    fontFamily: "'Apfel Grotezk', system-ui, sans-serif"
     fontSize: 'clamp(1.375rem, 1.1rem + 1vw, 1.75rem)'
     fontWeight: 600
     letterSpacing: '-0.02em'
   title:
-    fontFamily: "system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+    fontFamily: "'Ronzino', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
     fontSize: '1.0625rem'
     fontWeight: 600
     lineHeight: 1.35
     letterSpacing: '-0.005em'
   body:
-    fontFamily: "system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+    fontFamily: "'Ronzino', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
     fontSize: '1rem'
     fontWeight: 400
     lineHeight: 1.5
   prose:
-    fontFamily: "system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+    fontFamily: "'Ronzino', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
     fontSize: '1.125rem'
     fontWeight: 400
     lineHeight: 1.7
   caption:
-    fontFamily: "system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+    fontFamily: "'Ronzino', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
     fontSize: '0.875rem'
     fontWeight: 400
   control:
-    fontFamily: "system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+    fontFamily: "'Ronzino', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
     fontSize: '0.9375rem'
     fontWeight: 500
   wordmark:
-    fontFamily: "system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+    fontFamily: "'Ronzino', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
     fontSize: '0.9375rem'
     fontWeight: 600
     letterSpacing: '0.18em'
   label:
-    fontFamily: "ui-monospace, 'SF Mono', Menlo, Consolas, monospace"
+    fontFamily: "'Necto Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace"
     fontSize: '0.6875rem'
     fontWeight: 400
     lineHeight: 1.3
@@ -162,7 +162,7 @@ components:
 
 The archive is a hand of cards dealt on a plain charcoal table. Every month is one horizontal row of cards laid left to right, and the months stack in order down the page, so chronology reads twice: across a row and down the page. Cards sit square and rise when the pointer or focus reaches them. The table is quiet so the reporting, its cover images and its outlets, carries the colour.
 
-The material is neutral and documentary: an achromatic ground, card faces one lightness step above it, hairline borders, system sans for everything a person reads, and small tracked monospace capitals for data (dates, counts, topic tags). There is exactly one accent, a warm gold, and it is rationed to state: focus, the active filter, the current menu item, the hovered control, the theme toggle's ball, and the 404 page's single action. Density is moderate: generous gutters, cards sized for a cover and a three-line title, rows that bleed off the right edge to show they scroll.
+The material is neutral and documentary: an achromatic ground, card faces one lightness step above it, hairline borders, a grotesk for headings and a quiet sans for everything a person reads, and small tracked monospace capitals for data (dates, counts, topic tags). There is exactly one accent, a warm gold, and it is rationed to state: focus, the active filter, the current menu item, the hovered control, the theme toggle's ball, and the 404 page's single action. Density is moderate: generous gutters, cards sized for a cover and a three-line title, rows that bleed off the right edge to show they scroll.
 
 Two themes ship and share every token name. Dark (charcoal) is the default and is used whenever the system prefers dark or gives no preference; light (paper) is used when the system prefers light or the reader picks it with the toggle, which remembers the choice.
 
@@ -170,7 +170,7 @@ Two themes ship and share every token name. Dark (charcoal) is the default and i
 
 - Achromatic charcoal or paper ground; card faces one step off the ground; hairline borders instead of fills.
 - One gold accent, spent only on state and on a few small marks.
-- System sans for titles and reading; tracked mono capitals only for data attached to content.
+- Apfel Grotezk for headings, Ronzino for reading; tracked mono capitals only for data attached to content.
 - Month rows of fixed-width cards that scroll horizontally with snap.
 - Flat at rest; lift and shadow appear only in response to hover, focus or an open menu.
 - Light and dark are equal citizens with the same token names.
@@ -210,11 +210,11 @@ A colourless table with one warm light on it: every neutral is pure grey (chroma
 
 ## Typography
 
-**Display Font:** system-ui (with -apple-system, Segoe UI, Roboto, sans-serif)
-**Body Font:** the same system stack
-**Label/Mono Font:** ui-monospace (with SF Mono, Menlo, Consolas, monospace)
+**Display Font:** Apfel Grotezk (Collletttivo, OFL; Regular, Mittel, Fett), falling back to system-ui
+**Body Font:** Ronzino (Collletttivo, OFL; Regular, Oblique, Medium, Bold), falling back to the system sans
+**Label/Mono Font:** Necto Mono (Collletttivo, OFL; Regular), falling back to ui-monospace
 
-**Character:** One user-pinned native sans does all the reading, carried by weight (600 for headings, 500 for controls) and tight negative tracking at size; a small, widely tracked mono capital sets data apart as data.
+**Character:** Three free Collletttivo faces. Apfel Grotezk sets the display, page-title and month headings (`h1`, `h2` via `--display`); Ronzino does all the reading and controls, carried by weight (600 for headings, 500 for controls) and tight negative tracking at size; a small, widely tracked mono capital sets data apart as data.
 
 ### Hierarchy
 

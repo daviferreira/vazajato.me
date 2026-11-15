@@ -22,6 +22,20 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href.replace(
     <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <link
+      rel="preload"
+      href="/fonts/Ronzino-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/ApfelGrotezk-Mittel.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <meta
       name="theme-color"
       content="#f3f3f3"
@@ -63,6 +77,64 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href.replace(
 </html>
 
 <style is:global>
+  /* Collletttivo typefaces (OFL): Apfel Grotezk, Ronzino, Necto Mono. */
+  @font-face {
+    font-family: 'Apfel Grotezk';
+    src: url('/fonts/ApfelGrotezk-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Apfel Grotezk';
+    src: url('/fonts/ApfelGrotezk-Mittel.woff2') format('woff2');
+    font-weight: 500 600;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Apfel Grotezk';
+    src: url('/fonts/ApfelGrotezk-Fett.woff2') format('woff2');
+    font-weight: 700 900;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Ronzino';
+    src: url('/fonts/Ronzino-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Ronzino';
+    src: url('/fonts/Ronzino-Oblique.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Ronzino';
+    src: url('/fonts/Ronzino-Medium.woff2') format('woff2');
+    font-weight: 500 600;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Ronzino';
+    src: url('/fonts/Ronzino-Bold.woff2') format('woff2');
+    font-weight: 700 900;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Necto Mono';
+    src: url('/fonts/NectoMono-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+  }
+
   :root {
     color-scheme: dark;
 
@@ -78,8 +150,9 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href.replace(
     --gold-ink: oklch(0.24 0.04 84);
     --scrollbar: oklch(0.42 0 0);
 
-    --sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-    --mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    --display: 'Apfel Grotezk', system-ui, sans-serif;
+    --sans: 'Ronzino', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    --mono: 'Necto Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
 
     --gutter: clamp(16px, 4vw, 64px);
     --radius: 6px;
@@ -139,6 +212,11 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href.replace(
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     accent-color: var(--gold);
+  }
+
+  h1,
+  h2 {
+    font-family: var(--display);
   }
 
   h1,
