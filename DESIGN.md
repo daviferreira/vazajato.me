@@ -2,8 +2,8 @@
 name: vazajato.me
 description: Linha do tempo da Vaza Jato, every month dealt as a row of cards on a neutral charcoal table.
 colors:
-  gold: 'oklch(0.82 0.15 84)'
-  gold-ink: 'oklch(0.24 0.04 84)'
+  accent: 'oklch(0.74 0.18 355)'
+  accent-ink: 'oklch(0.2 0.05 355)'
   charcoal-ground: 'oklch(0.22 0 0)'
   card-face: 'oklch(0.25 0 0)'
   raised-control: 'oklch(0.28 0 0)'
@@ -13,8 +13,8 @@ colors:
   body-ink: 'oklch(0.86 0 0)'
   muted-ink: 'oklch(0.74 0 0)'
   scrollbar-thumb: 'oklch(0.42 0 0)'
-  paper-gold: 'oklch(0.6 0.13 84)'
-  paper-gold-ink: 'oklch(0.15 0.02 84)'
+  paper-accent: 'oklch(0.56 0.2 358)'
+  paper-accent-ink: 'oklch(0.99 0.01 355)'
   paper-ground: 'oklch(0.965 0 0)'
   paper-card-face: 'oklch(1 0 0)'
   paper-raised-control: 'oklch(0.93 0 0)'
@@ -144,12 +144,12 @@ components:
     width: '60px'
     height: '32px'
   theme-toggle-ball:
-    backgroundColor: '{colors.gold}'
+    backgroundColor: '{colors.accent}'
     rounded: '{rounded.circle}'
     size: '24px'
-  button-gold:
-    backgroundColor: '{colors.gold}'
-    textColor: '{colors.gold-ink}'
+  button-accent:
+    backgroundColor: '{colors.accent}'
+    textColor: '{colors.accent-ink}'
     rounded: '{rounded.md}'
     padding: '12px 18px'
 ---
@@ -162,14 +162,14 @@ components:
 
 The archive is a hand of cards dealt on a plain charcoal table. Every month is one horizontal row of cards laid left to right, and the months stack in order down the page, so chronology reads twice: across a row and down the page. Cards sit square and rise when the pointer or focus reaches them. The table is quiet so the reporting, its cover images and its outlets, carries the colour.
 
-The material is neutral and documentary: an achromatic ground, card faces one lightness step above it, hairline borders, a grotesk for headings and a quiet sans for everything a person reads, and small tracked monospace capitals for data (dates, counts, topic tags). There is exactly one accent, a warm gold, and it is rationed to state: focus, the active filter, the current menu item, the hovered control, the theme toggle's ball, the wordmark's cursor, and the 404 page's single action. Density is moderate: generous gutters, cards sized for a cover and a three-line title, rows that bleed off the right edge to show they scroll.
+The material is neutral and documentary: an achromatic ground, card faces one lightness step above it, hairline borders, a grotesk for headings and a quiet sans for everything a person reads, and small tracked monospace capitals for data (dates, counts, topic tags). There is exactly one accent, a hot pink, and it is rationed to state: focus, the active filter, the current menu item, the hovered control, the theme toggle's ball, the wordmark's cursor, and the 404 page's single action. Density is moderate: generous gutters, cards sized for a cover and a three-line title, rows that bleed off the right edge to show they scroll.
 
 Two themes ship and share every token name. Dark (charcoal) is the default and is used whenever the system prefers dark or gives no preference; light (paper) is used when the system prefers light or the reader picks it with the toggle, which remembers the choice.
 
 **Key Characteristics:**
 
 - Achromatic charcoal or paper ground; card faces one step off the ground; hairline borders instead of fills.
-- One gold accent, spent only on state and on a few small marks.
+- One pink accent, spent only on state and on a few small marks.
 - Apfel Grotezk for headings, Ronzino for reading; tracked mono capitals only for data attached to content.
 - Month rows of fixed-width cards that scroll horizontally with snap.
 - Flat at rest; lift and shadow appear only in response to hover, focus or an open menu.
@@ -177,12 +177,12 @@ Two themes ship and share every token name. Dark (charcoal) is the default and i
 
 ## Colors
 
-A colourless table with one warm light on it: every neutral is pure grey (chroma 0) and the only hue in the system is gold at 84 degrees.
+A colourless table with one hot light on it: every neutral is pure grey (chroma 0) and the only hue in the system is pink at 355 to 358 degrees.
 
 ### Primary
 
-- **Dealer's Gold** (`gold` dark, `paper-gold` light): focus outline (2px, 3px offset), the active filter's double border, the current-item dot in menus, hovered round button and toggle borders, the toggle ball, text selection, the wordmark's blinking cursor, the newsletter link underline, and the fill of the 404 return button. Light theme uses a deeper gold so the focus ring keeps 3:1 against paper.
-- **Gold Ink** (`gold-ink` / `paper-gold-ink`): text and glyphs set on gold (selection text, the toggle's active icon, the 404 button label).
+- **Accent Pink** (`accent` dark, `paper-accent` light): focus outline (2px, 3px offset), the active filter's double border, the current-item dot in menus, hovered round button and toggle borders, the toggle ball, text selection, the wordmark's blinking cursor, the newsletter link underline, and the fill of the 404 return button. Dark pink is #ff74b0 (6.9:1 on the ground); light theme uses a deeper #c82a74 (4.7:1 on paper) so the focus ring and fills keep contrast.
+- **Accent Ink** (`accent-ink` / `paper-accent-ink`): text and glyphs set on pink: near-black in dark (7.3:1), white in light (5.0:1) (selection text, the toggle's active icon, the 404 button label).
 
 ### Neutral
 
@@ -204,9 +204,9 @@ A colourless table with one warm light on it: every neutral is pure grey (chroma
 
 ### Named Rules
 
-**The Rationed Gold Rule.** Gold marks state, never structure: something is focused, active, current, under the pointer, or the single action on a page. A surface at rest never wears gold; the only gold fills are the toggle ball and, at most, one primary action per page.
+**The Rationed Accent Rule.** Pink marks state, never structure: something is focused, active, current, under the pointer, or the single action on a page. A surface at rest never wears pink; the only pink fills are the toggle ball and, at most, one primary action per page.
 
-**The Same Names Rule.** Both themes redefine the same custom properties (`--bg`, `--surface`, `--raised`, `--line`, `--line-strong`, `--text`, `--body`, `--muted`, `--gold`, `--gold-ink`, `--scrollbar`). Components reference only these names, never a theme-specific value.
+**The Same Names Rule.** Both themes redefine the same custom properties (`--bg`, `--surface`, `--raised`, `--line`, `--line-strong`, `--text`, `--body`, `--muted`, `--accent`, `--accent-ink`, `--scrollbar`). Components reference only these names, never a theme-specific value.
 
 ## Typography
 
@@ -237,8 +237,8 @@ A colourless table with one warm light on it: every neutral is pure grey (chroma
 
 The page is full-bleed with a fluid side gutter (`spacing.gutter`, 16px to 64px). The top bar, intro, month headings and footer all align to that gutter; month rows scroll edge to edge while their first card snaps to the gutter (`scroll-padding-inline`).
 
-- **Intro:** title, lede and computed summary. From 1100px it becomes two columns, title left and a column of up to 760px right, top-aligned with a 48px gap. Padding clamps 28px to 64px above and 24px to 40px below.
-- **Toolbar:** a full-width row under the intro: filters and sort on the left, the view toggle on the right; wraps on narrow screens.
+- **Intro:** title, lede and computed summary. From 1100px it becomes two columns, title left and a column of up to 760px right with a 48px gap, aligned on their last baselines so the summary line sits on the title's last line. Padding clamps 28px to 64px above and 24px to 40px below.
+- **Toolbar:** a full-width row under the intro (12px vertical padding, hairline below, ground background): filters and sort on the left, the view toggle on the right; wraps on narrow screens. From 641px it sticks to the top of the viewport while scrolling; phones leave it in flow. While pinned (`data-stuck`, set by an IntersectionObserver on a 1px sentinel) it compacts: 8px padding, 36px filter controls at 0.875rem and 210px wide, and the view toggle drops to icons (labels stay for screen readers, `title` gives a tooltip).
 - **Month section:** heading, mono count and, when the row overflows, previous/next round buttons pushed to the right. Below it the row: fixed-width cards (`min(340px, 78vw)`) with a 20px gap, padded 16px above and 24px below, horizontal scroll with mandatory start snap and a hidden scrollbar. Arrow buttons page by 85% of the row width.
 - **Rhythm:** 6, 8, 14, 20, 24 and 48px recur (`spacing` scale); 14px is the default stack gap in intro and card bodies.
 - **Mobile (640px and below):** filters become a three-column grid (outlet, topic, square sort button); filter labels shorten; the month heading becomes a two-row grid with arrows spanning both rows; header links wrap onto their own line below the wordmark and toggle.
@@ -252,7 +252,7 @@ Flat by default. Depth comes from tone: the ground, a card face one step off it,
 
 - **Lifted card** (`box-shadow: 0 14px 30px -12px oklch(0 0 0 / 0.45)`): a hovered or focused card, together with a 4px rise.
 - **Open menu** (`box-shadow: 0 12px 32px oklch(0 0 0 / 0.28)`): dropdown menus while open.
-- **Active ring** (`box-shadow: inset 0 0 0 1px gold`): doubles the gold border of an active filter control. Not depth; a weight cue.
+- **Active ring** (`box-shadow: inset 0 0 0 1px pink`): doubles the pink border of an active filter control. Not depth; a weight cue.
 
 ### Named Rules
 
@@ -260,7 +260,7 @@ Flat by default. Depth comes from tone: the ground, a card face one step off it,
 
 ## Shapes
 
-Small, firm corners on a three-step scale: 4px for tags, menu items and the clear button; 6px (`--radius`) for filter controls and the gold button; 8px for cards, menus and embedded frames. Round shapes are reserved for circular things: 40px icon buttons, outlet avatars (20px circles), the toggle's pill track and ball, the current-item dot. Borders are 1px hairlines everywhere.
+Small, firm corners on a three-step scale: 4px for tags, menu items and the clear button; 6px (`--radius`) for filter controls and the pink button; 8px for cards, menus and embedded frames. Round shapes are reserved for circular things: 40px icon buttons, outlet avatars (20px circles), the toggle's pill track and ball, the current-item dot. Borders are 1px hairlines everywhere.
 
 ## Components
 
@@ -272,11 +272,11 @@ The signature unit: a card whose title link covers the whole card (`.stretched`)
 - **Background:** card face, body ink text; title in ink.
 - **Structure:** 2:1 cover image over a 3px strip in the outlet's colour (outlet colour also fills the cover while it loads); body padded 16px 18px 18px with 14px gaps: a mono dateline in muted ink, the title, the outlet (20px round avatar and name in muted ink, pushed to the bottom), then topic tags.
 - **Border:** 1px hairline in every state.
-- **States:** hover and focus rise 4px and take the lifted shadow (0.45s, expo-out ease); focus also shows the gold outline.
+- **States:** hover and focus rise 4px and take the lifted shadow (0.45s, expo-out ease); focus also shows the pink outline.
 
 ### View toggle
 
-A segmented control at the right of the toolbar: Cards, Lista, Tabela, each a stroke icon plus label, in a raised track with a strong hairline. A card-face pill with an inset gold ring slides under the pressed option (0.45s, expo-out), like the theme toggle's ball; the pressed label is ink, the others muted. The choice is stored and restored before paint on `<html data-view>`; without JS only cards show and the toggle stays hidden. Full width on phones.
+A segmented control at the right of the toolbar: Cards, Lista, Tabela, each a stroke icon plus label, in a raised track with a strong hairline. A card-face pill with an inset pink ring slides under the pressed option (0.45s, expo-out), like the theme toggle's ball; the pressed label is ink, the others muted. The choice is stored and restored before paint on `<html data-view>`; without JS only cards show and the toggle stays hidden. Full width on phones.
 
 ### List view (news feed)
 
@@ -284,7 +284,7 @@ Month sections; each story is a full-width row: a 2:1 cover up to 480px on the l
 
 ### Table view
 
-One table of every story: Data (mono, ink), Título (500, ink, gold underline on hover), Veículo (avatar and name, no wrap), Tópicos (mono, muted, joined by middots). Mono column heads over a strong hairline, hairline rows, baseline-aligned cells, 24px column gaps, row hover in card face. Scrolls sideways inside its own region below 820px. Data, Título and Veículo heads are sort buttons: click sorts ascending, again descending (pt-BR collation, punctuation ignored); the sorted head turns ink with an up or down arrow and carries `aria-sort`, idle heads preview the arrow on hover. The toolbar sort button re-sorts the table by date in its direction.
+One table of every story: Data (mono, ink), Título (500, ink, pink underline on hover), Veículo (avatar and name, no wrap), Tópicos (mono, muted, joined by middots). Mono column heads over a strong hairline, hairline rows, baseline-aligned cells, 24px column gaps, row hover in card face. Scrolls sideways inside its own region below 820px. Data, Título and Veículo heads are sort buttons: click sorts ascending, again descending (pt-BR collation, punctuation ignored); the sorted head turns ink with an up or down arrow and carries `aria-sort`, idle heads preview the arrow on hover. The toolbar sort button re-sorts the table by date in its direction.
 
 ### Tags
 
@@ -296,36 +296,38 @@ One table of every story: Data (mono, ink), Título (500, ink, gold underline on
 - **Shape:** 6px corners, 44px minimum height, 260px wide on desktop and full cell width on mobile.
 - **Default:** raised background, strong hairline, ink text at control size, muted chevron on the right that rotates 180deg when open.
 - **Hover:** border goes to ink.
-- **Active (a filter is applied):** gold border doubled by an inset gold ring; the chevron is replaced by a 30px clear (x) button.
-- **Menu:** native `details` disclosure; a card-face panel with hairline border, 8px corners, 6px padding, open-menu shadow, 300px minimum width, scrolls past 60vh; drops in 6px over 0.22s. Items are 8px 10px with 4px corners, raised on hover; the current item is ink, 600 weight, with a 7px gold dot at the right.
+- **Active (a filter is applied):** pink border doubled by an inset pink ring; the chevron is replaced by a 30px clear (x) button.
+- **Menu:** native `details` disclosure; a card-face panel with hairline border, 8px corners, 6px padding, open-menu shadow, 300px minimum width, scrolls past 60vh; drops in 6px over 0.22s. Items are 8px 10px with 4px corners, raised on hover; the current item is ink, 600 weight, with a 7px pink dot at the right.
 - **Sort:** same control shape with a sort glyph; collapses to a 44px square on mobile.
 
 ### Round icon buttons
 
-Month previous/next and footer share links. 40px circles, raised background, strong hairline, ink glyph; border turns gold on hover; disabled at 35% opacity.
+Footer share links: 40px circles, raised background, strong hairline, ink glyph; border turns pink on hover.
+
+Month previous/next: 44px solid ink circles with a ground-coloured 20px chevron, so the way through a row is hard to miss; hover fills them pink with accent-ink glyph, press scales to 94%; at the end of a row the button drops to a strong-hairline outline with a muted glyph at 60% opacity.
 
 ### Theme toggle
 
-A pill switch after the Astro error overlay's toggle: 60px by 32px track in card face with a strong hairline, sun and moon stroke glyphs at either end, and a 24px gold ball that slides under the active glyph (0.45s, expo-out). The glyph over the ball is gold ink; the other is muted. Border turns gold on hover. Exposed as a switch; hidden until its script runs; uses the system highlight colour in forced-colours mode.
+A pill switch after the Astro error overlay's toggle: 60px by 32px track in card face with a strong hairline, sun and moon stroke glyphs at either end, and a 24px pink ball that slides under the active glyph (0.45s, expo-out). The glyph over the ball is pink ink; the other is muted. Border turns pink on hover. Exposed as a switch; hidden until its script runs; uses the system highlight colour in forced-colours mode.
 
 ### Navigation (top bar)
 
-Wordmark left (`#vazajato` in Necto Mono and ink, followed by a gold `_` cursor that blinks every 1.1s and holds still with reduced motion), file links right in muted ink that turn ink and underline on hover, toggle at the far right. Padding 20px by the gutter.
+Wordmark left (`#vazajato` in Necto Mono and ink, followed by a pink `_` cursor that blinks every 1.1s and holds still with reduced motion), file links right in muted ink that turn ink and underline on hover, toggle at the far right. Padding 20px by the gutter.
 
 ### Icons
 
 One stroke family on a 24px grid at 1.75 stroke, round caps and joins, inheriting text colour (chevron, left, right, close, sort, sun, moon). Brand marks (WhatsApp, Twitter, Facebook) are filled.
 
-### Gold button
+### Accent button
 
-Used once, on the 404 page: gold fill, gold ink label at 600, 12px 18px padding, 6px corners.
+Used once, on the 404 page: pink fill, accent-ink label at 600, 12px 18px padding, 6px corners.
 
 ## Do's and Don'ts
 
 ### Do:
 
 - **Do** reference the shared custom properties so every surface works in both themes without extra rules.
-- **Do** keep gold to state and single actions: focus, active, current, hover, the toggle ball, one gold button per page at most.
+- **Do** keep pink to state and single actions: focus, active, current, hover, the toggle ball, one pink button per page at most.
 - **Do** edge surfaces with 1px hairlines; use the strong hairline for anything interactive.
 - **Do** set dates, counts and topics in the mono label style, and give the date the firmer treatment.
 - **Do** lay new collections of articles out as month rows of 340px cards, scrolling horizontally with snap.
@@ -334,7 +336,7 @@ Used once, on the 404 page: gold fill, gold ink label at 600, 12px 18px padding,
 
 ### Don't:
 
-- **Don't** fill large areas, panels or headings with gold, or use it at rest to decorate.
+- **Don't** fill large areas, panels or headings with pink, or use it at rest to decorate.
 - **Don't** add a second accent hue; the only other colour on the page comes from cover images, outlet avatars and outlet colour strips.
 - **Don't** put shadows on surfaces at rest.
 - **Don't** tilt or rotate cards.

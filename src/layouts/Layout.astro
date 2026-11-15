@@ -150,8 +150,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href.replace(
     --text: oklch(0.94 0 0);
     --body: oklch(0.86 0 0);
     --muted: oklch(0.74 0 0);
-    --gold: oklch(0.82 0.15 84);
-    --gold-ink: oklch(0.24 0.04 84);
+    --accent: oklch(0.74 0.18 355);
+    --accent-ink: oklch(0.2 0.05 355);
     --scrollbar: oklch(0.42 0 0);
 
     --display: 'Apfel Grotezk', system-ui, sans-serif;
@@ -175,8 +175,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href.replace(
       --text: oklch(0.2 0 0);
       --body: oklch(0.3 0 0);
       --muted: oklch(0.47 0 0);
-      --gold: oklch(0.6 0.13 84);
-      --gold-ink: oklch(0.15 0.02 84);
+      --accent: oklch(0.56 0.2 358);
+      --accent-ink: oklch(0.99 0.01 355);
       --scrollbar: oklch(0.75 0 0);
     }
   }
@@ -192,8 +192,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href.replace(
     --text: oklch(0.2 0 0);
     --body: oklch(0.3 0 0);
     --muted: oklch(0.47 0 0);
-    --gold: oklch(0.6 0.13 84);
-    --gold-ink: oklch(0.15 0.02 84);
+    --accent: oklch(0.56 0.2 358);
+    --accent-ink: oklch(0.99 0.01 355);
     --scrollbar: oklch(0.75 0 0);
   }
 
@@ -215,7 +215,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href.replace(
     font: 400 1rem/1.5 var(--sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    accent-color: var(--gold);
+    accent-color: var(--accent);
   }
 
   h1,
@@ -236,7 +236,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href.replace(
   }
 
   .stretched:focus-visible::after {
-    outline: 2px solid var(--gold);
+    outline: 2px solid var(--accent);
     outline-offset: -2px;
   }
 
@@ -270,12 +270,12 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href.replace(
   }
 
   ::selection {
-    background: var(--gold);
-    color: var(--gold-ink);
+    background: var(--accent);
+    color: var(--accent-ink);
   }
 
   :focus-visible {
-    outline: 2px solid var(--gold);
+    outline: 2px solid var(--accent);
     outline-offset: 3px;
   }
 

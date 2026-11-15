@@ -16,10 +16,10 @@ const count = `${articles.length} ${articles.length === 1 ? 'reportagem' : 'repo
     <span class="count mono">{count}</span>
     <div class="nav" data-row-nav hidden>
       <button type="button" aria-label={`Anteriores de ${title}`} data-prev>
-        <Icon name="left" />
+        <Icon name="left" size={20} />
       </button>
       <button type="button" aria-label={`Próximas de ${title}`} data-next>
-        <Icon name="right" />
+        <Icon name="right" size={20} />
       </button>
     </div>
   </header>
@@ -88,27 +88,41 @@ const count = `${articles.length} ${articles.length === 1 ? 'reportagem' : 'repo
     display: none;
   }
 
+  /* Solid ink buttons so the way through a row is hard to miss; the accent under
+     the pointer; an outline only once there is nothing more that way. */
   .nav button {
     display: grid;
     place-items: center;
-    width: 40px;
-    height: 40px;
-    border: 1px solid var(--line-strong);
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--text);
     border-radius: 50%;
-    background: var(--raised);
+    background: var(--text);
+    color: var(--bg);
     cursor: pointer;
     transition:
+      background-color 0.2s,
       border-color 0.2s,
-      opacity 0.2s;
+      color 0.2s,
+      transform 0.25s var(--ease-out);
   }
 
   .nav button:hover:not(:disabled) {
-    border-color: var(--gold);
+    border-color: var(--accent);
+    background: var(--accent);
+    color: var(--accent-ink);
+  }
+
+  .nav button:active:not(:disabled) {
+    transform: scale(0.94);
   }
 
   .nav button:disabled {
+    border-color: var(--line-strong);
+    background: transparent;
+    color: var(--muted);
     cursor: default;
-    opacity: 0.35;
+    opacity: 0.6;
   }
 
   .row {
@@ -143,6 +157,10 @@ const count = `${articles.length} ${articles.length === 1 ? 'reportagem' : 'repo
   @media (prefers-reduced-motion: reduce) {
     .row {
       scroll-behavior: auto;
+    }
+
+    .nav button {
+      transition: none;
     }
   }
 </style>

@@ -31,7 +31,8 @@ const { articles, intro, source, title, topic } = Astro.props;
     </div>
   </div>
 
-  <div class="toolbar">
+  <div class="sentinel" data-toolbar-sentinel aria-hidden="true"></div>
+  <div class="toolbar" data-toolbar>
     <Filters source={source} topic={topic} />
     <ViewToggle />
   </div>
@@ -54,6 +55,17 @@ const { articles, intro, source, title, topic } = Astro.props;
 <Footer />
 
 <script>
+  // Mark the toolbar while it is pinned so it can compact itself.
+  const toolbar = document.querySelector<HTMLElement>('[data-toolbar]');
+  const sentinel = document.querySelector('[data-toolbar-sentinel]');
+  const pins = matchMedia('(min-width: 641px)');
+  new IntersectionObserver(([entry]) =>
+    toolbar.toggleAttribute(
+      'data-stuck',
+      pins.matches && !entry.isIntersecting && entry.boundingClientRect.top < 0,
+    ),
+  ).observe(sentinel);
+
   // Row arrows: scroll by one viewport of cards, disabled at either end.
   document.querySelectorAll('.month').forEach((month) => {
     const row = month.querySelector<HTMLElement>('[data-row]');
@@ -86,7 +98,7 @@ const { articles, intro, source, title, topic } = Astro.props;
   .intro {
     display: grid;
     gap: 14px;
-    padding: clamp(28px, 4.5vw, 64px) var(--gutter) clamp(24px, 3vw, 40px);
+    padding: clamp(28px, 4.5vw, 64px) var(--gutter) clamp(12px, 2vw, 28px);
   }
 
   h1 {
@@ -105,7 +117,7 @@ const { articles, intro, source, title, topic } = Astro.props;
   @media (min-width: 1100px) {
     .intro {
       grid-template-columns: minmax(0, 1fr) minmax(0, 760px);
-      align-items: start;
+      align-items: last baseline;
       column-gap: 48px;
     }
   }
@@ -118,7 +130,6 @@ const { articles, intro, source, title, topic } = Astro.props;
   }
 
   .summary {
-    margin-bottom: 6px;
     color: var(--muted);
     font-size: 0.9375rem;
   }
@@ -129,7 +140,7 @@ const { articles, intro, source, title, topic } = Astro.props;
   }
 
   .summary a:hover {
-    text-decoration-color: var(--gold);
+    text-decoration-color: var(--accent);
     text-decoration-thickness: 2px;
   }
 
@@ -139,12 +150,45 @@ const { articles, intro, source, title, topic } = Astro.props;
     align-items: center;
     justify-content: space-between;
     gap: 10px 24px;
-    padding: 0 var(--gutter) 24px;
+    padding: 12px var(--gutter);
+    border-bottom: 1px solid var(--line);
+    background: var(--bg);
+    transition: padding 0.3s var(--ease-out);
+  }
+
+  /* Pinned while scrolling; phones skip it, where it would take two rows. */
+  @media (min-width: 641px) {
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+    }
+  }
+
+  .toolbar[data-stuck] {
+    padding-block: 8px;
+  }
+
+  .sentinel {
+    height: 1px;
+    margin-bottom: -1px;
   }
 
   .panels {
     padding-bottom: 32px;
-    border-top: 1px solid var(--line);
+  }
+
+  /* The pinned toolbar is shorter. Without this, scroll anchoring shifts the
+     page to compensate, which unpins it, and it loops at the threshold. */
+  .toolbar,
+  .panels {
+    overflow-anchor: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .toolbar {
+      transition: none;
+    }
   }
 
   /* Cards show by default and without JS; <html data-view> picks another. */

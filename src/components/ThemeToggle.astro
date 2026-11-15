@@ -110,13 +110,13 @@
     width: var(--ball);
     height: var(--ball);
     border-radius: 50%;
-    background: var(--gold);
+    background: var(--accent);
     transition: transform 0.45s var(--ease-out);
   }
 
   /* Light: ball under the sun. Dark: ball slides under the moon. */
   .sun {
-    color: var(--gold-ink);
+    color: var(--accent-ink);
   }
 
   .moon {
@@ -132,11 +132,11 @@
   }
 
   .toggle[aria-checked='true'] .moon {
-    color: var(--gold-ink);
+    color: var(--accent-ink);
   }
 
   .toggle:hover {
-    border-color: var(--gold);
+    border-color: var(--accent);
   }
 
   @media (prefers-reduced-motion: reduce) {

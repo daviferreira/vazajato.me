@@ -17,7 +17,7 @@ const views = [
 >
   <span class="pill" aria-hidden="true"></span>
   {views.map(({ id, label }) => (
-    <button type="button" data-view={id} aria-pressed="false">
+    <button type="button" data-view={id} aria-pressed="false" title={label}>
       <Icon name={id} size={16} />
       <span>{label}</span>
     </button>
@@ -55,7 +55,13 @@ const views = [
 
   group.hidden = false;
   sync();
-  new ResizeObserver(sync).observe(group);
+  // While the buttons resize (the pinned toolbar folds its labels), the
+  // pill tracks them exactly; it only slides when the choice changes.
+  new ResizeObserver(() => {
+    group.classList.remove('ready');
+    sync();
+    requestAnimationFrame(() => group.classList.add('ready'));
+  }).observe(group);
   // Place the pill without animating, then let later moves slide.
   requestAnimationFrame(() => group.classList.add('ready'));
 </script>
@@ -82,7 +88,7 @@ const views = [
     width: var(--pill-w, 0);
     border-radius: 4px;
     background: var(--surface);
-    box-shadow: inset 0 0 0 1px var(--gold);
+    box-shadow: inset 0 0 0 1px var(--accent);
     transform: translateX(var(--pill-x, 0));
   }
 
@@ -107,11 +113,38 @@ const views = [
     font-size: 0.9375rem;
     font-weight: 500;
     cursor: pointer;
-    transition: color 0.2s;
+    transition:
+      color 0.2s,
+      gap 0.3s var(--ease-out),
+      min-height 0.3s var(--ease-out),
+      padding 0.3s var(--ease-out);
   }
 
   button:hover {
     color: var(--text);
+  }
+
+  /* Icons only while the toolbar is pinned; labels stay for screen readers. */
+  /* Labels fold away (still read by screen readers) while pinned. */
+  button span {
+    display: inline-block;
+    max-width: 5em;
+    overflow: hidden;
+    white-space: nowrap;
+    transition:
+      max-width 0.3s var(--ease-out),
+      opacity 0.2s;
+  }
+
+  :global([data-stuck]) button {
+    gap: 0;
+    min-height: 30px;
+    padding: 0 10px;
+  }
+
+  :global([data-stuck]) button span {
+    max-width: 0;
+    opacity: 0;
   }
 
   button[aria-pressed='true'] {
@@ -119,7 +152,9 @@ const views = [
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .ready .pill {
+    .ready .pill,
+    button,
+    button span {
       transition: none;
     }
   }
