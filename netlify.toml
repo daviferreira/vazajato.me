@@ -7,3 +7,16 @@
   for = "/vistas/*"
   [headers.values]
     X-Robots-Tag = "noindex"
+
+# Alias domains redirect to the primary domain.
+[[redirects]]
+  from = "https://vazajato.com/*"
+  to = "https://www.vazajato.me/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.vazajato.com/*"
+  to = "https://www.vazajato.me/:splat"
+  status = 301
+  force = true
