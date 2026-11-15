@@ -1,0 +1,236 @@
+---
+import Icon from './Icon.astro';
+
+// Filters the rows already on the page; every row carries a pre-folded
+// data-search string (see src/lib/search.js). Hidden without JS.
+---
+
+<form class="search" role="search" data-search-form hidden>
+  <label class="visually-hidden" for="busca">
+    Buscar reportagens
+  </label>
+  <Icon name="search" size={18} class="icon" />
+  <input
+    id="busca"
+    type="search"
+    name="q"
+    placeholder="Buscar"
+    autocomplete="off"
+    spellcheck="false"
+    enterkeyhint="search"
+  />
+  <kbd aria-hidden="true">/</kbd>
+</form>
+
+<script>
+  import { fold } from '../lib/search.js';
+
+  const form = document.querySelector<HTMLFormElement>('[data-search-form]');
+  const input = form.querySelector('input');
+  const status = document.querySelector<HTMLElement>('[data-search-status]');
+
+  const plural = (n: number) =>
+    `${n} ${n === 1 ? 'reportagem' : 'reportagens'}`;
+
+  const apply = () => {
+    const query = input.value.trim();
+    const words = fold(query).split(/\s+/).filter(Boolean);
+
+    document.querySelectorAll<HTMLElement>('[data-search]').forEach((row) => {
+      row.hidden = !words.every((word) => row.dataset.search.includes(word));
+    });
+
+    // Months: hide the empty ones, and say how many of theirs are left.
+    document
+      .querySelectorAll<HTMLElement>('[data-search-group]')
+      .forEach((group) => {
+        const total = group.querySelectorAll('[data-search]').length;
+        const shown = group.querySelectorAll(
+          '[data-search]:not([hidden])',
+        ).length;
+        group.hidden = shown === 0;
+        group.querySelector('[data-search-count]').textContent =
+          shown === total ? plural(total) : `${shown} de ${plural(total)}`;
+      });
+
+    // The gallery is always rendered, so it gives the count for every view.
+    const found = document.querySelectorAll(
+      '[data-panel="cards"] [data-search]:not([hidden])',
+    ).length;
+    status.textContent = !query
+      ? ''
+      : found === 0
+        ? `Nenhuma reportagem encontrada para “${query}”.`
+        : `${plural(found)} ${found === 1 ? 'encontrada' : 'encontradas'} para “${query}”.`;
+
+    // Gallery rows changed width: back to the start, and refresh the arrows.
+    document.querySelectorAll<HTMLElement>('[data-row]').forEach((row) => {
+      row.scrollTo({ left: 0 });
+      row.dispatchEvent(new Event('scroll'));
+    });
+  };
+
+  // The query lives in ?q= so a search can be shared or reloaded.
+  const sync = () => {
+    const url = new URL(location.href);
+    const query = input.value.trim();
+    if (query) url.searchParams.set('q', query);
+    else url.searchParams.delete('q');
+    history.replaceState(history.state, '', url);
+  };
+
+  form.hidden = false;
+  input.value = new URLSearchParams(location.search).get('q') ?? '';
+  if (input.value) apply();
+
+  input.addEventListener('input', () => {
+    apply();
+    sync();
+  });
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    input.blur();
+  });
+  input.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    if (input.value) {
+      input.value = '';
+      apply();
+      sync();
+    } else {
+      input.blur();
+    }
+  });
+
+  // "/" jumps to the search box from anywhere but another field.
+  document.addEventListener('keydown', (e) => {
+    const target = e.target as HTMLElement;
+    if (
+      e.key !== '/' ||
+      e.metaKey ||
+      e.ctrlKey ||
+      e.altKey ||
+      target.closest('input, textarea, select, [contenteditable]')
+    ) {
+      return;
+    }
+    e.preventDefault();
+    input.focus();
+    input.select();
+  });
+
+  // The list and table arrive later, as fragments; filter them on arrival.
+  document.addEventListener('timeline:loaded', apply);
+</script>
+
+<style>
+  /* Set as type like the filters: a hairline to write on, no box. */
+  .search {
+    position: relative;
+    display: flex;
+    flex: 1 1 200px;
+    align-items: center;
+    gap: 8px;
+    max-width: 320px;
+    margin-left: auto;
+    color: var(--muted);
+  }
+
+  .search[hidden] {
+    display: none;
+  }
+
+  /* Drawn like the view toggle's underline (2px, 6px up from the bottom of
+     the 44px control), so the two rules sit on one line. Pressing them both
+     to 2px keeps them the same weight; idle, it reads as a hairline. */
+  .search::after {
+    position: absolute;
+    right: 0;
+    bottom: 6px;
+    left: 0;
+    height: 2px;
+    background: var(--line-strong);
+    content: '';
+    transform: scaleY(0.5);
+    transform-origin: bottom;
+    transition:
+      background-color 0.2s,
+      transform 0.2s;
+  }
+
+  .search:focus-within::after {
+    background: var(--accent);
+    transform: none;
+  }
+
+  input {
+    flex: 1;
+    min-width: 0;
+    min-height: 44px;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--text);
+    font: inherit;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    outline: none;
+    transition:
+      min-height 0.3s var(--ease-out),
+      font-size 0.3s var(--ease-out);
+  }
+
+  input::placeholder {
+    color: var(--muted);
+    opacity: 1;
+  }
+
+  /* Compact while the toolbar is pinned, like the filters. */
+  :global([data-stuck]) input {
+    min-height: 36px;
+    font-size: 0.875rem;
+  }
+
+  kbd {
+    display: grid;
+    place-items: center;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--line-strong);
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 0.75rem;
+  }
+
+  .search:focus-within kbd,
+  input:not(:placeholder-shown) ~ kbd {
+    display: none;
+  }
+
+  /* Rows and months the search hides, whatever display their view gives them. */
+  :global([data-search][hidden]),
+  :global([data-search-group][hidden]) {
+    display: none !important;
+  }
+
+  @media (max-width: 640px) {
+    /* Its own row on phones, above the filters. */
+    .search {
+      flex-basis: 100%;
+      order: -1;
+      max-width: none;
+      margin-left: 0;
+    }
+
+    kbd {
+      display: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .search::after,
+    input {
+      transition: none;
+    }
+  }
+</style>

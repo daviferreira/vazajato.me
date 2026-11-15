@@ -4,6 +4,7 @@ import { Image } from 'astro:assets';
 import Icon from './Icon.astro';
 
 import { formatDate, slug, sourceImage, sources } from '../lib/data.js';
+import { searchText } from '../lib/search.js';
 
 // Rendered as a fragment (/vistas/tabela/...) and fetched when first shown;
 // styles live in src/styles/views.css, sorting in src/scripts/table-sort.ts.
@@ -48,6 +49,7 @@ const columns = [
           data-date={publishDate}
           data-title={title}
           data-outlet={sources[source].name}
+          data-search={searchText({ title, topics }, sources[source].name)}
         >
           <td class="date">
             <time datetime={publishDate}>{formatDate(publishDate)}</time>

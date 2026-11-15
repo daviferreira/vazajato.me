@@ -2,7 +2,8 @@
 import Article from './Article.astro';
 import Icon from './Icon.astro';
 
-import { monthTitle } from '../lib/data.js';
+import { monthTitle, sources } from '../lib/data.js';
+import { searchText } from '../lib/search.js';
 
 const { articles, month } = Astro.props;
 const title = monthTitle(month);
@@ -10,10 +11,12 @@ const id = `mes-${month}`;
 const count = `${articles.length} ${articles.length === 1 ? 'reportagem' : 'reportagens'}`;
 ---
 
-<section class="month" aria-labelledby={id}>
+<section class="month" aria-labelledby={id} data-search-group>
   <header class="head">
     <h2 id={id}>{title}</h2>
-    <span class="count">{count}</span>
+    <span class="count" data-search-count>
+      {count}
+    </span>
     <div class="nav" data-row-nav hidden>
       <button type="button" aria-label={`Anteriores de ${title}`} data-prev>
         <Icon name="left" size={20} />
@@ -26,7 +29,7 @@ const count = `${articles.length} ${articles.length === 1 ? 'reportagem' : 'repo
   <div class="row" data-row tabindex="0" role="region" aria-label={title}>
     <ul class="cards" data-cards>
       {articles.map((article) => (
-        <li>
+        <li data-search={searchText(article, sources[article.source].name)}>
           <Article {...article} />
         </li>
       ))}

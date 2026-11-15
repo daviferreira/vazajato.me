@@ -2,6 +2,7 @@
 import Filters from './Filters.astro';
 import Footer from './Footer.astro';
 import Month from './Month.astro';
+import Search from './Search.astro';
 import SiteHeader from './SiteHeader.astro';
 import ViewToggle from './ViewToggle.astro';
 
@@ -51,10 +52,12 @@ const tableBones = [...Array(10).keys()];
   <div class="sentinel" data-toolbar-sentinel aria-hidden="true"></div>
   <div class="toolbar" data-toolbar>
     <Filters source={source} topic={topic} />
+    <Search />
     <ViewToggle />
   </div>
 
   <div class="panels">
+    <p class="search-status" data-search-status aria-live="polite"></p>
     <div class="panel" data-panel="cards" data-months>
       {groupByMonth(articles).map((month) => (
         <Month {...month} />
@@ -133,6 +136,7 @@ const tableBones = [...Array(10).keys()];
         .querySelectorAll('[data-list], [data-items]')
         .forEach((el) => el.append(...[...el.children].reverse()));
     }
+    document.dispatchEvent(new CustomEvent('timeline:loaded'));
   };
 
   const shown = () => document.documentElement.dataset.view;
@@ -326,6 +330,16 @@ const tableBones = [...Array(10).keys()];
 
   .panels {
     padding-bottom: 32px;
+  }
+
+  .search-status {
+    padding: 20px var(--gutter) 0;
+    color: var(--body);
+    font-size: 0.9375rem;
+  }
+
+  .search-status:empty {
+    display: none;
   }
 
   .panels :global(.loading) {

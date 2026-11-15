@@ -9,6 +9,7 @@ import {
   sourceImage,
   sources,
 } from '../lib/data.js';
+import { searchText } from '../lib/search.js';
 
 // A news-site feed: cover left, kicker, headline and byline right.
 // Rendered as a fragment (/vistas/lista/...) and fetched when first shown;
@@ -18,10 +19,10 @@ const { articles } = Astro.props;
 
 <div class="list-view" data-list>
   {groupByMonth(articles).map(({ month, articles }) => (
-    <section class="group" aria-labelledby={`lista-${month}`}>
+    <section class="group" aria-labelledby={`lista-${month}`} data-search-group>
       <header class="head">
         <h2 id={`lista-${month}`}>{monthTitle(month)}</h2>
-        <span class="count">
+        <span class="count" data-search-count>
           {articles.length}{' '}
           {articles.length === 1 ? 'reportagem' : 'reportagens'}
         </span>
@@ -31,7 +32,12 @@ const { articles } = Astro.props;
           ({ articleId, publishDate, source, title, topics, url }) => {
             const tags = topics.filter(Boolean);
             return (
-              <li>
+              <li
+                data-search={searchText(
+                  { title, topics },
+                  sources[source].name,
+                )}
+              >
                 <article class="story">
                   <span
                     class="cover"
