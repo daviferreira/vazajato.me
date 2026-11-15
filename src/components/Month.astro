@@ -209,30 +209,28 @@ const count = `${articles.length} ${articles.length === 1 ? 'reportagem' : 'repo
     border-left: 0;
   }
 
-  /* Phones: one card at a time, snapped to the middle, with its neighbours
-     peeking in at both sides. The fade only covers those peeks. */
+  /* Phones: one card at a time, snapped to the middle, with a slice of
+     its neighbours showing at both sides. A light fade softens the edges. */
   @media (max-width: 640px) {
     .row {
-      --card: min(320px, 74vw);
-      --fade: calc((100vw - var(--card)) / 2);
+      --card: min(400px, calc(100vw - 80px));
+      --space: 8px;
+      --fade: 16px;
       scroll-padding-inline: 0;
     }
 
     /* Room enough for the first and last cards to reach the middle. */
     .cards {
-      padding-inline: max(0px, calc((100vw - var(--card)) / 2 - 28px));
+      padding-inline: calc((100vw - var(--card)) / 2 - var(--space));
     }
 
-    /* One card in view at a time, so no rules between them. */
-    .cards li {
+    /* Tighter gap and no rules, so the neighbours actually peek in. */
+    .cards li,
+    .cards li:nth-child(1 of :not([hidden])) {
       width: var(--card);
+      padding-inline: var(--space);
       border-left: 0;
       scroll-snap-align: center;
-    }
-
-    /* Keep both sides even so centring the box centres the card. */
-    .cards li:nth-child(1 of :not([hidden])) {
-      padding-left: 28px;
     }
   }
 
