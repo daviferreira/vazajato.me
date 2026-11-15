@@ -330,10 +330,15 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href.replace(
     outline-offset: 2px;
   }
 
-  /* <main> takes focus from the skip link only so the next Tab starts
+  /* The target takes focus from the skip link only so the next Tab starts
      there; it needs no ring of its own. */
   #conteudo:focus {
     outline: none;
+  }
+
+  /* On the timeline it lands on the articles, below the pinned toolbar. */
+  #conteudo {
+    scroll-margin-top: var(--toolbar-h, 0px);
   }
 
   .visually-hidden {
