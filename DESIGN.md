@@ -307,7 +307,7 @@ Set as type, like a newspaper's section navigation, not as app controls.
 
 Footer share links: 40px squares, raised background, strong hairline, ink glyph; border turns blue on hover.
 
-Month previous/next: 44px solid ink squares with a 2px blue border and a ground-coloured 20px chevron, so the way through a row is hard to miss; hover fills them blue with accent-ink glyph, press scales to 94%; at the end of a row the button drops to a strong-hairline outline with a muted glyph at 60% opacity.
+Month previous/next: 44px squares with a 2px ink border, no fill and a 20px ink chevron, so the way through a row is hard to miss; hover fills them blue with a blue border and accent-ink glyph, press scales to 94%; at the end of a row the button drops to a strong-hairline outline with a muted glyph at 60% opacity.
 
 ### Theme toggle
 
