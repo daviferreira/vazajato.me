@@ -33,8 +33,10 @@ const tags = topics.filter(Boolean);
     <p class="byline">
       <Image src={sourceImage[source]} alt="" width={40} height={40} />
       <span>{name}</span>
-      <span aria-hidden="true">—</span>
-      <time datetime={publishDate}>{formatDate(publishDate)}</time>
+      <span aria-hidden="true">•</span>
+      <time datetime={publishDate}>
+        {formatDate(publishDate, { year: false })}
+      </time>
       <span class="position" aria-hidden="true"></span>
     </p>
   </div>

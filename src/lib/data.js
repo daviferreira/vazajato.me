@@ -86,9 +86,11 @@ const SHORT_MONTHS = [
   'dez',
 ];
 
-export const formatDate = (date) => {
+// "9 jun 2019", or "9 jun" where a month heading already gives the year.
+export const formatDate = (date, { year: withYear = true } = {}) => {
   const [year, month, day] = date.split('-');
-  return `${Number(day)} ${SHORT_MONTHS[Number(month) - 1]} ${year}`;
+  const short = `${Number(day)} ${SHORT_MONTHS[Number(month) - 1]}`;
+  return withYear ? `${short} ${year}` : short;
 };
 
 // "267 reportagens de 20 veículos, de junho de 2019 a março de 2024"
