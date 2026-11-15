@@ -1,5 +1,6 @@
 ---
 import CommandPalette from './CommandPalette.astro';
+import Icon from './Icon.astro';
 import ThemeToggle from './ThemeToggle.astro';
 ---
 
@@ -17,6 +18,7 @@ import ThemeToggle from './ThemeToggle.astro';
       rel="noopener noreferrer"
       target="_blank"
     >
+      <Icon name="sheet" size={16} />
       Planilha de dados
     </a>
     <a
@@ -25,6 +27,7 @@ import ThemeToggle from './ThemeToggle.astro';
       rel="noopener noreferrer"
       target="_blank"
     >
+      <Icon name="folder" size={16} />
       Arquivos com diálogos
     </a>
   </nav>
@@ -79,6 +82,9 @@ import ThemeToggle from './ThemeToggle.astro';
   }
 
   .links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     color: var(--muted);
     text-decoration: none;
   }
