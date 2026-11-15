@@ -52,6 +52,9 @@ import Icon from './Icon.astro';
           '[data-search]:not([hidden])',
         ).length;
         group.hidden = shown === 0;
+        group
+          .querySelector<HTMLElement>('[data-cards]')
+          ?.style.setProperty('--total', String(shown));
         group.querySelector('[data-search-count]').textContent =
           shown === total ? plural(total) : `${shown} de ${plural(total)}`;
       });

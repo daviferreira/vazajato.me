@@ -27,7 +27,7 @@ const count = `${articles.length} ${articles.length === 1 ? 'reportagem' : 'repo
     </div>
   </header>
   <div class="row" data-row tabindex="0" role="region" aria-label={title}>
-    <ul class="cards" data-cards>
+    <ul class="cards" style={`--total: ${articles.length}`} data-cards>
       {articles.map((article, i) => (
         <li data-search={searchText(article, sources[article.source].name)}>
           <Article {...article} priority={first && i === 0} />
@@ -192,6 +192,18 @@ const count = `${articles.length} ${articles.length === 1 ? 'reportagem' : 'repo
     width: max-content;
     padding: 24px var(--gutter) 32px;
     list-style: none;
+    /* Each card's position in the row; search updates --total, and hidden
+       cards don't count, so numbers stay right whatever is filtered. */
+    counter-reset: card total var(--total);
+  }
+
+  .cards li:not([hidden]) {
+    counter-increment: card;
+  }
+
+  /* "1/1" says nothing: drop it when only one card is showing. */
+  .cards:not(:has(li:not([hidden]) ~ li:not([hidden]))) :global(.position) {
+    display: none;
   }
 
   /* Entries are columns divided by hairline rules, not boxes. */
