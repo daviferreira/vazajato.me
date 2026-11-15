@@ -4,10 +4,10 @@ import ThemeToggle from './ThemeToggle.astro';
 
 <header class="bar">
   <a class="wordmark" href="/" aria-label="vazajato.me, página inicial">
-    <span class="hash" aria-hidden="true">
-      #
+    #vazajato
+    <span class="cursor" aria-hidden="true">
+      _
     </span>
-    vazajato
   </a>
   <nav class="links" aria-label="Arquivos">
     <a
@@ -39,24 +39,28 @@ import ThemeToggle from './ThemeToggle.astro';
 
   .wordmark {
     color: var(--text);
-    font-size: 0.9375rem;
-    font-weight: 600;
-    letter-spacing: 0.18em;
+    font-family: var(--mono);
+    font-size: 1rem;
+    letter-spacing: 0.04em;
     text-decoration: none;
-    text-transform: uppercase;
   }
 
-  .hash {
-    display: inline-grid;
-    place-items: center;
-    width: 1.6em;
-    height: 1.6em;
-    margin-right: 0.6em;
-    border: 1.5px solid currentColor;
-    border-radius: 4px;
-    font-weight: 800;
-    letter-spacing: 0;
-    transform: skewX(-10deg);
+  /* A terminal cursor after the name; holds still for reduced motion. */
+  .cursor {
+    color: var(--gold);
+    animation: blink 1.1s steps(1) infinite;
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cursor {
+      animation: none;
+    }
   }
 
   .links {

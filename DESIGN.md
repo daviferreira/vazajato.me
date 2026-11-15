@@ -69,10 +69,10 @@ typography:
     fontSize: '0.9375rem'
     fontWeight: 500
   wordmark:
-    fontFamily: "'Ronzino', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-    fontSize: '0.9375rem'
-    fontWeight: 600
-    letterSpacing: '0.18em'
+    fontFamily: "'Necto Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace"
+    fontSize: '1rem'
+    fontWeight: 400
+    letterSpacing: '0.04em'
   label:
     fontFamily: "'Necto Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace"
     fontSize: '0.6875rem'
@@ -162,7 +162,7 @@ components:
 
 The archive is a hand of cards dealt on a plain charcoal table. Every month is one horizontal row of cards laid left to right, and the months stack in order down the page, so chronology reads twice: across a row and down the page. Cards sit square and rise when the pointer or focus reaches them. The table is quiet so the reporting, its cover images and its outlets, carries the colour.
 
-The material is neutral and documentary: an achromatic ground, card faces one lightness step above it, hairline borders, a grotesk for headings and a quiet sans for everything a person reads, and small tracked monospace capitals for data (dates, counts, topic tags). There is exactly one accent, a warm gold, and it is rationed to state: focus, the active filter, the current menu item, the hovered control, the theme toggle's ball, and the 404 page's single action. Density is moderate: generous gutters, cards sized for a cover and a three-line title, rows that bleed off the right edge to show they scroll.
+The material is neutral and documentary: an achromatic ground, card faces one lightness step above it, hairline borders, a grotesk for headings and a quiet sans for everything a person reads, and small tracked monospace capitals for data (dates, counts, topic tags). There is exactly one accent, a warm gold, and it is rationed to state: focus, the active filter, the current menu item, the hovered control, the theme toggle's ball, the wordmark's cursor, and the 404 page's single action. Density is moderate: generous gutters, cards sized for a cover and a three-line title, rows that bleed off the right edge to show they scroll.
 
 Two themes ship and share every token name. Dark (charcoal) is the default and is used whenever the system prefers dark or gives no preference; light (paper) is used when the system prefers light or the reader picks it with the toggle, which remembers the choice.
 
@@ -181,7 +181,7 @@ A colourless table with one warm light on it: every neutral is pure grey (chroma
 
 ### Primary
 
-- **Dealer's Gold** (`gold` dark, `paper-gold` light): focus outline (2px, 3px offset), the active filter's double border, the current-item dot in menus, hovered round button and toggle borders, the toggle ball, text selection, the newsletter link underline, and the fill of the 404 return button. Light theme uses a deeper gold so the focus ring keeps 3:1 against paper.
+- **Dealer's Gold** (`gold` dark, `paper-gold` light): focus outline (2px, 3px offset), the active filter's double border, the current-item dot in menus, hovered round button and toggle borders, the toggle ball, text selection, the wordmark's blinking cursor, the newsletter link underline, and the fill of the 404 return button. Light theme uses a deeper gold so the focus ring keeps 3:1 against paper.
 - **Gold Ink** (`gold-ink` / `paper-gold-ink`): text and glyphs set on gold (selection text, the toggle's active icon, the 404 button label).
 
 ### Neutral
@@ -226,7 +226,7 @@ A colourless table with one warm light on it: every neutral is pure grey (chroma
 - **Prose** (400, 1.125rem, 1.7, max 68ch): newsletter reprints.
 - **Caption** (400, 0.875rem): outlet names on cards, header links, the footer, the back link, and filter controls on phones.
 - **Control** (500, 0.9375rem): filter controls and menu items.
-- **Wordmark** (600, 0.9375rem, 0.18em, uppercase): the "vazajato" mark in the top bar.
+- **Wordmark** (mono, 1rem, 0.04em, lowercase): `#vazajato_` in the top bar, the one mono use that is not data.
 - **Label** (mono, 0.6875rem, 0.14em, uppercase): dates, article counts, topic tags.
 
 ### Named Rules
@@ -259,7 +259,7 @@ Flat by default. Depth comes from tone: the ground, a card face one step off it,
 
 ## Shapes
 
-Small, firm corners on a three-step scale: 4px for tags, menu items and the clear button; 6px (`--radius`) for filter controls and the gold button; 8px for cards, menus and embedded frames. Round shapes are reserved for circular things: 40px icon buttons, outlet avatars (20px circles), the toggle's pill track and ball, the current-item dot. Borders are 1px hairlines everywhere; the only heavier stroke is the wordmark's outlined # box (1.5px, 4px corners, skewed -10deg, in text ink).
+Small, firm corners on a three-step scale: 4px for tags, menu items and the clear button; 6px (`--radius`) for filter controls and the gold button; 8px for cards, menus and embedded frames. Round shapes are reserved for circular things: 40px icon buttons, outlet avatars (20px circles), the toggle's pill track and ball, the current-item dot. Borders are 1px hairlines everywhere.
 
 ## Components
 
@@ -297,7 +297,7 @@ A pill switch after the Astro error overlay's toggle: 60px by 32px track in card
 
 ### Navigation (top bar)
 
-Wordmark left (outlined skewed # box plus tracked uppercase "vazajato" in ink), file links right in muted ink that turn ink and underline on hover, toggle at the far right. Padding 20px by the gutter.
+Wordmark left (`#vazajato` in Necto Mono and ink, followed by a gold `_` cursor that blinks every 1.1s and holds still with reduced motion), file links right in muted ink that turn ink and underline on hover, toggle at the far right. Padding 20px by the gutter.
 
 ### Icons
 
