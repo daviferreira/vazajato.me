@@ -93,17 +93,17 @@ const count = `${articles.length} ${articles.length === 1 ? 'reportagem' : 'repo
     display: none;
   }
 
-  /* Solid ink buttons so the way through a row is hard to miss; the accent under
-     the pointer; an outline only once there is nothing more that way. */
+  /* Ink-ringed buttons with no fill; the accent fills them under the
+     pointer; a muted outline once there is nothing more that way. */
   .nav button {
     display: grid;
     place-items: center;
     width: 44px;
     height: 44px;
-    border: 2px solid var(--accent);
+    border: 2px solid var(--text);
     border-radius: 50%;
-    background: var(--text);
-    color: var(--bg);
+    background: transparent;
+    color: var(--text);
     cursor: pointer;
     transition:
       background-color 0.2s,
