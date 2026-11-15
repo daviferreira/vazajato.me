@@ -161,10 +161,11 @@ const views = [
     content: attr(data-tip);
     opacity: 0;
     pointer-events: none;
-    transform: translate(-50%, -2px);
+    transform: translate(-50%, -6px);
     transition:
-      opacity 0.15s,
-      transform 0.15s var(--ease-out);
+      opacity 0.18s,
+      transform 0.18s var(--ease-out),
+      visibility 0.18s allow-discrete;
     visibility: hidden;
   }
 
@@ -172,13 +173,15 @@ const views = [
   :global([data-stuck]) button:focus-visible::after {
     opacity: 1;
     transform: translate(-50%, 0);
+    transition-duration: 0.25s;
     visibility: visible;
   }
 
   @media (prefers-reduced-motion: reduce) {
     .ready .pill,
     button,
-    button span {
+    button span,
+    button::after {
       transition: none;
     }
   }

@@ -116,7 +116,20 @@ const { source, topic } = Astro.props;
     aria-label="Mais recentes primeiro"
     hidden
   >
-    <Icon name="sort" />
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.75"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path class="arrow-up" d="M8 4v16M4 8l4-4 4 4" />
+      <path class="arrow-down" d="M16 20V4M12 16l4 4 4-4" />
+    </svg>
     <span class="sort-label" data-sort-label>
       Mais recentes primeiro
     </span>
@@ -322,8 +335,20 @@ const { source, topic } = Astro.props;
     color: var(--body);
   }
 
-  .sort :global(svg) {
-    color: var(--muted);
+  /* The lit arrow names the order on screen: up oldest first, down newest. */
+  .sort path {
+    color: var(--text);
+    opacity: 0.35;
+    transition: opacity 0.25s var(--ease-out);
+  }
+
+  .sort .arrow-up,
+  :global(:root[data-order='desc']) .sort .arrow-down {
+    opacity: 1;
+  }
+
+  :global(:root[data-order='desc']) .sort .arrow-up {
+    opacity: 0.35;
   }
 
   .menu {
@@ -339,7 +364,28 @@ const { source, topic } = Astro.props;
     background: var(--surface);
     box-shadow: 0 12px 32px oklch(0 0 0 / 0.28);
     list-style: none;
-    animation: drop 0.22s var(--ease-out);
+    transform-origin: top left;
+    transition:
+      opacity 0.3s var(--ease-out),
+      transform 0.3s var(--ease-out);
+  }
+
+  /* Enter from above; on close, keep the content rendered until it fades. */
+  details:not([open]) .menu {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.97);
+    transition-duration: 0.2s;
+  }
+
+  @starting-style {
+    details[open] .menu {
+      opacity: 0;
+      transform: translateY(-12px) scale(0.96);
+    }
+  }
+
+  details::details-content {
+    transition: content-visibility 0.2s allow-discrete;
   }
 
   .menu ul {
@@ -427,13 +473,6 @@ const { source, topic } = Astro.props;
     display: none;
   }
 
-  @keyframes drop {
-    from {
-      opacity: 0;
-      transform: translateY(-6px);
-    }
-  }
-
   @media (max-width: 640px) {
     .filters {
       gap: 0 20px;
@@ -450,6 +489,7 @@ const { source, topic } = Astro.props;
     .filter:nth-child(2) .menu {
       right: -12px;
       left: auto;
+      transform-origin: top right;
     }
 
     .menu {
@@ -475,8 +515,10 @@ const { source, topic } = Astro.props;
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .menu {
-      animation: none;
+    .menu,
+    .sort path,
+    details::details-content {
+      transition: none;
     }
 
     .control {
