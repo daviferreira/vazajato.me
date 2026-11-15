@@ -40,7 +40,7 @@ const { source, topic } = Astro.props;
       </ul>
     </details>
     {source && (
-      <a class="clear" href="/" aria-label="Remover filtro de veículo">
+      <a class="clear hit" href="/" aria-label="Remover filtro de veículo">
         <Icon name="close" size={16} />
       </a>
     )}
@@ -73,7 +73,7 @@ const { source, topic } = Astro.props;
       </ul>
     </details>
     {topic && (
-      <a class="clear" href="/" aria-label="Remover filtro de tópico">
+      <a class="clear hit" href="/" aria-label="Remover filtro de tópico">
         <Icon name="close" size={16} />
       </a>
     )}
@@ -268,6 +268,7 @@ const { source, topic } = Astro.props;
   .menu a {
     display: flex;
     align-items: center;
+    min-height: 44px;
     gap: 10px;
     padding: 8px 10px;
     color: var(--body);

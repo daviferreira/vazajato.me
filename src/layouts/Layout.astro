@@ -153,7 +153,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href.replace(
     --line-strong: oklch(0.93 0 0 / 0.42);
     --text: oklch(0.94 0 0);
     --body: oklch(0.86 0 0);
-    --muted: oklch(0.74 0 0);
+    --muted: oklch(0.77 0 0);
     --accent: oklch(0.74 0.13 235);
     --accent-ink: oklch(0.2 0.04 235);
     --scrollbar: oklch(0.42 0 0);
@@ -179,8 +179,10 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href.replace(
       --line-strong: oklch(0.2 0 0 / 0.4);
       --text: oklch(0.2 0 0);
       --body: oklch(0.3 0 0);
-      --muted: oklch(0.47 0 0);
-      --accent: oklch(0.52 0.12 240);
+      --muted: oklch(0.41 0 0);
+      --accent: oklch(0.43 0.12 240);
+      /* The highlighter keeps the lighter blue, so text stays legible on it. */
+      --highlight: color-mix(in oklch, oklch(0.52 0.12 240) 62%, transparent);
       --accent-ink: oklch(0.99 0.01 240);
       --scrollbar: oklch(0.75 0 0);
     }
@@ -196,8 +198,10 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href.replace(
     --line-strong: oklch(0.2 0 0 / 0.4);
     --text: oklch(0.2 0 0);
     --body: oklch(0.3 0 0);
-    --muted: oklch(0.47 0 0);
-    --accent: oklch(0.52 0.12 240);
+    --muted: oklch(0.41 0 0);
+    --accent: oklch(0.43 0.12 240);
+    /* The highlighter keeps the lighter blue, so text stays legible on it. */
+    --highlight: color-mix(in oklch, oklch(0.52 0.12 240) 62%, transparent);
     --accent-ink: oklch(0.99 0.01 240);
     --scrollbar: oklch(0.75 0 0);
   }
@@ -339,6 +343,22 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href.replace(
   /* On the timeline it lands on the articles, below the pinned toolbar. */
   #conteudo {
     scroll-margin-top: var(--toolbar-h, 0px);
+  }
+
+  /* Small controls keep their look but get an invisible hit area of at
+     least 44px (WCAG 2.5.5, AAA target size). */
+  .hit {
+    position: relative;
+  }
+
+  .hit::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: max(100%, 44px);
+    height: max(100%, 44px);
+    content: '';
+    transform: translate(-50%, -50%);
   }
 
   .visually-hidden {

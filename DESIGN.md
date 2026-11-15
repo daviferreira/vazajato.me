@@ -11,9 +11,9 @@ colors:
   hairline-strong: 'oklch(0.93 0 0 / 0.42)'
   ink: 'oklch(0.94 0 0)'
   body-ink: 'oklch(0.86 0 0)'
-  muted-ink: 'oklch(0.74 0 0)'
+  muted-ink: 'oklch(0.77 0 0)'
   scrollbar-thumb: 'oklch(0.42 0 0)'
-  paper-accent: 'oklch(0.52 0.12 240)'
+  paper-accent: 'oklch(0.43 0.12 240)'
   paper-accent-ink: 'oklch(0.99 0.01 240)'
   paper-ground: 'oklch(0.965 0 0)'
   paper-card-face: 'oklch(1 0 0)'
@@ -22,7 +22,7 @@ colors:
   paper-hairline-strong: 'oklch(0.2 0 0 / 0.4)'
   paper-ink: 'oklch(0.2 0 0)'
   paper-body-ink: 'oklch(0.3 0 0)'
-  paper-muted-ink: 'oklch(0.47 0 0)'
+  paper-muted-ink: 'oklch(0.41 0 0)'
   paper-scrollbar-thumb: 'oklch(0.75 0 0)'
   easter-egg-red: 'oklch(0.65 0.22 25)'
   photo-scrim: 'oklch(0 0 0 / 0.45)'
@@ -181,8 +181,8 @@ A colourless table with one blue light on it: every neutral is pure grey (chroma
 
 ### Primary
 
-- **Telegram Blue** (`accent` dark, `paper-accent` light): focus outline (2px, 3px offset), the active filter's double border, the current-item dot in menus, hovered round button and toggle borders, the toggle ball, text selection, the wordmark's blinking cursor, the newsletter link underline, and the fill of the 404 return button. Dark blue is #47b7f1 (7.7:1 on the ground); light theme uses a deeper #0070a6 (4.9:1 on paper) so the focus ring and fills keep contrast.
-- **Accent Ink** (`accent-ink` / `paper-accent-ink`): text and glyphs set on blue: near-black in dark (8.0:1), white in light (5.3:1) (selection text, the toggle's active icon, the 404 button label).
+- **Telegram Blue** (`accent` dark, `paper-accent` light): focus outline (2px, 3px offset), the active filter's double border, the current-item dot in menus, hovered round button and toggle borders, the toggle ball, text selection, the wordmark's blinking cursor, the newsletter link underline, and the fill of the 404 return button. Dark blue is #47b7f1 (7.7:1 on the ground); light theme uses a deeper #00568a (7.1:1 on paper) so the focus ring and fills keep contrast.
+- **Accent Ink** (`accent-ink` / `paper-accent-ink`): text and glyphs set on blue: near-black in dark (8.0:1), white in light (7.6:1) (selection text, the toggle's active icon, the 404 button label).
 
 ### Neutral
 
@@ -315,7 +315,7 @@ A square switch after the Astro error overlay's toggle: 60px by 32px track in ca
 
 ### Navigation (top bar)
 
-Wordmark left (`#vazajato` in Necto Mono and ink, followed by a blue `_` cursor that blinks every 1.1s and holds still with reduced motion), file links right in muted ink that turn ink and underline on hover, toggle at the far right. Padding 20px by the gutter.
+Wordmark left (`#vazajato` in Necto Mono and ink, followed by a blue `_` cursor that blinks four times at 1.1s, under the 5s WCAG allows, then rests visible; it holds still with reduced motion), file links right in muted ink that turn ink and underline on hover, toggle at the far right. Padding 20px by the gutter.
 
 ### Icons
 

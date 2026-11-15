@@ -4,7 +4,7 @@ import ThemeToggle from './ThemeToggle.astro';
 ---
 
 <header class="bar">
-  <a class="wordmark" href="/" aria-label="vazajato.me, página inicial">
+  <a class="wordmark hit" href="/" aria-label="vazajato.me, página inicial">
     #vazajato
     <span class="cursor" aria-hidden="true">
       _
@@ -12,6 +12,7 @@ import ThemeToggle from './ThemeToggle.astro';
   </a>
   <nav class="links" aria-label="Arquivos">
     <a
+      class="hit"
       href="https://docs.google.com/spreadsheets/d/1y9bixq_sZ5TOwwqfoagRKX4zCm1Ka6hXbch9qN6OtKI"
       rel="noopener noreferrer"
       target="_blank"
@@ -19,6 +20,7 @@ import ThemeToggle from './ThemeToggle.astro';
       Planilha de dados
     </a>
     <a
+      class="hit"
       href="https://www.dropbox.com/sh/a2wijlhwezq8yyo/AABTEZI4XWfjPEmHeKT7bbcYa?dl=0"
       rel="noopener noreferrer"
       target="_blank"
@@ -49,10 +51,12 @@ import ThemeToggle from './ThemeToggle.astro';
     text-decoration: none;
   }
 
-  /* A terminal cursor after the name; holds still for reduced motion. */
+  /* A terminal cursor after the name. It blinks four times (under the 5s
+     WCAG allows for unstoppable blinking), then rests visible; it holds
+     still for reduced motion. */
   .cursor {
     color: var(--accent);
-    animation: blink 1.1s steps(1) infinite;
+    animation: blink 1.1s steps(1) 4;
   }
 
   @keyframes blink {

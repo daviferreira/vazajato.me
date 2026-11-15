@@ -7,7 +7,7 @@ import Icon from './Icon.astro';
 ---
 
 <button
-  class="trigger"
+  class="trigger hit"
   type="button"
   aria-haspopup="dialog"
   aria-keyshortcuts="Meta+K Control+K"
@@ -587,7 +587,8 @@ import Icon from './Icon.astro';
     display: flex;
     align-items: baseline;
     gap: 16px;
-    padding: 8px 10px;
+    min-height: 44px;
+    padding: 10px;
     color: var(--body);
     cursor: pointer;
   }
