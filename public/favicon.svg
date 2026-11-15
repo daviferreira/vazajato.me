@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    .bg { fill: #f6f6f6 }
+    .ink { fill: #222 }
+    .cursor { fill: #0070a6 }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #1c1c1c }
+      .ink { fill: #eee }
+      .cursor { fill: #47b7f1 }
+    }
+  </style>
+  <rect class="bg" width="32" height="32"/>
+  <path class="ink" d="M7 8h2v16H7zM12 8h2v16h-2zM4 12h13v2H4zM4 18h13v2H4z"/>
+  <rect class="cursor" x="19" y="21" width="9" height="3"/>
+</svg>

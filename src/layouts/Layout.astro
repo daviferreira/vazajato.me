@@ -18,8 +18,9 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href.replace(
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <link rel="icon" href="/favicon-32x32.png" type="image/png" />
-    <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+    <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link
