@@ -282,7 +282,7 @@ Month sections separated by space, no rules; each story is a full-width row: a 2
 
 ### Table view
 
-One table of every story: Data (tabular figures, body ink), Título (500, ink, blue underline on hover), Veículo (avatar and name, no wrap), Tópicos (0.875rem, muted, joined by middots). Column heads in 500 weight, 0.8125rem, muted, over a strong hairline, hairline rows, baseline-aligned cells, 24px column gaps, row hover in card face. Scrolls sideways inside its own region below 820px. Data, Título and Veículo heads are sort buttons: click sorts ascending, again descending (pt-BR collation, punctuation ignored); the sorted head turns ink with an up or down arrow and carries `aria-sort`, idle heads preview the arrow on hover. The toolbar sort button re-sorts the table by date in its direction.
+One table of every story: Data (tabular figures, body ink), Título (500, ink, blue underline on hover), Veículo (avatar and name, no wrap), Tópicos (0.875rem, muted, joined by middots). Column heads in 500 weight, 0.8125rem, muted, over a strong hairline, hairline rows, baseline-aligned cells, 24px column gaps, row hover in card face. From 960px the header row sticks just below the pinned toolbar (its live height is exposed as `--toolbar-h`); narrower, the table scrolls sideways inside its own region and the header scrolls with it. Data, Título and Veículo heads are sort buttons: click sorts ascending, again descending (pt-BR collation, punctuation ignored); the sorted head turns ink with an up or down arrow and carries `aria-sort`, idle heads preview the arrow on hover. The toolbar sort button re-sorts the table by date in its direction.
 
 ### Highlighter
 

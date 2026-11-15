@@ -117,6 +117,14 @@ const lead = title.slice(0, title.length - key.length);
     ),
   ).observe(sentinel);
 
+  // Expose the toolbar's live height so the table header can pin below it.
+  new ResizeObserver(() =>
+    document.documentElement.style.setProperty(
+      '--toolbar-h',
+      `${toolbar.offsetHeight}px`,
+    ),
+  ).observe(toolbar);
+
   // Row arrows: scroll by one viewport of cards, disabled at either end.
   document.querySelectorAll('.month').forEach((month) => {
     const row = month.querySelector<HTMLElement>('[data-row]');
