@@ -2,8 +2,8 @@
 name: vazajato.me
 description: Linha do tempo da Vaza Jato, every month dealt as a row of cards on a neutral charcoal table.
 colors:
-  accent: 'oklch(0.74 0.18 355)'
-  accent-ink: 'oklch(0.2 0.05 355)'
+  accent: 'oklch(0.74 0.13 235)'
+  accent-ink: 'oklch(0.2 0.04 235)'
   charcoal-ground: 'oklch(0.22 0 0)'
   card-face: 'oklch(0.25 0 0)'
   raised-control: 'oklch(0.28 0 0)'
@@ -13,8 +13,8 @@ colors:
   body-ink: 'oklch(0.86 0 0)'
   muted-ink: 'oklch(0.74 0 0)'
   scrollbar-thumb: 'oklch(0.42 0 0)'
-  paper-accent: 'oklch(0.56 0.2 358)'
-  paper-accent-ink: 'oklch(0.99 0.01 355)'
+  paper-accent: 'oklch(0.52 0.12 240)'
+  paper-accent-ink: 'oklch(0.99 0.01 240)'
   paper-ground: 'oklch(0.965 0 0)'
   paper-card-face: 'oklch(1 0 0)'
   paper-raised-control: 'oklch(0.93 0 0)'
@@ -162,14 +162,14 @@ components:
 
 The archive is a hand of cards dealt on a plain charcoal table. Every month is one horizontal row of cards laid left to right, and the months stack in order down the page, so chronology reads twice: across a row and down the page. Entries sit square on the page, divided by rules; a row fades out at any edge with more to scroll. The table is quiet so the reporting, its cover images and its outlets, carries the colour.
 
-The material is neutral and documentary: an achromatic ground, hairline rules instead of boxes, square corners, a grotesk for headings and a quiet sans for everything a person reads, set like a newspaper index rather than an app. There is exactly one accent, a hot pink, and it is rationed to state: focus, the active filter, the current menu item, the hovered control, the theme toggle's ball, the wordmark's cursor, and the 404 page's single action. Density is moderate: generous gutters, cards sized for a cover and a three-line title, rows that bleed off the right edge to show they scroll.
+The material is neutral and documentary: an achromatic ground, hairline rules instead of boxes, square corners, a grotesk for headings and a quiet sans for everything a person reads, set like a newspaper index rather than an app. There is exactly one accent, Telegram blue (the app the chats leaked from), and it is rationed to state: focus, the active filter, the current menu item, the hovered control, the theme toggle's ball, the wordmark's cursor, and the 404 page's single action. Density is moderate: generous gutters, cards sized for a cover and a three-line title, rows that bleed off the right edge to show they scroll.
 
 Two themes ship and share every token name. Dark (charcoal) is the default and is used whenever the system prefers dark or gives no preference; light (paper) is used when the system prefers light or the reader picks it with the toggle, which remembers the choice.
 
 **Key Characteristics:**
 
 - Achromatic charcoal or paper ground; entries sit straight on it, divided by column and section rules; corners are square.
-- One pink accent, spent only on state and on a few small marks.
+- One blue accent, spent only on state and on a few small marks.
 - Apfel Grotezk for headings, Ronzino for reading; mono only in the wordmark.
 - Month rows of fixed-width cards that scroll horizontally with snap.
 - Flat at rest; lift and shadow appear only in response to hover, focus or an open menu.
@@ -177,12 +177,12 @@ Two themes ship and share every token name. Dark (charcoal) is the default and i
 
 ## Colors
 
-A colourless table with one hot light on it: every neutral is pure grey (chroma 0) and the only hue in the system is pink at 355 to 358 degrees.
+A colourless table with one blue light on it: every neutral is pure grey (chroma 0) and the only hue in the system is Telegram blue at 235 to 240 degrees.
 
 ### Primary
 
-- **Accent Pink** (`accent` dark, `paper-accent` light): focus outline (2px, 3px offset), the active filter's double border, the current-item dot in menus, hovered round button and toggle borders, the toggle ball, text selection, the wordmark's blinking cursor, the newsletter link underline, and the fill of the 404 return button. Dark pink is #ff74b0 (6.9:1 on the ground); light theme uses a deeper #c82a74 (4.7:1 on paper) so the focus ring and fills keep contrast.
-- **Accent Ink** (`accent-ink` / `paper-accent-ink`): text and glyphs set on pink: near-black in dark (7.3:1), white in light (5.0:1) (selection text, the toggle's active icon, the 404 button label).
+- **Telegram Blue** (`accent` dark, `paper-accent` light): focus outline (2px, 3px offset), the active filter's double border, the current-item dot in menus, hovered round button and toggle borders, the toggle ball, text selection, the wordmark's blinking cursor, the newsletter link underline, and the fill of the 404 return button. Dark blue is #47b7f1 (7.7:1 on the ground); light theme uses a deeper #0070a6 (4.9:1 on paper) so the focus ring and fills keep contrast.
+- **Accent Ink** (`accent-ink` / `paper-accent-ink`): text and glyphs set on blue: near-black in dark (8.0:1), white in light (5.3:1) (selection text, the toggle's active icon, the 404 button label).
 
 ### Neutral
 
@@ -204,7 +204,7 @@ A colourless table with one hot light on it: every neutral is pure grey (chroma 
 
 ### Named Rules
 
-**The Rationed Accent Rule.** Pink marks state, never structure: something is focused, active, current, under the pointer, or the single action on a page. A surface at rest never wears pink; the only pink fills are the toggle ball and, at most, one primary action per page.
+**The Rationed Accent Rule.** Blue marks state, never structure: something is focused, active, current, under the pointer, or the single action on a page. A surface at rest never wears blue; the only blue fills are the toggle ball and, at most, one primary action per page.
 
 **The Same Names Rule.** Both themes redefine the same custom properties (`--bg`, `--surface`, `--raised`, `--line`, `--line-strong`, `--text`, `--body`, `--muted`, `--accent`, `--accent-ink`, `--scrollbar`). Components reference only these names, never a theme-specific value.
 
@@ -252,7 +252,7 @@ Flat. Stories sit straight on the ground, separated by rules; only controls take
 ### Shadow Vocabulary
 
 - **Open menu** (`box-shadow: 0 12px 32px oklch(0 0 0 / 0.28)`): dropdown menus while open.
-- **Active ring** (`box-shadow: inset 0 0 0 1px pink`): doubles the pink border of an active filter control. Not depth; a weight cue.
+- **Active ring** (`box-shadow: inset 0 0 0 1px blue`): doubles the blue border of an active filter control. Not depth; a weight cue.
 
 ### Named Rules
 
@@ -270,11 +270,11 @@ The signature unit: a card whose title link covers the whole card (`.stretched`)
 
 - **No box:** no background, border or corner; the row's column rules separate entries.
 - **Structure:** square 2:1 cover over a 3px strip in the outlet's colour (outlet colour also fills the cover while it loads), then 18px below, at 10px gaps: the topics as a kicker, the title as an Apfel Grotezk headline (700, 1.25rem, line-height 1.15), and a byline pushed to the bottom (18px avatar, outlet, em dash, date).
-- **States:** hover and focus zoom the cover 3% (0.45s, expo-out); focus also draws the pink outline round the entry. Reduced motion drops the zoom.
+- **States:** hover and focus zoom the cover 3% (0.45s, expo-out); focus also draws the blue outline round the entry. Reduced motion drops the zoom.
 
 ### View toggle
 
-Text options at the right of the toolbar: Galeria (the month rows), Lista, Tabela, each a muted stroke icon plus label, no track or border. The pressed option is ink and carries a highlighter band (`--highlight`, lower half of the text) that slides between options (0.45s, expo-out); the others are muted and turn ink on hover. The choice is stored and restored before paint on `<html data-view>`; without JS only cards show and the toggle stays hidden. Full width on phones.
+Text options at the right of the toolbar: Galeria (the month rows), Lista, Tabela, each a muted stroke icon plus label, no track or border. The pressed option is ink with a 2px accent underline that slides between options (0.45s, expo-out); the others are muted and turn ink on hover. The choice is stored and restored before paint on `<html data-view>`; without JS only cards show and the toggle stays hidden. Full width on phones.
 
 ### List view (news feed)
 
@@ -282,11 +282,15 @@ Month sections separated by space, no rules; each story is a full-width row: a 2
 
 ### Table view
 
-One table of every story: Data (tabular figures, body ink), Título (500, ink, pink underline on hover), Veículo (avatar and name, no wrap), Tópicos (0.875rem, muted, joined by middots). Column heads in 500 weight, 0.8125rem, muted, over a strong hairline, hairline rows, baseline-aligned cells, 24px column gaps, row hover in card face. Scrolls sideways inside its own region below 820px. Data, Título and Veículo heads are sort buttons: click sorts ascending, again descending (pt-BR collation, punctuation ignored); the sorted head turns ink with an up or down arrow and carries `aria-sort`, idle heads preview the arrow on hover. The toolbar sort button re-sorts the table by date in its direction.
+One table of every story: Data (tabular figures, body ink), Título (500, ink, blue underline on hover), Veículo (avatar and name, no wrap), Tópicos (0.875rem, muted, joined by middots). Column heads in 500 weight, 0.8125rem, muted, over a strong hairline, hairline rows, baseline-aligned cells, 24px column gaps, row hover in card face. Scrolls sideways inside its own region below 820px. Data, Título and Veículo heads are sort buttons: click sorts ascending, again descending (pt-BR collation, punctuation ignored); the sorted head turns ink with an up or down arrow and carries `aria-sort`, idle heads preview the arrow on hover. The toolbar sort button re-sorts the table by date in its direction.
 
 ### Highlighter
 
-The accent's second job: a pink marker swipe (`mark`, `--highlight` = accent at 62% over the ground) under the lower half of words, with slightly ragged ends. Used on the page title ("Vaza Jato" on the home page, the outlet or topic name elsewhere) and for text selection. It marks what a reader would mark; never a whole paragraph.
+The accent's second job: a blue marker swipe (`.highlight` / `mark`, `--highlight` = accent at 62% over the ground) under the lower half of words, with slightly ragged ends. Used on an applied filter's value and for text selection. It marks what a reader would mark; never a whole paragraph.
+
+### Title scramble
+
+The page title's key words ("Vaza Jato" on the home page, the outlet or topic name elsewhere) unscramble on load: each letter flickers through random lowercase letters and symbols in the accent colour, then settles to the real letter in ink, left to right (first at 250ms, then every 55ms, glyphs change every 50ms). Each glyph is drawn centred in its own letter's slot while the real letter is transparent, so the line never moves. Screen readers get the plain words from a visually hidden copy; without JS or with reduced motion the title is static.
 
 ### Filter controls (outlet and topic menus, sort)
 
@@ -295,23 +299,23 @@ Set as type, like a newspaper's section navigation, not as app controls.
 - **Shape:** no box, background or border; 44px minimum height for touch (36px while pinned), 28px between controls; values truncate at 240px.
 - **Default:** ink text at 0.9375rem, 500 weight, muted chevron that rotates 180deg when open.
 - **Hover:** the value underlines (1px, 4px offset).
-- **Active (a filter is applied):** the value carries the pink highlighter (`.highlight`, the same swipe as the title); the chevron is replaced by a 28px muted clear (x).
-- **Menu:** native `details` disclosure; a card-face panel with hairline border, square corners, 6px padding, open-menu shadow, 300px minimum width, scrolls past 60vh; drops in 6px over 0.22s. Items are 8px 10px, square, raised on hover; the current item is ink, 600 weight, with a 7px pink dot at the right.
+- **Active (a filter is applied):** the value carries the blue highlighter (`.highlight`, the same swipe as the title); the chevron is replaced by a 28px muted clear (x).
+- **Menu:** native `details` disclosure; a card-face panel with hairline border, square corners, 6px padding, open-menu shadow, 300px minimum width, scrolls past 60vh; drops in 6px over 0.22s. Items are 8px 10px, square, raised on hover; the current item is ink, 600 weight, with a 7px blue dot at the right.
 - **Sort:** same text style in body ink with a muted sort glyph; on phones the label is visually hidden and only the glyph shows.
 
 ### Round icon buttons
 
-Footer share links: 40px circles, raised background, strong hairline, ink glyph; border turns pink on hover.
+Footer share links: 40px circles, raised background, strong hairline, ink glyph; border turns blue on hover.
 
-Month previous/next: 44px solid ink circles with a 2px pink border and a ground-coloured 20px chevron, so the way through a row is hard to miss; hover fills them pink with accent-ink glyph, press scales to 94%; at the end of a row the button drops to a strong-hairline outline with a muted glyph at 60% opacity.
+Month previous/next: 44px solid ink circles with a 2px blue border and a ground-coloured 20px chevron, so the way through a row is hard to miss; hover fills them blue with accent-ink glyph, press scales to 94%; at the end of a row the button drops to a strong-hairline outline with a muted glyph at 60% opacity.
 
 ### Theme toggle
 
-A square switch after the Astro error overlay's toggle: 60px by 32px track in card face with a strong hairline, sun and moon stroke glyphs at either end, and a 24px pink square that slides under the active glyph (0.45s, expo-out). The glyph over the ball is pink ink; the other is muted. Border turns pink on hover. Exposed as a switch; hidden until its script runs; uses the system highlight colour in forced-colours mode.
+A square switch after the Astro error overlay's toggle: 60px by 32px track in card face with a strong hairline, sun and moon stroke glyphs at either end, and a 24px blue square that slides under the active glyph (0.45s, expo-out). The glyph over the ball is blue ink; the other is muted. Border turns blue on hover. Exposed as a switch; hidden until its script runs; uses the system highlight colour in forced-colours mode.
 
 ### Navigation (top bar)
 
-Wordmark left (`#vazajato` in Necto Mono and ink, followed by a pink `_` cursor that blinks every 1.1s and holds still with reduced motion), file links right in muted ink that turn ink and underline on hover, toggle at the far right. Padding 20px by the gutter.
+Wordmark left (`#vazajato` in Necto Mono and ink, followed by a blue `_` cursor that blinks every 1.1s and holds still with reduced motion), file links right in muted ink that turn ink and underline on hover, toggle at the far right. Padding 20px by the gutter.
 
 ### Icons
 
@@ -319,14 +323,14 @@ One stroke family on a 24px grid at 1.75 stroke, round caps and joins, inheritin
 
 ### Accent button
 
-Used once, on the 404 page: pink fill, accent-ink label at 600, 12px 18px padding, square corners.
+Used once, on the 404 page: blue fill, accent-ink label at 600, 12px 18px padding, square corners.
 
 ## Do's and Don'ts
 
 ### Do:
 
 - **Do** reference the shared custom properties so every surface works in both themes without extra rules.
-- **Do** keep pink to state and single actions: focus, active, current, hover, the toggle ball, one pink button per page at most.
+- **Do** keep blue to state and single actions: focus, active, current, hover, the toggle ball, one blue button per page at most.
 - **Do** divide with 1px rules; use the strong hairline for controls and section heads.
 - **Do** set entries as kicker, headline and byline, with dates and counts in tabular body figures.
 - **Do** lay new collections of articles out as month rows of ruled columns, scrolling horizontally with snap.
@@ -335,7 +339,7 @@ Used once, on the 404 page: pink fill, accent-ink label at 600, 12px 18px paddin
 
 ### Don't:
 
-- **Don't** fill large areas, panels or headings with pink, or use it at rest to decorate.
+- **Don't** fill large areas, panels or headings with blue, or use it at rest to decorate.
 - **Don't** add a second accent hue; the only other colour on the page comes from cover images, outlet avatars and outlet colour strips.
 - **Don't** put shadows on surfaces at rest.
 - **Don't** tilt or rotate cards.

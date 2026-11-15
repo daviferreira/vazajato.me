@@ -67,8 +67,8 @@ const views = [
 </script>
 
 <style>
-  /* Set as type like the filters; the pressed view is marked with the
-     highlighter, which slides between options. */
+  /* Set as type like the filters; a thin accent underline marks the
+     pressed view and slides between options. */
   .views {
     position: relative;
     display: flex;
@@ -81,13 +81,11 @@ const views = [
 
   .pill {
     position: absolute;
-    bottom: calc(50% - 0.42em);
+    bottom: 6px;
     left: 0;
     width: var(--pill-w, 0);
-    height: 0.6em;
-    border-radius: 0.12em 0.3em 0.18em 0.25em;
-    background: var(--highlight);
-    font-size: 0.9375rem;
+    height: 2px;
+    background: var(--accent);
     transform: translateX(var(--pill-x, 0));
   }
 

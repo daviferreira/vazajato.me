@@ -11,6 +11,10 @@ import { groupByMonth, summary } from '../lib/data.js';
 
 // `title` and `intro` describe the page; `source` / `topic` set the filters.
 const { articles, intro, source, title, topic } = Astro.props;
+
+// The key words of the title unscramble on load.
+const key = title.includes('Vaza Jato') ? 'Vaza Jato' : title;
+const lead = title.slice(0, title.length - key.length);
 ---
 
 <SiteHeader />
@@ -18,14 +22,10 @@ const { articles, intro, source, title, topic } = Astro.props;
 <main>
   <div class="intro">
     <h1>
-      {title.includes('Vaza Jato') ? (
-        <>
-          {title.replace('Vaza Jato', '')}
-          <mark>Vaza Jato</mark>
-        </>
-      ) : (
-        <mark>{title}</mark>
-      )}
+      {lead}
+      <span class="key" data-scramble>
+        {key}
+      </span>
     </h1>
     <div class="aside">
       <p class="lede">{intro}</p>
@@ -64,6 +64,48 @@ const { articles, intro, source, title, topic } = Astro.props;
 <Footer />
 
 <script>
+  // Title scramble: each letter of the key words flickers through random
+  // glyphs, then settles, left to right, and stays as settled spans. Every glyph is drawn centred in its
+  // own letter's slot (the real letter is only painted transparent), so the
+  // line never moves. Screen readers get the plain words throughout.
+  const key = document.querySelector<HTMLElement>('[data-scramble]');
+  if (key && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const text = key.textContent.trim();
+    const glyphs = 'abcdefghijklmnopqrstuvwxyz#%&*+=/<>_';
+    const spoken = document.createElement('span');
+    spoken.className = 'visually-hidden';
+    spoken.textContent = text;
+    const shown = document.createElement('span');
+    shown.setAttribute('aria-hidden', 'true');
+    const slots = [...text].map((char) => {
+      const slot = document.createElement('span');
+      slot.textContent = char;
+      shown.append(slot);
+      return slot;
+    });
+    key.replaceChildren(spoken, shown);
+
+    const start = performance.now();
+    const settle = (i: number) => 250 + i * 55;
+    const end = settle(text.length - 1);
+
+    const frame = (now: number) => {
+      const t = now - start;
+      slots.forEach((slot, i) => {
+        const scrambling = text[i] !== ' ' && t < settle(i);
+        slot.classList.toggle('glyph', scrambling);
+        if (scrambling) {
+          slot.dataset.glyph =
+            glyphs[Math.floor(Math.random() * glyphs.length)];
+        }
+      });
+      // The last frame settles every slot; the spans stay, so the
+      // words keep exactly the width they had while scrambling.
+      if (t < end) setTimeout(() => requestAnimationFrame(frame), 50);
+    };
+    requestAnimationFrame(frame);
+  }
+
   // Mark the toolbar while it is pinned so it can compact itself.
   const toolbar = document.querySelector<HTMLElement>('[data-toolbar]');
   const sentinel = document.querySelector('[data-toolbar-sentinel]');
@@ -119,6 +161,22 @@ const { articles, intro, source, title, topic } = Astro.props;
     font-weight: 600;
     line-height: 1;
     letter-spacing: -0.035em;
+  }
+
+  /* Scramble (see script): glyphs are drawn centred in each letter's slot
+     while the real letter is transparent, so the line never shifts. */
+  .key :global(.glyph) {
+    position: relative;
+    color: transparent;
+  }
+
+  .key :global(.glyph)::after {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    color: var(--accent);
+    content: attr(data-glyph);
+    transform: translateX(-50%);
   }
 
   .aside {
