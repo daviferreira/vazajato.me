@@ -85,15 +85,14 @@ const { articles } = Astro.props;
 
 <style>
   .group {
-    padding: 24px var(--gutter) 8px;
+    padding: clamp(32px, 4vw, 56px) var(--gutter) 0;
   }
 
   .head {
     display: flex;
     align-items: baseline;
     gap: 16px;
-    padding: 12px 0 4px;
-    border-top: 1px solid var(--line-strong);
+    padding-bottom: 8px;
   }
 
   h2 {
@@ -113,17 +112,13 @@ const { articles } = Astro.props;
     list-style: none;
   }
 
-  .stories li + li {
-    border-top: 1px solid var(--line);
-  }
-
   .story {
     position: relative;
     display: grid;
     grid-template-columns: minmax(0, 480px) minmax(0, 1fr);
     align-items: start;
-    gap: 28px;
-    padding: 28px 0;
+    gap: 36px;
+    padding: 32px 0;
     color: var(--body);
     text-decoration: none;
   }
@@ -204,7 +199,7 @@ const { articles } = Astro.props;
     .story {
       grid-template-columns: 1fr;
       gap: 16px;
-      padding: 24px 0;
+      padding: 28px 0;
     }
   }
 

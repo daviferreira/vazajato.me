@@ -160,7 +160,7 @@ components:
 
 **Creative North Star: "The Dealt Archive"**
 
-The archive is a hand of cards dealt on a plain charcoal table. Every month is one horizontal row of cards laid left to right, and the months stack in order down the page, so chronology reads twice: across a row and down the page. Cards sit square and rise when the pointer or focus reaches them. The table is quiet so the reporting, its cover images and its outlets, carries the colour.
+The archive is a hand of cards dealt on a plain charcoal table. Every month is one horizontal row of cards laid left to right, and the months stack in order down the page, so chronology reads twice: across a row and down the page. Entries sit square on the page, divided by rules; a row fades out at any edge with more to scroll. The table is quiet so the reporting, its cover images and its outlets, carries the colour.
 
 The material is neutral and documentary: an achromatic ground, hairline rules instead of boxes, square corners, a grotesk for headings and a quiet sans for everything a person reads, set like a newspaper index rather than an app. There is exactly one accent, a hot pink, and it is rationed to state: focus, the active filter, the current menu item, the hovered control, the theme toggle's ball, the wordmark's cursor, and the 404 page's single action. Density is moderate: generous gutters, cards sized for a cover and a three-line title, rows that bleed off the right edge to show they scroll.
 
@@ -232,7 +232,7 @@ A colourless table with one hot light on it: every neutral is pure grey (chroma 
 
 ### Named Rules
 
-**The Newspaper Index Rule.** Entries are set like a printed index: kicker, headline, byline, divided by rules. No boxes around stories, no tracked mono capitals, no app chrome inside the content.
+**The Newspaper Index Rule.** Entries are set like a printed index: kicker, headline, byline, with vertical column rules between entries in a row and generous space, not horizontal rules, between sections. No boxes around stories, no tracked mono capitals, no app chrome inside the content.
 
 ## Layout
 
@@ -240,7 +240,7 @@ The page is full-bleed with a fluid side gutter (`spacing.gutter`, 16px to 64px)
 
 - **Intro:** title, lede and computed summary. From 1100px it becomes two columns, title left and a column of up to 760px right with a 48px gap, aligned on their last baselines so the summary line sits on the title's last line. Padding clamps 28px to 64px above and 24px to 40px below.
 - **Toolbar:** a full-width row under the intro (12px vertical padding, ground background; a hairline below only while pinned): filters and sort on the left, the view toggle on the right; wraps on narrow screens. From 641px it sticks to the top of the viewport while scrolling; phones leave it in flow. While pinned (`data-stuck`, set by an IntersectionObserver on a 1px sentinel) it compacts: 8px padding, 36px filter controls at 0.875rem and 210px wide, and the view toggle drops to icons (labels stay for screen readers, `title` gives a tooltip).
-- **Month section:** a 1px strong-hairline rule across the gutter, then heading, count (0.875rem, tabular) and, when the row overflows, previous/next round buttons pushed to the right. Below it the row: entries `min(320px, 74vw)` wide as columns with 20px padding either side of a 1px hairline column rule (none before the first), padded 20px above and 28px below, horizontal scroll with mandatory start snap and a hidden scrollbar. Arrow buttons page by 85% of the row width.
+- **Month section:** separated by space alone (clamp 32px to 56px above, no rule): heading, count (0.875rem, tabular) and, when the row overflows, previous/next round buttons pushed to the right. Below it the row: entries `min(320px, 74vw)` wide as columns with 28px padding either side of a 1px hairline column rule (none before the first), padded 24px above and 32px below, horizontal scroll with mandatory start snap and a hidden scrollbar; the scrollport fades out (gutter + 64px, eased 0.3s) on any side with more cards. Arrow buttons page by 85% of the row width.
 - **Rhythm:** 6, 8, 14, 20, 24 and 48px recur (`spacing` scale); 14px is the default stack gap in intro and card bodies.
 - **Mobile (640px and below):** filters become a three-column grid (outlet, topic, square sort button); filter labels shorten; the month heading becomes a two-row grid with arrows spanning both rows; header links wrap onto their own line below the wordmark and toggle.
 - **Reading pages:** newsletter articles are a centred 68ch column under a back link.
@@ -260,7 +260,7 @@ Flat. Stories sit straight on the ground, separated by rules; only controls take
 
 ## Shapes
 
-Square corners everywhere (`--radius: 0`): covers, controls, menus, the view toggle, buttons and embedded frames, as on a printed page. Round shapes are reserved for circular things: the month arrows and share buttons, outlet avatars (20px circles), the toggle's pill track and ball, the current-item dot. Borders are 1px hairlines everywhere.
+Square corners everywhere (`--radius: 0`): covers, controls, menus, the view toggle, buttons and embedded frames, as on a printed page. Round shapes are reserved for circular things: the month arrows and share buttons, outlet avatars (20px circles), the current-item dot. The theme toggle is square like the view toggle. Borders are 1px hairlines everywhere.
 
 ## Components
 
@@ -269,16 +269,16 @@ Square corners everywhere (`--radius: 0`): covers, controls, menus, the view tog
 The signature unit: a card whose title link covers the whole card (`.stretched`) and opens the original article in a new tab. The list view uses the same pattern. Only the table links outlet and topics to their filtered timelines.
 
 - **No box:** no background, border or corner; the row's column rules separate entries.
-- **Structure:** square 2:1 cover over a 3px strip in the outlet's colour (outlet colour also fills the cover while it loads), then 14px below: the topics as a kicker, the title as an Apfel Grotezk headline (700, 1.25rem, line-height 1.15), and a byline pushed to the bottom (18px avatar, outlet, em dash, date).
+- **Structure:** square 2:1 cover over a 3px strip in the outlet's colour (outlet colour also fills the cover while it loads), then 18px below, at 10px gaps: the topics as a kicker, the title as an Apfel Grotezk headline (700, 1.25rem, line-height 1.15), and a byline pushed to the bottom (18px avatar, outlet, em dash, date).
 - **States:** hover and focus zoom the cover 3% (0.45s, expo-out); focus also draws the pink outline round the entry. Reduced motion drops the zoom.
 
 ### View toggle
 
-A segmented control at the right of the toolbar: Cards, Lista, Tabela, each a stroke icon plus label, in a raised track with a strong hairline. A card-face pill with an inset pink ring slides under the pressed option (0.45s, expo-out), like the theme toggle's ball; the pressed label is ink, the others muted. The choice is stored and restored before paint on `<html data-view>`; without JS only cards show and the toggle stays hidden. Full width on phones.
+A segmented control at the right of the toolbar: Galeria (the month rows), Lista, Tabela, each a stroke icon plus label, in a raised track with a strong hairline. A card-face pill with an inset pink ring slides under the pressed option (0.45s, expo-out), like the theme toggle's ball; the pressed label is ink, the others muted. The choice is stored and restored before paint on `<html data-view>`; without JS only cards show and the toggle stays hidden. Full width on phones.
 
 ### List view (news feed)
 
-Month sections under the same strong-hairline rule as the cards; each story is a full-width row: a 2:1 cover up to 480px on the left (outlet colour behind it, square, 3% zoom on hover), then the topics as a kicker in body ink, the title as an Apfel Grotezk headline (700, clamp 1.375rem to 2rem, line-height 1.12, balanced), and a byline of avatar, outlet and date in muted ink. Hairlines between stories; the cover stacks above the text under 760px.
+Month sections separated by space, no rules; each story is a full-width row: a 2:1 cover up to 480px on the left (outlet colour behind it, square, 3% zoom on hover), then the topics as a kicker in body ink, the title as an Apfel Grotezk headline (700, clamp 1.375rem to 2rem, line-height 1.12, balanced), and a byline of avatar, outlet and date in muted ink. Stories are spaced 32px apart with a 36px gutter between cover and text, no rules between them; the cover stacks above the text under 760px.
 
 ### Table view
 
@@ -305,7 +305,7 @@ Month previous/next: 44px solid ink circles with a ground-coloured 20px chevron,
 
 ### Theme toggle
 
-A pill switch after the Astro error overlay's toggle: 60px by 32px track in card face with a strong hairline, sun and moon stroke glyphs at either end, and a 24px pink ball that slides under the active glyph (0.45s, expo-out). The glyph over the ball is pink ink; the other is muted. Border turns pink on hover. Exposed as a switch; hidden until its script runs; uses the system highlight colour in forced-colours mode.
+A square switch after the Astro error overlay's toggle: 60px by 32px track in card face with a strong hairline, sun and moon stroke glyphs at either end, and a 24px pink square that slides under the active glyph (0.45s, expo-out). The glyph over the ball is pink ink; the other is muted. Border turns pink on hover. Exposed as a switch; hidden until its script runs; uses the system highlight colour in forced-colours mode.
 
 ### Navigation (top bar)
 

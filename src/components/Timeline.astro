@@ -88,6 +88,9 @@ const { articles, intro, source, title, topic } = Astro.props;
       nav.hidden = max < 4;
       prev.disabled = row.scrollLeft < 4;
       next.disabled = row.scrollLeft > max - 4;
+      // Edge fades show where there is more to scroll.
+      row.toggleAttribute('data-more-before', !prev.disabled);
+      row.toggleAttribute('data-more-after', max >= 4 && !next.disabled);
     };
 
     const page = (direction: number) =>
@@ -107,7 +110,7 @@ const { articles, intro, source, title, topic } = Astro.props;
   .intro {
     display: grid;
     gap: 14px;
-    padding: clamp(28px, 4.5vw, 64px) var(--gutter) clamp(12px, 2vw, 28px);
+    padding: clamp(36px, 6vw, 88px) var(--gutter) clamp(20px, 3vw, 44px);
   }
 
   h1 {

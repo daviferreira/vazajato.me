@@ -36,17 +36,14 @@ const count = `${articles.length} ${articles.length === 1 ? 'reportagem' : 'repo
 
 <style>
   .month {
-    padding-block: 24px 12px;
+    padding-block: clamp(32px, 4vw, 56px) 0;
   }
 
-  /* A newspaper section head: a rule, then the month. */
   .head {
     display: flex;
     align-items: baseline;
     gap: 16px;
-    margin-inline: var(--gutter);
-    padding-top: 12px;
-    border-top: 1px solid var(--line-strong);
+    padding-inline: var(--gutter);
   }
 
   h2 {
@@ -130,12 +127,46 @@ const count = `${articles.length} ${articles.length === 1 ? 'reportagem' : 'repo
     opacity: 0.6;
   }
 
+  /* Registered so the fades can ease in and out. */
+  @property --fade-before {
+    syntax: '<length>';
+    inherits: false;
+    initial-value: 0px;
+  }
+
+  @property --fade-after {
+    syntax: '<length>';
+    inherits: false;
+    initial-value: 0px;
+  }
+
   .row {
+    --fade: calc(var(--gutter) + 64px);
+
     overflow-x: auto;
     overscroll-behavior-x: contain;
     scroll-snap-type: x mandatory;
     scroll-padding-inline: var(--gutter);
     scrollbar-width: none;
+    /* The scrollport fades out on any side that has more cards. */
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 var(--fade-before),
+      #000 calc(100% - var(--fade-after)),
+      transparent
+    );
+    transition:
+      --fade-before 0.3s,
+      --fade-after 0.3s;
+  }
+
+  .row[data-more-before] {
+    --fade-before: var(--fade);
+  }
+
+  .row[data-more-after] {
+    --fade-after: var(--fade);
   }
 
   .row::-webkit-scrollbar {
@@ -149,7 +180,7 @@ const count = `${articles.length} ${articles.length === 1 ? 'reportagem' : 'repo
   .cards {
     display: flex;
     width: max-content;
-    padding: 20px var(--gutter) 28px;
+    padding: 24px var(--gutter) 32px;
     list-style: none;
   }
 
@@ -157,7 +188,7 @@ const count = `${articles.length} ${articles.length === 1 ? 'reportagem' : 'repo
   .cards li {
     box-sizing: content-box;
     width: min(320px, 74vw);
-    padding-inline: 20px;
+    padding-inline: 28px;
     border-left: 1px solid var(--line);
     scroll-snap-align: start;
   }
@@ -170,6 +201,7 @@ const count = `${articles.length} ${articles.length === 1 ? 'reportagem' : 'repo
   @media (prefers-reduced-motion: reduce) {
     .row {
       scroll-behavior: auto;
+      transition: none;
     }
 
     .nav button {
