@@ -1,0 +1,657 @@
+---
+import Icon from './Icon.astro';
+
+// ⌘K / Ctrl+K from anywhere: find a story, topic or outlet, jump to a month,
+// or run a page action. Article data comes from /paleta.json on first use.
+// Without JS the trigger stays hidden; the filters and footer cover the same.
+---
+
+<button
+  class="trigger"
+  type="button"
+  aria-haspopup="dialog"
+  aria-keyshortcuts="Meta+K Control+K"
+  data-palette-open
+  hidden
+>
+  <Icon name="search" size={15} />
+  <span class="label">Ir para</span>
+  <kbd data-palette-key>⌘K</kbd>
+</button>
+
+<dialog class="palette" aria-label="Ir para" data-palette>
+  <div class="field">
+    <Icon name="search" size={18} />
+    <input
+      type="text"
+      role="combobox"
+      aria-expanded="true"
+      aria-controls="palette-list"
+      aria-autocomplete="list"
+      aria-label="Buscar reportagens, tópicos, veículos ou ações"
+      placeholder="Buscar reportagens, tópicos, veículos…"
+      autocomplete="off"
+      spellcheck="false"
+      enterkeyhint="go"
+    />
+    <kbd>esc</kbd>
+  </div>
+  <div class="results">
+    <ul id="palette-list" role="listbox" aria-label="Resultados"></ul>
+    <p class="empty" data-palette-empty hidden></p>
+  </div>
+  <p class="hints" aria-hidden="true">
+    <span>
+      <kbd>↑</kbd>
+      <kbd>↓</kbd> navegar
+    </span>
+    <span>
+      <kbd>↵</kbd> abrir
+    </span>
+    <span>
+      <kbd>esc</kbd> fechar
+    </span>
+  </p>
+</dialog>
+
+<script>
+  import { fold } from '../lib/search.js';
+
+  type Item = {
+    label: string;
+    hint?: string;
+    keywords?: string;
+    run: () => void | Promise<void>;
+  };
+  type Link = { label: string; href: string };
+  type Data = {
+    articles: {
+      title: string;
+      url: string;
+      date: string;
+      source: string;
+      topics: string[];
+    }[];
+    topics: Link[];
+    sources: Link[];
+  };
+
+  const root = document.documentElement;
+  const trigger = document.querySelector<HTMLButtonElement>(
+    '[data-palette-open]',
+  );
+  const dialog = document.querySelector<HTMLDialogElement>('[data-palette]');
+  const input = dialog.querySelector('input');
+  const list = dialog.querySelector<HTMLUListElement>('[role="listbox"]');
+  const empty = dialog.querySelector<HTMLElement>('[data-palette-empty]');
+
+  const mac = /Mac|iPhone|iPad/.test(navigator.userAgent);
+  trigger.querySelector('[data-palette-key]').textContent = mac
+    ? '⌘K'
+    : 'Ctrl K';
+  trigger.hidden = false;
+
+  // ----- Data -------------------------------------------------------------
+
+  let data: Promise<Data | null> | undefined;
+  let loaded: Data | null = null;
+  const load = () =>
+    (data ??= fetch('/paleta.json')
+      .then((r) => (r.ok ? r.json() : Promise.reject()))
+      .then((json: Data) => (loaded = json))
+      .catch(() => {
+        data = undefined;
+        return null;
+      }));
+
+  const go = (href: string) => () => {
+    location.href = href;
+  };
+  const openTab = (href: string) => () => {
+    window.open(href, '_blank', 'noopener,noreferrer');
+  };
+
+  // ----- Items ------------------------------------------------------------
+
+  // Page actions depend on what the page has: the timeline's controls are
+  // driven by clicking them, so their own state and storage stay in charge.
+  const actions = (): Item[] => {
+    const items: Item[] = [];
+    const click = (selector: string) => () =>
+      document.querySelector<HTMLElement>(selector)?.click();
+
+    if (navigator.share) {
+      items.push({
+        label: 'Compartilhar esta página',
+        keywords: 'enviar share',
+        run: () =>
+          navigator
+            .share({ title: document.title, url: location.href })
+            .catch(() => {}),
+      });
+    }
+    items.push({
+      label: 'Copiar link desta página',
+      keywords: 'url endereco compartilhar',
+      run: () => navigator.clipboard?.writeText(location.href),
+    });
+
+    const sort = document.querySelector<HTMLElement>('[data-sort]');
+    if (sort && !sort.hidden) {
+      items.push({
+        label: `Ordenar: ${sort.getAttribute('aria-label')?.toLowerCase()}`,
+        keywords: 'ordem recentes antigas',
+        run: click('[data-sort]'),
+      });
+    }
+
+    const current = root.dataset.view || 'cards';
+    document
+      .querySelectorAll<HTMLElement>('[data-view-toggle] [data-view]')
+      .forEach((button) => {
+        if (button.dataset.view === current) return;
+        items.push({
+          label: `Ver em ${button.dataset.tip.toLowerCase()}`,
+          keywords: 'visualizacao modo',
+          run: () => button.click(),
+        });
+      });
+
+    const dark =
+      (root.dataset.theme ??
+        (matchMedia('(prefers-color-scheme: dark)').matches
+          ? 'dark'
+          : 'light')) === 'dark';
+    items.push({
+      label: dark ? 'Usar tema claro' : 'Usar tema escuro',
+      keywords: 'tema cor modo dark light',
+      run: click('[data-theme-toggle]'),
+    });
+
+    items.push({
+      label: 'Reportagem aleatória',
+      keywords: 'sortear surpresa',
+      run: async () => {
+        const { articles = [] } = (await load()) ?? {};
+        const pick = articles[Math.floor(Math.random() * articles.length)];
+        if (pick) openTab(pick.url)();
+      },
+    });
+    return items;
+  };
+
+  const places = (): Item[] => [
+    ...(location.pathname === '/'
+      ? []
+      : [
+          {
+            label: 'Linha do tempo',
+            keywords: 'inicio home todas',
+            run: go('/'),
+          },
+        ]),
+    {
+      label: 'Planilha de dados',
+      hint: 'Google Sheets ↗',
+      keywords: 'dados planilha',
+      run: openTab(
+        'https://docs.google.com/spreadsheets/d/1y9bixq_sZ5TOwwqfoagRKX4zCm1Ka6hXbch9qN6OtKI',
+      ),
+    },
+    {
+      label: 'Baixar arquivos com diálogos',
+      hint: 'Dropbox ↗',
+      keywords: 'download pdf conversas telegram',
+      run: openTab(
+        'https://www.dropbox.com/sh/a2wijlhwezq8yyo/AABTEZI4XWfjPEmHeKT7bbcYa?dl=0',
+      ),
+    },
+    {
+      label: 'Uma mão lava a outra (a jato)',
+      hint: 'Newsletter',
+      keywords: 'newsletter intercept',
+      run: go('/newsletter-intercept-2019-09-21'),
+    },
+    {
+      label: 'Deltan que ama o FBI que odeia a PGR',
+      hint: 'Newsletter',
+      keywords: 'newsletter intercept',
+      run: go('/deltan-ama-fbi'),
+    },
+  ];
+
+  // Months of the view on screen (the table has no month headings).
+  const months = (): Item[] => {
+    const prefix = { cards: 'mes-', list: 'lista-' }[
+      root.dataset.view || 'cards'
+    ];
+    if (!prefix) return [];
+    return [...document.querySelectorAll<HTMLElement>(`h2[id^="${prefix}"]`)]
+      .filter((h) => !h.closest('[hidden]'))
+      .map((heading) => ({
+        label: heading.textContent.trim(),
+        keywords: 'mes',
+        run: () => {
+          const offset =
+            parseFloat(
+              getComputedStyle(root).getPropertyValue('--toolbar-h'),
+            ) || 0;
+          scrollTo({
+            top: heading.getBoundingClientRect().top + scrollY - offset - 16,
+          });
+        },
+      }));
+  };
+
+  const searchHere = (query: string): Item[] => {
+    const box = document.querySelector<HTMLInputElement>('#busca');
+    if (!box || !query) return [];
+    return [
+      {
+        label: `Filtrar esta página por “${query}”`,
+        run: () => {
+          box.value = query;
+          box.dispatchEvent(new Event('input'));
+          document
+            .querySelector('[data-toolbar]')
+            ?.scrollIntoView({ block: 'start' });
+        },
+      },
+    ];
+  };
+
+  // ----- Matching ---------------------------------------------------------
+
+  const matches = (words: string[], item: Item) => {
+    const haystack = fold(
+      `${item.label} ${item.hint ?? ''} ${item.keywords ?? ''}`,
+    );
+    return words.every((w) => haystack.includes(w));
+  };
+
+  // Labels that start with the query rank above ones that only contain it.
+  const rank = (words: string[], items: Item[], limit: number) =>
+    items
+      .filter((item) => matches(words, item))
+      .sort(
+        (a, b) =>
+          Number(fold(b.label).startsWith(words[0])) -
+          Number(fold(a.label).startsWith(words[0])),
+      )
+      .slice(0, limit);
+
+  const groups = (query: string): [string, Item[]][] => {
+    const words = fold(query).split(/\s+/).filter(Boolean);
+    if (!words.length) {
+      return [
+        ['Ações', actions()],
+        ['Ir para', places()],
+      ];
+    }
+    const topics = (loaded?.topics ?? []).map(({ label, href }) => ({
+      label,
+      hint: 'Tópico',
+      run: go(href),
+    }));
+    const sources = (loaded?.sources ?? []).map(({ label, href }) => ({
+      label,
+      hint: 'Veículo',
+      run: go(href),
+    }));
+    const articles = (loaded?.articles ?? []).map((a) => ({
+      label: a.title,
+      hint: `${a.source} · ${a.date} ↗`,
+      keywords: a.topics.join(' '),
+      run: openTab(a.url),
+    }));
+    return [
+      // Specific places first, so Enter lands on the likeliest one.
+      ['Tópicos', rank(words, topics, 5)],
+      ['Veículos', rank(words, sources, 5)],
+      ['Meses', rank(words, months(), 4)],
+      ['Ações', rank(words, actions(), 4)],
+      ['Ir para', rank(words, places(), 4)],
+      ['Reportagens', rank(words, articles, 8)],
+      ['Nesta página', searchHere(query)],
+    ];
+  };
+
+  // ----- Rendering --------------------------------------------------------
+
+  let items: Item[] = [];
+  let options: HTMLElement[] = [];
+  let active = 0;
+
+  const select = (index: number, scroll = true) => {
+    options[active]?.setAttribute('aria-selected', 'false');
+    active = (index + options.length) % options.length;
+    const option = options[active];
+    if (!option) return input.removeAttribute('aria-activedescendant');
+    option.setAttribute('aria-selected', 'true');
+    input.setAttribute('aria-activedescendant', option.id);
+    if (scroll) option.scrollIntoView({ block: 'nearest' });
+  };
+
+  const render = () => {
+    const query = input.value.trim();
+    items = [];
+    options = [];
+    list.replaceChildren(
+      ...groups(query)
+        .filter(([, group]) => group.length)
+        .map(([title, group], g) => {
+          const li = document.createElement('li');
+          li.setAttribute('role', 'presentation');
+          const heading = document.createElement('div');
+          heading.className = 'group';
+          heading.id = `palette-g${g}`;
+          heading.textContent = title;
+          const ul = document.createElement('ul');
+          ul.setAttribute('role', 'group');
+          ul.setAttribute('aria-labelledby', heading.id);
+          for (const item of group) {
+            const option = document.createElement('li');
+            const index = items.push(item) - 1;
+            option.id = `palette-o${index}`;
+            option.setAttribute('role', 'option');
+            option.setAttribute('aria-selected', 'false');
+            const label = document.createElement('span');
+            label.className = 'name';
+            label.textContent = item.label;
+            option.append(label);
+            if (item.hint) {
+              const hint = document.createElement('span');
+              hint.className = 'hint';
+              hint.textContent = item.hint;
+              option.append(hint);
+            }
+            option.addEventListener('mousemove', () => {
+              if (active !== index) select(index, false);
+            });
+            option.addEventListener('click', () => run(index));
+            options.push(option);
+            ul.append(option);
+          }
+          li.append(heading, ul);
+          return li;
+        }),
+    );
+    empty.hidden = options.length > 0;
+    empty.textContent =
+      query && !loaded ? 'Carregando…' : `Nada encontrado para “${query}”.`;
+    active = 0;
+    select(0);
+  };
+
+  const run = async (index: number) => {
+    const item = items[index];
+    if (!item) return;
+    dialog.close();
+    await item.run();
+  };
+
+  // ----- Opening and keys -------------------------------------------------
+
+  const open = () => {
+    if (dialog.open) return;
+    input.value = '';
+    render();
+    dialog.showModal();
+    input.focus();
+    load().then(() => dialog.open && input.value && render());
+  };
+
+  trigger.addEventListener('click', open);
+  trigger.addEventListener('pointerenter', load, { once: true });
+  trigger.addEventListener('focus', load, { once: true });
+
+  document.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && !e.altKey && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      if (dialog.open) dialog.close();
+      else open();
+    }
+  });
+
+  input.addEventListener('input', render);
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      select(active + (e.key === 'ArrowDown' ? 1 : -1));
+    } else if (e.key === 'Enter' && !e.isComposing) {
+      e.preventDefault();
+      run(active);
+    } else if (e.key === 'Escape' && input.value) {
+      // First Escape clears the query; the next one closes.
+      e.preventDefault();
+      input.value = '';
+      render();
+    }
+  });
+
+  // A click on the backdrop (the dialog box itself, outside its content).
+  dialog.addEventListener('click', (e) => {
+    if (e.target === dialog) dialog.close();
+  });
+</script>
+
+<style>
+  .trigger {
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    gap: 8px;
+    height: 32px;
+    padding: 0 6px 0 10px;
+    border: 1px solid var(--line-strong);
+    background: var(--surface);
+    color: var(--muted);
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition:
+      border-color 0.2s,
+      color 0.2s;
+  }
+
+  .trigger[hidden] {
+    display: none;
+  }
+
+  .trigger:hover {
+    border-color: var(--accent);
+    color: var(--text);
+  }
+
+  kbd {
+    padding: 1px 5px;
+    border: 1px solid var(--line-strong);
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 0.6875rem;
+    line-height: 1.4;
+  }
+
+  /* Phones have no keyboard to advertise; the glyph alone opens it. */
+  @media (max-width: 640px) {
+    .trigger {
+      padding: 0 9px;
+    }
+
+    .trigger .label,
+    .trigger kbd {
+      display: none;
+    }
+  }
+
+  /* A menu, so it takes the one shadow the system allows. */
+  .palette {
+    width: min(640px, calc(100% - 32px));
+    max-height: min(560px, calc(100dvh - 24vh));
+    margin: 12vh auto auto;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--line-strong);
+    background: var(--surface);
+    color: var(--body);
+    box-shadow:
+      0 4px 12px oklch(0 0 0 / 0.3),
+      0 24px 64px oklch(0 0 0 / 0.55);
+  }
+
+  .palette[open] {
+    display: flex;
+    flex-direction: column;
+    animation: drop 0.22s var(--ease-out);
+  }
+
+  .palette::backdrop {
+    background: oklch(0 0 0 / 0.45);
+  }
+
+  @keyframes drop {
+    from {
+      opacity: 0;
+      transform: translateY(-6px);
+    }
+  }
+
+  .field {
+    display: flex;
+    flex: none;
+    align-items: center;
+    gap: 12px;
+    padding: 0 16px;
+    border-bottom: 1px solid var(--line);
+    color: var(--muted);
+  }
+
+  .field input {
+    flex: 1;
+    min-width: 0;
+    min-height: 56px;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--text);
+    font: inherit;
+    font-size: 1.0625rem;
+    font-weight: 500;
+    outline: none;
+  }
+
+  .field input::placeholder {
+    color: var(--muted);
+    opacity: 1;
+  }
+
+  .results {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 6px;
+  }
+
+  /* The group lists are built by the script, so they need :global. */
+  .results ul,
+  .results :global(ul) {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .results :global(.group) {
+    padding: 12px 10px 6px;
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .results :global([role='option']) {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 8px 10px;
+    color: var(--body);
+    cursor: pointer;
+  }
+
+  .results :global([aria-selected='true']) {
+    background: var(--raised);
+    color: var(--text);
+    box-shadow: inset 2px 0 var(--accent);
+  }
+
+  .results :global(.name) {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .results :global(.hint) {
+    flex: none;
+    max-width: 45%;
+    overflow: hidden;
+    color: var(--muted);
+    font-size: 0.8125rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .empty {
+    padding: 20px 10px;
+    color: var(--muted);
+  }
+
+  .empty[hidden] {
+    display: none;
+  }
+
+  .hints {
+    display: flex;
+    flex: none;
+    gap: 16px;
+    padding: 10px 16px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.75rem;
+  }
+
+  .hints kbd {
+    margin-right: 2px;
+  }
+
+  @media (max-width: 640px) {
+    .palette {
+      margin-top: 16px;
+      max-height: calc(100dvh - 32px);
+    }
+
+    .hints,
+    .field kbd {
+      display: none;
+    }
+
+    .results :global([role='option']) {
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .results :global(.hint) {
+      max-width: 100%;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .palette[open] {
+      animation: none;
+    }
+  }
+
+  @media (forced-colors: active) {
+    .results :global([aria-selected='true']) {
+      outline: 2px solid Highlight;
+    }
+  }
+</style>
