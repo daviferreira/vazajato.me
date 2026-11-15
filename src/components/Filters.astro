@@ -25,19 +25,34 @@ const { source, topic } = Astro.props;
         </span>
         <Icon name="chevron" class="chevron" />
       </summary>
-      <ul class="menu">
-        {sourceKeys.map((key) => (
-          <li>
-            <a
-              href={`/veiculos/${key}`}
-              aria-current={key === source ? 'page' : undefined}
-            >
-              <Image src={sourceImage[key]} alt="" width={40} height={40} />
-              {sources[key].name}
-            </a>
-          </li>
-        ))}
-      </ul>
+      <div class="menu">
+        <input
+          class="find"
+          type="search"
+          placeholder="Buscar veículo"
+          aria-label="Buscar veículo"
+          autocomplete="off"
+          spellcheck="false"
+          data-find
+          hidden
+        />
+        <ul>
+          {sourceKeys.map((key) => (
+            <li>
+              <a
+                href={`/veiculos/${key}`}
+                aria-current={key === source ? 'page' : undefined}
+              >
+                <Image src={sourceImage[key]} alt="" width={40} height={40} />
+                {sources[key].name}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <p class="empty" hidden>
+          Nada encontrado
+        </p>
+      </div>
     </details>
     {source && (
       <a class="clear hit" href="/" aria-label="Remover filtro de veículo">
@@ -59,18 +74,33 @@ const { source, topic } = Astro.props;
         </span>
         <Icon name="chevron" class="chevron" />
       </summary>
-      <ul class="menu">
-        {topics.map(({ label }) => (
-          <li>
-            <a
-              href={`/topicos/${slug(label)}`}
-              aria-current={label === topic ? 'page' : undefined}
-            >
-              {label}
-            </a>
-          </li>
-        ))}
-      </ul>
+      <div class="menu">
+        <input
+          class="find"
+          type="search"
+          placeholder="Buscar tópico"
+          aria-label="Buscar tópico"
+          autocomplete="off"
+          spellcheck="false"
+          data-find
+          hidden
+        />
+        <ul>
+          {topics.map(({ label }) => (
+            <li>
+              <a
+                href={`/topicos/${slug(label)}`}
+                aria-current={label === topic ? 'page' : undefined}
+              >
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <p class="empty" hidden>
+          Nada encontrado
+        </p>
+      </div>
     </details>
     {topic && (
       <a class="clear hit" href="/" aria-label="Remover filtro de tópico">
@@ -94,6 +124,8 @@ const { source, topic } = Astro.props;
 </div>
 
 <script>
+  import { fold } from '../lib/search.js';
+
   const dropdowns = document.querySelectorAll<HTMLDetailsElement>(
     'details[name="filter"]',
   );
@@ -112,6 +144,51 @@ const { source, topic } = Astro.props;
     const open = [...dropdowns].find((d) => d.open);
     close();
     open?.querySelector('summary')?.focus();
+  });
+
+  // Type to narrow a menu; Enter opens the first match, arrows walk the list.
+  dropdowns.forEach((details) => {
+    const input = details.querySelector<HTMLInputElement>('[data-find]');
+    const empty = details.querySelector<HTMLElement>('.empty');
+    const items = [...details.querySelectorAll<HTMLLIElement>('li')].map(
+      (li) => ({ li, text: fold(li.textContent) }),
+    );
+    const visible = () =>
+      items
+        .filter(({ li }) => !li.hidden)
+        .map(({ li }) => li.querySelector('a'));
+
+    input.hidden = false;
+
+    details.addEventListener('toggle', () => {
+      if (!details.open) return;
+      input.value = '';
+      input.dispatchEvent(new Event('input'));
+      // Skip on touch so the keyboard doesn't cover the list.
+      if (matchMedia('(hover: hover)').matches) input.focus();
+    });
+
+    input.addEventListener('input', () => {
+      const words = fold(input.value).split(/\s+/).filter(Boolean);
+      items.forEach(({ li, text }) => {
+        li.hidden = !words.every((w) => text.includes(w));
+      });
+      empty.hidden = visible().length > 0;
+    });
+
+    details.addEventListener('keydown', (e) => {
+      const links = visible();
+      const at = links.indexOf(document.activeElement as HTMLAnchorElement);
+      if (e.key === 'Enter' && e.target === input && !e.isComposing) {
+        e.preventDefault();
+        links[0]?.click();
+      } else if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        const next = at + (e.key === 'ArrowDown' ? 1 : -1);
+        if (next < 0) input.focus();
+        else links[Math.min(next, links.length - 1)]?.focus();
+      }
+    });
   });
 
   // Sort: flip months and the stories inside them, in every view.
@@ -263,6 +340,47 @@ const { source, topic } = Astro.props;
     box-shadow: 0 12px 32px oklch(0 0 0 / 0.28);
     list-style: none;
     animation: drop 0.22s var(--ease-out);
+  }
+
+  .menu ul {
+    list-style: none;
+  }
+
+  .find {
+    position: sticky;
+    top: -6px;
+    z-index: 1;
+    width: 100%;
+    min-height: 44px;
+    margin: -6px 0 6px;
+    padding: 0 10px;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--text);
+    font: inherit;
+    font-size: 0.9375rem;
+    outline: none;
+  }
+
+  .find:focus {
+    border-bottom-color: var(--accent);
+  }
+
+  .find::placeholder {
+    color: var(--muted);
+    opacity: 1;
+  }
+
+  .find[hidden],
+  .empty[hidden] {
+    display: none;
+  }
+
+  .empty {
+    padding: 12px 10px;
+    color: var(--muted);
+    font-size: 0.9375rem;
   }
 
   .menu a {
