@@ -1,9 +1,18 @@
 ---
 import { Image } from 'astro:assets';
 
+import Icon from './Icon.astro';
+
 import { formatDate, slug, sourceImage, sources } from '../lib/data.js';
 
 const { articles } = Astro.props;
+
+// Sortable columns; rows carry the matching data-* key.
+const columns = [
+  { key: 'date', label: 'Data' },
+  { key: 'title', label: 'Título' },
+  { key: 'outlet', label: 'Veículo' },
+];
 ---
 
 <div
@@ -15,15 +24,29 @@ const { articles } = Astro.props;
   <table>
     <thead>
       <tr>
-        <th scope="col">Data</th>
-        <th scope="col">Título</th>
-        <th scope="col">Veículo</th>
+        {columns.map(({ key, label }) => (
+          <th
+            scope="col"
+            aria-sort={key === 'date' ? 'ascending' : undefined}
+            data-column={key}
+          >
+            <button type="button" data-sort-column={key}>
+              {label}
+              <Icon name="up" size={14} class="arrow up" />
+              <Icon name="down" size={14} class="arrow down" />
+            </button>
+          </th>
+        ))}
         <th scope="col">Tópicos</th>
       </tr>
     </thead>
-    <tbody data-items>
+    <tbody data-table-rows>
       {articles.map(({ publishDate, source, title, topics, url }) => (
-        <tr>
+        <tr
+          data-date={publishDate}
+          data-title={title}
+          data-outlet={sources[source].name}
+        >
           <td class="date mono">
             <time datetime={publishDate}>{formatDate(publishDate)}</time>
           </td>
@@ -53,6 +76,57 @@ const { articles } = Astro.props;
   </table>
 </div>
 
+<script>
+  // Column sorting. Rows keep their original index to break ties stably.
+  const table = document
+    .querySelector<HTMLTableElement>('[data-table-rows]')
+    ?.closest('table');
+
+  if (table) {
+    const body = table.querySelector('tbody');
+    const rows = [...body.rows];
+    rows.forEach((row, i) => (row.dataset.index = String(i)));
+    const collator = new Intl.Collator('pt-BR', {
+      sensitivity: 'base',
+      ignorePunctuation: true,
+    });
+
+    const sort = (key: string, ascending: boolean) => {
+      const sign = ascending ? 1 : -1;
+      rows.sort(
+        (a, b) =>
+          sign * collator.compare(a.dataset[key], b.dataset[key]) ||
+          sign * (Number(a.dataset.index) - Number(b.dataset.index)),
+      );
+      body.append(...rows);
+      table.querySelectorAll<HTMLElement>('th[data-column]').forEach((th) => {
+        if (th.dataset.column === key) {
+          th.setAttribute('aria-sort', ascending ? 'ascending' : 'descending');
+        } else {
+          th.removeAttribute('aria-sort');
+        }
+      });
+    };
+
+    table
+      .querySelectorAll<HTMLButtonElement>('[data-sort-column]')
+      .forEach((button) =>
+        button.addEventListener('click', () => {
+          const th = button.closest('th');
+          sort(
+            button.dataset.sortColumn,
+            th.getAttribute('aria-sort') !== 'ascending',
+          );
+        }),
+      );
+
+    // The toolbar's sort button orders every view by date.
+    document.addEventListener('timeline:sort', (event) =>
+      sort('date', !(event as CustomEvent<boolean>).detail),
+    );
+  }
+</script>
+
 <style>
   .scroll {
     overflow-x: auto;
@@ -80,6 +154,42 @@ const { articles } = Astro.props;
   th:last-child,
   td:last-child {
     padding-right: 0;
+  }
+
+  th button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin: -6px 0 -6px -6px;
+    padding: 6px;
+    border: 0;
+    border-radius: 4px;
+    background: none;
+    color: inherit;
+    font: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    cursor: pointer;
+  }
+
+  th button:hover,
+  th[aria-sort] button {
+    color: var(--text);
+  }
+
+  /* Arrows: hidden until hover on idle columns; one shows on the sorted one. */
+  th :global(.arrow) {
+    display: none;
+  }
+
+  th:not([aria-sort]) button:hover :global(.up),
+  th[aria-sort='ascending'] :global(.up),
+  th[aria-sort='descending'] :global(.down) {
+    display: block;
+  }
+
+  th:not([aria-sort]) button:hover :global(.up) {
+    color: var(--muted);
   }
 
   th {

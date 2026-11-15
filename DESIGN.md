@@ -284,7 +284,7 @@ Month sections; each story is a full-width row: a 2:1 cover up to 480px on the l
 
 ### Table view
 
-One table of every story: Data (mono, ink), Título (500, ink, gold underline on hover), Veículo (avatar and name, no wrap), Tópicos (mono, muted, joined by middots). Mono column heads over a strong hairline, hairline rows, baseline-aligned cells, 24px column gaps, row hover in card face. Scrolls sideways inside its own region below 820px.
+One table of every story: Data (mono, ink), Título (500, ink, gold underline on hover), Veículo (avatar and name, no wrap), Tópicos (mono, muted, joined by middots). Mono column heads over a strong hairline, hairline rows, baseline-aligned cells, 24px column gaps, row hover in card face. Scrolls sideways inside its own region below 820px. Data, Título and Veículo heads are sort buttons: click sorts ascending, again descending (pt-BR collation, punctuation ignored); the sorted head turns ink with an up or down arrow and carries `aria-sort`, idle heads preview the arrow on hover. The toolbar sort button re-sorts the table by date in its direction.
 
 ### Tags
 
