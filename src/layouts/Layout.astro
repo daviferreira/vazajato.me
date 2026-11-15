@@ -50,6 +50,9 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href.replace(
       data-theme-color
     />
     <script is:inline>
+      // Flag JS before first paint, so [data-js-only] controls hold their
+      // place from the start instead of popping in once the bundle runs.
+      document.documentElement.dataset.js = '';
       // Apply a saved theme before first paint; otherwise follow the system.
       try {
         const theme = localStorage.getItem('theme');
@@ -368,5 +371,10 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href.replace(
     overflow: hidden;
     clip-path: inset(50%);
     white-space: nowrap;
+  }
+
+  /* Controls that only work with JS; <html data-js> is set in the head. */
+  :root:not([data-js]) [data-js-only] {
+    display: none !important;
   }
 </style>

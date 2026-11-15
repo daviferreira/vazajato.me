@@ -12,7 +12,7 @@ import Icon from './Icon.astro';
   aria-haspopup="dialog"
   aria-keyshortcuts="Meta+K Control+K"
   data-palette-open
-  hidden
+  data-js-only
 >
   <Icon name="search" size={15} />
   <span class="label">Ir para</span>
@@ -89,7 +89,6 @@ import Icon from './Icon.astro';
   trigger.querySelector('[data-palette-key]').textContent = mac
     ? '⌘K'
     : 'Ctrl K';
-  trigger.hidden = false;
 
   // ----- Data -------------------------------------------------------------
 
@@ -137,7 +136,7 @@ import Icon from './Icon.astro';
     });
 
     const sort = document.querySelector<HTMLElement>('[data-sort]');
-    if (sort && !sort.hidden) {
+    if (sort) {
       items.push({
         label: `Ordenar: ${sort.getAttribute('aria-label')?.toLowerCase()}`,
         keywords: 'ordem recentes antigas',
@@ -451,10 +450,6 @@ import Icon from './Icon.astro';
     transition:
       border-color 0.2s,
       color 0.2s;
-  }
-
-  .trigger[hidden] {
-    display: none;
   }
 
   .trigger:hover {

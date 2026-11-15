@@ -9,7 +9,7 @@
   aria-checked="true"
   aria-label="Tema escuro"
   data-theme-toggle
-  hidden
+  data-js-only
 >
   <svg
     class="sun"
@@ -60,7 +60,6 @@
     });
   };
 
-  toggle.hidden = false;
   sync();
   system.addEventListener('change', sync);
 
@@ -91,10 +90,6 @@
     border-radius: 0;
     background: var(--surface);
     cursor: pointer;
-  }
-
-  .toggle[hidden] {
-    display: none;
   }
 
   svg {

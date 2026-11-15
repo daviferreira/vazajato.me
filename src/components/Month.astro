@@ -209,6 +209,33 @@ const count = `${articles.length} ${articles.length === 1 ? 'reportagem' : 'repo
     border-left: 0;
   }
 
+  /* Phones: one card at a time, snapped to the middle, with its neighbours
+     peeking in at both sides. The fade only covers those peeks. */
+  @media (max-width: 640px) {
+    .row {
+      --card: min(320px, 74vw);
+      --fade: calc((100vw - var(--card)) / 2);
+      scroll-padding-inline: 0;
+    }
+
+    /* Room enough for the first and last cards to reach the middle. */
+    .cards {
+      padding-inline: max(0px, calc((100vw - var(--card)) / 2 - 28px));
+    }
+
+    /* One card in view at a time, so no rules between them. */
+    .cards li {
+      width: var(--card);
+      border-left: 0;
+      scroll-snap-align: center;
+    }
+
+    /* Keep both sides even so centring the box centres the card. */
+    .cards li:nth-child(1 of :not([hidden])) {
+      padding-left: 28px;
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .row {
       scroll-behavior: auto;

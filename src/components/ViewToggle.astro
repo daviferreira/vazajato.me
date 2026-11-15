@@ -13,7 +13,7 @@ const views = [
   role="group"
   aria-label="Visualização"
   data-view-toggle
-  hidden
+  data-js-only
 >
   <span class="pill" aria-hidden="true"></span>
   {views.map(({ id, label }) => (
@@ -60,7 +60,6 @@ const views = [
     }),
   );
 
-  group.hidden = false;
   // While the buttons resize (the pinned toolbar folds its labels), the
   // pill tracks them exactly; it only slides when the choice changes.
   new ResizeObserver(() => {
@@ -79,10 +78,6 @@ const views = [
     position: relative;
     display: flex;
     gap: 6px;
-  }
-
-  .views[hidden] {
-    display: none;
   }
 
   .pill {
