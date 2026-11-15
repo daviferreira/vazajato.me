@@ -13,7 +13,7 @@ const { source, topic } = Astro.props;
   <div class="filter">
     <details name="filter">
       <summary class:list={['control', { active: source }]}>
-        <span class="value">
+        <span class:list={['value', { highlight: source }]}>
           {source ? (
             sources[source].name
           ) : (
@@ -49,7 +49,7 @@ const { source, topic } = Astro.props;
   <div class="filter">
     <details name="filter">
       <summary class:list={['control', { active: topic }]}>
-        <span class="value">
+        <span class:list={['value', { highlight: topic }]}>
           {topic || (
             <>
               <span class="long">Todos os tópicos</span>
@@ -144,10 +144,12 @@ const { source, topic } = Astro.props;
 </script>
 
 <style>
+  /* Set as type, like a newspaper's section navigation: no boxes. */
   .filters {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    align-items: center;
+    gap: 4px 28px;
   }
 
   .filter {
@@ -161,21 +163,18 @@ const { source, topic } = Astro.props;
   .control {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     min-height: 44px;
-    padding: 0 14px;
-    border: 1px solid var(--line-strong);
-    border-radius: var(--radius);
-    background: var(--raised);
+    padding: 0;
+    border: 0;
+    background: none;
     color: var(--text);
     font-size: 0.9375rem;
     font-weight: 500;
     cursor: pointer;
     list-style: none;
     transition:
-      border-color 0.2s,
       min-height 0.3s var(--ease-out),
-      width 0.3s var(--ease-out),
       font-size 0.3s var(--ease-out);
   }
 
@@ -183,12 +182,11 @@ const { source, topic } = Astro.props;
     display: none;
   }
 
-  .control:hover {
-    border-color: var(--text);
-  }
-
-  summary.control {
-    width: 260px;
+  .control:hover .value,
+  .control:hover .sort-label {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
   }
 
   /* Compact while the toolbar is pinned. */
@@ -197,17 +195,8 @@ const { source, topic } = Astro.props;
     font-size: 0.875rem;
   }
 
-  :global([data-stuck]) summary.control {
-    width: 210px;
-  }
-
-  :global([data-stuck]) .clear {
-    width: 26px;
-    height: 26px;
-  }
-
   .value {
-    flex: 1;
+    max-width: 240px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -217,10 +206,9 @@ const { source, topic } = Astro.props;
     display: none;
   }
 
+  /* An applied filter is marked with the highlighter. */
   .control.active {
-    border-color: var(--accent);
-    box-shadow: inset 0 0 0 1px var(--accent);
-    padding-right: 44px;
+    padding-right: 32px;
   }
 
   .control.active :global(.chevron) {
@@ -239,32 +227,37 @@ const { source, topic } = Astro.props;
   .clear {
     position: absolute;
     top: 50%;
-    right: 8px;
+    right: 0;
     display: grid;
     place-items: center;
-    width: 30px;
-    height: 30px;
-    border-radius: 0;
+    width: 28px;
+    height: 28px;
     color: var(--muted);
     transform: translateY(-50%);
   }
 
   .clear:hover {
-    background: var(--surface);
     color: var(--text);
+  }
+
+  .sort {
+    color: var(--body);
+  }
+
+  .sort :global(svg) {
+    color: var(--muted);
   }
 
   .menu {
     position: absolute;
-    top: calc(100% + 6px);
-    left: 0;
+    top: calc(100% + 2px);
+    left: -12px;
     z-index: 20;
     width: max(100%, 300px);
     max-height: min(60vh, 480px);
     overflow-y: auto;
     padding: 6px;
     border: 1px solid var(--line);
-    border-radius: 0;
     background: var(--surface);
     box-shadow: 0 12px 32px oklch(0 0 0 / 0.28);
     list-style: none;
@@ -276,7 +269,6 @@ const { source, topic } = Astro.props;
     align-items: center;
     gap: 10px;
     padding: 8px 10px;
-    border-radius: 0;
     color: var(--body);
     font-size: 0.9375rem;
     text-decoration: none;
@@ -322,30 +314,24 @@ const { source, topic } = Astro.props;
 
   @media (max-width: 640px) {
     .filters {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
-      gap: 8px;
+      gap: 0 20px;
     }
 
-    summary.control {
-      width: 100%;
-      padding: 0 10px;
+    .control {
       font-size: 0.875rem;
     }
 
+    .value {
+      max-width: 34vw;
+    }
+
     .filter:nth-child(2) .menu {
-      right: 0;
+      right: -12px;
       left: auto;
     }
 
     .menu {
       width: min(300px, calc(100vw - 32px));
-    }
-
-    .sort {
-      justify-content: center;
-      width: 44px;
-      padding: 0;
     }
 
     .long {
@@ -372,7 +358,7 @@ const { source, topic } = Astro.props;
     }
 
     .control {
-      transition: border-color 0.2s;
+      transition: none;
     }
   }
 </style>

@@ -67,13 +67,12 @@ const views = [
 </script>
 
 <style>
+  /* Set as type like the filters; the pressed view is marked with the
+     highlighter, which slides between options. */
   .views {
     position: relative;
     display: flex;
-    padding: 3px;
-    border: 1px solid var(--line-strong);
-    border-radius: var(--radius);
-    background: var(--raised);
+    gap: 6px;
   }
 
   .views[hidden] {
@@ -82,13 +81,13 @@ const views = [
 
   .pill {
     position: absolute;
-    top: 3px;
-    bottom: 3px;
+    bottom: calc(50% - 0.42em);
     left: 0;
     width: var(--pill-w, 0);
-    border-radius: 0;
-    background: var(--surface);
-    box-shadow: inset 0 0 0 1px var(--accent);
+    height: 0.6em;
+    border-radius: 0.12em 0.3em 0.18em 0.25em;
+    background: var(--highlight);
+    font-size: 0.9375rem;
     transform: translateX(var(--pill-x, 0));
   }
 
@@ -102,12 +101,10 @@ const views = [
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 8px;
-    min-height: 36px;
-    padding: 0 12px;
+    gap: 7px;
+    min-height: 44px;
+    padding: 0 6px;
     border: 0;
-    border-radius: 0;
     background: none;
     color: var(--muted);
     font-size: 0.9375rem;
@@ -116,15 +113,14 @@ const views = [
     transition:
       color 0.2s,
       gap 0.3s var(--ease-out),
-      min-height 0.3s var(--ease-out),
-      padding 0.3s var(--ease-out);
+      min-height 0.3s var(--ease-out);
   }
 
-  button:hover {
+  button:hover,
+  button[aria-pressed='true'] {
     color: var(--text);
   }
 
-  /* Icons only while the toolbar is pinned; labels stay for screen readers. */
   /* Labels fold away (still read by screen readers) while pinned. */
   button span {
     display: inline-block;
@@ -138,17 +134,12 @@ const views = [
 
   :global([data-stuck]) button {
     gap: 0;
-    min-height: 30px;
-    padding: 0 10px;
+    min-height: 36px;
   }
 
   :global([data-stuck]) button span {
     max-width: 0;
     opacity: 0;
-  }
-
-  button[aria-pressed='true'] {
-    color: var(--text);
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -160,12 +151,7 @@ const views = [
   }
 
   @media (max-width: 640px) {
-    .views {
-      width: 100%;
-    }
-
     button {
-      flex: 1;
       font-size: 0.875rem;
     }
   }

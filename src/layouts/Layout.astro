@@ -277,7 +277,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href.replace(
 
   /* The accent as a reporter's highlighter: a pink swipe under the lower
      part of the words, as if marked up on a printed page. */
-  mark {
+  mark,
+  .highlight {
     margin: 0 -0.08em;
     padding: 0 0.08em;
     border-radius: 0.12em 0.3em 0.18em 0.25em;

@@ -274,7 +274,7 @@ The signature unit: a card whose title link covers the whole card (`.stretched`)
 
 ### View toggle
 
-A segmented control at the right of the toolbar: Galeria (the month rows), Lista, Tabela, each a stroke icon plus label, in a raised track with a strong hairline. A card-face pill with an inset pink ring slides under the pressed option (0.45s, expo-out), like the theme toggle's ball; the pressed label is ink, the others muted. The choice is stored and restored before paint on `<html data-view>`; without JS only cards show and the toggle stays hidden. Full width on phones.
+Text options at the right of the toolbar: Galeria (the month rows), Lista, Tabela, each a muted stroke icon plus label, no track or border. The pressed option is ink and carries a highlighter band (`--highlight`, lower half of the text) that slides between options (0.45s, expo-out); the others are muted and turn ink on hover. The choice is stored and restored before paint on `<html data-view>`; without JS only cards show and the toggle stays hidden. Full width on phones.
 
 ### List view (news feed)
 
@@ -290,18 +290,20 @@ The accent's second job: a pink marker swipe (`mark`, `--highlight` = accent at 
 
 ### Filter controls (outlet and topic menus, sort)
 
-- **Shape:** square corners, 44px minimum height, 260px wide on desktop and full cell width on mobile.
-- **Default:** raised background, strong hairline, ink text at control size, muted chevron on the right that rotates 180deg when open.
-- **Hover:** border goes to ink.
-- **Active (a filter is applied):** pink border doubled by an inset pink ring; the chevron is replaced by a 30px clear (x) button.
+Set as type, like a newspaper's section navigation, not as app controls.
+
+- **Shape:** no box, background or border; 44px minimum height for touch (36px while pinned), 28px between controls; values truncate at 240px.
+- **Default:** ink text at 0.9375rem, 500 weight, muted chevron that rotates 180deg when open.
+- **Hover:** the value underlines (1px, 4px offset).
+- **Active (a filter is applied):** the value carries the pink highlighter (`.highlight`, the same swipe as the title); the chevron is replaced by a 28px muted clear (x).
 - **Menu:** native `details` disclosure; a card-face panel with hairline border, square corners, 6px padding, open-menu shadow, 300px minimum width, scrolls past 60vh; drops in 6px over 0.22s. Items are 8px 10px, square, raised on hover; the current item is ink, 600 weight, with a 7px pink dot at the right.
-- **Sort:** same control shape with a sort glyph; collapses to a 44px square on mobile.
+- **Sort:** same text style in body ink with a muted sort glyph; on phones the label is visually hidden and only the glyph shows.
 
 ### Round icon buttons
 
 Footer share links: 40px circles, raised background, strong hairline, ink glyph; border turns pink on hover.
 
-Month previous/next: 44px solid ink circles with a ground-coloured 20px chevron, so the way through a row is hard to miss; hover fills them pink with accent-ink glyph, press scales to 94%; at the end of a row the button drops to a strong-hairline outline with a muted glyph at 60% opacity.
+Month previous/next: 44px solid ink circles with a 2px pink border and a ground-coloured 20px chevron, so the way through a row is hard to miss; hover fills them pink with accent-ink glyph, press scales to 94%; at the end of a row the button drops to a strong-hairline outline with a muted glyph at 60% opacity.
 
 ### Theme toggle
 
